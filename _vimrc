@@ -1,21 +1,54 @@
 set rtp+=~/.vim/vundle.git/  
 call vundle#rc()
 
-Bundle 'Shougo/neocomplcache'
-Bundle 'Shougo/unite.vim'
-Bundle 'unite-colorscheme'
-Bundle 'thinca/vim-ref'
-Bundle 'thinca/vim-quickrun'
-Bundle 'Solarized'
+Bundle 'AutoClose'
+Bundle 'eregex.vim'
 Bundle 'google'
 Bundle 'https://github.com/Shougo/vimshell.git'
-Bundle 'https://github.com/Shougo/vimproc.git' 
+Bundle 'https://github.com/Shougo/vimproc.git'
+Bundle 'https://github.com/vim-ruby/vim-ruby.git'
+Bundle 'project.tar.gz'
+Bundle 'rails.vim'
+Bundle 'Solarized'
+Bundle 'Shougo/neocomplcache'
+Bundle 'Shougo/unite.vim'
+Bundle 'surround.vim'
+Bundle 'snippetsEmu'
+Bundle 'thinca/vim-ref'
+Bundle 'thinca/vim-quickrun'
+Bundle 'unite-colorscheme'
+Bundle 'quickrun.vim'
 filetype plugin indent on     " required!
 
-"vi互換の動きにしない
+" 括弧自動補完
+"inoremap { {}<LEFT>
+"inoremap [ []<LEFT>
+"inoremap ( ()<LEFT>
+"inoremap " ""<LEFT>
+"inoremap ' ''<LEFT>
+"vnoremap { "zdi^V{<C-R>z}<ESC>
+"vnoremap [ "zdi^V[<C-R>z]<ESC>
+"vnoremap ( "zdi^V(<C-R>z)<ESC>
+"vnoremap " "zdi^V"<C-R>z^V"<ESC>
+"vnoremap ' "zdi'<C-R>z'<ESC>
+
+"インクリメンタルサーチを行う
+set incsearch
+
+"入力モード時、ステータスラインのカラーを変更
+"augroup InsertHook
+"autocmd!
+"autocmd InsertEnter * highlight StatusLine guifg=#ccdc90 guibg=#2E4340
+"autocmd InsertLeave * highlight StatusLine guifg=#2E4340 guibg=#ccdc90
+"augroup END
+
+"日本語入力をリセット
+au BufNewFile,BufRead * set iminsert=0
+
+" vi互換の動きにしない
 set nocompatible
 
-"左右のカーソル移動で行間移動可能にする。
+" 左右のカーソル移動で行間移動可能にする。
 set whichwrap=b,s,<,>,[,]
 
 " バッファをキーで移動
@@ -39,8 +72,8 @@ nnoremap j gj
 nnoremap k gk
 
 " 削除でレジスタに格納しない(ビジュアルモードでの選択後は格納する)
-nnoremap x "_x
-nnoremap dd "_dd
+"nnoremap x "_x
+"nnoremap dd "_dd
 
 "デフォルト設定。結局runtime/indentの設定のほうで、ファイルごとに切り替える
 " タブとか改行を表示する
@@ -122,3 +155,4 @@ imap <silent> <C-T><C-T> <C-R>=strftime("%H:%M:%S")<CR>
 
 "VimShell
 let g:vimproc_dll_path = $VIMRUNTIME . '/autoload/proc.so'
+
