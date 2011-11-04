@@ -1,5 +1,5 @@
-:colo google
-set guifont=Osaka|“™•:h15
+:colo google2
+set guifont=Osaka-Mono:h10
 
 "sŠÔ
 :set lsp=5

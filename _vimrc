@@ -1,15 +1,23 @@
-set rtp+=~/.vim/vundle.git/  
-call vundle#rc()
+" vi互換の動きにしない
+set nocompatible
+filetype off
 
-"Bundle 'AutoClose'
+"if文が必要。
+if has("win32") || has("win64")
+   set rtp+=./vimfiles/vundle.git/
+   call vundle#rc('./vimfiles/bundle/')
+else
+   set rtp+=~/.vim/vundle.vim/
+   call vundle#rc()
+endif
+
 Bundle 'eregex.vim'
-Bundle 'google'
 Bundle 'https://github.com/Shougo/vimshell.git'
 Bundle 'https://github.com/Shougo/vimproc.git'
 Bundle 'https://github.com/vim-ruby/vim-ruby.git'
+Bundle 'https://github.com/ujiro99/google2.git'
 Bundle 'project.tar.gz'
 Bundle 'rails.vim'
-"Bundle 'Solarized'
 Bundle 'Shougo/neocomplcache'
 Bundle 'Shougo/unite.vim'
 Bundle 'surround.vim'
@@ -18,19 +26,8 @@ Bundle 'thinca/vim-ref'
 Bundle 'thinca/vim-quickrun'
 Bundle 'unite-colorscheme'
 Bundle 'quickrun.vim'
-filetype plugin indent on     " required!
 
-" 括弧自動補完
-"inoremap { {}<LEFT>
-"inoremap [ []<LEFT>
-"inoremap ( ()<LEFT>
-"inoremap " ""<LEFT>
-"inoremap ' ''<LEFT>
-"vnoremap { "zdi^V{<C-R>z}<ESC>
-"vnoremap [ "zdi^V[<C-R>z]<ESC>
-"vnoremap ( "zdi^V(<C-R>z)<ESC>
-"vnoremap " "zdi^V"<C-R>z^V"<ESC>
-"vnoremap ' "zdi'<C-R>z'<ESC>
+filetype plugin indent on     " required!
 
 "インクリメンタルサーチを行う
 set incsearch
@@ -44,9 +41,6 @@ set incsearch
 
 "日本語入力をリセット
 au BufNewFile,BufRead * set iminsert=0
-
-" vi互換の動きにしない
-set nocompatible
 
 " 左右のカーソル移動で行間移動可能にする。
 set whichwrap=b,s,<,>,[,]
@@ -76,11 +70,11 @@ nnoremap k gk
 "nnoremap dd "_dd
 
 "デフォルト設定。結局runtime/indentの設定のほうで、ファイルごとに切り替える
-" タブとか改行を表示する
-set list
+"タブとか改行を表示する
+set nolist
 
 " タブとか改行を示す文字列 eol(改行)は背景色違いのスペースにする。
-set listchars=tab:>-,extends:<,trail:-,eol:\  
+"set listchars=tab:>-,extends:<,trail:-,eol:\  
 
 "タブを空白で入力する
 set expandtab
@@ -94,7 +88,7 @@ set autoindent
 "スマートインデント
 set smartindent
 "折り返し表示しない
-set nowrap
+"set nowrap
 
 "空行のインデントを勝手に消さない
 nnoremap o oX<C-h>
@@ -108,7 +102,7 @@ set fileencodings=utf-8,cp932,euc-jp
 set fileformats=unix,dos
 
 " 内部の解釈の文字コード　設定ファイルもこのコード
-"set encoding=utf-8
+" set encoding=utf-8
 " 内部の改行コード
 set fileformat=unix
 
@@ -155,4 +149,3 @@ imap <silent> <C-T><C-T> <C-R>=strftime("%H:%M:%S")<CR>
 
 "VimShell
 let g:vimproc_dll_path = $VIMRUNTIME . '/autoload/proc.so'
-
