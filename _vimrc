@@ -1,15 +1,13 @@
 set rtp+=~/.vim/vundle.git/  
 call vundle#rc()
 
-"Bundle 'AutoClose'
 Bundle 'eregex.vim'
-Bundle 'google'
 Bundle 'https://github.com/Shougo/vimshell.git'
 Bundle 'https://github.com/Shougo/vimproc.git'
 Bundle 'https://github.com/vim-ruby/vim-ruby.git'
+Bundle 'https://ujiro99@github.com/ujiro99/google2.git'
 Bundle 'project.tar.gz'
 Bundle 'rails.vim'
-"Bundle 'Solarized'
 Bundle 'Shougo/neocomplcache'
 Bundle 'Shougo/unite.vim'
 Bundle 'surround.vim'
