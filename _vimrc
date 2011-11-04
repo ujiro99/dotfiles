@@ -106,7 +106,6 @@ set fileformats=unix,dos
 " 内部の改行コード
 set fileformat=unix
 
-"==================================================================
 "全角スペースを視覚化
 if has('syntax')
   syntax enable
@@ -149,3 +148,16 @@ imap <silent> <C-T><C-T> <C-R>=strftime("%H:%M:%S")<CR>
 
 "VimShell
 let g:vimproc_dll_path = $VIMRUNTIME . '/autoload/proc.so'
+
+"カーソル行をハイライト
+set cursorline
+"カレントウィンドウにのみ罫線を引く
+augroup cch
+  autocmd! cch
+  autocmd WinLeave * set nocursorline
+  autocmd WinEnter,BufRead * set cursorline
+augroup END
+:hi clear CursorLine
+:hi CursorLine gui=underline
+highlight CursorLine ctermbg=black guibg=black
+

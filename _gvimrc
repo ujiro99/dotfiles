@@ -1,5 +1,18 @@
 :colo google2
+<<<<<<< HEAD
 set guifont=Osaka-Mono:h10
+=======
+set guifont=Osaka－等幅:h14
+>>>>>>> 31f38c31c8ee1ba09752184f0d1f670f4819e6f4
 
 "行間
 :set lsp=5
+
+"フォーカスが外れると透明化
+"augroup hack234
+"  autocmd!
+"  if has('mac')
+"    autocmd FocusGained * set transparency=10
+"    autocmd FocusLost * set transparency=50
+"  endif
+"augroup END
