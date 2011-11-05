@@ -1,6 +1,7 @@
-set rtp+=~/.vim/vundle.git/  
+set rtp+=~/.vim/vundle.git/
 call vundle#rc()
 
+Bundle 'Align'
 Bundle 'eregex.vim'
 Bundle 'https://github.com/Shougo/vimshell.git'
 Bundle 'https://github.com/Shougo/vimproc.git'
