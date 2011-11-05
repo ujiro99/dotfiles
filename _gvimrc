@@ -1,6 +1,11 @@
 :colo google2
-set guifont=Osaka|“™•:h14
-
+set guifont=Osaka-Mono:h10
+if has("win32") || has("win64")
+    set guifont=Osaka-Mono:h10
+else
+    set guifont=Osaka-Mono:h14
+endif
+                
 "sŠÔ
 :set lsp=5
 

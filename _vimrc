@@ -1,12 +1,22 @@
-set rtp+=~/.vim/vundle.git/
-call vundle#rc()
+" vi互換の動きにしない
+set nocompatible
+filetype off
+
+"vundle.vimを使用する
+if has("win32") || has("win64")
+   set rtp+=./vimfiles/vundle.git/
+   call vundle#rc('./vimfiles/bundle/')
+else
+   set rtp+=~/.vim/vundle.git/
+   call vundle#rc()
+endif
 
 Bundle 'Align'
 Bundle 'eregex.vim'
 Bundle 'https://github.com/Shougo/vimshell.git'
 Bundle 'https://github.com/Shougo/vimproc.git'
 Bundle 'https://github.com/vim-ruby/vim-ruby.git'
-Bundle 'https://ujiro99@github.com/ujiro99/google2.git'
+Bundle 'https://github.com/ujiro99/google2.git'
 Bundle 'project.tar.gz'
 Bundle 'rails.vim'
 Bundle 'Shougo/neocomplcache'
@@ -16,20 +26,8 @@ Bundle 'snippetsEmu'
 Bundle 'thinca/vim-ref'
 Bundle 'thinca/vim-quickrun'
 Bundle 'unite-colorscheme'
-Bundle 'quickrun.vim'
-filetype plugin indent on     " required!
 
-" 括弧自動補完
-"inoremap { {}<LEFT>
-"inoremap [ []<LEFT>
-"inoremap ( ()<LEFT>
-"inoremap " ""<LEFT>
-"inoremap ' ''<LEFT>
-"vnoremap { "zdi^V{<C-R>z}<ESC>
-"vnoremap [ "zdi^V[<C-R>z]<ESC>
-"vnoremap ( "zdi^V(<C-R>z)<ESC>
-"vnoremap " "zdi^V"<C-R>z^V"<ESC>
-"vnoremap ' "zdi'<C-R>z'<ESC>
+filetype plugin indent on     " required!
 
 "インクリメンタルサーチを行う
 set incsearch
@@ -40,12 +38,6 @@ set incsearch
 "autocmd InsertEnter * highlight StatusLine guifg=#ccdc90 guibg=#2E4340
 "autocmd InsertLeave * highlight StatusLine guifg=#2E4340 guibg=#ccdc90
 "augroup END
-
-"日本語入力をリセット
-au BufNewFile,BufRead * set iminsert=0
-
-" vi互換の動きにしない
-set nocompatible
 
 " 左右のカーソル移動で行間移動可能にする。
 set whichwrap=b,s,<,>,[,]
@@ -70,16 +62,12 @@ set number
 nnoremap j gj
 nnoremap k gk
 
-" 削除でレジスタに格納しない(ビジュアルモードでの選択後は格納する)
-"nnoremap x "_x
-"nnoremap dd "_dd
-
 "デフォルト設定。結局runtime/indentの設定のほうで、ファイルごとに切り替える
-" タブとか改行を表示する
-set list
+"タブとか改行を表示する
+set nolist
 
 " タブとか改行を示す文字列 eol(改行)は背景色違いのスペースにする。
-set listchars=tab:>-,extends:<,trail:-,eol:\  
+"set listchars=tab:>-,extends:<,trail:-,eol:\  
 
 "タブを空白で入力する
 set expandtab
@@ -106,17 +94,16 @@ set fileencodings=utf-8,cp932,euc-jp
 " 改行コードの解釈優先順位
 set fileformats=unix,dos
 
-" 内部の解釈の文字コード　設定ファイルもこのコード
-"set encoding=utf-8
+" 内部の解釈の文字コード 設定ファイルもこのコード
+" set encoding=utf-8
 " 内部の改行コード
 set fileformat=unix
 
-"==================================================================
 "全角スペースを視覚化
 if has('syntax')
   syntax enable
   function! ActivateInvisibleIndicator()
-    highlight ZenkakuSpace cterm=underline ctermfg=darkgrey gui=underline guifg=#FF0000
+    highlight ZenkakuSpace cterm=underline ctermfg=darkgrey gui=underline guifg=#333333
     match ZenkakuSpace /　/
   endfunction
   augroup InvisibleIndicator
@@ -145,7 +132,7 @@ set title
 set virtualedit+=block
 
 "escでハイライトをオフ
-"nnoremap <silent> <ESC> <ESC>:noh<CR>
+nnoremap <silent> <ESC> <ESC>:noh<CR>
 " ノーマルモード中でもエンターキーで改行挿入でノーマルモードに戻る
 noremap <CR> i<CR><ESC>
 
@@ -153,5 +140,68 @@ noremap <CR> i<CR><ESC>
 imap <silent> <C-T><C-T> <C-R>=strftime("%H:%M:%S")<CR>
 
 "VimShell
-let g:vimproc_dll_path = $VIMRUNTIME . '/autoload/proc.so'
+"windowsの場合はproc.dllを入れておく
+if has("win32") || has("win64")
+else
+    let g:vimproc_dll_path = $VIMRUNTIME . '/autoload/proc.so'
+endif
+
+"カーソル行をハイライト
+"カレントウィンドウにのみ罫線を引く
+set cursorline
+augroup cch
+  autocmd! cch
+  autocmd WinLeave * set nocursorline
+  autocmd WinEnter,BufRead * set cursorline
+augroup END
+:hi clear CursorLine
+:hi CursorLine gui=underline
+highlight CursorLine ctermbg=black guibg=black
+
+
+"---------------------------------------------
+" 日本語入力関連
+"---------------------------------------------
+"日本語入力をリセット
+au BufNewFile,BufRead * set iminsert=0
+" 挿入モード終了時にIME状態を保持しない
+inoremap <silent> <ESC> <ESC>
+inoremap <silent> <C-[> <ESC>
+" 「日本語入力固定モード」切替キー
+inoremap <silent> <C-j> <C-^>
+
+
+"---------------------------------------------
+" project.vim関連
+"---------------------------------------------
+" ファイルが選択されたら、ウィンドウを閉じる
+:let g:proj_flags = "imstc"
+" <Leader>Pで、プロジェクトをトグルで開閉する
+:nmap <silent> <Leader>p <Plug>ToggleProject
+" <Leader>pで、デフォルトのプロジェクトを開く
+":nmap <silent> <Leader>p :Project<CR>
+" カレントディレクトリにプロジェクト管理ファイルがあったら読み込む
+if getcwd() != $HOME
+    if filereadable(getcwd(). '/.vimprojects')
+        :Project .vimprojects
+    endif
+endif
+
+
+"---------------------------------------------
+" neocomplcache.vim関連
+"---------------------------------------------
+" neocomplcacheを起動時に有効化
+let g:neocomplcache_enable_at_startup = 1
+" smart caseを有効化
+let g:neocomplcache_enable_smart_case = 1
+" camel caseを有効化
+let g:neocomplcache_enable_camel_case_completion = 1
+" _区切りの補完を有効化
+let g:neocomplcache_enable_underbar_completion = 1
+" シンタックスをキャッシュするときの最小文字長
+let g:neocomplcache_min_syntax_length = 3
+"<C-Space>でomni補完
+"imap <C-Space> <C-x><C-o>
+
 
