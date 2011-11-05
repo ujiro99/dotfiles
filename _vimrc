@@ -40,9 +40,6 @@ set incsearch
 "autocmd InsertLeave * highlight StatusLine guifg=#2E4340 guibg=#ccdc90
 "augroup END
 
-"日本語入力をリセット
-au BufNewFile,BufRead * set iminsert=0
-
 " 左右のカーソル移動で行間移動可能にする。
 set whichwrap=b,s,<,>,[,]
 
@@ -66,10 +63,6 @@ set number
 nnoremap j gj
 nnoremap k gk
 
-" 削除でレジスタに格納しない(ビジュアルモードでの選択後は格納する)
-"nnoremap x "_x
-"nnoremap dd "_dd
-
 "デフォルト設定。結局runtime/indentの設定のほうで、ファイルごとに切り替える
 "タブとか改行を表示する
 set nolist
@@ -89,7 +82,7 @@ set autoindent
 "スマートインデント
 set smartindent
 "折り返し表示しない
-"set nowrap
+set nowrap
 
 "空行のインデントを勝手に消さない
 nnoremap o oX<C-h>
@@ -111,7 +104,7 @@ set fileformat=unix
 if has('syntax')
   syntax enable
   function! ActivateInvisibleIndicator()
-    highlight ZenkakuSpace cterm=underline ctermfg=darkgrey gui=underline guifg=#D14836
+    highlight ZenkakuSpace cterm=underline ctermfg=darkgrey gui=underline guifg=#333333
     match ZenkakuSpace /　/
   endfunction
   augroup InvisibleIndicator
@@ -140,7 +133,7 @@ set title
 set virtualedit+=block
 
 "escでハイライトをオフ
-"nnoremap <silent> <ESC> <ESC>:noh<CR>
+nnoremap <silent> <ESC> <ESC>:noh<CR>
 " ノーマルモード中でもエンターキーで改行挿入でノーマルモードに戻る
 noremap <CR> i<CR><ESC>
 
@@ -166,9 +159,12 @@ augroup END
 :hi CursorLine gui=underline
 highlight CursorLine ctermbg=black guibg=black
 
-"<C-Space>でomni補完
-imap <C-Space> <C-x><C-o>
 
+"---------------------------------------------
+" 日本語入力関連
+"---------------------------------------------
+"日本語入力をリセット
+au BufNewFile,BufRead * set iminsert=0
 " 挿入モード終了時にIME状態を保持しない
 inoremap <silent> <ESC> <ESC>
 inoremap <silent> <C-[> <ESC>
@@ -188,6 +184,24 @@ inoremap <silent> <C-j> <C-^>
 " カレントディレクトリにプロジェクト管理ファイルがあったら読み込む
 if getcwd() != $HOME
     if filereadable(getcwd(). '/.vimprojects')
-        Project .vimprojects
+        :Project .vimprojects
     endif
 endif
+
+
+"---------------------------------------------
+" neocomplcache.vim関連
+"---------------------------------------------
+" neocomplcacheを起動時に有効化
+let g:neocomplcache_enable_at_startup = 1
+" smart caseを有効化
+let g:neocomplcache_enable_smart_case = 1
+" camel caseを有効化
+let g:neocomplcache_enable_camel_case_completion = 1
+" _区切りの補完を有効化
+let g:neocomplcache_enable_underbar_completion = 1
+" シンタックスをキャッシュするときの最小文字長
+let g:neocomplcache_min_syntax_length = 3
+"<C-Space>でomni補完
+imap <C-Space> <C-x><C-o>
+
