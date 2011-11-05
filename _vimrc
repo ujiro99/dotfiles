@@ -102,7 +102,7 @@ set fileencodings=utf-8,cp932,euc-jp
 " 改行コードの解釈優先順位
 set fileformats=unix,dos
 
-" 内部の解釈の文字コード　設定ファイルもこのコード
+" 内部の解釈の文字コード 設定ファイルもこのコード
 " set encoding=utf-8
 " 内部の改行コード
 set fileformat=unix
@@ -111,7 +111,7 @@ set fileformat=unix
 if has('syntax')
   syntax enable
   function! ActivateInvisibleIndicator()
-    highlight ZenkakuSpace cterm=underline ctermfg=darkgrey gui=underline guifg=#FF0000
+    highlight ZenkakuSpace cterm=underline ctermfg=darkgrey gui=underline guifg=#D14836
     match ZenkakuSpace /　/
   endfunction
   augroup InvisibleIndicator
@@ -155,8 +155,8 @@ else
 endif
 
 "カーソル行をハイライト
-set cursorline
 "カレントウィンドウにのみ罫線を引く
+set cursorline
 augroup cch
   autocmd! cch
   autocmd WinLeave * set nocursorline
@@ -168,3 +168,26 @@ highlight CursorLine ctermbg=black guibg=black
 
 "<C-Space>でomni補完
 imap <C-Space> <C-x><C-o>
+
+" 挿入モード終了時にIME状態を保持しない
+inoremap <silent> <ESC> <ESC>
+inoremap <silent> <C-[> <ESC>
+" 「日本語入力固定モード」切替キー
+inoremap <silent> <C-j> <C-^>
+
+
+"---------------------------------------------
+" project.vim関連
+"---------------------------------------------
+" ファイルが選択されたら、ウィンドウを閉じる
+:let g:proj_flags = "imstc"
+" <Leader>Pで、プロジェクトをトグルで開閉する
+:nmap <silent> <Leader>P <Plug>ToggleProject
+" <Leader>pで、デフォルトのプロジェクトを開く
+:nmap <silent> <Leader>p :Project<CR>
+" カレントディレクトリにプロジェクト管理ファイルがあったら読み込む
+if getcwd() != $HOME
+    if filereadable(getcwd(). '/.vimprojects')
+        Project .vimprojects
+    endif
+endif
