@@ -2,7 +2,7 @@
 set nocompatible
 filetype off
 
-"if文が必要。
+"vundle.vimを使用する
 if has("win32") || has("win64")
    set rtp+=./vimfiles/vundle.git/
    call vundle#rc('./vimfiles/bundle/')
@@ -11,6 +11,7 @@ else
    call vundle#rc()
 endif
 
+Bundle 'Align.vim'
 Bundle 'eregex.vim'
 Bundle 'https://github.com/Shougo/vimshell.git'
 Bundle 'https://github.com/Shougo/vimproc.git'
@@ -147,7 +148,11 @@ noremap <CR> i<CR><ESC>
 imap <silent> <C-T><C-T> <C-R>=strftime("%H:%M:%S")<CR>
 
 "VimShell
-let g:vimproc_dll_path = $VIMRUNTIME . '/autoload/proc.so'
+"windowsの場合はproc.dllを入れておく
+if has("win32") || has("win64")
+else
+    let g:vimproc_dll_path = $VIMRUNTIME . '/autoload/proc.so'
+endif
 
 "カーソル行をハイライト
 set cursorline
@@ -161,3 +166,5 @@ augroup END
 :hi CursorLine gui=underline
 highlight CursorLine ctermbg=black guibg=black
 
+"<C-Space>でomni補完
+imap <C-Space> <C-x><C-o>

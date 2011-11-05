@@ -1,9 +1,5 @@
 :colo google2
-<<<<<<< HEAD
 set guifont=Osaka-Mono:h10
-=======
-set guifont=OsakaÅ|ìôïù:h14
->>>>>>> 31f38c31c8ee1ba09752184f0d1f670f4819e6f4
 
 "çsä‘
 :set lsp=5

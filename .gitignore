@@ -1,1 +1,4 @@
 /vimfiles/bundle/
+
+#backupfile
+*.bak
