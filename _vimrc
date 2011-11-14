@@ -7,10 +7,11 @@ if has("win32") || has("win64")
    set rtp+=./vimfiles/vundle.git/
    call vundle#rc('./vimfiles/bundle/')
 else
-   set rtp+=~/.vim/vundle.git/
+   set rtp+=~/.vim/bundle/vundle
    call vundle#rc()
 endif
 
+Bundle 'gmarik/vundle'
 Bundle 'Align'
 Bundle 'eregex.vim'
 Bundle 'https://github.com/Shougo/vimshell.git'
@@ -137,7 +138,7 @@ nnoremap <silent> <ESC> <ESC>:noh<CR>
 noremap <CR> i<CR><ESC>
 
 " 挿入モードでctrl+T二回うちで現在時刻挿入
-imap <silent> <C-T><C-T> <C-R>=strftime("%H:%M:%S")<CR>
+"imap <silent> <C-T><C-T> <C-R>=strftime("%H:%M:%S")<CR>
 
 "VimShell
 "windowsの場合はproc.dllを入れておく
@@ -204,4 +205,11 @@ let g:neocomplcache_min_syntax_length = 3
 "<C-Space>でomni補完
 "imap <C-Space> <C-x><C-o>
 
+"---------------------------------------------
+" バッファ操作関連
+"---------------------------------------------
+nmap <Space>b :ls<CR>:buffer 
+nmap <Space>f :edit .<CR>
+nmap <Space>v :vsplit<CR><C-w><C-w>:ls<CR>:buffer
+nmap <Space>V :Vexplore!<CR><CR>
 
