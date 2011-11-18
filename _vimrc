@@ -7,15 +7,17 @@ if has("win32") || has("win64")
    set rtp+=./vimfiles/vundle.git/
    call vundle#rc('./vimfiles/bundle/')
 else
-   set rtp+=~/.vim/bundle/vundle
+   set rtp& rtp+=~/.vim/bundle/vundle
    call vundle#rc()
 endif
 
-Bundle 'gmarik/vundle'
 Bundle 'Align'
+Bundle 'CSApprox'
 Bundle 'eregex.vim'
-Bundle 'https://github.com/Shougo/vimshell.git'
+Bundle 'gmarik/vundle'
+Bundle 'https://github.com/Shougo/vimfiler.git'
 Bundle 'https://github.com/Shougo/vimproc.git'
+Bundle 'https://github.com/Shougo/vimshell.git'
 Bundle 'https://github.com/vim-ruby/vim-ruby.git'
 Bundle 'https://github.com/ujiro99/google2.git'
 Bundle 'project.tar.gz'
@@ -105,7 +107,7 @@ if has('syntax')
   syntax enable
   function! ActivateInvisibleIndicator()
     highlight ZenkakuSpace cterm=underline ctermfg=darkgrey gui=underline guifg=#333333
-    match ZenkakuSpace /　/
+    match ZenkakuSpace /＿/
   endfunction
   augroup InvisibleIndicator
     autocmd!
@@ -119,9 +121,6 @@ set clipboard+=unnamed
 "編集中でもバッファを切り替えれるようにしておく
 set hidden
 
-"バッファ一覧ショートカット→バッファ番号で移動
-nmap gb :ls<CR>:buf 
-
 "ステータスのところにファイル情報表示
 set statusline=%<[%n]%F%=\ %m%r%h%w%y%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}\ %l,%c\ %P 
 
@@ -132,7 +131,7 @@ set title
 " 矩形選択で行末を超えてブロックを選択できるようにする
 set virtualedit+=block
 
-"escでハイライトをオフ
+" escでハイライトをオフ
 nnoremap <silent> <ESC> <ESC>:noh<CR>
 " ノーマルモード中でもエンターキーで改行挿入でノーマルモードに戻る
 noremap <CR> i<CR><ESC>
@@ -156,8 +155,20 @@ augroup cch
   autocmd WinEnter,BufRead * set cursorline
 augroup END
 :hi clear CursorLine
-:hi CursorLine gui=underline
-highlight CursorLine ctermbg=black guibg=black
+:hi CursorLine 
+highlight CursorLine ctermbg=black guibg=#eeeeee
+
+" ヘルプファイルの参照
+nnoremap <C-h>  :<C-u>help<Space>
+
+" vimrcのリロード
+command! ReloadVimrc  source $MYVIMRC
+
+" 専用ホットキーを定義
+nnoremap <Space>. :<C-u>edit $MYVIMRC<CR>
+
+" デフォルトのエクスプローラをVimFilerへ変更
+:let g:vimfiler_as_default_explorer = 1
 
 
 "---------------------------------------------
@@ -180,7 +191,7 @@ inoremap <silent> <C-j> <C-^>
 " <Leader>Pで、プロジェクトをトグルで開閉する
 :nmap <silent> <Leader>p <Plug>ToggleProject
 " <Leader>pで、デフォルトのプロジェクトを開く
-":nmap <silent> <Leader>p :Project<CR>
+":nmap <silent> <Leader>P :Project<CR>
 " カレントディレクトリにプロジェクト管理ファイルがあったら読み込む
 if getcwd() != $HOME
     if filereadable(getcwd(). '/.vimprojects')
@@ -192,24 +203,55 @@ endif
 "---------------------------------------------
 " neocomplcache.vim関連
 "---------------------------------------------
-" neocomplcacheを起動時に有効化
-let g:neocomplcache_enable_at_startup = 1
-" smart caseを有効化
-let g:neocomplcache_enable_smart_case = 1
-" camel caseを有効化
-let g:neocomplcache_enable_camel_case_completion = 1
-" _区切りの補完を有効化
-let g:neocomplcache_enable_underbar_completion = 1
-" シンタックスをキャッシュするときの最小文字長
-let g:neocomplcache_min_syntax_length = 3
-"<C-Space>でomni補完
-"imap <C-Space> <C-x><C-o>
+if has("win32") || has("win64")
+else
+  " neocomplcacheを起動時に有効化
+  let g:neocomplcache_enable_at_startup = 1
+  " smart caseを有効化
+  let g:neocomplcache_enable_smart_case = 1
+  " camel caseを有効化
+  let g:neocomplcache_enable_camel_case_completion = 1
+  " _区切りの補完を有効化
+  let g:neocomplcache_enable_underbar_completion = 1
+  " シンタックスをキャッシュするときの最小文字長
+  let g:neocomplcache_min_syntax_length = 3
+  "<C-Space>でomni補完
+  "imap <C-Space> <C-x><C-o>
+endif
+
 
 "---------------------------------------------
 " バッファ操作関連
 "---------------------------------------------
 nmap <Space>b :ls<CR>:buffer 
-nmap <Space>f :edit .<CR>
+nmap <Space>f :VimFiler<CR>
 nmap <Space>v :vsplit<CR><C-w><C-w>:ls<CR>:buffer
 nmap <Space>V :Vexplore!<CR><CR>
 
+"---------------------------------------------
+" unite.vim
+"---------------------------------------------
+" 入力モードで開始する
+let g:unite_enable_start_insert=1
+" バッファ一覧
+nnoremap <silent> ,ub :<C-u>Unite buffer<CR>
+" ファイル一覧
+nnoremap <silent> ,uf :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
+" レジスタ一覧
+nnoremap <silent> ,ur :<C-u>Unite -buffer-name=register register<CR>
+" 最近使用したファイル一覧
+nnoremap <silent> ,um :<C-u>Unite file_mru<CR>
+" 常用セット
+nnoremap <silent> ,uu :<C-u>Unite buffer file_mru<CR>
+" 全部乗せ
+nnoremap <silent> ,ua :<C-u>UniteWithBufferDir -buffer-name=files buffer file_mru bookmark file<CR>
+
+" ウィンドウを分割して開く
+au FileType unite nnoremap <silent> <buffer> <expr> <C-j> unite#do_action('split')
+au FileType unite inoremap <silent> <buffer> <expr> <C-j> unite#do_action('split')
+" ウィンドウを縦に分割して開く
+au FileType unite nnoremap <silent> <buffer> <expr> <C-l> unite#do_action('vsplit')
+au FileType unite inoremap <silent> <buffer> <expr> <C-l> unite#do_action('vsplit')
+" ESCキーを2回押すと終了する
+au FileType unite nnoremap <silent> <buffer> <ESC><ESC> q
+au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>q
