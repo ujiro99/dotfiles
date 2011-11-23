@@ -12,7 +12,6 @@ else
 endif
 
 Bundle 'Align'
-Bundle 'CSApprox'
 Bundle 'eregex.vim'
 Bundle 'gmarik/vundle'
 Bundle 'https://github.com/Shougo/vimfiler.git'
@@ -78,6 +77,7 @@ set expandtab
 "標準タブは4
 set tabstop=4
 set softtabstop=4
+set shiftwidth=4
 
 "自動的にインデントする
 set autoindent
@@ -154,9 +154,9 @@ augroup cch
   autocmd WinLeave * set nocursorline
   autocmd WinEnter,BufRead * set cursorline
 augroup END
-:hi clear CursorLine
-:hi CursorLine 
-highlight CursorLine ctermbg=black guibg=#eeeeee
+":hi clear CursorLine
+":hi CursorLine 
+"highlight CursorLine ctermbg=black guibg=#eeeeee
 
 " ヘルプファイルの参照
 nnoremap <C-h>  :<C-u>help<Space>
@@ -227,6 +227,7 @@ nmap <Space>b :ls<CR>:buffer
 nmap <Space>f :VimFiler<CR>
 nmap <Space>v :vsplit<CR><C-w><C-w>:ls<CR>:buffer
 nmap <Space>V :Vexplore!<CR><CR>
+nmap <Space>d :bd<CR>
 
 "---------------------------------------------
 " unite.vim
@@ -255,3 +256,13 @@ au FileType unite inoremap <silent> <buffer> <expr> <C-l> unite#do_action('vspli
 " ESCキーを2回押すと終了する
 au FileType unite nnoremap <silent> <buffer> <ESC><ESC> q
 au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>q
+
+
+"---------------------------------------------
+" Vimshell関連
+"---------------------------------------------
+let g:vimshell_user_prompt = '"(" . getcwd() . ") --- (" . $USER . "@" . hostname() . ")"'
+let g:vimshell_prompt = '$ '
+let g:vimshell_right_prompt = 'vimshell#vcs#info("(%s)-[%b]", "(%s)-[%b|%a]")'
+let g:vimshell_ignore_case = 1
+let g:vimshell_smart_case = 1
