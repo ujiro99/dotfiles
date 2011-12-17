@@ -34,13 +34,6 @@ filetype plugin indent on     " required!
 "インクリメンタルサーチを行う
 set incsearch
 
-"入力モード時、ステータスラインのカラーを変更
-"augroup InsertHook
-"autocmd!
-"autocmd InsertEnter * highlight StatusLine guifg=#ccdc90 guibg=#2E4340
-"autocmd InsertLeave * highlight StatusLine guifg=#2E4340 guibg=#ccdc90
-"augroup END
-
 " 左右のカーソル移動で行間移動可能にする。
 set whichwrap=b,s,<,>,[,]
 
@@ -68,9 +61,6 @@ nnoremap k gk
 "タブとか改行を表示する
 set nolist
 
-" タブとか改行を示す文字列 eol(改行)は背景色違いのスペースにする。
-"set listchars=tab:>-,extends:<,trail:-,eol:\  
-
 "タブを空白で入力する
 set expandtab
 
@@ -97,8 +87,6 @@ set fileencodings=utf-8,cp932,euc-jp
 " 改行コードの解釈優先順位
 set fileformats=unix,dos
 
-" 内部の解釈の文字コード 設定ファイルもこのコード
-" set encoding=utf-8
 " 内部の改行コード
 set fileformat=unix
 
@@ -136,9 +124,6 @@ nnoremap <silent> <ESC> <ESC>:noh<CR>
 " ノーマルモード中でもエンターキーで改行挿入でノーマルモードに戻る
 noremap <CR> i<CR><ESC>
 
-" 挿入モードでctrl+T二回うちで現在時刻挿入
-"imap <silent> <C-T><C-T> <C-R>=strftime("%H:%M:%S")<CR>
-
 "VimShell
 "windowsの場合はproc.dllを入れておく
 if has("win32") || has("win64")
@@ -154,9 +139,6 @@ augroup cch
   autocmd WinLeave * set nocursorline
   autocmd WinEnter,BufRead * set cursorline
 augroup END
-":hi clear CursorLine
-":hi CursorLine 
-"highlight CursorLine ctermbg=black guibg=#eeeeee
 
 " ヘルプファイルの参照
 nnoremap <C-h>  :<C-u>help<Space>
@@ -166,9 +148,6 @@ command! ReloadVimrc  source $MYVIMRC
 
 " 専用ホットキーを定義
 nnoremap <Space>. :<C-u>edit $MYVIMRC<CR>
-
-" デフォルトのエクスプローラをVimFilerへ変更
-:let g:vimfiler_as_default_explorer = 1
 
 
 "---------------------------------------------
@@ -216,8 +195,12 @@ else
   " シンタックスをキャッシュするときの最小文字長
   let g:neocomplcache_min_syntax_length = 3
   "<C-Space>でomni補完
-  "imap <C-Space> <C-x><C-o>
+  imap <C-Space> <C-x><C-o>
 endif
+
+
+" デフォルトのエクスプローラをVimFilerへ変更
+:let g:vimfiler_as_default_explorer = 1
 
 
 "---------------------------------------------
@@ -228,6 +211,7 @@ nmap <Space>f :VimFiler<CR>
 nmap <Space>v :vsplit<CR><C-w><C-w>:ls<CR>:buffer
 nmap <Space>V :Vexplore!<CR><CR>
 nmap <Space>d :bd<CR>
+
 
 "---------------------------------------------
 " unite.vim
@@ -246,7 +230,6 @@ nnoremap <silent> ,um :<C-u>Unite file_mru<CR>
 nnoremap <silent> ,uu :<C-u>Unite buffer file_mru<CR>
 " 全部乗せ
 nnoremap <silent> ,ua :<C-u>UniteWithBufferDir -buffer-name=files buffer file_mru bookmark file<CR>
-
 " ウィンドウを分割して開く
 au FileType unite nnoremap <silent> <buffer> <expr> <C-j> unite#do_action('split')
 au FileType unite inoremap <silent> <buffer> <expr> <C-j> unite#do_action('split')
@@ -266,3 +249,20 @@ let g:vimshell_prompt = '$ '
 let g:vimshell_right_prompt = 'vimshell#vcs#info("(%s)-[%b]", "(%s)-[%b|%a]")'
 let g:vimshell_ignore_case = 1
 let g:vimshell_smart_case = 1
+let g:vimshell_interactive_update_time = 10
+" vimshell map
+nnoremap <silent> vs  :VimShell<CR>
+nnoremap <silent> vsc :VimShellCreate<CR>
+nnoremap <silent> vp  :VimShellPop<CR>
+
+
+" コマンドライン補完をzshライクにする
+set wildmode=list:full
+
+
+" vim の二重起動を禁止する
+if has("win32") || has("win64")
+    gvim.exe --remote-silent 
+else
+    MacVim.app --remote-silent 
+endif
