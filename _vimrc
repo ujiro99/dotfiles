@@ -4,8 +4,8 @@ filetype off
 
 "vundle.vimを使用する
 if has("win32") || has("win64")
-   set rtp+=./vimfiles/vundle.git/
-   call vundle#rc('./vimfiles/bundle/')
+   set rtp+=$VIM/vimfiles/bundle/vundle
+   call vundle#rc('$VIM/vimfiles/bundle/')
 else
    set rtp& rtp+=~/.vim/bundle/vundle
    call vundle#rc()
@@ -25,6 +25,7 @@ Bundle 'Shougo/neocomplcache'
 Bundle 'Shougo/unite.vim'
 Bundle 'surround.vim'
 Bundle 'snippetsEmu'
+Bundle 'tagexplorer.vim'
 Bundle 'thinca/vim-ref'
 Bundle 'thinca/vim-quickrun'
 Bundle 'unite-colorscheme'
@@ -36,10 +37,6 @@ set incsearch
 
 " 左右のカーソル移動で行間移動可能にする。
 set whichwrap=b,s,<,>,[,]
-
-" バッファをキーで移動
-map <F2> <ESC>:bp<CR>
-map <F3> <ESC>:bn<CR>
 
 " バックアップファイルを作成しない
 set nobackup
@@ -106,6 +103,9 @@ endif
 " ヤンクをクリップボードへ送り込む
 set clipboard+=unnamed
 
+" クリップボードの貼付け
+nmap <Space>p "+gP<CR>
+
 "編集中でもバッファを切り替えれるようにしておく
 set hidden
 
@@ -124,12 +124,6 @@ nnoremap <silent> <ESC> <ESC>:noh<CR>
 " ノーマルモード中でもエンターキーで改行挿入でノーマルモードに戻る
 noremap <CR> i<CR><ESC>
 
-"VimShell
-"windowsの場合はproc.dllを入れておく
-if has("win32") || has("win64")
-else
-    let g:vimproc_dll_path = $VIMRUNTIME . '/autoload/proc.so'
-endif
 
 "カーソル行をハイライト
 "カレントウィンドウにのみ罫線を引く
@@ -140,14 +134,21 @@ augroup cch
   autocmd WinEnter,BufRead * set cursorline
 augroup END
 
+
 " ヘルプファイルの参照
 nnoremap <C-h>  :<C-u>help<Space>
 
-" vimrcのリロード
-command! ReloadVimrc  source $MYVIMRC
-
 " 専用ホットキーを定義
 nnoremap <Space>. :<C-u>edit $MYVIMRC<CR>
+
+
+"---------------------------------------------
+" 独自コマンド
+"---------------------------------------------
+" vimrcのリロード
+command! ReloadVimrc  source $MYVIMRC
+" デスクトップへ移動
+command! Cdd :cd $HOME/デスクトップ
 
 
 "---------------------------------------------
@@ -182,8 +183,8 @@ endif
 "---------------------------------------------
 " neocomplcache.vim関連
 "---------------------------------------------
-if has("win32") || has("win64")
-else
+"if has("win32") || has("win64")
+"else
   " neocomplcacheを起動時に有効化
   let g:neocomplcache_enable_at_startup = 1
   " smart caseを有効化
@@ -194,23 +195,27 @@ else
   let g:neocomplcache_enable_underbar_completion = 1
   " シンタックスをキャッシュするときの最小文字長
   let g:neocomplcache_min_syntax_length = 3
-  "<C-Space>でomni補完
-  imap <C-Space> <C-x><C-o>
-endif
+"endif
 
 
+"---------------------------------------------
+" VimFiler関連
+"---------------------------------------------
 " デフォルトのエクスプローラをVimFilerへ変更
-:let g:vimfiler_as_default_explorer = 1
+:let g:vimfiler_as_default_explorer  = 1
+:let g:vimfiler_safe_mode_by_default = 0
 
 
 "---------------------------------------------
 " バッファ操作関連
 "---------------------------------------------
-nmap <Space>b :ls<CR>:buffer 
-nmap <Space>f :VimFiler<CR>
-nmap <Space>v :vsplit<CR><C-w><C-w>:ls<CR>:buffer
-nmap <Space>V :Vexplore!<CR><CR>
-nmap <Space>d :bd<CR>
+nmap <Space>j  :bp<CR>
+nmap <Space>k  :bn<CR>
+nmap <Space>b  :ls<CR>:buffer 
+nmap <Space>f  :VimFiler<CR>
+nmap <Space>v  :vsplit<CR><C-w><C-w>:ls<CR>:buffer
+nmap <Space>V  :Vexplore!<CR><CR>
+nmap <Space>d  :bd<CR>
 
 
 "---------------------------------------------
@@ -244,6 +249,11 @@ au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>q
 "---------------------------------------------
 " Vimshell関連
 "---------------------------------------------
+"windowsの場合はproc.dllを入れておく
+if has("win32") || has("win64")
+else
+    let g:vimproc_dll_path = $VIMRUNTIME . '/autoload/proc.so'
+endif
 let g:vimshell_user_prompt = '"(" . getcwd() . ") --- (" . $USER . "@" . hostname() . ")"'
 let g:vimshell_prompt = '$ '
 let g:vimshell_right_prompt = 'vimshell#vcs#info("(%s)-[%b]", "(%s)-[%b|%a]")'
@@ -256,13 +266,27 @@ nnoremap <silent> vsc :VimShellCreate<CR>
 nnoremap <silent> vp  :VimShellPop<CR>
 
 
+"---------------------------------------------
+" tagexplorer関連
+"---------------------------------------------
+:set tags=tags
+nnoremap <silent> mt  :!ctags -R<CR>
+
+
 " コマンドライン補完をzshライクにする
 set wildmode=list:full
 
+" もう一度やる
+nnoremap U <C-r> 
+nnoremap <C-p> :cp <CR> 
+nnoremap <C-n> :cn <CR>
 
 " vim の二重起動を禁止する
 if has("win32") || has("win64")
-    gvim.exe --remote-silent 
+    "gvim.exe --remote-silent 
 else
     MacVim.app --remote-silent 
 endif
+
+"<C-Space>でomni補完
+imap <C-Space> <C-x><C-o>
