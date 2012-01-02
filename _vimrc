@@ -181,7 +181,7 @@ endif
 
 
 "---------------------------------------------
-" neocomplcache.vimŠÖ˜A
+" neocomplcacheŠÖ˜A
 "---------------------------------------------
 "if has("win32") || has("win64")
 "else
@@ -252,7 +252,7 @@ au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>q
 "windows‚Ìê‡‚Íproc.dll‚ğ“ü‚ê‚Ä‚¨‚­
 if has("win32") || has("win64")
 else
-    let g:vimproc_dll_path = $VIMRUNTIME . '/autoload/proc.so'
+    let g:vimproc_dll_path = $HOME.'/.vim/autoload/proc.so'
 endif
 let g:vimshell_user_prompt = '"(" . getcwd() . ") --- (" . $USER . "@" . hostname() . ")"'
 let g:vimshell_prompt = '$ '
@@ -285,7 +285,7 @@ nnoremap <C-n> :cn <CR>
 if has("win32") || has("win64")
     "gvim.exe --remote-silent 
 else
-    MacVim.app --remote-silent 
+    "MacVim.app --remote-silent 
 endif
 
 "<C-Space>‚Åomni•âŠ®

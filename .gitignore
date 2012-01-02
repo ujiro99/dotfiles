@@ -1,4 +1,5 @@
 /vimfiles/bundle/
+/vimfiles/autoload/
 
 #backupfile
 *.bak
