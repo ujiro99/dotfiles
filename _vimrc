@@ -2,35 +2,36 @@
 set nocompatible
 filetype off
 
-"vundle.vimを使用する
+"NeoBundle.vimを使用する
 if has("win32") || has("win64")
-   set rtp+=$VIM/vimfiles/bundle/vundle
-   call vundle#rc('$VIM/vimfiles/bundle/')
+   set rtp+=$VIM/vimfiles/bundle/neobundle.vim
+   call neobundle#rc('$VIM/vimfiles/bundle/')
 else
-   set rtp& rtp+=~/.vim/bundle/vundle
-   call vundle#rc()
+   set rtp& rtp+=~/.vim/bundle/neobundle.vim
+   call neobundle#rc()
 endif
 
-Bundle 'Align'
-Bundle 'eregex.vim'
-Bundle 'gmarik/vundle'
-Bundle 'https://github.com/Shougo/vimfiler.git'
-Bundle 'https://github.com/Shougo/vimproc.git'
-Bundle 'https://github.com/Shougo/vimshell.git'
-Bundle 'https://github.com/vim-ruby/vim-ruby.git'
-Bundle 'https://github.com/ujiro99/google2.git'
-Bundle 'project.tar.gz'
-Bundle 'rails.vim'
-Bundle 'Shougo/neocomplcache'
-Bundle 'Shougo/unite.vim'
-Bundle 'surround.vim'
-Bundle 'snippetsEmu'
-Bundle 'tagexplorer.vim'
-Bundle 'thinca/vim-ref'
-Bundle 'thinca/vim-quickrun'
-Bundle 'unite-colorscheme'
+NeoBundle 'Align'
+NeoBundle 'eregex.vim'
+NeoBundle 'gmarik/vundle'
+NeoBundle 'https://github.com/Shougo/vimfiler.git'
+NeoBundle 'https://github.com/Shougo/vimproc.git'
+NeoBundle 'https://github.com/Shougo/vimshell.git'
+NeoBundle 'https://github.com/vim-ruby/vim-ruby.git'
+NeoBundle 'https://github.com/ujiro99/google2.git'
+NeoBundle 'project.tar.gz'
+NeoBundle 'rails.vim'
+NeoBundle 'Shougo/neocomplcache'
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'surround.vim'
+NeoBundle 'snippetsEmu'
+NeoBundle 'tagexplorer.vim'
+NeoBundle 'thinca/vim-ref'
+NeoBundle 'thinca/vim-quickrun'
+NeoBundle 'unite-colorscheme'
 
 filetype plugin indent on     " required!
+
 
 "インクリメンタルサーチを行う
 set incsearch
@@ -183,19 +184,16 @@ endif
 "---------------------------------------------
 " neocomplcache関連
 "---------------------------------------------
-"if has("win32") || has("win64")
-"else
-  " neocomplcacheを起動時に有効化
-  let g:neocomplcache_enable_at_startup = 1
-  " smart caseを有効化
-  let g:neocomplcache_enable_smart_case = 1
-  " camel caseを有効化
-  let g:neocomplcache_enable_camel_case_completion = 1
-  " _区切りの補完を有効化
-  let g:neocomplcache_enable_underbar_completion = 1
-  " シンタックスをキャッシュするときの最小文字長
-  let g:neocomplcache_min_syntax_length = 3
-"endif
+" neocomplcacheを起動時に有効化
+let g:neocomplcache_enable_at_startup = 1
+" smart caseを有効化
+let g:neocomplcache_enable_smart_case = 1
+" camel caseを有効化
+let g:neocomplcache_enable_camel_case_completion = 1
+" _区切りの補完を有効化
+let g:neocomplcache_enable_underbar_completion = 1
+" シンタックスをキャッシュするときの最小文字長
+let g:neocomplcache_min_syntax_length = 3
 
 
 "---------------------------------------------
@@ -203,6 +201,7 @@ endif
 "---------------------------------------------
 " デフォルトのエクスプローラをVimFilerへ変更
 :let g:vimfiler_as_default_explorer  = 1
+" セーフモードを解除
 :let g:vimfiler_safe_mode_by_default = 0
 
 
@@ -276,17 +275,12 @@ nnoremap <silent> mt  :!ctags -R<CR>
 " コマンドライン補完をzshライクにする
 set wildmode=list:full
 
+
 " もう一度やる
 nnoremap U <C-r> 
 nnoremap <C-p> :cp <CR> 
 nnoremap <C-n> :cn <CR>
 
-" vim の二重起動を禁止する
-if has("win32") || has("win64")
-    "gvim.exe --remote-silent 
-else
-    "MacVim.app --remote-silent 
-endif
 
 "<C-Space>でomni補完
 imap <C-Space> <C-x><C-o>
