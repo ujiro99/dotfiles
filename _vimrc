@@ -274,6 +274,10 @@ nnoremap <silent> mt  :!ctags -R<CR>
 
 " コマンドライン補完をzshライクにする
 set wildmode=list:full
+" コマンドライン補完を拡張モードにする
+set wildmenu
+" コマンドラインを補完入力するキー
+set wildchar=<Tab>
 
 
 " もう一度やる
@@ -284,3 +288,12 @@ nnoremap <C-n> :cn <CR>
 
 "<C-Space>でomni補完
 imap <C-Space> <C-x><C-o>
+
+
+" マッチ文字列が画面の真ん中にくるようにする
+nmap n nzz
+nmap N Nzz
+nmap * *zz
+nmap # #zz
+nmap g* g*zz
+nmap g# g#zz
