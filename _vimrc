@@ -17,17 +17,22 @@ NeoBundle 'gmarik/vundle'
 NeoBundle 'https://github.com/Shougo/vimfiler.git'
 NeoBundle 'https://github.com/Shougo/vimproc.git'
 NeoBundle 'https://github.com/Shougo/vimshell.git'
+NeoBundle 'https://github.com/tsukkee/unite-tag.git'
 NeoBundle 'https://github.com/vim-ruby/vim-ruby.git'
-NeoBundle 'https://github.com/ujiro99/google2.git'
+NeoBundle 'https://github.com/ujiro99/my-color-scheme.git'
+NeoBundle 'NERD_tree.vim'
 NeoBundle 'project.tar.gz'
 NeoBundle 'rails.vim'
 NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'Shougo/unite.vim'
-NeoBundle 'surround.vim'
 NeoBundle 'snippetsEmu'
+NeoBundle 'surround.vim'
+NeoBundle 'srcexpl.vim' 
 NeoBundle 'tagexplorer.vim'
+NeoBundle 'taglist.vim'
 NeoBundle 'thinca/vim-ref'
 NeoBundle 'thinca/vim-quickrun'
+NeoBundle 'trinity.vim'
 NeoBundle 'unite-colorscheme'
 
 filetype plugin indent on     " required!
@@ -268,7 +273,7 @@ nnoremap <silent> vp  :VimShellPop<CR>
 "---------------------------------------------
 " tagexplorerŠÖ˜A
 "---------------------------------------------
-:set tags=tags
+:set tags+=./tags
 nnoremap <silent> mt  :!ctags -R<CR>
 
 

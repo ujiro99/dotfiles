@@ -51,7 +51,6 @@ setopt nolistbeep
 
 
 ## Keybind configuration
-#
 # emacs like keybind (e.x. Ctrl-a gets to line head and Ctrl-e gets
 #   to end) and something additions
 bindkey -e
