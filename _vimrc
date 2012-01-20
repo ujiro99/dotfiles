@@ -20,20 +20,12 @@ NeoBundle 'https://github.com/Shougo/vimshell.git'
 NeoBundle 'https://github.com/tsukkee/unite-tag.git'
 NeoBundle 'https://github.com/vim-ruby/vim-ruby.git'
 NeoBundle 'https://github.com/ujiro99/my-color-scheme.git'
-NeoBundle 'NERD_tree.vim'
-NeoBundle 'project.tar.gz'
 NeoBundle 'rails.vim'
 NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'Shougo/unite.vim'
-NeoBundle 'snippetsEmu'
 NeoBundle 'surround.vim'
-NeoBundle 'srcexpl.vim' 
-NeoBundle 'tagexplorer.vim'
-NeoBundle 'taglist.vim'
 NeoBundle 'thinca/vim-ref'
 NeoBundle 'thinca/vim-quickrun'
-NeoBundle 'trinity.vim'
-NeoBundle 'unite-colorscheme'
 
 filetype plugin indent on     " required!
 
@@ -170,23 +162,6 @@ inoremap <silent> <C-j> <C-^>
 
 
 "---------------------------------------------
-" project.vim関連
-"---------------------------------------------
-" ファイルが選択されたら、ウィンドウを閉じる
-:let g:proj_flags = "imstc"
-" <Leader>Pで、プロジェクトをトグルで開閉する
-:nmap <silent> <Leader>p <Plug>ToggleProject
-" <Leader>pで、デフォルトのプロジェクトを開く
-":nmap <silent> <Leader>P :Project<CR>
-" カレントディレクトリにプロジェクト管理ファイルがあったら読み込む
-if getcwd() != $HOME
-    if filereadable(getcwd(). '/.vimprojects')
-        :Project .vimprojects
-    endif
-endif
-
-
-"---------------------------------------------
 " neocomplcache関連
 "---------------------------------------------
 " neocomplcacheを起動時に有効化
@@ -271,7 +246,7 @@ nnoremap <silent> vp  :VimShellPop<CR>
 
 
 "---------------------------------------------
-" tagexplorer関連
+" tag関連
 "---------------------------------------------
 :set tags+=./tags
 nnoremap <silent> mt  :!ctags -R<CR>
@@ -302,3 +277,5 @@ nmap * *zz
 nmap # #zz
 nmap g* g*zz
 nmap g# g#zz
+
+
