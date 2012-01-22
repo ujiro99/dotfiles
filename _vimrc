@@ -12,11 +12,11 @@ else
 endif
 
 NeoBundle 'Align'
-NeoBundle 'eregex.vim'
+" NeoBundle 'eregex.vim'
 NeoBundle 'gmarik/vundle'
 NeoBundle 'https://github.com/Shougo/vimfiler.git'
 NeoBundle 'https://github.com/Shougo/vimproc.git'
-NeoBundle 'https://github.com/Shougo/vimshell.git'
+" NeoBundle 'https://github.com/Shougo/vimshell.git'
 NeoBundle 'https://github.com/tsukkee/unite-tag.git'
 NeoBundle 'https://github.com/vim-ruby/vim-ruby.git'
 NeoBundle 'https://github.com/ujiro99/my-color-scheme.git'
@@ -25,7 +25,7 @@ NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'surround.vim'
 NeoBundle 'thinca/vim-ref'
-NeoBundle 'thinca/vim-quickrun'
+" NeoBundle 'thinca/vim-quickrun'
 
 filetype plugin indent on     " required!
 

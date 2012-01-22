@@ -31,6 +31,11 @@ case ${UID} in
     ;;
 esac
 
+
+# PATH setting
+PATH=${PATH}:${HOME}/bin
+
+
 # auto change directory
 setopt auto_cd
 
@@ -86,8 +91,10 @@ fpath=(${HOME}/.zsh/functions/Completion ${fpath})
 autoload -U compinit
 compinit
 
+
 # TAB 補完時に大文字小文字無視
-compctl -M 'm:{a-z}={A-Z}'
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+zstyle ':completion:*' menu select=1
 
 
 ## zsh editor
