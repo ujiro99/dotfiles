@@ -12,28 +12,28 @@ else
 endif
 
 NeoBundle 'Align'
-NeoBundle 'eregex.vim'
 NeoBundle 'gmarik/vundle'
 NeoBundle 'https://github.com/Shougo/vimfiler.git'
 NeoBundle 'https://github.com/Shougo/vimproc.git'
-NeoBundle 'https://github.com/Shougo/vimshell.git'
 NeoBundle 'https://github.com/tsukkee/unite-tag.git'
 NeoBundle 'https://github.com/vim-ruby/vim-ruby.git'
 NeoBundle 'https://github.com/ujiro99/my-color-scheme.git'
-NeoBundle 'NERD_tree.vim'
-NeoBundle 'project.tar.gz'
 NeoBundle 'rails.vim'
 NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'Shougo/unite.vim'
-NeoBundle 'snippetsEmu'
 NeoBundle 'surround.vim'
-NeoBundle 'srcexpl.vim' 
-NeoBundle 'tagexplorer.vim'
-NeoBundle 'taglist.vim'
-NeoBundle 'thinca/vim-ref'
-NeoBundle 'thinca/vim-quickrun'
-NeoBundle 'trinity.vim'
-NeoBundle 'unite-colorscheme'
+"NeoBundle 'eregex.vim'
+"NeoBundle 'https://github.com/Shougo/vimshell.git'
+"NeoBundle 'NERD_tree.vim'
+"NeoBundle 'project.tar.gz'
+"NeoBundle 'snippetsEmu'
+"NeoBundle 'srcexpl.vim' 
+"NeoBundle 'tagexplorer.vim'
+"NeoBundle 'taglist.vim'
+"NeoBundle 'thinca/vim-ref'
+"NeoBundle 'thinca/vim-quickrun'
+"NeoBundle 'trinity.vim'
+"NeoBundle 'unite-colorscheme'
 
 filetype plugin indent on     " required!
 
@@ -173,33 +173,35 @@ inoremap <silent> <C-j> <C-^>
 " project.vim関連
 "---------------------------------------------
 " ファイルが選択されたら、ウィンドウを閉じる
-:let g:proj_flags = "imstc"
+":let g:proj_flags = "imstc"
 " <Leader>Pで、プロジェクトをトグルで開閉する
-:nmap <silent> <Leader>p <Plug>ToggleProject
+":nmap <silent> <Leader>p <Plug>ToggleProject
 " <Leader>pで、デフォルトのプロジェクトを開く
 ":nmap <silent> <Leader>P :Project<CR>
 " カレントディレクトリにプロジェクト管理ファイルがあったら読み込む
-if getcwd() != $HOME
-    if filereadable(getcwd(). '/.vimprojects')
-        :Project .vimprojects
-    endif
-endif
+"if getcwd() != $HOME
+"    if filereadable(getcwd(). '/.vimprojects')
+"        :Project .vimprojects
+"    endif
+"endif
 
 
 "---------------------------------------------
 " neocomplcache関連
 "---------------------------------------------
-" neocomplcacheを起動時に有効化
-let g:neocomplcache_enable_at_startup = 1
-" smart caseを有効化
-let g:neocomplcache_enable_smart_case = 1
-" camel caseを有効化
-let g:neocomplcache_enable_camel_case_completion = 1
-" _区切りの補完を有効化
-let g:neocomplcache_enable_underbar_completion = 1
-" シンタックスをキャッシュするときの最小文字長
-let g:neocomplcache_min_syntax_length = 3
-
+if has("win32") || has("win64")
+else
+    " neocomplcacheを起動時に有効化
+    let g:neocomplcache_enable_at_startup = 1
+    " smart caseを有効化
+    let g:neocomplcache_enable_smart_case = 1
+    " camel caseを有効化
+    let g:neocomplcache_enable_camel_case_completion = 1
+    " _区切りの補完を有効化
+    let g:neocomplcache_enable_underbar_completion = 1
+    " シンタックスをキャッシュするときの最小文字長
+    let g:neocomplcache_min_syntax_length = 4
+endif
 
 "---------------------------------------------
 " VimFiler関連
@@ -271,7 +273,7 @@ nnoremap <silent> vp  :VimShellPop<CR>
 
 
 "---------------------------------------------
-" tagexplorer関連
+" tag関連
 "---------------------------------------------
 :set tags+=./tags
 nnoremap <silent> mt  :!ctags -R<CR>
