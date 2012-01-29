@@ -31,6 +31,12 @@ case ${UID} in
     ;;
 esac
 
+
+# PATH setting
+PATH=${PATH}:${HOME}/bin
+# rvmへのパスを通す
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" 
+
 # auto change directory
 setopt auto_cd
 
@@ -48,16 +54,6 @@ setopt noautoremoveslash
 
 # no beep sound when complete list displayed
 setopt nolistbeep
-
-
-## Keybind configuration
-# emacs like keybind (e.x. Ctrl-a gets to line head and Ctrl-e gets
-#   to end) and something additions
-bindkey -e
-bindkey "^[[1~" beginning-of-line # Home gets to line head
-bindkey "^[[4~" end-of-line # End gets to line end
-bindkey "^[[3~" delete-char # Del
-
 
 # historical backward/forward search with linehead string binded to ^P/^N
 autoload history-search-end
@@ -86,8 +82,10 @@ fpath=(${HOME}/.zsh/functions/Completion ${fpath})
 autoload -U compinit
 compinit
 
+
 # TAB 補完時に大文字小文字無視
-compctl -M 'm:{a-z}={A-Z}'
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+zstyle ':completion:*' menu select=1
 
 
 ## zsh editor
@@ -116,6 +114,8 @@ freebsd*|darwin*)
 linux*)
     alias ls="ls --color"
     ;;
+cygwin*)
+    alias ls="ls --color"
 esac
 
 alias la="ls -a"
@@ -173,5 +173,3 @@ xterm|xterm-color|kterm|kterm-color)
     ;;
 esac
 
-# rvmへのパスを通す
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" 
