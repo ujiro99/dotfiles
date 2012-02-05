@@ -1,0 +1,28 @@
+# éQçl
+# http://d.hatena.ne.jp/mollifier/20080921/1221923733
+
+#split window
+bind s eval split focus "select 0"
+bind ^s eval split focus "select 0"
+
+#resize
+bind r eval 'command -c resize'
+bind ^r eval 'command -c resize'
+bind + eval 'command -c resize'
+bind - eval 'command -c resize'
+bind -c resize + eval 'resize +1' 'command -c resize'
+bind -c resize - eval 'resize -1' 'command -c resize'
+
+#move current window
+bind j focus down
+bind ^j focus down
+bind k focus up
+bind ^k focus up
+
+#close current window
+bind c remove
+bind ^c remove
+
+#close all other windows
+bind o only
+bind ^o only

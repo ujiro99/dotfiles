@@ -12,20 +12,28 @@ else
 endif
 
 NeoBundle 'Align'
-" NeoBundle 'eregex.vim'
-NeoBundle 'gmarik/vundle'
+NeoBundle 'eregex.vim'
+NeoBundle 'https://github.com/Shougo/neobundle.vim.git'
+NeoBundle 'https://github.com/Shougo/neocomplcache.git'
+NeoBundle 'https://github.com/Shougo/unite.vim.git'
 NeoBundle 'https://github.com/Shougo/vimfiler.git'
 NeoBundle 'https://github.com/Shougo/vimproc.git'
-" NeoBundle 'https://github.com/Shougo/vimshell.git'
+NeoBundle 'https://github.com/Shougo/vimshell.git'
 NeoBundle 'https://github.com/tsukkee/unite-tag.git'
 NeoBundle 'https://github.com/vim-ruby/vim-ruby.git'
 NeoBundle 'https://github.com/ujiro99/my-color-scheme.git'
 NeoBundle 'rails.vim'
-NeoBundle 'Shougo/neocomplcache'
-NeoBundle 'Shougo/unite.vim'
+NeoBundle 'tagexplorer.vim'
 NeoBundle 'surround.vim'
-NeoBundle 'thinca/vim-ref'
-" NeoBundle 'thinca/vim-quickrun'
+"NeoBundle 'NERD_tree.vim'
+"NeoBundle 'project.tar.gz'
+"NeoBundle 'snippetsEmu'
+"NeoBundle 'srcexpl.vim' 
+"NeoBundle 'taglist.vim'
+"NeoBundle 'thinca/vim-ref'
+"NeoBundle 'thinca/vim-quickrun'
+"NeoBundle 'trinity.vim'
+"NeoBundle 'unite-colorscheme'
 
 filetype plugin indent on     " required!
 
@@ -48,11 +56,6 @@ set matchtime=3
 " 行番号表示
 set number
 
-" 見た目で行移動
-nnoremap j gj
-nnoremap k gk
-
-"デフォルト設定。結局runtime/indentの設定のほうで、ファイルごとに切り替える
 "タブとか改行を表示する
 set nolist
 
@@ -70,11 +73,6 @@ set autoindent
 set smartindent
 "折り返し表示しない
 set nowrap
-
-"空行のインデントを勝手に消さない
-nnoremap o oX<C-h>
-nnoremap O OX<C-h>
-inoremap <CR> <CR>X<C-h>
 
 " 文字コードの自動解釈の優先順位
 set fileencodings=utf-8,cp932,euc-jp
@@ -101,9 +99,6 @@ endif
 " ヤンクをクリップボードへ送り込む
 set clipboard+=unnamed
 
-" クリップボードの貼付け
-nmap <Space>p "+gP<CR>
-
 "編集中でもバッファを切り替えれるようにしておく
 set hidden
 
@@ -117,11 +112,6 @@ set title
 " 矩形選択で行末を超えてブロックを選択できるようにする
 set virtualedit+=block
 
-" escでハイライトをオフ
-nnoremap <silent> <ESC> <ESC>:noh<CR>
-" ノーマルモード中でもエンターキーで改行挿入でノーマルモードに戻る
-noremap <CR> i<CR><ESC>
-
 
 "カーソル行をハイライト
 "カレントウィンドウにのみ罫線を引く
@@ -133,20 +123,74 @@ augroup cch
 augroup END
 
 
+" コマンドライン補完をzshライクにする
+set wildmode=list:full
+" コマンドライン補完を拡張モードにする
+set wildmenu
+" コマンドラインを補完入力するキー
+set wildchar=<Tab>
+
+
 " ヘルプファイルの参照
 nnoremap <C-h>  :<C-u>help<Space>
 
 " 専用ホットキーを定義
 nnoremap <Space>. :<C-u>edit $MYVIMRC<CR>
 
+" escでハイライトをオフ
+nnoremap <silent> <ESC> <ESC>:noh<CR>
+
+" ノーマルモード中でもエンターキーで改行挿入でノーマルモードに戻る
+noremap <CR> i<CR><ESC>
+
+" クリップボードの貼付け
+nmap <Space>p "+gP
+
+"空行のインデントを勝手に消さない
+nnoremap o oX<C-h>
+nnoremap O OX<C-h>
+inoremap <CR> <CR>X<C-h>
+
+" 見た目で行移動
+nnoremap j gjzz
+nnoremap k gkzz
+
+" マッチ文字列が画面の真ん中にくるようにする
+nmap n nzz
+nmap N Nzz
+nmap * *zz
+nmap # #zz
+nmap g* g*zz
+nmap g# g#zz
+
+" もう一度やる
+nnoremap U <C-r> 
+
+" QuickFixの移動
+nnoremap <C-p> :cp <CR> 
+nnoremap <C-n> :cn <CR>
+
+"<C-Space>でomni補完
+imap <C-Space> <C-x><C-o>
+
+" 行末へ移動
+nnoremap - $
+
+" 対応する括弧に移動
+nnoremap [ %
+nnoremap ] %
+
 
 "---------------------------------------------
-" 独自コマンド
+" バッファ操作関連
 "---------------------------------------------
-" vimrcのリロード
-command! ReloadVimrc  source $MYVIMRC
-" デスクトップへ移動
-command! Cdd :cd $HOME/デスクトップ
+nmap <Space>j  :bp<CR>zz
+nmap <Space>k  :bn<CR>zz
+nmap <Space>b  :ls<CR>:buffer 
+nmap <Space>f  :VimFiler<CR>
+nmap <Space>v  :vsplit<CR><C-w><C-w>:ls<CR>:buffer
+nmap <Space>V  :Vexplore!<CR><CR>
+nmap <Space>d  :bd<CR>zz
 
 
 "---------------------------------------------
@@ -162,10 +206,31 @@ inoremap <silent> <C-j> <C-^>
 
 
 "---------------------------------------------
+" project.vim関連
+"---------------------------------------------
+" ファイルが選択されたら、ウィンドウを閉じる
+":let g:proj_flags = "imstc"
+" <Leader>Pで、プロジェクトをトグルで開閉する
+":nmap <silent> <Leader>p <Plug>ToggleProject
+" <Leader>pで、デフォルトのプロジェクトを開く
+":nmap <silent> <Leader>P :Project<CR>
+" カレントディレクトリにプロジェクト管理ファイルがあったら読み込む
+"if getcwd() != $HOME
+"    if filereadable(getcwd(). '/.vimprojects')
+"        :Project .vimprojects
+"    endif
+"endif
+
+
+"---------------------------------------------
 " neocomplcache関連
 "---------------------------------------------
-" neocomplcacheを起動時に有効化
-let g:neocomplcache_enable_at_startup = 1
+if has("win32") || has("win64")
+else
+    " neocomplcacheを起動時に有効化
+    let g:neocomplcache_enable_at_startup = 1
+endif
+
 " smart caseを有効化
 let g:neocomplcache_enable_smart_case = 1
 " camel caseを有効化
@@ -173,7 +238,7 @@ let g:neocomplcache_enable_camel_case_completion = 1
 " _区切りの補完を有効化
 let g:neocomplcache_enable_underbar_completion = 1
 " シンタックスをキャッシュするときの最小文字長
-let g:neocomplcache_min_syntax_length = 3
+let g:neocomplcache_min_syntax_length = 4
 
 
 "---------------------------------------------
@@ -186,34 +251,24 @@ let g:neocomplcache_min_syntax_length = 3
 
 
 "---------------------------------------------
-" バッファ操作関連
-"---------------------------------------------
-nmap <Space>j  :bp<CR>
-nmap <Space>k  :bn<CR>
-nmap <Space>b  :ls<CR>:buffer 
-nmap <Space>f  :VimFiler<CR>
-nmap <Space>v  :vsplit<CR><C-w><C-w>:ls<CR>:buffer
-nmap <Space>V  :Vexplore!<CR><CR>
-nmap <Space>d  :bd<CR>
-
-
-"---------------------------------------------
 " unite.vim
 "---------------------------------------------
 " 入力モードで開始する
 let g:unite_enable_start_insert=1
 " バッファ一覧
-nnoremap <silent> ,ub :<C-u>Unite buffer<CR>
+nnoremap <silent> ,mb :<C-u>Unite buffer<CR>
 " ファイル一覧
-nnoremap <silent> ,uf :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
+nnoremap <silent> ,mf :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
 " レジスタ一覧
-nnoremap <silent> ,ur :<C-u>Unite -buffer-name=register register<CR>
+nnoremap <silent> ,mr :<C-u>Unite -buffer-name=register register<CR>
 " 最近使用したファイル一覧
-nnoremap <silent> ,um :<C-u>Unite file_mru<CR>
+nnoremap <silent> ,mm :<C-u>Unite file_mru<CR>
 " 常用セット
-nnoremap <silent> ,uu :<C-u>Unite buffer file_mru<CR>
+nnoremap <silent> ,mu :<C-u>Unite buffer file_mru<CR>
+" カレントバッファの行
+nnoremap <silent> ,m/ :<C-u>Unite -buffer-name=search line -start-insert -no-quit<CR>
 " 全部乗せ
-nnoremap <silent> ,ua :<C-u>UniteWithBufferDir -buffer-name=files buffer file_mru bookmark file<CR>
+nnoremap <silent> ,ma :<C-u>UniteWithBufferDir -buffer-name=files buffer file_mru bookmark file<CR>
 " ウィンドウを分割して開く
 au FileType unite nnoremap <silent> <buffer> <expr> <C-j> unite#do_action('split')
 au FileType unite inoremap <silent> <buffer> <expr> <C-j> unite#do_action('split')
@@ -248,34 +303,17 @@ nnoremap <silent> vp  :VimShellPop<CR>
 "---------------------------------------------
 " tag関連
 "---------------------------------------------
-:set tags+=./tags
+:set tags=./tags
 nnoremap <silent> mt  :!ctags -R<CR>
 
 
-" コマンドライン補完をzshライクにする
-set wildmode=list:full
-" コマンドライン補完を拡張モードにする
-set wildmenu
-" コマンドラインを補完入力するキー
-set wildchar=<Tab>
-
-
-" もう一度やる
-nnoremap U <C-r> 
-nnoremap <C-p> :cp <CR> 
-nnoremap <C-n> :cn <CR>
-
-
-"<C-Space>でomni補完
-imap <C-Space> <C-x><C-o>
-
-
-" マッチ文字列が画面の真ん中にくるようにする
-nmap n nzz
-nmap N Nzz
-nmap * *zz
-nmap # #zz
-nmap g* g*zz
-nmap g# g#zz
-
-
+"---------------------------------------------
+" 独自コマンド
+"---------------------------------------------
+" vimrcのリロード
+command! ReloadVimrc  source $MYVIMRC
+" デスクトップへ移動
+if has("win32") || has("win64")
+   command! Cdd :cd $HOME/デスクトップ
+else
+endif
