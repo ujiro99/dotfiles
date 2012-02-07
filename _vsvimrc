@@ -10,21 +10,21 @@ set clipboard += unnamed " Yanks go on clipboard instead.
 set incsearch            " incremental searching on
 set hlsearch             " highlight all matches
 
-" Œ©‚½–Ú‚ÅsˆÚ“®
+" è¦‹ãŸç›®ã§è¡Œç§»å‹•
 nnoremap j jzz
 nnoremap k kzz
 
-" ‚à‚¤ˆê“x‚â‚é
+" ã‚‚ã†ä¸€åº¦ã‚„ã‚‹
 nnoremap U <C-y> 
 
-" s––‚ÖˆÚ“®
+" è¡Œæœ«ã¸ç§»å‹•
 nnoremap - $
 
-" ‘Î‰‚·‚éŠ‡ŒÊ‚ÉˆÚ“®
+" å¯¾å¿œã™ã‚‹æ‹¬å¼§ã«ç§»å‹•
 nnoremap [ %
 nnoremap ] %
 
-" ƒ}ƒbƒ`•¶š—ñ‚ª‰æ–Ê‚Ì^‚ñ’†‚É‚­‚é‚æ‚¤‚É‚·‚é
+" ãƒãƒƒãƒæ–‡å­—åˆ—ãŒç”»é¢ã®çœŸã‚“ä¸­ã«ãã‚‹ã‚ˆã†ã«ã™ã‚‹
 nmap n nzz
 nmap N Nzz
 nmap * *zz
