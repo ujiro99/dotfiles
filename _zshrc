@@ -24,7 +24,7 @@ case ${UID} in
     SPROMPT="%B%{${fg[red]}%}%r is correct? [n,y,a,e]:%{${reset_color}%}%b "
     ;;
 *)
-    PROMPT="%{${fg[red]}%}[%/%%]%{${reset_color}%}
+    PROMPT="%{${fg[red]}%}[%/]%{${reset_color}%}
 $ "
     PROMPT2="%{${fg[red]}%}%_%%%{${reset_color}%} "
     SPROMPT="%{${fg[red]}%}%r is correct? [n,y,a,e]:%{${reset_color}%} "
@@ -118,9 +118,14 @@ linux*)
     ;;
 cygwin*)
     alias ls="ls --color"
+    alias cdd="cd ~/デスクトップ"
+    alias fk="taskkill /f /im"
+    alias apush="adb push"
+    alias apull="adb pull"
+    alias adev="adb devices"
+    alias aver="adb version"
+    alias akill="adb kill-server"
 esac
-
-alias cdd="cd ~/デスクトップ"
 
 alias la="ls -a"
 alias lf="ls -F"
@@ -131,12 +136,6 @@ alias df="df -h"
 
 alias su="su -l"
 
-alias fk="taskkill /f /im"
-alias apush="adb push"
-alias apull="adb pull"
-alias adev="adb devices"
-alias aver="adb version"
-alias akill="adb kill-server"
 
 ## terminal configuration
 case "${TERM}" in
@@ -182,4 +181,3 @@ xterm|xterm-color|kterm|kterm-color)
     }
     ;;
 esac
-
