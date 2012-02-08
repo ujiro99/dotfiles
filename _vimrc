@@ -13,14 +13,15 @@ endif
 
 NeoBundle 'Align'
 NeoBundle 'eregex.vim'
+NeoBundle 'https://github.com/banyan/recognize_charcode.vim.git'
 NeoBundle 'https://github.com/Shougo/neobundle.vim.git'
 NeoBundle 'https://github.com/Shougo/unite.vim.git'
 NeoBundle 'https://github.com/Shougo/vimfiler.git'
 NeoBundle 'https://github.com/Shougo/vimproc.git'
 NeoBundle 'https://github.com/tsukkee/unite-tag.git'
 NeoBundle 'https://github.com/vim-ruby/vim-ruby.git'
-NeoBundle 'https://github.com/ujiro99/my-color-scheme.git'
 NeoBundle 'https://github.com/vim-scripts/AutoComplPop.git'
+NeoBundle 'https://github.com/ujiro99/my-color-scheme.git'
 NeoBundle 'rails.vim'
 NeoBundle 'tagexplorer.vim'
 NeoBundle 'surround.vim'
@@ -44,11 +45,19 @@ if has("win32") || has("win64")
     source $VIM\dotfiles\.vimrc.completion
     "Tags関連
     source $VIM\dotfiles\.vimrc.tags
+    "Color関連
+    source $VIM\dotfiles\.vimrc.colors
+    "エンコーディング関連
+    source $VIM\dotfiles\.vimrc.encoding
 else
     "表示関連
     source ~/dotfiles/.vimrc.completion
     "Tags関連
     source ~/dotfiles/.vimrc.tags
+    "Color関連
+    source ~/dotfiles/.vimrc.colors
+    "エンコーディング関連
+    source ~/dotfiles/.vimrc.encoding
 endif
 
 "インクリメンタルサーチを行う
@@ -86,12 +95,6 @@ set autoindent
 set smartindent
 "折り返し表示しない
 set nowrap
-
-" 文字コードの自動解釈の優先順位
-set fileencodings=utf-8,cp932,euc-jp
-
-" 改行コードの解釈優先順位
-set fileformats=unix,dos
 
 " 内部の改行コード
 set fileformat=unix
@@ -174,9 +177,6 @@ nnoremap U <C-r>
 " QuickFixの移動
 nnoremap <C-p> :cp <CR> 
 nnoremap <C-n> :cn <CR>
-
-"<C-Space>でomni補完
-imap <C-Space> <C-x><C-o>
 
 " 行末へ移動
 nnoremap - $

@@ -64,14 +64,9 @@ function! InsertTabWrapper()
 endfunction
 inoremap <tab> <c-r>=InsertTabWrapper()<cr>
 
+
 " 途中でEnterしたとき、ポップアップを消して改行する
 inoremap <expr> <CR> pumvisible() ? \<C-Y>\<CR>" : "\<CR>"
-
-" ポップアップメニューのカラーを設定
-hi Pmenu guibg=#666666
-hi PmenuSel guibg=#8cd0d3 guifg=#666666
-hi PmenuSbar guibg=#333333
-
 
 "----------------------------------------------
 " https://github.com/yuroyoro/dotfiles/blob/master/.vimrc.completion.autocomplpop
