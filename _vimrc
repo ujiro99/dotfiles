@@ -195,7 +195,7 @@ nmap <Space>b  :ls<CR>:buffer
 nmap <Space>f  :VimFiler<CR>
 nmap <Space>v  :vsplit<CR><C-w><C-w>:ls<CR>:buffer
 nmap <Space>V  :Vexplore!<CR><CR>
-nmap <Space>d  :bd<CR>zz
+nmap <Space>d  :Kwbd<CR>zz
 
 
 "---------------------------------------------
@@ -282,8 +282,9 @@ endif
 "---------------------------------------------
 " vimrcのリロード
 command! ReloadVimrc  source $MYVIMRC
+" ウィンドウレイアウトを崩さないでバッファを閉じる
+command! Kwbd let kwbd_bn= bufnr("%")|enew|exe "bdel ".kwbd_bn|unlet kwbd_bn 
 " デスクトップへ移動
 if has("win32") || has("win64")
    command! Cdd :cd $HOME/デスクトップ
-else
 endif
