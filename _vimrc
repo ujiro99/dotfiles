@@ -2,6 +2,9 @@
 set nocompatible
 filetype off
 
+" メニューをデフォルトの英語にする
+set langmenu=none
+
 "NeoBundle.vimを使用する
 if has("win32") || has("win64")
    set rtp+=$VIM/vimfiles/bundle/neobundle.vim
@@ -42,6 +45,8 @@ filetype plugin indent on     " required!
 
 if has("win32") || has("win64")
     "表示関連
+    source $VIM\dotfiles\.vimrc.apperance
+    "補間関連
     source $VIM\dotfiles\.vimrc.completion
     "Tags関連
     source $VIM\dotfiles\.vimrc.tags
@@ -51,6 +56,8 @@ if has("win32") || has("win64")
     source $VIM\dotfiles\.vimrc.encoding
 else
     "表示関連
+    source ~/dotfiles/.vimrc.apperance
+    "補間関連
     source ~/dotfiles/.vimrc.completion
     "Tags関連
     source ~/dotfiles/.vimrc.tags
@@ -75,12 +82,6 @@ set noswapfile
 " 対応括弧の瞬間強調時間
 set matchtime=3
 
-" 行番号表示
-set number
-
-"タブとか改行を表示する
-set nolist
-
 "タブを空白で入力する
 set expandtab
 
@@ -97,20 +98,7 @@ set smartindent
 set nowrap
 
 " 内部の改行コード
-set fileformat=unix
-
-"全角スペースを視覚化
-if has('syntax')
-  syntax enable
-  function! ActivateInvisibleIndicator()
-    highlight ZenkakuSpace cterm=underline ctermfg=darkgrey gui=underline guifg=#333333
-    match ZenkakuSpace /＿/
-  endfunction
-  augroup InvisibleIndicator
-    autocmd!
-    autocmd BufEnter * call ActivateInvisibleIndicator()
-  augroup END
-endif
+" set fileformat=unix
 
 " ヤンクをクリップボードへ送り込む
 set clipboard+=unnamed
@@ -121,23 +109,8 @@ set hidden
 "ステータスのところにファイル情報表示
 set statusline=%<[%n]%F%=\ %m%r%h%w%y%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}\ %l,%c\ %P 
 
-"ルーラーを表示
-set ruler
-set title
-
 " 矩形選択で行末を超えてブロックを選択できるようにする
 set virtualedit+=block
-
-
-"カーソル行をハイライト
-"カレントウィンドウにのみ罫線を引く
-set cursorline
-augroup cch
-  autocmd! cch
-  autocmd WinLeave * set nocursorline
-  autocmd WinEnter,BufRead * set cursorline
-augroup END
-
 
 " ヘルプファイルの参照
 nnoremap <C-h>  :<C-u>help<Space>
@@ -179,7 +152,7 @@ nnoremap <C-p> :cp <CR>
 nnoremap <C-n> :cn <CR>
 
 " 行末へ移動
-nnoremap - $
+noremap - $
 
 " 対応する括弧に移動
 nnoremap [ %
@@ -189,13 +162,14 @@ nnoremap ] %
 "---------------------------------------------
 " バッファ操作関連
 "---------------------------------------------
-nmap <Space>j  :bp<CR>zz
-nmap <Space>k  :bn<CR>zz
-nmap <Space>b  :ls<CR>:buffer 
-nmap <Space>f  :VimFiler<CR>
-nmap <Space>v  :vsplit<CR><C-w><C-w>:ls<CR>:buffer
-nmap <Space>V  :Vexplore!<CR><CR>
-nmap <Space>d  :Kwbd<CR>zz
+nmap <Space>j :bp<CR>zz
+nmap <Space>k :bn<CR>zz
+nmap <Space>b :ls<CR>:buffer 
+nmap <Space>f :VimFiler<CR>
+nmap <Space>v :vsplit<CR><C-w><C-w>:ls<CR>:buffer
+nmap <Space>V :Vexplore!<CR><CR>
+nmap <Space>d :bd<CR>zz
+nmap <Space>c :Kwbd<CR>zz
 
 
 "---------------------------------------------

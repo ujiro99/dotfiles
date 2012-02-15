@@ -10,6 +10,8 @@ case ${UID} in
     ;;
 esac
 
+## mintty color scheme
+source ~/mintty_color/mycolor
 
 ## Default shell configuration
 #
@@ -24,7 +26,7 @@ case ${UID} in
     SPROMPT="%B%{${fg[red]}%}%r is correct? [n,y,a,e]:%{${reset_color}%}%b "
     ;;
 *)
-    PROMPT="%{${fg[red]}%}[%/]%{${reset_color}%}
+    PROMPT="%{${fg[blue]}%}[%/]%{${reset_color}%}
 $ "
     PROMPT2="%{${fg[red]}%}%_%%%{${reset_color}%} "
     SPROMPT="%{${fg[red]}%}%r is correct? [n,y,a,e]:%{${reset_color}%} "
@@ -125,6 +127,7 @@ cygwin*)
     alias adev="adb devices"
     alias aver="adb version"
     alias akill="adb kill-server"
+    alias tcpdump="windump"
 esac
 
 alias la="ls -a"
@@ -135,6 +138,8 @@ alias du="du -h"
 alias df="df -h"
 
 alias su="su -l"
+
+alias pw="pwd"
 
 
 ## terminal configuration
