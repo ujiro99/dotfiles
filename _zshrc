@@ -116,6 +116,7 @@ linux*)
 cygwin*)
     alias ls="ls --color"
     alias cdd="cd ~/デスクトップ"
+    alias cd/="cd /cygdrive/c/"
     alias fk="taskkill /f /im"
     alias apush="adb push"
     alias apull="adb pull"
@@ -206,3 +207,8 @@ function _update_vcs_info_msg() {
 
 add-zsh-hook precmd _update_vcs_info_msg
 RPROMPT="%1(v|%F{green}%1v%f|)"
+
+# git-completionを使用する
+autoload bashcompinit
+bashcompinit
+source ~/git-completion.bash
