@@ -97,17 +97,11 @@ set smartindent
 "折り返し表示しない
 set nowrap
 
-" 内部の改行コード
-" set fileformat=unix
-
 " ヤンクをクリップボードへ送り込む
 set clipboard+=unnamed
 
 "編集中でもバッファを切り替えれるようにしておく
 set hidden
-
-"ステータスのところにファイル情報表示
-set statusline=%<[%n]%F%=\ %m%r%h%w%y%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}\ %l,%c\ %P 
 
 " 矩形選択で行末を超えてブロックを選択できるようにする
 set virtualedit+=block
