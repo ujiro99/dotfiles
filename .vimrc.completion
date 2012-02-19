@@ -15,10 +15,10 @@ cnoremap <C-n> <Down>
 cnoremap <Down>  <C-n>
 
 " 補完にneocomplcacheを使う Windowsだと重いから使わない
-"source ~/dotfiles/.vimrc.completion.neocomplcache
+"source $HOME/dotfiles/.vimrc.completion.neocomplcache
 
 " 補完にAutoComplPopを使う
-source $VIM\dotfiles\.vimrc.completion.autocomplpop
+source $HOME/dotfiles/.vimrc.completion.autocomplpop
 
 
 "-------------------------------------------------------------

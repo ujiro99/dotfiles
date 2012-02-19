@@ -6,66 +6,49 @@ filetype off
 set langmenu=none
 
 "NeoBundle.vimを使用する
-if has("win32") || has("win64")
-   set rtp+=$VIM/vimfiles/bundle/neobundle.vim
-   call neobundle#rc('$VIM/vimfiles/bundle/')
+if has("win32") || has("win64") || has("win32unix")
+   set rtp+=$HOME/vimfiles/bundle/neobundle.vim
+   call neobundle#rc('$HOME/vimfiles/bundle/')
 else
-   set rtp& rtp+=~/.vim/bundle/neobundle.vim
+   set rtp& rtp+=$HOME/.vim/bundle/neobundle.vim
    call neobundle#rc()
 endif
 
+if has('gui_running')
+    NeoBundle 'eregex.vim'
+    NeoBundle 'https://github.com/Shougo/unite.vim.git'
+    NeoBundle 'https://github.com/ujiro99/my-color-scheme.git'
+    NeoBundle 'https://github.com/tsukkee/unite-tag.git'
+    NeoBundle 'https://github.com/Shougo/vimfiler.git'
+    NeoBundle 'rails.vim'
+    NeoBundle 'https://github.com/vim-ruby/vim-ruby.git'
+    NeoBundle 'tagexplorer.vim'
+endif
+
 NeoBundle 'Align'
-NeoBundle 'eregex.vim'
 NeoBundle 'https://github.com/banyan/recognize_charcode.vim.git'
 NeoBundle 'https://github.com/Shougo/neobundle.vim.git'
-NeoBundle 'https://github.com/Shougo/unite.vim.git'
-NeoBundle 'https://github.com/Shougo/vimfiler.git'
 NeoBundle 'https://github.com/Shougo/vimproc.git'
-NeoBundle 'https://github.com/tsukkee/unite-tag.git'
-NeoBundle 'https://github.com/vim-ruby/vim-ruby.git'
 NeoBundle 'https://github.com/vim-scripts/AutoComplPop.git'
-NeoBundle 'https://github.com/ujiro99/my-color-scheme.git'
-NeoBundle 'rails.vim'
-NeoBundle 'tagexplorer.vim'
 NeoBundle 'surround.vim'
-"NeoBundle 'https://github.com/Shougo/vimshell.git'
-"NeoBundle 'https://github.com/Shougo/neocomplcache.git'
-"NeoBundle 'NERD_tree.vim'
-"NeoBundle 'project.tar.gz'
-"NeoBundle 'snippetsEmu'
-"NeoBundle 'srcexpl.vim' 
-"NeoBundle 'taglist.vim'
-"NeoBundle 'thinca/vim-ref'
-"NeoBundle 'thinca/vim-quickrun'
-"NeoBundle 'trinity.vim'
-"NeoBundle 'unite-colorscheme'
 
 filetype plugin indent on     " required!
 
 
-if has("win32") || has("win64")
-    "表示関連
-    source $VIM\dotfiles\.vimrc.apperance
-    "補間関連
-    source $VIM\dotfiles\.vimrc.completion
-    "Tags関連
-    source $VIM\dotfiles\.vimrc.tags
-    "Color関連
-    source $VIM\dotfiles\.vimrc.colors
-    "エンコーディング関連
-    source $VIM\dotfiles\.vimrc.encoding
-else
-    "表示関連
-    source ~/dotfiles/.vimrc.apperance
-    "補間関連
-    source ~/dotfiles/.vimrc.completion
-    "Tags関連
-    source ~/dotfiles/.vimrc.tags
-    "Color関連
-    source ~/dotfiles/.vimrc.colors
-    "エンコーディング関連
-    source ~/dotfiles/.vimrc.encoding
-endif
+"---------------------------------------------
+" 設定ファイルの読込
+"---------------------------------------------
+"表示関連
+source $HOME/dotfiles/.vimrc.apperance
+"補間関連
+source $HOME/dotfiles/.vimrc.completion
+"Tags関連
+source $HOME/dotfiles/.vimrc.tags
+"Color関連
+source $HOME/dotfiles/.vimrc.colors
+"エンコーディング関連
+source $HOME/dotfiles/.vimrc.encoding
+
 
 "インクリメンタルサーチを行う
 set incsearch
@@ -139,13 +122,12 @@ nmap g* g*zz
 nmap g# g#zz
 
 " もう一度やる
-nnoremap U <C-r> 
+nnoremap U <C-r>
 
 " QuickFixの移動
 nnoremap <C-p> :cp <CR> 
 nnoremap <C-n> :cn <CR>
 
-" 行末へ移動
 noremap - $
 
 " 対応する括弧に移動
@@ -158,8 +140,7 @@ nnoremap ] %
 "---------------------------------------------
 nmap <Space>j :bp<CR>zz
 nmap <Space>k :bn<CR>zz
-nmap <Space>b :ls<CR>:buffer 
-nmap <Space>f :VimFiler<CR>
+nmap <Space>b :ls<CR>:buffer
 nmap <Space>v :vsplit<CR><C-w><C-w>:ls<CR>:buffer
 nmap <Space>V :Vexplore!<CR><CR>
 nmap <Space>d :bd<CR>zz
@@ -179,30 +160,14 @@ inoremap <silent> <C-j> <C-^>
 
 
 "---------------------------------------------
-" project.vim関連
-"---------------------------------------------
-" ファイルが選択されたら、ウィンドウを閉じる
-":let g:proj_flags = "imstc"
-" <Leader>Pで、プロジェクトをトグルで開閉する
-":nmap <silent> <Leader>p <Plug>ToggleProject
-" <Leader>pで、デフォルトのプロジェクトを開く
-":nmap <silent> <Leader>P :Project<CR>
-" カレントディレクトリにプロジェクト管理ファイルがあったら読み込む
-"if getcwd() != $HOME
-"    if filereadable(getcwd(). '/.vimprojects')
-"        :Project .vimprojects
-"    endif
-"endif
-
-
-
-"---------------------------------------------
 " VimFiler関連
 "---------------------------------------------
 " デフォルトのエクスプローラをVimFilerへ変更
 :let g:vimfiler_as_default_explorer  = 1
 " セーフモードを解除
 :let g:vimfiler_safe_mode_by_default = 0
+" VimFiler表示
+nmap <Space>f :VimFiler<CR>
 
 
 "---------------------------------------------
@@ -237,9 +202,12 @@ au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>q
 
 "---------------------------------------------
 " Vimproc関連
-"---------------------------------------------
+"--------------------------------------------
 "windowsの場合はproc.dllを入れておく
 if has("win32") || has("win64")
+    let g:vimproc_dll_path = $HOME.'\vimfiles\lib\proc.dll'
+elseif has("win32unix")
+    let g:vimproc_dll_path = $HOME.'/vimfiles/lib/proc_cygwin.dll'
 else
     let g:vimproc_dll_path = $HOME.'/.vim/autoload/proc.so'
 endif
@@ -253,6 +221,6 @@ command! ReloadVimrc  source $MYVIMRC
 " ウィンドウレイアウトを崩さないでバッファを閉じる
 command! Kwbd let kwbd_bn= bufnr("%")|enew|exe "bdel ".kwbd_bn|unlet kwbd_bn 
 " デスクトップへ移動
-if has("win32") || has("win64")
+if has("win32") || has("win64") || has("win32unix")
    command! Cdd :cd $HOME/デスクトップ
 endif

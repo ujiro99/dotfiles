@@ -1,0 +1,79 @@
+" ----------------------------------------
+" 環境変数
+" ----------------------------------------
+set smartindent
+set autoindent
+set ignorecase
+set regexsearch
+set incsearch
+set hlsearch
+set smartcase
+set saney
+set imdisable
+
+
+" ----------------------------------------
+" keymap
+" ----------------------------------------
+" 行末へ移動
+noremap - $
+
+
+"対応する括弧に移動
+nnoremap [ %
+nnoremap ] %
+
+
+nnoremap u  :Undo<CR>
+nnoremap U  :Redo<CR>
+nnoremap mj :AddJavaDocComment<CR>
+nnoremap mi :OrganizeImports<CR>
+
+
+" ソース
+nnoremap <space>sd :CreateDelegateMethods<CR>
+nnoremap <space>sg :CreateGetterSetter<CR>
+nnoremap <space>sc :GenerateConstructorUsingFields<CR>
+nnoremap <space>so :OverrideMethods<CR>
+nnoremap <space>sf :Format<CR>
+
+
+" リファクタリング
+nnoremap <space>rt :ChangeType<CR>
+nnoremap <space>rv :PromoteLocalVariable<CR>
+
+
+" Esc
+noremap  <C-c> <C-[>
+noremap! <C-c> <C-[>
+
+
+" tab
+nnoremap gr gT
+
+
+" text-objectを割り当て
+onoremap aa  a>
+vnoremap aa  a>
+onoremap ia  i>
+vnoremap ia  i>
+
+onoremap ar  a]
+vnoremap ar  a]
+onoremap ir  i]
+vnoremap ir  i]
+
+onoremap ad  a"
+vnoremap ad  a"
+onoremap id  i"
+vnoremap id  i"
+
+onoremap aq  a'
+vnoremap aq  a'
+onoremap iq  i'
+vnoremap iq  i'
+
+
+"srで参照をプロジェクトから検索
+eclipseaction SearchRef  org.eclipse.jdt.ui.edit.text.java.search.references.in.project
+oremap sr :SearchRef<C-m>

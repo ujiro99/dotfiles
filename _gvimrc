@@ -1,4 +1,4 @@
-:colo my-color-scheme
+:colo my_color_scheme
 set guifont=Osaka-Mono:h10
 if has("win32") || has("win64")
     set guifont=Osaka-Mono:h10
@@ -6,5 +6,5 @@ else
     set guifont=Osaka-Mono:h14
 endif
                 
-"çsä‘
+"Ë°åÈñì
 :set lsp=5
