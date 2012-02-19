@@ -37,7 +37,7 @@ esac
 
 
 # PATH setting
-PATH=${PATH}:${HOME}/bin
+PATH=${PATH}:${HOME}/bin:/usr/local/bin
 # rvmへのパスを通す
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
