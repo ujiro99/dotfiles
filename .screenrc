@@ -1,13 +1,29 @@
-# �Q�l
-# http://d.hatena.ne.jp/mollifier/20080921/1221923733
+# escape key
+escape ^A
+
+# このキーを押すまではウインドウが残る
+zombie ^[
+
+# 起動時メッセージを表示しない
+startup_message off
+
+# ステータスバーにウィンドウ一覧を表示
+hardstatus alwayslastline "%w"
+
+# default shell to invoke with ^.-c
+shell /bin/zsh
 
 #split window
 bind s eval split focus "select 0"
 bind ^s eval split focus "select 0"
 
+#split window vertical
+bind v eval 'split -v' focus "select 0"
+bind ^v eval 'split -v' focus "select 0"
+
 #resize
-bind r eval 'command -c resize'
-bind ^r eval 'command -c resize'
+bind r eval 'command -c resize' 'echo "resize mode"'
+bind ^r eval 'command -c resize' 'echo "resize mode"'
 bind + eval 'command -c resize'
 bind - eval 'command -c resize'
 bind -c resize + eval 'resize +1' 'command -c resize'
@@ -18,10 +34,10 @@ bind j focus down
 bind ^j focus down
 bind k focus up
 bind ^k focus up
-
-#close current window
-bind c remove
-bind ^c remove
+bind h focus left
+bind ^h focus left
+bind l focus right
+bind ^l focus right
 
 #close all other windows
 bind o only
