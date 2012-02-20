@@ -59,6 +59,12 @@ setopt noautoremoveslash
 # no beep sound when complete list displayed
 setopt nolistbeep
 
+
+## Keybind configuration
+# vim like keybind
+bindkey -v
+
+
 # historical backward/forward search with linehead string binded to ^P/^N
 autoload history-search-end
 zle -N history-beginning-search-backward-end history-search-end
@@ -71,11 +77,6 @@ bindkey "\\en" history-beginning-search-forward-end
 
 # reverse menu completion binded to Shift-Tab
 bindkey "\e[Z" reverse-menu-complete
-
-
-## Keybind configuration
-# vim like keybind 
-bindkey -v
 
 
 ## Command history configuration
@@ -108,9 +109,6 @@ zstyle ':completion:*' menu select=1
 #
 setopt complete_aliases     # aliased ls needs if file/dir completions work
 
-alias where="command -v"
-alias j="jobs -l"
-
 case "${OSTYPE}" in
 freebsd*|darwin*)
     alias ls="ls -G -w"
@@ -131,6 +129,9 @@ cygwin*)
     alias tcpdump="windump"
 esac
 
+alias where="command -v"
+alias j="jobs -l"
+alias sc="screen"
 alias la="ls -a"
 alias lf="ls -F"
 alias ll="ls -l"
