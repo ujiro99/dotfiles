@@ -10,8 +10,12 @@ case ${UID} in
     ;;
 esac
 
+
 ## mintty color scheme
 source ~/mintty_color/mycolor
+## vi Status bar
+source ~/dotfiles/.zshrc.vimode
+
 
 ## Default shell configuration
 #
