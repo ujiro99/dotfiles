@@ -92,7 +92,7 @@ set virtualedit+=block
 " ヘルプファイルの参照
 nnoremap <C-h>  :<C-u>help<Space>
 
-" 専用ホットキーを定義
+" vimrcを編集する
 nnoremap <Space>. :<C-u>edit $MYVIMRC<CR>
 
 " escでハイライトをオフ
@@ -128,6 +128,7 @@ nnoremap U <C-r>
 nnoremap <C-p> :cp <CR> 
 nnoremap <C-n> :cn <CR>
 
+" 行末へ移動
 noremap - $
 
 " 対応する括弧に移動

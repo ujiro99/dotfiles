@@ -125,11 +125,8 @@ cygwin*)
     alias cdd="cd ~/デスクトップ"
     alias cd/="cd /cygdrive/c/"
     alias fk="taskkill /f /im"
-    alias apush="adb push"
-    alias apull="adb pull"
-    alias adev="adb devices"
-    alias aver="adb version"
-    alias akill="adb kill-server"
+    alias a="adb"
+    alias adv="adb devices"
     alias tcpdump="windump"
 esac
 
@@ -143,6 +140,7 @@ alias du="du -h"
 alias df="df -h"
 alias su="su -l"
 alias pw="pwd"
+alias g="git"
 
 ## terminal configuration
 case "${TERM}" in

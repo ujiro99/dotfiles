@@ -28,30 +28,30 @@ showmode() {
 
     # Get number of lines down to print mode
     movedown=$(($(echo "$RBUFFER" | wc -l) + ${1:-0}))
-    
+
     # Get current row position
     echo -n "\e[6n"
     row="${${$(readuntil R)#*\[}%;*}"
-    
+
     # Are we at the bottom of the terminal?
     if [ $((row+movedown)) -gt "$LINES" ]
     then
         # Scroll terminal up one line
         echo -n "\e[1S"
-        
+
         # Move cursor up one line
         echo -n "\e[1A"
     fi
-    
+
     # Save cursor position
     echo -n "\e[s"
-    
+
     # Move cursor to start of line $movedown lines down
     echo -n "\e[$movedown;E"
-    
+
     # Change font attributes
     echo -n "\e[1m"
-    
+
     # Has a mode been set?
     if [ -n "$VIMODE" ]
     then
@@ -64,7 +64,7 @@ showmode() {
 
     # Restore font
     echo -n "\e[0m"
-    
+
     # Restore cursor position
     echo -n "\e[u"
 }
