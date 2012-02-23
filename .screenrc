@@ -13,15 +13,15 @@ hardstatus alwayslastline "%w"
 # default shell to invoke with ^.-c
 shell /bin/zsh
 
-#split window
+# split window
 bind s eval split focus "select 0"
 bind ^s eval split focus "select 0"
 
-#split window vertical
+# split window vertical
 bind v eval 'split -v' focus "select 0"
 bind ^v eval 'split -v' focus "select 0"
 
-#resize
+# resize
 bind r eval 'command -c resize' 'echo "resize mode"'
 bind ^r eval 'command -c resize' 'echo "resize mode"'
 bind + eval 'command -c resize'
@@ -29,7 +29,7 @@ bind - eval 'command -c resize'
 bind -c resize + eval 'resize +1' 'command -c resize'
 bind -c resize - eval 'resize -1' 'command -c resize'
 
-#move current window
+# move current window
 bind j focus down
 bind ^j focus down
 bind k focus up
@@ -39,6 +39,9 @@ bind ^h focus left
 bind l focus right
 bind ^l focus right
 
-#close all other windows
+# close all other windows
 bind o only
 bind ^o only
+
+# copy
+bind ; copy
