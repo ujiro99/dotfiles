@@ -116,6 +116,7 @@ setopt complete_aliases     # aliased ls needs if file/dir completions work
 case "${OSTYPE}" in
 freebsd*|darwin*)
     alias ls="ls -G -w"
+    alias vim="/Applications/MacVim.app/Contents/MacOS/Vim"
     ;;
 linux*)
     alias ls="ls --color"
@@ -140,6 +141,7 @@ alias du="du -h"
 alias df="df -h"
 alias su="su -l"
 alias pw="pwd"
+alias g="git"
 alias g="git"
 
 ## terminal configuration
