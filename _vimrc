@@ -15,22 +15,23 @@ else
 endif
 
 if has('gui_running')
-    NeoBundle 'eregex.vim'
     NeoBundle 'https://github.com/Shougo/unite.vim.git'
-    NeoBundle 'https://github.com/ujiro99/my_color_scheme.git'
-    NeoBundle 'https://github.com/tsukkee/unite-tag.git'
     NeoBundle 'https://github.com/Shougo/vimfiler.git'
-    NeoBundle 'rails.vim'
+    NeoBundle 'https://github.com/tsukkee/unite-tag.git'
+    NeoBundle 'https://github.com/ujiro99/my_color_scheme.git'
     NeoBundle 'https://github.com/vim-ruby/vim-ruby.git'
     NeoBundle 'tagexplorer.vim'
 endif
 
 NeoBundle 'Align'
+NeoBundle 'eregex.vim'
+NeoBundle 'rails.vim'
+NeoBundle 'surround.vim'
 NeoBundle 'https://github.com/banyan/recognize_charcode.vim.git'
+NeoBundle 'https://github.com/Lokaltog/vim-powerline.git'
 NeoBundle 'https://github.com/Shougo/neobundle.vim.git'
 NeoBundle 'https://github.com/Shougo/vimproc.git'
 NeoBundle 'https://github.com/vim-scripts/AutoComplPop.git'
-NeoBundle 'surround.vim'
 
 filetype plugin indent on     " required!
 
