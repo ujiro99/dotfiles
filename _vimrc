@@ -135,6 +135,21 @@ noremap - $
 nnoremap [ %
 nnoremap ] %
 
+" ckfixウィンドウではq/ESCで閉じる
+autocmd FileType qf nnoremap <buffer> q :ccl<CR>
+autocmd FileType qf nnoremap <buffer> <ESC> :ccl<CR>
+
+" cwでquickfixウィンドウの表示をtoggleする
+function! s:toggle_qf_window()
+  for bufnr in range(1,  winnr('$'))
+    if getwinvar(bufnr,  '&buftype') ==# 'quickfix'
+      execute 'ccl'
+      return
+    endif
+  endfor
+  execute 'botright cw'
+endfunction
+nnoremap <silent> cw :call <SID>toggle_qf_window()<CR>
 
 "---------------------------------------------
 " バッファ操作関連
