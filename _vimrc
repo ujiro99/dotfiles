@@ -17,7 +17,7 @@ endif
 if has('gui_running')
     NeoBundle 'eregex.vim'
     NeoBundle 'https://github.com/Shougo/unite.vim.git'
-    NeoBundle 'https://github.com/ujiro99/my-color-scheme.git'
+    NeoBundle 'https://github.com/ujiro99/my_color_scheme.git'
     NeoBundle 'https://github.com/tsukkee/unite-tag.git'
     NeoBundle 'https://github.com/Shougo/vimfiler.git'
     NeoBundle 'rails.vim'
@@ -221,9 +221,9 @@ au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>q
 "--------------------------------------------
 "windowsの場合はproc.dllを入れておく
 if has("win32") || has("win64")
-    let g:vimproc_dll_path = $HOME.'\vimfiles\lib\proc.dll'
+    let g:vimproc_dll_path = $HOME.'\vimfiles\autoload\proc.dll'
 elseif has("win32unix")
-    let g:vimproc_dll_path = $HOME.'/vimfiles/lib/proc_cygwin.dll'
+    let g:vimproc_dll_path = $HOME.'/vimfiles/autoload/proc_cygwin.dll'
 else
     let g:vimproc_dll_path = $HOME.'/.vim/autoload/proc.so'
 endif
