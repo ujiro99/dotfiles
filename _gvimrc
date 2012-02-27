@@ -4,6 +4,6 @@ if has("win32") || has("win64")
 else
     set guifont=Osaka-MonoForPowerline:h14
 endif
-                
+
 "行間
 :set lsp=5
