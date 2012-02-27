@@ -126,7 +126,7 @@ nmap g# g#zz
 nnoremap U <C-r>
 
 " QuickFixの移動
-nnoremap <C-p> :cp <CR> 
+nnoremap <C-p> :cp <CR>
 nnoremap <C-n> :cn <CR>
 
 " 行末へ移動
@@ -236,8 +236,14 @@ endif
 " vimrcのリロード
 command! ReloadVimrc  source $MYVIMRC
 " ウィンドウレイアウトを崩さないでバッファを閉じる
-command! Kwbd let kwbd_bn= bufnr("%")|enew|exe "bdel ".kwbd_bn|unlet kwbd_bn 
+command! Kwbd let kwbd_bn= bufnr("%")|enew|exe "bdel ".kwbd_bn|unlet kwbd_bn
 " デスクトップへ移動
 if has("win32") || has("win64") || has("win32unix")
    command! Cdd :cd $HOME/デスクトップ
 endif
+
+
+" 保存時に行末の空白を除去する
+autocmd BufWritePre * :%s/\s\+$//ge
+" 保存時にtabをスペースに変換する
+autocmd BufWritePre * :%s/\t/  /ge

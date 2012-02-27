@@ -1,9 +1,8 @@
 :colo my_color_scheme
-set guifont=Osaka-Mono:h10
 if has("win32") || has("win64")
     set guifont=Osaka-Mono:h10
 else
-    set guifont=Osaka-Mono:h14
+    set guifont=Osaka-MonoForPowerline:h14
 endif
                 
 "行間
