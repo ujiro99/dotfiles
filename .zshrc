@@ -130,6 +130,8 @@ cygwin*)
     alias adv="adb devices"
     alias avr="adb version"
     alias tcpdump="windump"
+    alias apt="apt-cyg"
+    alias start="cygstart"
 esac
 
 alias where="command -v"

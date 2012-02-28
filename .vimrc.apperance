@@ -7,11 +7,11 @@ set list              " 不可視文字表示
 set listchars=tab:>.,trail:_,extends:>,precedes:< " 不可視文字の表示形式
 set display=uhex      " 印字不可能文字を16進数で表示
 set ruler             " ルーラーを表示
-set title
+set title             " ウィンドウタイトル変更
 set lazyredraw        " コマンド実行中は再描画しない
 set ttyfast           " 高速ターミナル接続を行う
 "ステータスのところにファイル情報表示
-"set statusline=%<[%n]%F%=\ %m%r%h%w%y%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}\ %l,%c\ %P 
+set statusline=%<[%n]%F%=\ %m%r%h%w%y%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}\ %l,%c\ %P
 
 
 "全角スペースを視覚化
@@ -53,3 +53,5 @@ map <silent> <C-F2> :if &guioptions =~# 'T' <Bar>
 
 " ステータスラインかっこ良くする
 let g:Powerline_symbols = 'fancy'
+" Explicitly tell vim that the terminal supports 256 colors
+set t_Co=256
