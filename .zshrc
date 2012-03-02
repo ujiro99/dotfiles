@@ -14,7 +14,7 @@ esac
 ## color scheme
 source ~/dotfiles/.zshrc.color
 ## vi Status bar
-source ~/dotfiles/.zshrc.vimode
+#source ~/dotfiles/.zshrc.vimode
 
 
 ## Default shell configuration

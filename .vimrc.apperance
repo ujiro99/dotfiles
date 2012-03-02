@@ -36,20 +36,20 @@ augroup cch
   autocmd WinLeave * set nocursorline
   autocmd WinEnter,BufRead * set cursorline
 augroup END
-
 hi clear CursorLine
 hi CursorLine gui=underline
 highlight CursorLine ctermbg=black guibg=black
 
 " メニューとツールバーの切り替え機能をCtrl-F2に割り当てる
-map <silent> <C-F2> :if &guioptions =~# 'T' <Bar>
-                         \set guioptions-=T <Bar>
-                         \set guioptions-=m <bar>
-                    \else <Bar>
-                         \set guioptions+=T <Bar>
-                         \set guioptions+=m <Bar>
-                    \endif<CR>
-
+"map <silent> <C-F2> :if &guioptions =~# 'T' <Bar>
+"                         \set guioptions-=T <Bar>
+"                         \set guioptions-=m <bar>
+"                    \else <Bar>
+"                         \set guioptions+=T <Bar>
+"                         \set guioptions+=m <Bar>
+"                    \endif<CR>
+set guioptions-=T
+set guioptions-=m
 
 " Explicitly tell vim that the terminal supports 256 colors
 set t_Co=256
