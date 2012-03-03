@@ -1,11 +1,11 @@
 [gui]
-	encoding = utf-8
-	fontdiff = -family Osaka-Mono -size 9 -weight normal -slant roman -underline 0 -overstrike 0
+    encoding = utf-8
+    fontdiff = -family Osaka-Mono -size 9 -weight normal -slant roman -underline 0 -overstrike 0
 [core]
-	excludesfile = ~/.gitignore #Globalな.gitignoreの指定
+    excludesfile = ~/.gitignore #Globalな.gitignoreの指定
     autoCRLF = false
-	quotepath = false
-	editor = vim -c \"set fenc=utf-8\"
+    quotepath = false
+    editor = vim -c \"set fenc=utf-8\"
 [color]
     status = auto
     diff = auto
@@ -86,3 +86,6 @@
     sl = stash list
     sp = stash pop
     ss = stash save
+[tig "bind"]
+    generic = g move-first-line
+    generic = G move-last-line
