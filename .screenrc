@@ -1,6 +1,9 @@
 # escape key
 escape ^A
 
+# コピーでスクロールできるバッファサイズ
+defscrollback 10000
+
 # このキーを押すまではウインドウが残る
 zombie ^[
 
@@ -8,7 +11,8 @@ zombie ^[
 startup_message off
 
 # ステータスバーにウィンドウ一覧を表示
-hardstatus alwayslastline "%w"
+hardstatus ignore "%w | %h"
+hardstatus alwayslastline "[%02c] %`%-w%{=b bw}%n %t%{-}%+w"
 
 # default shell to invoke with ^.-c
 shell /bin/zsh
