@@ -11,8 +11,8 @@ case ${UID} in
 esac
 
 
-## mintty color scheme
-source ~/mintty_color/mycolor
+## color scheme
+source ~/dotfiles/.zshrc.color
 ## vi Status bar
 source ~/dotfiles/.zshrc.vimode
 
@@ -34,7 +34,7 @@ case ${UID} in
 $ "
     PROMPT2="%{${fg[red]}%}%_%%%{${reset_color}%} "
     SPROMPT="%{${fg[red]}%}%r is correct? [n,y,a,e]:%{${reset_color}%} "
-    [ -n "${REMOTEHOST}${SSH_CONNECTION}" ] && 
+    [ -n "${REMOTEHOST}${SSH_CONNECTION}" ] &&
         PROMPT="%{${fg[cyan]}%}$(echo ${HOST%%.*} | tr '[a-z]' '[A-Z]') ${PROMPT}"
     ;;
 esac
@@ -62,7 +62,6 @@ setopt noautoremoveslash
 
 # no beep sound when complete list displayed
 setopt nolistbeep
-
 
 ## Keybind configuration
 # vim like keybind
@@ -117,6 +116,7 @@ case "${OSTYPE}" in
 freebsd*|darwin*)
     alias ls="ls -G -w"
     alias vim="/Applications/MacVim.app/Contents/MacOS/Vim"
+    alias dt="dotcloud"
     ;;
 linux*)
     alias ls="ls --color"
@@ -128,6 +128,7 @@ cygwin*)
     alias fk="taskkill /f /im"
     alias a="adb"
     alias adv="adb devices"
+    alias avr="adb version"
     alias tcpdump="windump"
 esac
 
@@ -141,7 +142,6 @@ alias du="du -h"
 alias df="df -h"
 alias su="su -l"
 alias pw="pwd"
-alias g="git"
 alias g="git"
 
 ## terminal configuration
