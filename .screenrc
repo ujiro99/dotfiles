@@ -44,4 +44,4 @@ bind o only
 bind ^o only
 
 # copy
-bind y copy
+bind ; copy
