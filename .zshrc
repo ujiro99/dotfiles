@@ -129,6 +129,7 @@ cygwin*)
     alias a="adb"
     alias adv="adb devices"
     alias avr="adb version"
+    alias alog="adb logcat -v time"
     alias tcpdump="windump"
     alias apt="apt-cyg"
     alias start="cygstart"
