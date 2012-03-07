@@ -49,3 +49,8 @@ bind ^o only
 
 # copy
 bind ; copy
+bind ^; copy
+
+# paste
+bind p paste .
+bind ^p paste .
