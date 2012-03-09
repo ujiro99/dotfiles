@@ -132,7 +132,7 @@ cygwin*)
     alias alog="adb logcat -v time"
     alias tcpdump="windump"
     alias apt="apt-cyg"
-    alias start="cygstart"
+    alias st="cygstart"
 esac
 
 alias where="command -v"
@@ -146,6 +146,8 @@ alias df="df -h"
 alias su="su -l"
 alias pw="pwd"
 alias g="git"
+alias grep="grep --color"
+alias u="../"
 
 ## terminal configuration
 case "${TERM}" in
