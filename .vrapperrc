@@ -22,11 +22,11 @@ noremap - $
 nnoremap [ %
 nnoremap ] %
 
-nnoremap u  :Undo<CR>
-nnoremap U  :Redo<CR>
+nnoremap u :Undo<CR>
+nnoremap U :Redo<CR>
 
 " Esc
-noremap  <C-c> <C-[>
+noremap <C-c> <C-[>
 noremap! <C-c> <C-[>
 
 " tab

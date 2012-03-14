@@ -136,7 +136,6 @@ cygwin*)
 esac
 
 alias where="command -v"
-alias j="jobs -l"
 alias sc="screen"
 alias la="ls -a"
 alias lf="ls -F"
@@ -148,6 +147,8 @@ alias pw="pwd"
 alias g="git"
 alias grep="grep --color"
 alias u="../"
+alias uu="../../"
+alias uuu="../../../"
 
 ## terminal configuration
 case "${TERM}" in
