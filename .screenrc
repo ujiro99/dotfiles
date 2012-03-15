@@ -1,5 +1,5 @@
 # escape key
-escape ^A
+escape ^T
 
 # コピーでスクロールできるバッファサイズ
 defscrollback 10000
