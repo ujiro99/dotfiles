@@ -179,6 +179,11 @@ jfbterm-color)
 esac
 
 
+# Less Color Syntax with source-highlight
+export LESS='-R'
+export LESSOPEN='| /usr/local/bin/src-hilite-lesspipe.sh %s'
+
+
 # set terminal title including current directory
 case "${TERM}" in
 xterm|xterm-color|kterm|kterm-color)
