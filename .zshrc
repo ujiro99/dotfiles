@@ -12,10 +12,9 @@ esac
 
 
 ## color scheme
-source ~/dotfiles/.zshrc.color
+[ -f ${HOME}/dotfiles/.zshrc.color ] && source ${HOME}/dotfiles/.zshrc.color
 ## vi Status bar
-source ~/dotfiles/.zshrc.vimode
-
+[ -f ${HOME}/dotfiles/.zshrc.vimode ] && source ${HOME}/dotfiles/.zshrc.vimode
 
 ## Default shell configuration
 #
