@@ -40,7 +40,7 @@ filetype plugin indent on     " required!
 " 設定ファイルの読込
 "---------------------------------------------
 "表示関連
-source $HOME/dotfiles/.vimrc.apperance
+source $HOME/dotfiles/.vimrc.appearance
 "補間関連
 source $HOME/dotfiles/.vimrc.completion
 "Tags関連
