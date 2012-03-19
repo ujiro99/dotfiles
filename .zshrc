@@ -134,7 +134,7 @@ esac
 alias where="command -v"
 alias j="jobs -l"
 alias sc="screen"
-alias la="ls -a"
+alias l="ls -a"
 alias lf="ls -F"
 alias ll="ls -l"
 alias du="du -h"
