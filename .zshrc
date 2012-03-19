@@ -140,6 +140,7 @@ esac
 alias where="command -v"
 alias sc="screen"
 alias l="ls -a"
+alias la="ls -a"
 alias lf="ls -F"
 alias ll="ls -l"
 alias du="du -h"
