@@ -1,5 +1,8 @@
 # escape key
-escape ^A
+escape ^T
+
+# コピーでスクロールできるバッファサイズ
+defscrollback 10000
 
 # コピーでスクロールできるバッファサイズ
 defscrollback 10000
@@ -49,3 +52,8 @@ bind ^o only
 
 # copy
 bind ; copy
+bind ^; copy
+
+# paste
+bind p paste .
+bind ^p paste .

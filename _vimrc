@@ -40,7 +40,7 @@ filetype plugin indent on     " required!
 " 設定ファイルの読込
 "---------------------------------------------
 "表示関連
-source $HOME/dotfiles/.vimrc.apperance
+source $HOME/dotfiles/.vimrc.appearance
 "補間関連
 source $HOME/dotfiles/.vimrc.completion
 "Tags関連
@@ -222,7 +222,8 @@ au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>q
 "--------------------------------------------
 "windowsの場合はproc.dllを入れておく
 if has("win32") || has("win64")
-    let g:vimproc_dll_path = $HOME.'\vimfiles\autoload\proc.dll'
+    "let g:vimproc_dll_path = $HOME.'\vimfiles\autoload\proc.dll'
+    let g:vimproc_dll_path = $HOME.'\vimfiles\autoload\proc.so'
 elseif has("win32unix")
     let g:vimproc_dll_path = $HOME.'/vimfiles/autoload/proc_cygwin.dll'
 else

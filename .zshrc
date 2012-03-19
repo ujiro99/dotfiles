@@ -14,7 +14,8 @@ esac
 ## color scheme
 [ -f ${HOME}/dotfiles/.zshrc.color ] && source ${HOME}/dotfiles/.zshrc.color
 ## vi Status bar
-[ -f ${HOME}/dotfiles/.zshrc.vimode ] && source ${HOME}/dotfiles/.zshrc.vimode
+#[ -f ${HOME}/dotfiles/.zshrc.vimode ] && source ${HOME}/dotfiles/.zshrc.vimode
+
 
 ## Default shell configuration
 #
@@ -128,11 +129,15 @@ cygwin*)
     alias a="adb"
     alias adv="adb devices"
     alias avr="adb version"
+    alias alog="adb logcat"
+    alias alogt="adb logcat -v time"
+    alias alogc="adb logcat -c"
     alias tcpdump="windump"
+    alias apt="apt-cyg -m ftp://ftp.iij.ad.jp/pub/cygwin/"
+    alias st="cygstart"
 esac
 
 alias where="command -v"
-alias j="jobs -l"
 alias sc="screen"
 alias l="ls -a"
 alias lf="ls -F"
@@ -142,6 +147,10 @@ alias df="df -h"
 alias su="su -l"
 alias pw="pwd"
 alias g="git"
+alias grep="grep --color"
+alias u="../"
+alias uu="../../"
+alias uuu="../../../"
 
 ## terminal configuration
 case "${TERM}" in
@@ -188,8 +197,15 @@ export LESSOPEN='| /usr/local/bin/src-hilite-lesspipe.sh %s'
 case "${TERM}" in
 xterm|xterm-color|kterm|kterm-color)
     precmd() {
-        echo -ne "\033]0;${USER}@${HOST%%.*}:${PWD}\007"
+        echo -ne "\034]0;${USER}@${HOST%%.*}:${PWD}\007"
     }
     ;;
 esac
 
+
+# cd履歴のジャンプ
+_Z_CMD=j
+source ~/.zsh/z/z.sh
+precmd() {
+  _z --add "$(pwd -P)"
+}
