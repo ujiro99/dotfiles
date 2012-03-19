@@ -12,9 +12,9 @@ esac
 
 
 ## color scheme
-source ~/dotfiles/.zshrc.color
+[ -f ${HOME}/dotfiles/.zshrc.color ] && source ${HOME}/dotfiles/.zshrc.color
 ## vi Status bar
-#source ~/dotfiles/.zshrc.vimode
+#[ -f ${HOME}/dotfiles/.zshrc.vimode ] && source ${HOME}/dotfiles/.zshrc.vimode
 
 
 ## Default shell configuration
@@ -24,7 +24,7 @@ autoload -Uz colors
 colors
 case ${UID} in
 0)
-    PROMPT="%{${fg[cyan]}%}$(echo ${HOST%%.*} | tr '[a-z]' '[A-Z]') %B%{${fg[red]}%}%/
+    PROMPT="%{${fg[cyan]}%}$(echo ${HOST%%.*} | tr '[a-z]' '[A-Z]') %B%{${fg[red]}%}[%/]
 #%{${reset_color}%}%b "
     PROMPT2="%B%{${fg[red]}%}%_#%{${reset_color}%}%b "
     SPROMPT="%B%{${fg[red]}%}%r is correct? [n,y,a,e]:%{${reset_color}%}%b "
@@ -62,7 +62,6 @@ setopt noautoremoveslash
 
 # no beep sound when complete list displayed
 setopt nolistbeep
-
 
 ## Keybind configuration
 # vim like keybind
@@ -117,6 +116,7 @@ case "${OSTYPE}" in
 freebsd*|darwin*)
     alias ls="ls -G -w"
     alias vim="/Applications/MacVim.app/Contents/MacOS/Vim"
+    alias dt="dotcloud"
     ;;
 linux*)
     alias ls="ls --color"
@@ -129,9 +129,11 @@ cygwin*)
     alias a="adb"
     alias adv="adb devices"
     alias avr="adb version"
-    alias alog="adb logcat -v time"
+    alias alog="adb logcat"
+    alias alogt="adb logcat -v time"
+    alias alogc="adb logcat -c"
     alias tcpdump="windump"
-    alias apt="apt-cyg"
+    alias apt="apt-cyg -m ftp://ftp.iij.ad.jp/pub/cygwin/"
     alias st="cygstart"
 esac
 
@@ -186,14 +188,20 @@ jfbterm-color)
 esac
 
 
+# Less Color Syntax with source-highlight
+export LESS='-R'
+export LESSOPEN='| /usr/local/bin/src-hilite-lesspipe.sh %s'
+
+
 # set terminal title including current directory
 case "${TERM}" in
 xterm|xterm-color|kterm|kterm-color)
     precmd() {
-        echo -ne "\033]0;${USER}@${HOST%%.*}:${PWD}\007"
+        echo -ne "\034]0;${USER}@${HOST%%.*}:${PWD}\007"
     }
     ;;
 esac
+
 
 # cd履歴のジャンプ
 _Z_CMD=j

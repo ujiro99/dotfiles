@@ -40,6 +40,7 @@ hi clear CursorLine
 hi CursorLine gui=underline
 highlight CursorLine ctermbg=black guibg=black
 
+
 " メニューとツールバーの切り替え機能をCtrl-F2に割り当てる
 "map <silent> <C-F2> :if &guioptions =~# 'T' <Bar>
 "                         \set guioptions-=T <Bar>

@@ -4,6 +4,9 @@ escape ^T
 # コピーでスクロールできるバッファサイズ
 defscrollback 10000
 
+# コピーでスクロールできるバッファサイズ
+defscrollback 10000
+
 # このキーを押すまではウインドウが残る
 zombie ^[
 
