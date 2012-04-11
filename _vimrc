@@ -15,22 +15,19 @@ else
 endif
 
 if has('gui_running')
-    NeoBundle 'https://github.com/Shougo/unite.vim.git'
-    NeoBundle 'https://github.com/Shougo/vimfiler.git'
-    NeoBundle 'https://github.com/tsukkee/unite-tag.git'
-    NeoBundle 'https://github.com/ujiro99/my_color_scheme.git'
-    NeoBundle 'https://github.com/vim-ruby/vim-ruby.git'
+"    NeoBundle 'https://github.com/Shougo/unite.vim.git'
+"    NeoBundle 'https://github.com/tsukkee/unite-tag.git'
+"    NeoBundle 'https://github.com/vim-ruby/vim-ruby.git'
     NeoBundle 'tagexplorer.vim'
+    NeoBundle 'eregex.vim'
+    NeoBundle 'rails.vim'
 endif
 
 NeoBundle 'Align'
-NeoBundle 'eregex.vim'
-NeoBundle 'rails.vim'
 NeoBundle 'surround.vim'
+NeoBundle 'https://github.com/ujiro99/my_color_scheme.git'
 NeoBundle 'https://github.com/banyan/recognize_charcode.vim.git'
-NeoBundle 'https://github.com/Lokaltog/vim-powerline.git'
 NeoBundle 'https://github.com/Shougo/neobundle.vim.git'
-NeoBundle 'https://github.com/Shougo/vimproc.git'
 NeoBundle 'https://github.com/vim-scripts/AutoComplPop.git'
 
 filetype plugin indent on     " required!
@@ -89,6 +86,13 @@ set hidden
 
 " 矩形選択で行末を超えてブロックを選択できるようにする
 set virtualedit+=block
+
+" 検索時に大文字小文字無視
+set ignorecase
+
+" 検索時に大文字が指定された時だけ大文字無視しない
+set smartcase
+
 
 " ヘルプファイルの参照
 nnoremap <C-h>  :<C-u>help<Space>
@@ -177,17 +181,6 @@ inoremap <silent> <C-j> <C-^>
 
 
 "---------------------------------------------
-" VimFiler関連
-"---------------------------------------------
-" デフォルトのエクスプローラをVimFilerへ変更
-:let g:vimfiler_as_default_explorer  = 1
-" セーフモードを解除
-:let g:vimfiler_safe_mode_by_default = 0
-" VimFiler表示
-nmap <Space>f :VimFiler<CR>
-
-
-"---------------------------------------------
 " unite.vim
 "---------------------------------------------
 " 入力モードで開始する
@@ -222,8 +215,7 @@ au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>q
 "--------------------------------------------
 "windowsの場合はproc.dllを入れておく
 if has("win32") || has("win64")
-    "let g:vimproc_dll_path = $HOME.'\vimfiles\autoload\proc.dll'
-    let g:vimproc_dll_path = $HOME.'\vimfiles\autoload\proc.so'
+    let g:vimproc_dll_path = $HOME.'\vimfiles\autoload\proc.dll'
 elseif has("win32unix")
     let g:vimproc_dll_path = $HOME.'/vimfiles/autoload/proc_cygwin.dll'
 else
