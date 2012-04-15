@@ -135,6 +135,8 @@ cygwin*)
     alias tcpdump="windump"
     alias apt="apt-cyg -m ftp://ftp.iij.ad.jp/pub/cygwin/"
     alias st="cygstart"
+    alias gtags="gtags -v --gtagsconf /glo622wb/share/gtags/gtags.conf"
+    alias htags="htags -sanovwF"
 esac
 
 alias where="command -v"
