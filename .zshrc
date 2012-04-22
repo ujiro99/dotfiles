@@ -48,8 +48,13 @@ PATH=${PATH}:${HOME}/bin:/usr/local/bin
 # auto change directory
 setopt auto_cd
 
-# auto directory pushd that you can get dirs list by cd -[tab]
+# cdで移動してもpushdと同じようにディレクトリスタックに追加する。
 setopt auto_pushd
+# カレントディレクトリ中に指定されたディレクトリが見つからなかった場合に
+# 移動先を検索するリスト。
+cdpath=(~)
+# ディレクトリが変わったらディレクトリスタックを表示。
+chpwd_functions=($chpwd_functions dirs)
 
 # command correct edition before each completion attempt
 setopt correct
@@ -90,10 +95,15 @@ setopt hist_ignore_dups     # ignore duplication command history list
 setopt share_history        # share command history data
 
 
-## Completion configuration
+# 補完設定ファイルを読み込む
 fpath=(${HOME}/.zsh/functions/Completion ${fpath})
 autoload -U compinit
 compinit
+
+
+# 補完スタイルの改善
+zstyle ':completion:*:descriptions' format '%U%B%d%b%u'
+zstyle ':completion:*:warnings' format '%BSorry, no matches for: %d%b'
 
 
 # TAB 補完時に大文字小文字無視
@@ -155,6 +165,26 @@ alias u="../"
 alias uu="../../"
 alias uuu="../../../"
 
+## デフォルトオプションの設定
+export GREP_OPTIONS
+#### バイナリファイルにはマッチさせない。
+GREP_OPTIONS="--binary-files=without-match"
+#### grep対象としてディレクトリを指定したらディレクトリ内を再帰的にgrepする。
+GREP_OPTIONS="--directories=recurse $GREP_OPTIONS"
+#### 拡張子が.tmpのファイルは無視する。
+GREP_OPTIONS="--exclude=\*.tmp $GREP_OPTIONS"
+### 管理用ディレクトリを無視する。
+if grep --help | grep -q -- --exclude-dir; then
+    GREP_OPTIONS="--exclude-dir=.svn $GREP_OPTIONS"
+    GREP_OPTIONS="--exclude-dir=.git $GREP_OPTIONS"
+    GREP_OPTIONS="--exclude-dir=.deps $GREP_OPTIONS"
+    GREP_OPTIONS="--exclude-dir=.libs $GREP_OPTIONS"
+fi
+### 可能なら色を付ける。
+if grep --help | grep -q -- --color; then
+    GREP_OPTIONS="--color=auto $GREP_OPTIONS"
+fi
+
 ## terminal configuration
 case "${TERM}" in
 screen)
@@ -162,33 +192,33 @@ screen)
     ;;
 esac
 
-case "${TERM}" in
-xterm|xterm-color)
-    export LSCOLORS=exfxcxdxbxegedabagacad
-    export LS_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
-    zstyle ':completion:*' list-colors 'di=34' 'ln=35' 'so=32' 'ex=31' 'bd=46;34' 'cd=43;34'
-    ;;
-kterm-color)
-    stty erase '^H'
-    export LSCOLORS=exfxcxdxbxegedabagacad
-    export LS_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
-    zstyle ':completion:*' list-colors 'di=34' 'ln=35' 'so=32' 'ex=31' 'bd=46;34' 'cd=43;34'
-    ;;
-kterm)
-    stty erase '^H'
-    ;;
-cons25)
-    unset LANG
-    export LSCOLORS=ExFxCxdxBxegedabagacad
-    export LS_COLORS='di=01;34:ln=01;35:so=01;32:ex=01;31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
-    zstyle ':completion:*' list-colors 'di=;34;1' 'ln=;35;1' 'so=;32;1' 'ex=31;1' 'bd=46;34' 'cd=43;34'
-    ;;
-jfbterm-color)
-    export LSCOLORS=gxFxCxdxBxegedabagacad
-    export LS_COLORS='di=01;36:ln=01;35:so=01;32:ex=01;31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
-    zstyle ':completion:*' list-colors 'di=;36;1' 'ln=;35;1' 'so=;32;1' 'ex=31;1' 'bd=46;34' 'cd=43;34'
-    ;;
-esac
+#case "${TERM}" in
+#xterm|xterm-color)
+#    export LSCOLORS=exfxcxdxbxegedabagacad
+#    export LS_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
+#    zstyle ':completion:*' list-colors 'di=34' 'ln=35' 'so=32' 'ex=31' 'bd=46;34' 'cd=43;34'
+#    ;;
+#kterm-color)
+#    stty erase '^H'
+#    export LSCOLORS=exfxcxdxbxegedabagacad
+#    export LS_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
+#    zstyle ':completion:*' list-colors 'di=34' 'ln=35' 'so=32' 'ex=31' 'bd=46;34' 'cd=43;34'
+#    ;;
+#kterm)
+#    stty erase '^H'
+#    ;;
+#cons25)
+#    unset LANG
+#    export LSCOLORS=ExFxCxdxBxegedabagacad
+#    export LS_COLORS='di=01;34:ln=01;35:so=01;32:ex=01;31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
+#    zstyle ':completion:*' list-colors 'di=;34;1' 'ln=;35;1' 'so=;32;1' 'ex=31;1' 'bd=46;34' 'cd=43;34'
+#    ;;
+#jfbterm-color)
+#    export LSCOLORS=gxFxCxdxBxegedabagacad
+#    export LS_COLORS='di=01;36:ln=01;35:so=01;32:ex=01;31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
+#    zstyle ':completion:*' list-colors 'di=;36;1' 'ln=;35;1' 'so=;32;1' 'ex=31;1' 'bd=46;34' 'cd=43;34'
+#    ;;
+#esac
 
 
 # Less Color Syntax with source-highlight
@@ -206,9 +236,27 @@ xterm|xterm-color|kterm|kterm-color)
 esac
 
 
+setopt hist_ignore_space
+bindkey -s '^z' '^[q %vi^m'
+
+
 # cd履歴のジャンプ
 _Z_CMD=j
-source ~/.zsh/z/z.sh
-precmd() {
-  _z --add "$(pwd -P)"
-}
+if [ -f ${HOME}/.zsh/z/z.sh ]; then
+    source  ${HOME}/.zsh/z/z.sh
+    precmd() {
+      _z --add "$(pwd -P)"
+    }
+fi
+
+
+# コマンドの自動補完
+# Cygwinだと遅いから使わない
+#if [ -f ${HOME}/.zsh/auto-fu.zsh/auto-fu.zsh ]; then
+#    source ${HOME}/.zsh/auto-fu.zsh/auto-fu.zsh
+#    function zle-line-init () {
+#        auto-fu-init
+#    }
+#    zle -N zle-line-init
+#    zstyle ':completion:*' completer _oldlist _complete
+#fi
