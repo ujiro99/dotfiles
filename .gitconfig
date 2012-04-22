@@ -1,10 +1,11 @@
 [gui]
     encoding = utf-8
-    fontdiff = -family Osaka-Mono -size 9 -weight normal -slant roman -underline 0 -overstrike 0
+    fontdiff = -family Osaka-Mono -size 10 -weight normal -slant roman -underline 0 -overstrike 0
 [core]
     excludesfile = ~/.gitignore #Globalな.gitignoreの指定
+    safeCRLF = true
     autoCRLF = false
-    quotepath = false
+    quotepath = true
     editor = vim -c \"set fenc=utf-8\"
 [color]
     status = auto
@@ -63,7 +64,7 @@
     # diff関連
     di = diff
     dm = diff master           # masterとのdiff
-    dw = diff --color-words    # 単語単位でいろつけてdiff
+    dw = diff --color-words -b # 単語単位でいろつけてdiff
     dc = diff --cached         # addされているものとのdiff
     ds = diff --staged         # 同上(1.6.1移行)
     d1 = diff HEAD~            # HEADから1つ前とdiff
@@ -89,3 +90,5 @@
 [tig "bind"]
     generic = g move-first-line
     generic = G move-last-line
+[log]
+  date = local
