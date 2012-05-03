@@ -137,7 +137,7 @@ cygwin*)
     alias cd/="cd /cygdrive/c/"
     alias fk="taskkill /f /im"
     alias a="adb"
-    alias adv="adb devices"
+    alias ad="adb devices"
     alias avr="adb version"
     alias alog="adb logcat"
     alias alogt="adb logcat -v time"
