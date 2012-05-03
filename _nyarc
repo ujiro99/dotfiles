@@ -62,7 +62,7 @@ option +tilde
 option +glob
 option prompt $e[31;40;1m[$p]$_$$ $e[37;1m
 option uncompletechar ,;=``
-option savehist "C:\nyaos-3.2.0_0-win\.history"
+option savehist "C:\Program Files\nyaos-3.2.0_5-win\_history"
 
 ### 関数定義
 ps{
@@ -113,7 +113,7 @@ vzbind{
     bindkey CTRL_F forward-word
     bindkey CTRL_A backward-word
 }
-# vzbind
+vzbind
 
 lua_e "
     --- NYAOS 終了時のフック ---
