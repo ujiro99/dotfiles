@@ -67,6 +67,7 @@ setopt noautoremoveslash
 
 # no beep sound when complete list displayed
 setopt nolistbeep
+setopt nobeep
 
 ## Keybind configuration
 # vim like keybind
@@ -137,8 +138,7 @@ cygwin*)
     alias cd/="cd /cygdrive/c/"
     alias fk="taskkill /f /im"
     alias a="adb"
-    alias adv="adb devices"
-    alias avr="adb version"
+    alias ad="adb devices"
     alias alog="adb logcat"
     alias alogt="adb logcat -v time"
     alias alogc="adb logcat -c"
@@ -151,6 +151,7 @@ esac
 
 alias where="command -v"
 alias sc="screen"
+alias c="cd"
 alias l="ls -a"
 alias la="ls -a"
 alias lf="ls -F"
