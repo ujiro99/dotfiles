@@ -171,7 +171,7 @@ export GREP_OPTIONS
 #### バイナリファイルにはマッチさせない。
 GREP_OPTIONS="--binary-files=without-match"
 #### grep対象としてディレクトリを指定したらディレクトリ内を再帰的にgrepする。
-GREP_OPTIONS="--directories=recurse $GREP_OPTIONS"
+#GREP_OPTIONS="--directories=recurse $GREP_OPTIONS"
 #### 拡張子が.tmpのファイルは無視する。
 GREP_OPTIONS="--exclude=\*.tmp $GREP_OPTIONS"
 ### 管理用ディレクトリを無視する。
