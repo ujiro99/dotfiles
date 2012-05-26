@@ -65,9 +65,11 @@ setopt list_packed
 # no remove postfix slash of command line
 setopt noautoremoveslash
 
+# no beep sound
+setopt nobeep
+
 # no beep sound when complete list displayed
 setopt nolistbeep
-setopt nobeep
 
 ## Keybind configuration
 # vim like keybind
