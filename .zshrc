@@ -210,13 +210,13 @@ export LESSOPEN='| /usr/local/bin/src-hilite-lesspipe.sh %s'
 
 
 # set terminal title including current directory
-case "${TERM}" in
-xterm|xterm-color|kterm|kterm-color)
-    precmd() {
-        echo -ne "\034]0;${USER}@${HOST%%.*}:${PWD}\007"
-    }
-    ;;
-esac
+#case "${TERM}" in
+#xterm|xterm-color|kterm|kterm-color)
+#    precmd() {
+#        echo -ne "\034]0;${USER}@${HOST%%.*}:${PWD}\007"
+#    }
+#    ;;
+#esac
 
 
 setopt hist_ignore_space
