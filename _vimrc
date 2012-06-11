@@ -25,6 +25,7 @@ endif
 
 NeoBundle 'Align'
 NeoBundle 'surround.vim'
+NeoBundle 'gtags.vim'
 NeoBundle 'https://github.com/ujiro99/my_color_scheme.git'
 NeoBundle 'https://github.com/banyan/recognize_charcode.vim.git'
 NeoBundle 'https://github.com/Shougo/neobundle.vim.git'
@@ -95,7 +96,7 @@ set smartcase
 
 
 " ヘルプファイルの参照
-nnoremap <C-h>  :<C-u>help<Space>
+nnoremap <Space>h :<C-u>help<Space>
 
 " vimrcを編集する
 nnoremap <Space>. :<C-u>edit $MYVIMRC<CR>
@@ -159,8 +160,8 @@ nnoremap <silent> cw :call <SID>toggle_qf_window()<CR>
 "---------------------------------------------
 " バッファ操作関連
 "---------------------------------------------
-nmap <Space>j :bp<CR>zz
-nmap <Space>k :bn<CR>zz
+nmap <C-h>    :bp<CR>zz
+nmap <C-l>    :bn<CR>zz
 nmap <Space>b :ls<CR>:buffer
 nmap <Space>v :vsplit<CR><C-w><C-w>:ls<CR>:buffer
 nmap <Space>V :Vexplore!<CR><CR>
