@@ -41,6 +41,7 @@ if /%OS%/ == /Windows_NT/ then
     alias    gtags   gtags.exe    -v        --gtagsconf c:\glo622wb\share\gtags\gtags.conf
     alias    htags   htags.exe    -sanovwF
     alias    g       ""C:\Program Files\Git\bin\git.exe""
+    alias    grep    grep --color
     suffix   vbs     cscript  //nologo
     suffix   js      cscript  //nologo
 endif
@@ -74,7 +75,7 @@ cdd{
     ls
 }
 
-cc{
+c{
     cd "%1"
     la
 }
