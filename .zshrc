@@ -42,6 +42,8 @@ esac
 
 # PATH setting
 PATH=${PATH}:${HOME}/bin:/usr/local/bin
+PATH=${PATH}:/Applications/Xcode.app/Contents/Developer/usr/bin
+
 # rvmへのパスを通す
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
@@ -152,7 +154,7 @@ cygwin*)
 esac
 
 alias where="command -v"
-alias sc="screen"
+alias sc="/usr/local/bin/screen"
 alias c="cd"
 alias l="ls -a"
 alias la="ls -a"
@@ -163,32 +165,28 @@ alias df="df -h"
 alias su="su -l"
 alias pw="pwd"
 alias g="git"
-alias grep="grep --color"
+alias grep="grep -in"
 alias u="../"
 alias uu="../../"
 alias uuu="../../../"
 
-## デフォルトオプションの設定
+# grep デフォルトオプションの設定
 export GREP_OPTIONS
-#### バイナリファイルにはマッチさせない。
+# バイナリファイルにはマッチさせない。
 GREP_OPTIONS="--binary-files=without-match"
-#### grep対象としてディレクトリを指定したらディレクトリ内を再帰的にgrepする。
-#GREP_OPTIONS="--directories=recurse $GREP_OPTIONS"
-#### 拡張子が.tmpのファイルは無視する。
+# grep対象としてディレクトリを指定したらディレクトリ内を再帰的にgrepする。
+GREP_OPTIONS="--directories=recurse $GREP_OPTIONS"
+# 拡張子が.tmpのファイルは無視する。
 GREP_OPTIONS="--exclude=\*.tmp $GREP_OPTIONS"
-### 管理用ディレクトリを無視する。
-if grep --help | grep -q -- --exclude-dir; then
-    GREP_OPTIONS="--exclude-dir=.svn $GREP_OPTIONS"
-    GREP_OPTIONS="--exclude-dir=.git $GREP_OPTIONS"
-    GREP_OPTIONS="--exclude-dir=.deps $GREP_OPTIONS"
-    GREP_OPTIONS="--exclude-dir=.libs $GREP_OPTIONS"
-fi
-### 可能なら色を付ける。
-if grep --help | grep -q -- --color; then
-    GREP_OPTIONS="--color=auto $GREP_OPTIONS"
-fi
+# 管理用ディレクトリを無視する。
+GREP_OPTIONS="--exclude-dir=.svn $GREP_OPTIONS"
+GREP_OPTIONS="--exclude-dir=.git $GREP_OPTIONS"
+GREP_OPTIONS="--exclude-dir=.deps $GREP_OPTIONS"
+GREP_OPTIONS="--exclude-dir=.libs $GREP_OPTIONS"
+# 色を付ける。
+GREP_OPTIONS="--color=auto $GREP_OPTIONS"
 
-## terminal configuration
+# terminal configuration
 case "${TERM}" in
 screen)
     TERM=xterm
@@ -210,7 +208,7 @@ export LESSOPEN='| /usr/local/bin/src-hilite-lesspipe.sh %s'
 
 
 # set terminal title including current directory
-#case "${TERM}" in
+    #case "${TERM}" in
 #xterm|xterm-color|kterm|kterm-color)
 #    precmd() {
 #        echo -ne "\034]0;${USER}@${HOST%%.*}:${PWD}\007"
