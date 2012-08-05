@@ -185,6 +185,8 @@ GREP_OPTIONS="--exclude-dir=.deps $GREP_OPTIONS"
 GREP_OPTIONS="--exclude-dir=.libs $GREP_OPTIONS"
 # 色を付ける。
 GREP_OPTIONS="--color=auto $GREP_OPTIONS"
+# 色を赤にする。
+export GREP_COLOR="0:31"
 
 # terminal configuration
 case "${TERM}" in
