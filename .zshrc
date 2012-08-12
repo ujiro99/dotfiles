@@ -13,8 +13,15 @@ esac
 
 ## color scheme
 #[ -f ${HOME}/dotfiles/.zshrc.color ] && source ${HOME}/dotfiles/.zshrc.color
+
 ## vi Status bar
 #[ -f ${HOME}/dotfiles/.zshrc.vimode ] && source ${HOME}/dotfiles/.zshrc.vimode
+
+# show git branch
+[ -f ${HOME}/dotfiles/.zshrc.git.showbranch ] && source ${HOME}/dotfiles/.zshrc.git.showbranch
+
+## git status & completion
+#[ -f ${HOME}/dotfiles/.zshrc.git ] && source ${HOME}/dotfiles/.zshrc.git
 
 
 ## Default shell configuration
@@ -165,6 +172,7 @@ alias df="df -h"
 alias su="su -l"
 alias pw="pwd"
 alias g="git"
+alias gst="git st -s -b && git stash list"
 alias grep="grep -in"
 alias u="../"
 alias uu="../../"
