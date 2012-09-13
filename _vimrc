@@ -178,6 +178,8 @@ inoremap <silent> <ESC> <ESC>
 inoremap <silent> <C-[> <ESC>
 " 「日本語入力固定モード」切替キー
 inoremap <silent> <C-j> <C-^>
+" 自動的に日本語入力(IM)をオンにする機能を有効にする
+set noimdisableactivate
 
 
 "---------------------------------------------
