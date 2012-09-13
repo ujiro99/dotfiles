@@ -12,9 +12,16 @@ esac
 
 
 ## color scheme
-[ -f ${HOME}/dotfiles/.zshrc.color ] && source ${HOME}/dotfiles/.zshrc.color
+#[ -f ${HOME}/dotfiles/.zshrc.color ] && source ${HOME}/dotfiles/.zshrc.color
+
 ## vi Status bar
 #[ -f ${HOME}/dotfiles/.zshrc.vimode ] && source ${HOME}/dotfiles/.zshrc.vimode
+
+# show git branch
+[ -f ${HOME}/dotfiles/.zshrc.git.showbranch ] && source ${HOME}/dotfiles/.zshrc.git.showbranch
+
+## git status & completion
+#[ -f ${HOME}/dotfiles/.zshrc.git ] && source ${HOME}/dotfiles/.zshrc.git
 
 
 ## Default shell configuration
@@ -42,6 +49,8 @@ esac
 
 # PATH setting
 PATH=${PATH}:${HOME}/bin:/usr/local/bin
+PATH=${PATH}:/Applications/Xcode.app/Contents/Developer/usr/bin
+
 # rvmへのパスを通す
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
@@ -64,6 +73,9 @@ setopt list_packed
 
 # no remove postfix slash of command line
 setopt noautoremoveslash
+
+# no beep sound
+setopt nobeep
 
 # no beep sound when complete list displayed
 setopt nolistbeep
@@ -138,7 +150,6 @@ cygwin*)
     alias fk="taskkill /f /im"
     alias a="adb"
     alias ad="adb devices"
-    alias avr="adb version"
     alias alog="adb logcat"
     alias alogt="adb logcat -v time"
     alias alogc="adb logcat -c"
@@ -150,7 +161,8 @@ cygwin*)
 esac
 
 alias where="command -v"
-alias sc="screen"
+alias sc="/usr/local/bin/screen"
+alias c="cd"
 alias l="ls -a"
 alias la="ls -a"
 alias lf="ls -F"
@@ -160,65 +172,44 @@ alias df="df -h"
 alias su="su -l"
 alias pw="pwd"
 alias g="git"
-alias grep="grep --color"
+alias gst="git st -s -b && git stash list"
+alias grep="grep -in"
 alias u="../"
 alias uu="../../"
 alias uuu="../../../"
 
-## デフォルトオプションの設定
+# grep デフォルトオプションの設定
 export GREP_OPTIONS
-#### バイナリファイルにはマッチさせない。
+# バイナリファイルにはマッチさせない。
 GREP_OPTIONS="--binary-files=without-match"
-#### grep対象としてディレクトリを指定したらディレクトリ内を再帰的にgrepする。
-GREP_OPTIONS="--directories=recurse $GREP_OPTIONS"
-#### 拡張子が.tmpのファイルは無視する。
+## grep対象としてディレクトリを指定したらディレクトリ内を再帰的にgrepする。
+#GREP_OPTIONS="--directories=recurse $GREP_OPTIONS"
+# 拡張子が.tmpのファイルは無視する。
 GREP_OPTIONS="--exclude=\*.tmp $GREP_OPTIONS"
-### 管理用ディレクトリを無視する。
-if grep --help | grep -q -- --exclude-dir; then
-    GREP_OPTIONS="--exclude-dir=.svn $GREP_OPTIONS"
-    GREP_OPTIONS="--exclude-dir=.git $GREP_OPTIONS"
-    GREP_OPTIONS="--exclude-dir=.deps $GREP_OPTIONS"
-    GREP_OPTIONS="--exclude-dir=.libs $GREP_OPTIONS"
-fi
-### 可能なら色を付ける。
-if grep --help | grep -q -- --color; then
-    GREP_OPTIONS="--color=auto $GREP_OPTIONS"
-fi
+# 管理用ディレクトリを無視する。
+GREP_OPTIONS="--exclude-dir=.svn $GREP_OPTIONS"
+GREP_OPTIONS="--exclude-dir=.git $GREP_OPTIONS"
+GREP_OPTIONS="--exclude-dir=.deps $GREP_OPTIONS"
+GREP_OPTIONS="--exclude-dir=.libs $GREP_OPTIONS"
+# 色を付ける。
+GREP_OPTIONS="--color=auto $GREP_OPTIONS"
+# 色を赤にする。
+export GREP_COLOR="0:31"
 
-## terminal configuration
+# terminal configuration
 case "${TERM}" in
 screen)
     TERM=xterm
     ;;
 esac
 
-#case "${TERM}" in
-#xterm|xterm-color)
-#    export LSCOLORS=exfxcxdxbxegedabagacad
-#    export LS_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
-#    zstyle ':completion:*' list-colors 'di=34' 'ln=35' 'so=32' 'ex=31' 'bd=46;34' 'cd=43;34'
-#    ;;
-#kterm-color)
-#    stty erase '^H'
-#    export LSCOLORS=exfxcxdxbxegedabagacad
-#    export LS_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
-#    zstyle ':completion:*' list-colors 'di=34' 'ln=35' 'so=32' 'ex=31' 'bd=46;34' 'cd=43;34'
-#    ;;
-#kterm)
-#    stty erase '^H'
-#    ;;
-#cons25)
-#    unset LANG
-#    export LSCOLORS=ExFxCxdxBxegedabagacad
-#    export LS_COLORS='di=01;34:ln=01;35:so=01;32:ex=01;31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
-#    zstyle ':completion:*' list-colors 'di=;34;1' 'ln=;35;1' 'so=;32;1' 'ex=31;1' 'bd=46;34' 'cd=43;34'
-#    ;;
-#jfbterm-color)
-#    export LSCOLORS=gxFxCxdxBxegedabagacad
-#    export LS_COLORS='di=01;36:ln=01;35:so=01;32:ex=01;31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
-#    zstyle ':completion:*' list-colors 'di=;36;1' 'ln=;35;1' 'so=;32;1' 'ex=31;1' 'bd=46;34' 'cd=43;34'
-#    ;;
-#esac
+case "${TERM}" in
+xterm|xterm-color)
+    export LSCOLORS=exfxcxdxbxegedabagacad
+    export LS_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
+    zstyle ':completion:*' list-colors 'di=34' 'ln=35' 'so=32' 'ex=31' 'bd=46;34' 'cd=43;34'
+    ;;
+esac
 
 
 # Less Color Syntax with source-highlight
@@ -227,13 +218,13 @@ export LESSOPEN='| /usr/local/bin/src-hilite-lesspipe.sh %s'
 
 
 # set terminal title including current directory
-case "${TERM}" in
-xterm|xterm-color|kterm|kterm-color)
-    precmd() {
-        echo -ne "\034]0;${USER}@${HOST%%.*}:${PWD}\007"
-    }
-    ;;
-esac
+    #case "${TERM}" in
+#xterm|xterm-color|kterm|kterm-color)
+#    precmd() {
+#        echo -ne "\034]0;${USER}@${HOST%%.*}:${PWD}\007"
+#    }
+#    ;;
+#esac
 
 
 setopt hist_ignore_space
@@ -241,14 +232,18 @@ bindkey -s '^z' '^[q %vi^m'
 
 
 # cd履歴のジャンプ
-_Z_CMD=j
-if [ -f ${HOME}/.zsh/z/z.sh ]; then
-    source  ${HOME}/.zsh/z/z.sh
-    precmd() {
-      _z --add "$(pwd -P)"
-    }
-fi
+#_Z_CMD=j
+#if [ -f ${HOME}/.zsh/z/z.sh ]; then
+#    source  ${HOME}/.zsh/z/z.sh
+#    precmd() {
+#      _z --add "$(pwd -P)"
+#    }
+#fi
 
+# cd履歴のジャンプ
+if [ -f `brew --prefix`/etc/autojump ]; then
+  . `brew --prefix`/etc/autojump
+fi
 
 # コマンドの自動補完
 # Cygwinだと遅いから使わない

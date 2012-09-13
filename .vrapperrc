@@ -4,11 +4,10 @@
 set smartindent
 set autoindent
 set ignorecase
-set regexsearch
-set incsearch
-set hlsearch
 set smartcase
-set saney
+set regexsearch
+set hlsearch
+set incsearch
 set imdisable
 
 
@@ -16,7 +15,7 @@ set imdisable
 " keymap
 " ----------------------------------------
 " 行末へ移動
-noremap - $
+nnoremap - $
 
 "対応する括弧に移動
 nnoremap [ %

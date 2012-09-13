@@ -1,6 +1,6 @@
 # Source global definitions
 if [ -f /etc/bashrc ]; then
-        . /etc/bashrc
+    ./etc/bashrc
 fi
 
 # 新しく作られたファイルのパーミッションを644をデフォルトにする
@@ -10,8 +10,7 @@ ulimit -c 0
 
 ## シェル変数
 # プロンプト文字列の設定
-#PS1="\n\d \t \w\e\n\u@\h:\$ "
-PS1="\n\w\e\n@\$"
+PS1='\[\033[0;34m\][\t \w]\n\[\033[0m\]\$ '
 # コマンド履歴のサイズ
 HISTSIZE=50000
 HISTFILESIZE=50000
@@ -36,7 +35,7 @@ export MAKE_MODE=unix
 #export LANG=ja_JP.Shift_JIS
 #export OUTPUT_CHARSET=sjis
 ## タイムゾーンの指定
-#export TZ=JST-9
+export TZ=JST-9
 ## デフォルトのページャをlessにする
 export PAGER=less
 ## lessのステータス行にファイル名と行数、％を表示する
@@ -65,27 +64,27 @@ alias l="ls -a --color=auto"
 alias ll="ls -l"
 # updatedbでwindows領域を除外する
 alias updatedb='updatedb --localpaths="/bin /dev /etc /home /lib /sbin /srv /usr /var" --prunepaths="/usr/tmp /var/tmp"'
-alias c="cd"
+alias j=jobs
+alias vi=vim
+alias c=cd
 alias u="cd ../"
 alias uu="cd ../../"
 alias uuu="cd ../../../"
 alias g="git"
-alias j=jobs
-alias vi=vim
 
-#SYSTEM=`cygpath -u ${SYSTEMROOT}`/system32
-alias ping="$SYSTEM/ping.exe"
-alias arp="$SYSTEM/arp.exe"
-alias nslookup="$SYSTEM/nslookup.exe"
-alias traceroute="$SYSTEM/tracert.exe"
-alias route="$SYSTEM/route.exe"
-alias netstat="$SYSTEM/netstat.exe"
-alias ipconfig="$SYSTEM/ipconfig.exe"
-alias ifconfig=ipconfig
-#alias start=cygstart
-
-alias fk="taskkill /f /im"
-alias a="adb"
-alias ad="adb devices"
-
-unset SYSTEM
+if [ -d cygpath ]; then
+    SYSTEM=`cygpath -u ${SYSTEMROOT}`/system32
+    alias ping="$SYSTEM/ping.exe"
+    alias arp="$SYSTEM/arp.exe"
+    alias nslookup="$SYSTEM/nslookup.exe"
+    alias traceroute="$SYSTEM/tracert.exe"
+    alias route="$SYSTEM/route.exe"
+    alias netstat="$SYSTEM/netstat.exe"
+    alias ipconfig="$SYSTEM/ipconfig.exe"
+    alias ifconfig=ipconfig
+    alias st="cygstart"
+    alias a="adb"
+    alias ad="adb devices"
+    alias fk="taskkill /f /im"
+    unset SYSTEM
+fi
