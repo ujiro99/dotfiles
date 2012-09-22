@@ -25,6 +25,7 @@ endif
 
 NeoBundle 'Align'
 NeoBundle 'surround.vim'
+NeoBundle 'gtags.vim'
 NeoBundle 'https://github.com/ujiro99/my_color_scheme.git'
 NeoBundle 'https://github.com/banyan/recognize_charcode.vim.git'
 NeoBundle 'https://github.com/Shougo/neobundle.vim.git'
@@ -95,7 +96,7 @@ set smartcase
 
 
 " ヘルプファイルの参照
-nnoremap <C-h>  :<C-u>help<Space>
+nnoremap <Space>h :<C-u>help<Space>
 
 " vimrcを編集する
 nnoremap <Space>. :<C-u>edit $MYVIMRC<CR>
@@ -159,8 +160,8 @@ nnoremap <silent> cw :call <SID>toggle_qf_window()<CR>
 "---------------------------------------------
 " バッファ操作関連
 "---------------------------------------------
-nmap <Space>j :bp<CR>zz
-nmap <Space>k :bn<CR>zz
+nmap <C-h>    :bp<CR>zz
+nmap <C-l>    :bn<CR>zz
 nmap <Space>b :ls<CR>:buffer
 nmap <Space>v :vsplit<CR><C-w><C-w>:ls<CR>:buffer
 nmap <Space>V :Vexplore!<CR><CR>
@@ -180,36 +181,6 @@ inoremap <silent> <C-[> <ESC>
 inoremap <silent> <C-j> <C-^>
 " 自動的に日本語入力(IM)をオンにする機能を有効にする
 set noimdisableactivate
-
-
-"---------------------------------------------
-" unite.vim
-"---------------------------------------------
-" 入力モードで開始する
-let g:unite_enable_start_insert=1
-" バッファ一覧
-nnoremap <silent> ,mb :<C-u>Unite buffer<CR>
-" ファイル一覧
-nnoremap <silent> ,mf :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
-" レジスタ一覧
-nnoremap <silent> ,mr :<C-u>Unite -buffer-name=register register<CR>
-" 最近使用したファイル一覧
-nnoremap <silent> ,mm :<C-u>Unite file_mru<CR>
-" 常用セット
-nnoremap <silent> ,mu :<C-u>Unite buffer file_mru<CR>
-" カレントバッファの行
-nnoremap <silent> ,m/ :<C-u>Unite -buffer-name=search line -start-insert -no-quit<CR>
-" 全部乗せ
-nnoremap <silent> ,ma :<C-u>UniteWithBufferDir -buffer-name=files buffer file_mru bookmark file<CR>
-" ウィンドウを分割して開く
-au FileType unite nnoremap <silent> <buffer> <expr> <C-j> unite#do_action('split')
-au FileType unite inoremap <silent> <buffer> <expr> <C-j> unite#do_action('split')
-" ウィンドウを縦に分割して開く
-au FileType unite nnoremap <silent> <buffer> <expr> <C-l> unite#do_action('vsplit')
-au FileType unite inoremap <silent> <buffer> <expr> <C-l> unite#do_action('vsplit')
-" ESCキーを2回押すと終了する
-au FileType unite nnoremap <silent> <buffer> <ESC><ESC> q
-au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>q
 
 
 "---------------------------------------------
