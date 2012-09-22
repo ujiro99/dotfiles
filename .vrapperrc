@@ -17,9 +17,21 @@ set imdisable
 " 行末へ移動
 nnoremap - $
 
-"対応する括弧に移動
+" 対応する括弧に移動
 nnoremap [ %
 nnoremap ] %
+
+" 見た目で行移動, 画面の真ん中にくるようにする
+nnoremap j jzz
+nnoremap k kzz
+
+" マッチ文字列が画面の真ん中にくるようにする
+nnoremap n nzz
+nnoremap N Nzz
+nnoremap * *zz
+nnoremap # #zz
+nnoremap g* g*zz
+nnoremap g# g#zz
 
 nnoremap u :undo<CR>
 nnoremap U :redo<CR>
