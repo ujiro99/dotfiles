@@ -54,6 +54,11 @@ PATH=${PATH}:/Applications/Xcode.app/Contents/Developer/usr/bin
 # rvmへのパスを通す
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
+# rbenvの読み込み
+eval "$(rbenv init -)"
+source /usr/local/Cellar/rbenv/0.3.0/completions/rbenv.zsh
+
+
 # auto change directory
 setopt auto_cd
 
