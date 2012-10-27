@@ -5,7 +5,7 @@ filetype off
 " メニューをデフォルトの英語にする
 set langmenu=none
 
-"NeoBundle.vimを使用する
+" NeoBundle.vimを使用する
 if has("win32") || has("win64") || has("win32unix")
    set rtp+=$HOME/vimfiles/bundle/neobundle.vim
    call neobundle#rc('$HOME/vimfiles/bundle/')
@@ -37,19 +37,19 @@ filetype plugin indent on     " required!
 "---------------------------------------------
 " 設定ファイルの読込
 "---------------------------------------------
-"表示関連
+" 表示関連
 source $HOME/dotfiles/.vimrc.appearance
-"補間関連
+" 補間関連
 source $HOME/dotfiles/.vimrc.completion
-"Tags関連
+" Tags関連
 source $HOME/dotfiles/.vimrc.tags
-"Color関連
+" Color関連
 source $HOME/dotfiles/.vimrc.colors
-"エンコーディング関連
+" エンコーディング関連
 source $HOME/dotfiles/.vimrc.encoding
 
 
-"インクリメンタルサーチを行う
+" インクリメンタルサーチを行う
 set incsearch
 
 " 左右のカーソル移動で行間移動可能にする。
@@ -64,25 +64,25 @@ set noswapfile
 " 対応括弧の瞬間強調時間
 set matchtime=3
 
-"タブを空白で入力する
+" タブを空白で入力する
 set expandtab
 
-"標準タブは4
+" 標準タブは4
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 
-"自動的にインデントする
+" 自動的にインデントする
 set autoindent
-"スマートインデント
+" スマートインデント
 set smartindent
-"折り返し表示しない
+" 折り返し表示しない
 set nowrap
 
 " ヤンクをクリップボードへ送り込む
 set clipboard+=unnamed
 
-"編集中でもバッファを切り替えれるようにしておく
+" 編集中でもバッファを切り替えれるようにしておく
 set hidden
 
 " 矩形選択で行末を超えてブロックを選択できるようにする
@@ -110,7 +110,7 @@ noremap <CR> i<CR><ESC>
 " クリップボードの貼付け
 nmap <Space>p "+gP
 
-"空行のインデントを勝手に消さない
+" 空行のインデントを勝手に消さない
 nnoremap o oX<C-h>
 nnoremap O OX<C-h>
 inoremap <CR> <CR>X<C-h>
@@ -172,7 +172,7 @@ nmap <Space>c :Kwbd<CR>zz
 "---------------------------------------------
 " 日本語入力関連
 "---------------------------------------------
-"日本語入力をリセット
+" 日本語入力をリセット
 au BufNewFile,BufRead * set iminsert=0
 " 挿入モード終了時にIME状態を保持しない
 inoremap <silent> <ESC> <ESC>
@@ -186,7 +186,7 @@ set noimdisableactivate
 "---------------------------------------------
 " Vimproc関連
 "--------------------------------------------
-"windowsの場合はproc.dllを入れておく
+" windowsの場合はproc.dllを入れておく
 if has("win32") || has("win64")
     let g:vimproc_dll_path = $HOME.'\vimfiles\autoload\proc.dll'
 elseif has("win32unix")
