@@ -43,11 +43,11 @@ if /%OS%/ == /Windows_NT/ then
     alias    g       ""C:\Program Files\Git\bin\git.exe""
     alias    gr      grep --color -i -n
     alias    pw      pwd
+    alias    st      start
     suffix   vbs     cscript  //nologo
     suffix   js      cscript  //nologo
 endif
 
-alias  st  start
 
 suffix ny  nyaos -f
 suffix pl  perl
