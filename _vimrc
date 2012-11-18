@@ -15,17 +15,17 @@ else
 endif
 
 if has('gui_running')
-"    NeoBundle 'https://github.com/Shougo/unite.vim.git'
-"    NeoBundle 'https://github.com/tsukkee/unite-tag.git'
-"    NeoBundle 'https://github.com/vim-ruby/vim-ruby.git'
-    NeoBundle 'tagexplorer.vim'
-    NeoBundle 'eregex.vim'
-    NeoBundle 'rails.vim'
+    NeoBundle 'https://github.com/Shougo/unite.vim.git'
+    NeoBundle 'https://github.com/tsukkee/unite-tag.git'
+    NeoBundle 'https://github.com/vim-ruby/vim-ruby.git'
+    NeoBundle 'https://github.com/vim-scripts/tagexplorer.vim.git'
+    NeoBundle 'https://github.com/vim-scripts/eregex.vim.git'
+    NeoBundle 'https://github.com/vim-scripts/rails.vim.git'
 endif
 
-NeoBundle 'Align'
-NeoBundle 'surround.vim'
-NeoBundle 'gtags.vim'
+NeoBundle 'https://github.com/vim-scripts/Align.vim.git'
+NeoBundle 'https://github.com/vim-scripts/surround.vim.git'
+NeoBundle 'https://github.com/vim-scripts/gtags.vim.git'
 NeoBundle 'https://github.com/ujiro99/my_color_scheme.git'
 NeoBundle 'https://github.com/banyan/recognize_charcode.vim.git'
 NeoBundle 'https://github.com/Shougo/neobundle.vim.git'
