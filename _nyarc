@@ -22,22 +22,21 @@
 # ”z’u‚µ‚Ä‚­‚¾‚³‚¢.
 
 if /%OS%/ == /Windows_NT/ then
-    alias    kill    taskkill /f          /pid
-    alias    fk      taskkill /f          /im
+    alias    kill    taskkill /f /pid
+    alias    fk      taskkill /f /im
     alias    cp      copy
     alias    rm      del
     alias    mv      move
-    alias    la      ls       -a
-    alias    ll      ls       -la
-    alias    l       ls       -a
+    alias    la      ls -a
+    alias    ll      ls -la
+    alias    l       ls -a
     alias    a       adb
-    alias    ad      adb      devices
-    alias    alog    adb      logcat
-    alias    alogt   adb      logcat -v time
-    alias    alogc   adb      logcat -c
-    alias    u       cd       ../
-    alias    uu      cd       ../../
-    alias    uuu     cd       ../../../
+    alias    ad      adb devices
+    alias    al      adb logcat -v time
+    alias    as      adb shell
+    alias    u       cd ../
+    alias    uu      cd ../../
+    alias    uuu     cd ../../../
     alias    gtags   gtags.exe -v --gtagsconf ~\dotfiles\.gtagsrc
     alias    htags   htags.exe -sanovwF
     alias    g       ""C:\Program Files\Git\bin\git.exe""
