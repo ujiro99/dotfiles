@@ -1,0 +1,11 @@
+pw = pwd $*
+l  = ls -a $*
+a  = adb $*
+c  = cd $*
+u  = cd ../
+uu = cd ../../
+ad = adb devices
+al = adb log
+as = adb shell $*
+g  = git $*
+s  = svn $*
