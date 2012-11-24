@@ -1,3 +1,5 @@
+[include]
+    path = ~/.gitconfig.local
 [gui]
     encoding = utf-8
     fontdiff = -family Osaka-Mono -size 10 -weight normal -slant roman -underline 0 -overstrike 0
