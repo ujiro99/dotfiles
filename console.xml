@@ -1,23 +1,23 @@
 <?xml version="1.0"?>
 <settings>
-  <console change_refresh="10" refresh="100" rows="50" columns="80" buffer_rows="500" buffer_columns="0" shell="C:\Program Files\nyaos-3.2.0_0-win\nyaos.exe" init_dir="C:\" start_hidden="0" save_size="0">
+  <console change_refresh="10" refresh="100" rows="50" columns="80" buffer_rows="500" buffer_columns="0" shell="C:\Program Files\nyaos\nyaos.exe" init_dir="C:\" start_hidden="0" save_size="0">
     <colors>
-      <color id="0"  r="39"  g="39"  b="39"/>
-      <color id="1"  r="157" g="157" b="255"/>
-      <color id="2"  r="0"   g="150" b="0"/>
-      <color id="3"  r="0"   g="150" b="150"/>
-      <color id="4"  r="170" g="25"  b="25"/>
-      <color id="5"  r="201" g="10"  b="67"/>
-      <color id="6"  r="128" g="128" b="0"/>
-      <color id="7"  r="192" g="192" b="192"/>
-      <color id="8"  r="128" g="128" b="128"/>
-      <color id="9"  r="0"   g="100" b="255"/>
-      <color id="10" r="61"  g="182" b="133"/>
-      <color id="11" r="73"  g="238" b="252"/>
-      <color id="12" r="125" g="125" b="225"/>
-      <color id="13" r="255" g="128" b="192"/>
-      <color id="14" r="255" g="198" b="0"/>
-      <color id="15" r="234" g="234" b="234"/>
+      <color id="0"   r="39"   g="39"   b="39"/>
+      <color id="1"   r="157"  g="157"  b="255"/>
+      <color id="2"   r="0"    g="150"  b="0"/>
+      <color id="3"   r="0"    g="150"  b="150"/>
+      <color id="4"   r="170"  g="25"   b="25"/>
+      <color id="5"   r="201"  g="10"   b="67"/>
+      <color id="6"   r="128"  g="128"  b="0"/>
+      <color id="7"   r="192"  g="192"  b="192"/>
+      <color id="8"   r="128"  g="128"  b="128"/>
+      <color id="9"   r="0"    g="100"  b="255"/>
+      <color id="10"  r="61"   g="182"  b="133"/>
+      <color id="11"  r="73"   g="238"  b="252"/>
+      <color id="12"  r="125"  g="125"  b="225"/>
+      <color id="13"  r="255"  g="128"  b="192"/>
+      <color id="14"  r="255"  g="198"  b="0"/>
+      <color id="15"  r="234"  g="234"  b="234"/>
     </colors>
   </console>
   <appearance>
@@ -41,7 +41,7 @@
     <hotkey ctrl="1" shift="0" alt="0" extended="0" code="83" command="settings"/>
     <hotkey ctrl="0" shift="0" alt="0" extended="0" code="112" command="help"/>
     <hotkey ctrl="0" shift="0" alt="1" extended="0" code="115" command="exit"/>
-    <hotkey ctrl="1" shift="0" alt="0" extended="0" code="78" command="newtab1"/>
+    <hotkey ctrl="1" shift="0" alt="0" extended="0" code="112" command="newtab1"/>
     <hotkey ctrl="1" shift="0" alt="0" extended="0" code="113" command="newtab2"/>
     <hotkey ctrl="1" shift="0" alt="0" extended="0" code="114" command="newtab3"/>
     <hotkey ctrl="1" shift="0" alt="0" extended="0" code="115" command="newtab4"/>
@@ -101,6 +101,15 @@
     </tab>
     <tab title="Cmd" use_default_icon="0">
       <console shell="cmd.exe" init_dir="C:\" run_as_user="0" user=""/>
+      <cursor style="0" r="255" g="255" b="255"/>
+      <background type="0" r="0" g="0" b="0">
+        <image file="" relative="0" extend="0" position="0">
+          <tint opacity="0" r="0" g="0" b="0"/>
+        </image>
+      </background>
+    </tab>
+    <tab title="Zsh" use_default_icon="0">
+      <console shell="C:\cygwin\bin\zsh.exe" init_dir="C:\" run_as_user="0" user=""/>
       <cursor style="0" r="255" g="255" b="255"/>
       <background type="0" r="0" g="0" b="0">
         <image file="" relative="0" extend="0" position="0">
