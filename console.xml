@@ -91,7 +91,7 @@
   </mouse>
   <tabs>
     <tab title="Nya" use_default_icon="0">
-      <console shell="C:\Program Files\nyaos-3.2.0_0-win\nyaos.exe" init_dir="C:\" run_as_user="0" user=""/>
+      <console shell="C:\Program Files\nyaos\nyaos.exe" init_dir="C:\" run_as_user="0" user=""/>
       <cursor style="0" r="255" g="255" b="255"/>
       <background type="0" r="0" g="0" b="0">
         <image file="" relative="0" extend="0" position="0">
