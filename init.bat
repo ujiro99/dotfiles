@@ -8,8 +8,9 @@ mklink %USERPROFILE%\_gvimrc %USERPROFILE%\dotfiles\_gvimrc
 mklink %USERPROFILE%\_nya %USERPROFILE%\dotfiles\_nyarc
 mklink %USERPROFILE%\.vsvimrc %USERPROFILE%\dotfiles\.vsvimrc
 mklink %USERPROFILE%\.gitignore %USERPROFILE%\dotfiles\.gitignore
+mklink %USERPROFILE%\.gitconfig %USERPROFILE%\dotfiles\.gitconfig
 mklink %USERPROFILE%\.vrapperrc %USERPROFILE%\dotfiles\.vrapperrc
 mklink %USERPROFILE%\.zshrc %USERPROFILE%\dotfiles\.zshrc
 mklink %USERPROFILE%\.gtagsrc %USERPROFILE%\dotfiles\.gtagsrc
 mklink /d %USERPROFILE%\vimfiles %USERPROFILE%\dotfiles\vimfiles
-reg add "HKEY_CURRENT_USER\Software\Microsoft\Command Processor" /v AutoRun /d %USERPROFILE%\dotfiles\.cmdrc
+reg add "HKEY_CURRENT_USER\Software\Microsoft\Command Processor" /v AutoRun /d "doskey /macrofile=%USERPROFILE%\dotfiles\.cmdrc"
