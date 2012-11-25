@@ -26,6 +26,7 @@ endif
 NeoBundle 'https://github.com/vim-scripts/Align.vim.git'
 NeoBundle 'https://github.com/vim-scripts/surround.vim.git'
 NeoBundle 'https://github.com/vim-scripts/gtags.vim.git'
+NeoBundle 'https://github.com/tpope/vim-fugitive.git'
 NeoBundle 'https://github.com/ujiro99/my_color_scheme.git'
 NeoBundle 'https://github.com/banyan/recognize_charcode.vim.git'
 NeoBundle 'https://github.com/Shougo/neobundle.vim.git'
