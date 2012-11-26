@@ -192,7 +192,7 @@ endif
 "--------------------------------------------
 " windowsの場合はproc.dllを入れておく
 if has("win32") || has("win64")
-    let g:vimproc_dll_path = $HOME.'\vimfiles\autoload\proc.dll'
+    let g:vimproc_dll_path = $HOME.'\vimfiles\bundle\vimproc\autoload\vimproc_win32.dll'
 elseif has("win32unix")
     let g:vimproc_dll_path = $HOME.'/vimfiles/autoload/proc_cygwin.dll'
 else
