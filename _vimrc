@@ -152,6 +152,17 @@ nmap <Space>c :Kwbd<CR>zz
 
 
 "---------------------------------------------
+" minibufexpl関連
+"---------------------------------------------
+let g:miniBufExplMapWindowNavVim=1   "hjklで移動
+let g:miniBufExplSplitBelow=0        " Put new window above
+let g:miniBufExplMapWindowNavArrows=1
+let g:miniBufExplMapCTabSwitchBufs=1
+let g:miniBufExplModSelTarget=1
+let g:miniBufExplSplitToEdge=1
+
+
+"---------------------------------------------
 " 日本語入力関連
 "---------------------------------------------
 " 日本語入力をリセット
@@ -176,6 +187,70 @@ elseif has("win32unix")
 else
     let g:vimproc_dll_path = $HOME.'/.vim/autoload/proc.so'
 endif
+
+
+"---------------------------------------------
+" Unite.vim関連
+"---------------------------------------------
+" 入力モードで開始する
+" let g:unite_enable_start_insert=1
+" バッファ一覧
+nnoremap <silent> ,b :<C-u>Unite buffer<CR>
+" ファイル一覧
+nnoremap <silent> ,f :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
+" レジスタ一覧
+nnoremap <silent> ,r :<C-u>Unite -buffer-name=register register<CR>
+" 最近使用したファイル一覧
+nnoremap <silent> ,m :<C-u>Unite file_mru<CR>
+" 常用セット
+nnoremap <silent> ,u :<C-u>Unite buffer file_mru<CR>
+" 全部乗せ
+nnoremap <silent> ,a :<C-u>UniteWithBufferDir -buffer-name=files buffer file_mru bookmark file<CR>
+
+" ウィンドウを分割して開く
+au FileType unite nnoremap <silent> <buffer> <expr> <C-j> unite#do_action('split')
+au FileType unite inoremap <silent> <buffer> <expr> <C-j> unite#do_action('split')
+" ウィンドウを縦に分割して開く
+au FileType unite nnoremap <silent> <buffer> <expr> <C-l> unite#do_action('vsplit')
+au FileType unite inoremap <silent> <buffer> <expr> <C-l> unite#do_action('vsplit')
+" ESCキーを2回押すと終了する
+au FileType unite nnoremap <silent> <buffer> <ESC><ESC> q
+au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>q
+
+
+"---------------------------------------------
+" VimFiler関連
+"--------------------------------------------
+nnoremap <Space>f :VimFiler -buffer-name=explorer -split -winwidth=45 -toggle -no-quit<Cr>
+autocmd! FileType vimfiler call g:my_vimfiler_settings()
+function! g:my_vimfiler_settings()
+  nmap     <buffer><expr><Cr> vimfiler#smart_cursor_map("\<Plug>(vimfiler_expand_tree)", "\<Plug>(vimfiler_edit_file)")
+  nnoremap <buffer>s          :call vimfiler#mappings#do_action('my_split')<Cr>
+  nnoremap <buffer>v          :call vimfiler#mappings#do_action('my_vsplit')<Cr>
+endfunction
+
+let my_action = { 'is_selectable' : 1 }
+function! my_action.func(candidates)
+  wincmd p
+  exec 'split '. a:candidates[0].action__path
+endfunction
+call unite#custom_action('file', 'my_split', my_action)
+
+let my_action = { 'is_selectable' : 1 }
+function! my_action.func(candidates)
+  wincmd p
+  exec 'vsplit '. a:candidates[0].action__path
+endfunction
+call unite#custom_action('file', 'my_vsplit', my_action)
+
+
+"---------------------------------------------
+" ref.vim関連
+"---------------------------------------------
+let g:ref_open         = 'split'
+let g:ref_refe_cmd     = "rurema"
+let g:ref_refe_version = 2
+nnoremap <Space>r :<C-U>Rbf refe<Space>
 
 
 "---------------------------------------------
