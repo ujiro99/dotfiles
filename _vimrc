@@ -15,22 +15,26 @@ else
 endif
 
 if has('gui_running')
-    NeoBundle 'https://github.com/Shougo/unite.vim.git'
-    NeoBundle 'https://github.com/tsukkee/unite-tag.git'
-    NeoBundle 'https://github.com/vim-ruby/vim-ruby.git'
-    NeoBundle 'https://github.com/vim-scripts/tagexplorer.vim.git'
-    NeoBundle 'https://github.com/vim-scripts/eregex.vim.git'
-    NeoBundle 'https://github.com/vim-scripts/rails.vim.git'
+    NeoBundle 'https://github.com/vim-scripts/Align.vim.git'
 endif
 
-NeoBundle 'https://github.com/vim-scripts/Align.vim.git'
-NeoBundle 'https://github.com/vim-scripts/surround.vim.git'
-NeoBundle 'https://github.com/vim-scripts/gtags.vim.git'
-NeoBundle 'https://github.com/tpope/vim-fugitive.git'
-NeoBundle 'https://github.com/ujiro99/my_color_scheme.git'
 NeoBundle 'https://github.com/banyan/recognize_charcode.vim.git'
+NeoBundle 'https://github.com/fholgado/minibufexpl.vim.git'
 NeoBundle 'https://github.com/Shougo/neobundle.vim.git'
-NeoBundle 'https://github.com/vim-scripts/AutoComplPop.git'
+NeoBundle 'https://github.com/Shougo/neocomplcache.git'
+NeoBundle 'https://github.com/Shougo/unite.vim.git'
+NeoBundle 'https://github.com/Shougo/vimfiler.git'
+NeoBundle 'https://github.com/thinca/vim-quickrun.git'
+NeoBundle 'https://github.com/thinca/vim-ref.git'
+NeoBundle 'https://github.com/tpope/vim-fugitive.git'
+NeoBundle 'https://github.com/tsukkee/unite-tag.git'
+NeoBundle 'https://github.com/ujiro99/my_color_scheme.git'
+NeoBundle 'https://github.com/vim-ruby/vim-ruby.git'
+NeoBundle 'https://github.com/vim-scripts/eregex.vim.git'
+NeoBundle 'https://github.com/vim-scripts/gtags.vim.git'
+NeoBundle 'https://github.com/vim-scripts/rails.vim.git'
+NeoBundle 'https://github.com/vim-scripts/surround.vim.git'
+NeoBundle 'https://github.com/vim-scripts/tagexplorer.vim.git'
 
 filetype plugin indent on     " required!
 
