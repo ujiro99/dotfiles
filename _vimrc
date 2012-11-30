@@ -48,6 +48,8 @@ source $HOME/dotfiles/.vimrc.tags
 source $HOME/dotfiles/.vimrc.colors
 " エンコーディング関連
 source $HOME/dotfiles/.vimrc.encoding
+" 移動関連
+source $HOME/dotfiles/.vimrc.moving
 
 
 " インクリメンタルサーチを行う
@@ -95,7 +97,6 @@ set ignorecase
 " 検索時に大文字が指定された時だけ大文字無視しない
 set smartcase
 
-
 " ヘルプファイルの参照
 nnoremap <Space>h :<C-u>help<Space>
 
@@ -116,31 +117,8 @@ nnoremap o oX<C-h>
 nnoremap O OX<C-h>
 inoremap <CR> <CR>X<C-h>
 
-" 見た目で行移動
-nnoremap j gjzz
-nnoremap k gkzz
-
-" マッチ文字列が画面の真ん中にくるようにする
-nmap n nzz
-nmap N Nzz
-nmap * *zz
-nmap # #zz
-nmap g* g*zz
-nmap g# g#zz
-
 " もう一度やる
 nnoremap U <C-r>
-
-" QuickFixの移動
-nnoremap <C-p> :cp <CR>
-nnoremap <C-n> :cn <CR>
-
-" 行末へ移動
-noremap - $
-
-" 対応する括弧に移動
-nnoremap [ %
-nnoremap ] %
 
 " ckfixウィンドウではq/ESCで閉じる
 autocmd FileType qf nnoremap <buffer> q :ccl<CR>
@@ -158,11 +136,10 @@ function! s:toggle_qf_window()
 endfunction
 nnoremap <silent> cw :call <SID>toggle_qf_window()<CR>
 
+
 "---------------------------------------------
 " バッファ操作関連
 "---------------------------------------------
-nmap <C-h>    :bp<CR>zz
-nmap <C-l>    :bn<CR>zz
 nmap <Space>b :ls<CR>:buffer
 nmap <Space>v :vsplit<CR><C-w><C-w>:ls<CR>:buffer
 nmap <Space>V :Vexplore!<CR><CR>
