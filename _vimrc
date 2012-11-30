@@ -24,6 +24,7 @@ NeoBundle 'https://github.com/Shougo/neobundle.vim.git'
 NeoBundle 'https://github.com/Shougo/neocomplcache.git'
 NeoBundle 'https://github.com/Shougo/unite.vim.git'
 NeoBundle 'https://github.com/Shougo/vimfiler.git'
+NeoBundle 'https://github.com/Shougo/vimproc.git'
 NeoBundle 'https://github.com/thinca/vim-quickrun.git'
 NeoBundle 'https://github.com/thinca/vim-ref.git'
 NeoBundle 'https://github.com/tpope/vim-fugitive.git'
@@ -105,7 +106,7 @@ set smartcase
 nnoremap <Space>h :<C-u>help<Space>
 
 " vimrcを編集する
-nnoremap <Space>. :<C-u>edit $MYVIMRC<CR>
+nnoremap <Space>. :<C-u>edit $HOME/dotfiles/_vimrc<CR>
 
 " escでハイライトをオフ
 nnoremap <silent> <ESC> <ESC>:noh<CR>
@@ -172,8 +173,11 @@ inoremap <silent> <ESC> <ESC>
 inoremap <silent> <C-[> <ESC>
 " 「日本語入力固定モード」切替キー
 inoremap <silent> <C-j> <C-^>
-" 自動的に日本語入力(IM)をオンにする機能を有効にする
-set noimdisableactivate
+" MacVimでは自動的に日本語入力(IM)をオンにする機能を有効にする
+if has("win32") || has("win32unix") || has("win64")
+else
+    set noimdisableactivate
+endif
 
 
 "---------------------------------------------
@@ -181,7 +185,7 @@ set noimdisableactivate
 "--------------------------------------------
 " windowsの場合はproc.dllを入れておく
 if has("win32") || has("win64")
-    let g:vimproc_dll_path = $HOME.'\vimfiles\autoload\proc.dll'
+    let g:vimproc_dll_path = $HOME.'\vimfiles\bundle\vimproc\autoload\vimproc_win32.dll'
 elseif has("win32unix")
     let g:vimproc_dll_path = $HOME.'/vimfiles/autoload/proc_cygwin.dll'
 else
@@ -262,7 +266,7 @@ command! ReloadVimrc  source $MYVIMRC
 command! Kwbd let kwbd_bn= bufnr("%")|enew|exe "bdel ".kwbd_bn|unlet kwbd_bn
 " デスクトップへ移動
 if has("win32") || has("win64") || has("win32unix")
-   command! Cdd :cd $HOME/デスクトップ
+   command! Cdd :cd %USERPROFILE%\Desktop\
 endif
 
 
