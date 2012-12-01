@@ -15,7 +15,7 @@ else
 endif
 
 if has('gui_running')
-    NeoBundle 'https://github.com/vim-scripts/Align.vim.git'
+    NeoBundle 'https://github.com/vim-scripts/Align.git'
 endif
 
 NeoBundle 'https://github.com/banyan/recognize_charcode.vim.git'
@@ -95,9 +95,6 @@ set hidden
 
 " 矩形選択で行末を超えてブロックを選択できるようにする
 set virtualedit+=block
-
-" ヘルプファイルの参照
-nnoremap <Space>h :<C-u>help<Space>
 
 " vimrcを編集する
 nnoremap <Space>. :<C-u>edit $HOME/dotfiles/_vimrc<CR>
