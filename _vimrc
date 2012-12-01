@@ -55,10 +55,9 @@ source $HOME/dotfiles/.vimrc.colors
 source $HOME/dotfiles/.vimrc.encoding
 " 移動関連
 source $HOME/dotfiles/.vimrc.moving
+" 検索関連
+source $HOME/dotfiles/.vimrc.search
 
-
-" インクリメンタルサーチを行う
-set incsearch
 
 " 左右のカーソル移動で行間移動可能にする。
 set whichwrap=b,s,<,>,[,]
@@ -95,12 +94,6 @@ set hidden
 
 " 矩形選択で行末を超えてブロックを選択できるようにする
 set virtualedit+=block
-
-" 検索時に大文字小文字無視
-set ignorecase
-
-" 検索時に大文字が指定された時だけ大文字無視しない
-set smartcase
 
 " ヘルプファイルの参照
 nnoremap <Space>h :<C-u>help<Space>
@@ -197,7 +190,7 @@ endif
 " Unite.vim関連
 "---------------------------------------------
 " 入力モードで開始する
-" let g:unite_enable_start_insert=1
+let g:unite_enable_start_insert=1
 " バッファ一覧
 nnoremap <silent> ,b :<C-u>Unite buffer<CR>
 " ファイル一覧
@@ -255,6 +248,18 @@ let g:ref_open         = 'split'
 let g:ref_refe_cmd     = "rurema"
 let g:ref_refe_version = 2
 nnoremap <Space>r :<C-U>Rbf refe<Space>
+
+
+"---------------------------------------------
+" Fugitive 関連
+"---------------------------------------------
+nnoremap <Space>gd :<C-u>Gdiff<Enter>
+nnoremap <Space>gs :<C-u>Gstatus<Enter>
+nnoremap <Space>gl :<C-u>Glog<Enter>
+nnoremap <Space>ga :<C-u>Gwrite<Enter>
+nnoremap <Space>gc :<C-u>Gcommit<Enter>
+nnoremap <Space>gC :<C-u>Git commit --amend<Enter>
+nnoremap <Space>gb :<C-u>Gblame<Enter>
 
 
 "---------------------------------------------
