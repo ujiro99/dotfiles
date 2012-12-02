@@ -21,8 +21,8 @@ inoremap <C-h> <Left>
 inoremap <C-l> <Right>
 
 " spaceで次のbufferへ。back-spaceで前のbufferへ
-nmap <Space><Space> :MBEbn<CR>
-nmap <BS><BS> :MBEbp<CR>
+nmap <Space><Space> :bn<CR>zz
+nmap <BS><BS> :bp<CR>zz
 
 " 前のバッファ
 " nmap <C-h>    :bp<CR>zz
