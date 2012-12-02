@@ -246,7 +246,7 @@ call unite#custom_action('file', 'my_vsplit', my_action)
 let g:ref_open         = 'split'
 let g:ref_refe_cmd     = "rurema"
 let g:ref_refe_version = 2
-nnoremap <Space>r :<C-U>Rbf refe<Space>
+nnoremap <Space>r :<C-U>Ref refe<Space>
 
 
 "---------------------------------------------
@@ -259,6 +259,19 @@ nnoremap <Space>ga :<C-u>Gwrite<Enter>
 nnoremap <Space>gc :<C-u>Gcommit<Enter>
 nnoremap <Space>gC :<C-u>Git commit --amend<Enter>
 nnoremap <Space>gb :<C-u>Gblame<Enter>
+
+
+"---------------------------------------------
+" QuickRun 関連
+"---------------------------------------------
+" 現在のバッファを実行
+nnoremap <Space>r :QuickRun<CR>
+
+
+"---------------------------------------------
+" Align 関連
+"---------------------------------------------
+let g:Align_xstrlen=3
 
 
 "---------------------------------------------
@@ -278,3 +291,4 @@ endif
 autocmd BufWritePre * :%s/\s\+$//ge
 " 保存時にtabをスペースに変換する
 autocmd BufWritePre * :%s/\t/  /ge
+
