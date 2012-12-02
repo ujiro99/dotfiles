@@ -183,6 +183,7 @@ alias grep="grep -in"
 alias u="../"
 alias uu="../../"
 alias uuu="../../../"
+alias :q="exit"
 
 # grep デフォルトオプションの設定
 export GREP_OPTIONS
