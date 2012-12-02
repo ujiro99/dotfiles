@@ -144,17 +144,6 @@ nmap <Space>c :Kwbd<CR>zz
 
 
 "---------------------------------------------
-" minibufexpl関連
-"---------------------------------------------
-"let g:miniBufExplMapWindowNavVim=1   "hjklで移動
-"let g:miniBufExplSplitBelow=1  " Put new window below
-"let g:miniBufExplMapWindowNavArrows=1
-"let g:miniBufExplMapCTabSwitchBufs=1
-"let g:miniBufExplModSelTarget=1
-"let g:miniBufExplSplitToEdge=1
-
-
-"---------------------------------------------
 " 日本語入力関連
 "---------------------------------------------
 " 日本語入力をリセット
