@@ -28,18 +28,17 @@ NeoBundle 'https://github.com/thinca/vim-quickrun.git'
 NeoBundle 'https://github.com/thinca/vim-ref.git'
 NeoBundle 'https://github.com/tpope/vim-fugitive.git'
 NeoBundle 'https://github.com/tpope/vim-rvm.git'
+NeoBundle 'https://github.com/tpope/vim-rails.git'
 NeoBundle 'https://github.com/tsukkee/unite-tag.git'
 NeoBundle 'https://github.com/ujiro99/my_color_scheme.git'
 NeoBundle 'https://github.com/vim-ruby/vim-ruby.git'
 NeoBundle 'https://github.com/vim-scripts/eregex.vim.git'
 NeoBundle 'https://github.com/vim-scripts/gtags.vim.git'
 NeoBundle 'https://github.com/vim-scripts/grep.vim.git'
-NeoBundle 'https://github.com/vim-scripts/rails.vim.git'
 NeoBundle 'https://github.com/vim-scripts/surround.vim.git'
 NeoBundle 'https://github.com/vim-scripts/tagexplorer.vim.git'
 
 filetype plugin indent on     " required!
-
 
 "---------------------------------------------
 " 設定ファイルの読込
@@ -170,7 +169,7 @@ if has("win32") || has("win64")
 elseif has("win32unix")
     let g:vimproc_dll_path = $HOME.'/vimfiles/autoload/proc_cygwin.dll'
 else
-    let g:vimproc_dll_path = $HOME.'/.vim/autoload/proc.so'
+    let g:vimproc_dll_path = $HOME.'/.vim/bundle/vimproc/autoload/vimproc_mac.so'
 endif
 
 
@@ -262,7 +261,7 @@ nnoremap <F5> :QuickRun<CR>
 " vim-rvm 関連
 "---------------------------------------------
 " 新しいBufferでRvmで設定した環境を使う
-autocmd BufEnter * Rvm
+" autocmd BufEnter * Rvm
 
 
 "---------------------------------------------
