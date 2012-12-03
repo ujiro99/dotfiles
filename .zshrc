@@ -48,7 +48,7 @@ esac
 
 
 # PATH setting
-PATH=${PATH}:${HOME}/bin:/usr/local/bin
+PATH=${HOME}/bin:/usr/local/bin:${PATH}
 PATH=${PATH}:/Applications/Xcode.app/Contents/Developer/usr/bin
 
 # rvmへのパスを通す
@@ -143,6 +143,7 @@ case "${OSTYPE}" in
 freebsd*|darwin*)
     alias ls="ls -G -w"
     alias vim="/Applications/MacVim.app/Contents/MacOS/Vim"
+    alias vi="/Applications/MacVim.app/Contents/MacOS/Vim"
     alias dt="dotcloud"
     ;;
 linux*)
@@ -166,7 +167,7 @@ cygwin*)
 esac
 
 alias where="command -v"
-alias sc="/usr/local/bin/screen"
+alias sc="screen -r"
 alias c="cd"
 alias l="ls -a"
 alias la="ls -a"
@@ -182,6 +183,7 @@ alias grep="grep -in"
 alias u="../"
 alias uu="../../"
 alias uuu="../../../"
+alias :q="exit"
 
 # grep デフォルトオプションの設定
 export GREP_OPTIONS

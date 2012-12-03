@@ -15,23 +15,28 @@ else
 endif
 
 if has('gui_running')
-    NeoBundle 'https://github.com/Shougo/unite.vim.git'
-    NeoBundle 'https://github.com/tsukkee/unite-tag.git'
-    NeoBundle 'https://github.com/vim-ruby/vim-ruby.git'
-    NeoBundle 'https://github.com/vim-scripts/tagexplorer.vim.git'
-    NeoBundle 'https://github.com/vim-scripts/eregex.vim.git'
-    NeoBundle 'https://github.com/vim-scripts/rails.vim.git'
+    NeoBundle 'https://github.com/vim-scripts/Align.git'
 endif
-NeoBundle 'https://github.com/vim-scripts/Align.vim.git'
-NeoBundle 'https://github.com/vim-scripts/surround.vim.git'
-NeoBundle 'https://github.com/vim-scripts/gtags.vim.git'
-NeoBundle 'https://github.com/tpope/vim-fugitive.git'
-NeoBundle 'https://github.com/ujiro99/my_color_scheme.git'
+
 NeoBundle 'https://github.com/banyan/recognize_charcode.vim.git'
 NeoBundle 'https://github.com/Shougo/neobundle.vim.git'
+NeoBundle 'https://github.com/Shougo/neocomplcache.git'
+NeoBundle 'https://github.com/Shougo/unite.vim.git'
+NeoBundle 'https://github.com/Shougo/vimfiler.git'
 NeoBundle 'https://github.com/Shougo/vimproc.git'
+NeoBundle 'https://github.com/thinca/vim-quickrun.git'
+NeoBundle 'https://github.com/thinca/vim-ref.git'
 NeoBundle 'https://github.com/tpope/vim-fugitive.git'
-NeoBundle 'https://github.com/vim-scripts/AutoComplPop.git'
+NeoBundle 'https://github.com/tpope/vim-rvm.git'
+NeoBundle 'https://github.com/tsukkee/unite-tag.git'
+NeoBundle 'https://github.com/ujiro99/my_color_scheme.git'
+NeoBundle 'https://github.com/vim-ruby/vim-ruby.git'
+NeoBundle 'https://github.com/vim-scripts/eregex.vim.git'
+NeoBundle 'https://github.com/vim-scripts/gtags.vim.git'
+NeoBundle 'https://github.com/vim-scripts/grep.vim.git'
+NeoBundle 'https://github.com/vim-scripts/rails.vim.git'
+NeoBundle 'https://github.com/vim-scripts/surround.vim.git'
+NeoBundle 'https://github.com/vim-scripts/tagexplorer.vim.git'
 
 filetype plugin indent on     " required!
 
@@ -49,10 +54,11 @@ source $HOME/dotfiles/.vimrc.tags
 source $HOME/dotfiles/.vimrc.colors
 " エンコーディング関連
 source $HOME/dotfiles/.vimrc.encoding
+" 移動関連
+source $HOME/dotfiles/.vimrc.moving
+" 検索関連
+source $HOME/dotfiles/.vimrc.search
 
-
-" インクリメンタルサーチを行う
-set incsearch
 
 " 左右のカーソル移動で行間移動可能にする。
 set whichwrap=b,s,<,>,[,]
@@ -90,16 +96,6 @@ set hidden
 " 矩形選択で行末を超えてブロックを選択できるようにする
 set virtualedit+=block
 
-" 検索時に大文字小文字無視
-set ignorecase
-
-" 検索時に大文字が指定された時だけ大文字無視しない
-set smartcase
-
-
-" ヘルプファイルの参照
-nnoremap <Space>h :<C-u>help<Space>
-
 " vimrcを編集する
 nnoremap <Space>. :<C-u>edit $HOME/dotfiles/_vimrc<CR>
 
@@ -117,31 +113,8 @@ nnoremap o oX<C-h>
 nnoremap O OX<C-h>
 inoremap <CR> <CR>X<C-h>
 
-" 見た目で行移動
-nnoremap j gjzz
-nnoremap k gkzz
-
-" マッチ文字列が画面の真ん中にくるようにする
-nmap n nzz
-nmap N Nzz
-nmap * *zz
-nmap # #zz
-nmap g* g*zz
-nmap g# g#zz
-
 " もう一度やる
 nnoremap U <C-r>
-
-" QuickFixの移動
-nnoremap <C-p> :cp <CR>
-nnoremap <C-n> :cn <CR>
-
-" 行末へ移動
-noremap - $
-
-" 対応する括弧に移動
-nnoremap [ %
-nnoremap ] %
 
 " ckfixウィンドウではq/ESCで閉じる
 autocmd FileType qf nnoremap <buffer> q :ccl<CR>
@@ -159,15 +132,15 @@ function! s:toggle_qf_window()
 endfunction
 nnoremap <silent> cw :call <SID>toggle_qf_window()<CR>
 
+
 "---------------------------------------------
 " バッファ操作関連
 "---------------------------------------------
-nmap <C-h>    :bp<CR>zz
-nmap <C-l>    :bn<CR>zz
 nmap <Space>b :ls<CR>:buffer
 nmap <Space>v :vsplit<CR><C-w><C-w>:ls<CR>:buffer
 nmap <Space>V :Vexplore!<CR><CR>
 nmap <Space>d :bd<CR>zz
+nmap <Space>D :bd!<CR>
 nmap <Space>c :Kwbd<CR>zz
 
 
@@ -202,6 +175,104 @@ endif
 
 
 "---------------------------------------------
+" Unite.vim関連
+"---------------------------------------------
+" 入力モードで開始する
+let g:unite_enable_start_insert=1
+" バッファ一覧
+nnoremap <silent> ,b :<C-u>Unite buffer<CR>
+" ファイル一覧
+nnoremap <silent> ,f :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
+" レジスタ一覧
+nnoremap <silent> ,r :<C-u>Unite -buffer-name=register register<CR>
+" 最近使用したファイル一覧
+nnoremap <silent> ,m :<C-u>Unite file_mru<CR>
+" 常用セット
+nnoremap <silent> ,u :<C-u>Unite buffer file_mru<CR>
+" 全部乗せ
+nnoremap <silent> ,a :<C-u>UniteWithBufferDir -buffer-name=files buffer file_mru bookmark file<CR>
+
+" ウィンドウを分割して開く
+au FileType unite nnoremap <silent> <buffer> <expr> <C-j> unite#do_action('split')
+au FileType unite inoremap <silent> <buffer> <expr> <C-j> unite#do_action('split')
+" ウィンドウを縦に分割して開く
+au FileType unite nnoremap <silent> <buffer> <expr> <C-l> unite#do_action('vsplit')
+au FileType unite inoremap <silent> <buffer> <expr> <C-l> unite#do_action('vsplit')
+" ESCキーを2回押すと終了する
+au FileType unite nnoremap <silent> <buffer> <ESC><ESC> q
+au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>q
+
+
+"---------------------------------------------
+" VimFiler関連
+"--------------------------------------------
+nnoremap <Space>f :VimFiler -buffer-name=explorer -split -winwidth=45 -toggle -no-quit<Cr>
+autocmd! FileType vimfiler call g:my_vimfiler_settings()
+function! g:my_vimfiler_settings()
+  nmap     <buffer><expr><Cr> vimfiler#smart_cursor_map("\<Plug>(vimfiler_expand_tree)", "\<Plug>(vimfiler_edit_file)")
+  nnoremap <buffer>s          :call vimfiler#mappings#do_action('my_split')<Cr>
+  nnoremap <buffer>v          :call vimfiler#mappings#do_action('my_vsplit')<Cr>
+endfunction
+
+let my_action = { 'is_selectable' : 1 }
+function! my_action.func(candidates)
+  wincmd p
+  exec 'split '. a:candidates[0].action__path
+endfunction
+call unite#custom_action('file', 'my_split', my_action)
+
+let my_action = { 'is_selectable' : 1 }
+function! my_action.func(candidates)
+  wincmd p
+  exec 'vsplit '. a:candidates[0].action__path
+endfunction
+call unite#custom_action('file', 'my_vsplit', my_action)
+
+
+"---------------------------------------------
+" ref.vim関連
+"---------------------------------------------
+" ruby
+let g:ref_open         = 'split'
+let g:ref_refe_cmd     = "rurema"
+let g:ref_refe_version = 2
+nnoremap <Space>r :<C-U>Ref refe<Space>
+
+
+"---------------------------------------------
+" Fugitive 関連
+"---------------------------------------------
+nnoremap <Space>gd :<C-u>Gdiff<Enter>
+nnoremap <Space>gs :<C-u>Gstatus<Enter>
+nnoremap <Space>gl :<C-u>Glog<Enter>
+nnoremap <Space>ga :<C-u>Gwrite<Enter>
+nnoremap <Space>gc :<C-u>Gcommit<Enter>
+nnoremap <Space>gC :<C-u>Git commit --amend<Enter>
+nnoremap <Space>gb :<C-u>Gblame<Enter>
+
+
+"---------------------------------------------
+" QuickRun 関連
+"---------------------------------------------
+" 現在のバッファを実行
+nnoremap <F5> :QuickRun<CR>
+
+
+"---------------------------------------------
+" vim-rvm 関連
+"---------------------------------------------
+" 新しいBufferでRvmで設定した環境を使う
+autocmd BufEnter * Rvm
+
+
+"---------------------------------------------
+" Align 関連
+"---------------------------------------------
+" utf8を使うときに必要らしい
+let g:Align_xstrlen=3
+
+
+"---------------------------------------------
 " 独自コマンド
 "---------------------------------------------
 " vimrcのリロード
@@ -210,7 +281,7 @@ command! ReloadVimrc  source $MYVIMRC
 command! Kwbd let kwbd_bn= bufnr("%")|enew|exe "bdel ".kwbd_bn|unlet kwbd_bn
 " デスクトップへ移動
 if has("win32") || has("win64") || has("win32unix")
-   command! Cdd :cd C:\Users\flower99.MSE-NTTD\Desktop\
+   command! Cdd :cd %USERPROFILE%\Desktop\
 endif
 
 
@@ -218,3 +289,4 @@ endif
 autocmd BufWritePre * :%s/\s\+$//ge
 " 保存時にtabをスペースに変換する
 autocmd BufWritePre * :%s/\t/  /ge
+

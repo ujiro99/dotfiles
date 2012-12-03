@@ -14,13 +14,9 @@ cnoremap <Up>  <C-p>
 cnoremap <C-n> <Down>
 cnoremap <Down>  <C-n>
 
-" 補完にneocomplcacheを使う Windowsだと重いから使わない
-"source $HOME/dotfiles/.vimrc.completion.neocomplcache
+" 補完にneocomplcacheを使う
+source $HOME/dotfiles/.vimrc.completion.neocomplcache
 
 " 補完にAutoComplPopを使う
-source $HOME/dotfiles/.vimrc.completion.autocomplpop
+"source $HOME/dotfiles/.vimrc.completion.autocomplpop
 
-
-"-------------------------------------------------------------
-"https://github.com/yuroyoro/dotfiles/blob/master/.vimrc.completion
-"-------------------------------------------------------------
