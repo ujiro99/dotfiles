@@ -1,5 +1,5 @@
 pw = pwd $*
-l  = ls -a $*
+l  = dir $*
 a  = adb $*
 ad = adb devices
 al = adb logcat $*
