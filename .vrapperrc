@@ -18,8 +18,8 @@ set imdisable
 noremap - $
 
 " 対応する括弧に移動
-nnoremap [ %
-nnoremap ] %
+noremap [ %
+noremap ] %
 
 " 見た目で行移動, 画面の真ん中にくるようにする
 nnoremap j jzz
@@ -38,6 +38,13 @@ nnoremap U :redo<CR>
 
 " tab
 nnoremap gr gT
+
+" ビジュアルモード時-で行末まで選択
+vnoremap - $h
+
+" insert mode でjjでesc
+inoremap jj <Esc>
+
 
 "srで参照をプロジェクトから検索
 eclipseaction SearchRef  org.eclipse.jdt.ui.edit.text.java.search.references.in.project
