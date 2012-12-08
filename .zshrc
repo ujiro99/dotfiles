@@ -144,6 +144,8 @@ freebsd*|darwin*)
     alias ls="ls -G -w"
     alias vim="/Applications/MacVim.app/Contents/MacOS/Vim"
     alias vi="/Applications/MacVim.app/Contents/MacOS/Vim"
+    alias vl="/Applications/VLC.app/Contents/MacOS/VLC --intf=rc"
+    alias mp="mplayer"
     alias dt="dotcloud"
     ;;
 linux*)
@@ -151,14 +153,12 @@ linux*)
     ;;
 cygwin*)
     alias ls="ls --color"
-    alias cdd="cd ~/デスクトップ"
+    alias cdd="cd ~/Desktop/"
     alias cd/="cd /cygdrive/c/"
     alias fk="taskkill /f /im"
     alias a="adb"
     alias ad="adb devices"
-    alias alog="adb logcat"
-    alias alogt="adb logcat -v time"
-    alias alogc="adb logcat -c"
+    alias al="adb logcat -v time"
     alias tcpdump="windump"
     alias apt="apt-cyg -m ftp://ftp.iij.ad.jp/pub/cygwin/"
     alias st="cygstart"
@@ -167,7 +167,6 @@ cygwin*)
 esac
 
 alias where="command -v"
-alias sc="screen -r"
 alias c="cd"
 alias l="ls -a"
 alias la="ls -a"
@@ -176,6 +175,7 @@ alias ll="ls -l"
 alias du="du -h"
 alias df="df -h"
 alias su="su -l"
+alias sc="screen"
 alias pw="pwd"
 alias g="git"
 alias gst="git st -s -b && git stash list"
@@ -239,18 +239,18 @@ bindkey -s '^z' '^[q %vi^m'
 
 
 # cd履歴のジャンプ
-#_Z_CMD=j
-#if [ -f ${HOME}/.zsh/z/z.sh ]; then
-#    source  ${HOME}/.zsh/z/z.sh
-#    precmd() {
-#      _z --add "$(pwd -P)"
-#    }
-#fi
+_Z_CMD=j
+if [ -f ${HOME}/.zsh/z/z.sh ]; then
+    source  ${HOME}/.zsh/z/z.sh
+    precmd() {
+      _z --add "$(pwd -P)"
+    }
+fi
 
 # cd履歴のジャンプ
-if [ -f `brew --prefix`/etc/autojump ]; then
-  . `brew --prefix`/etc/autojump
-fi
+#if [ -f `brew --prefix`/etc/autojump ]; then
+#  . `brew --prefix`/etc/autojump
+#fi
 
 # コマンドの自動補完
 # Cygwinだと遅いから使わない
