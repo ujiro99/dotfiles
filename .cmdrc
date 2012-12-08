@@ -1,8 +1,8 @@
 pw = pwd $*
-l  = ls -a $*
+l  = dir $*
 a  = adb $*
 ad = adb devices
-al = adb log $*
+al = adb logcat $*
 as = adb shell $*
 c  = cd $*
 ch = cd %userprofile%

@@ -15,7 +15,7 @@ nnoremap j jzz
 nnoremap k kzz
 
 " もう一度やる
-nnoremap U <C-y> 
+nnoremap U <C-y>
 
 " 行末へ移動
 nnoremap - $
@@ -32,3 +32,8 @@ nmap # #zz
 nmap g* g*zz
 nmap g# g#zz
 
+" ビジュアルモード時-で行末まで選択
+vnoremap - $h
+
+" insert mode でjjでesc
+inoremap jj <Esc>

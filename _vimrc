@@ -281,7 +281,7 @@ command! ReloadVimrc  source $MYVIMRC
 command! Kwbd let kwbd_bn= bufnr("%")|enew|exe "bdel ".kwbd_bn|unlet kwbd_bn
 " デスクトップへ移動
 if has("win32") || has("win64") || has("win32unix")
-   command! Cdd :cd %USERPROFILE%\Desktop\
+   command! Cdd :cd $HOME\Desktop\
 endif
 
 

@@ -20,6 +20,9 @@ inoremap <C-k> <Up>
 inoremap <C-h> <Left>
 inoremap <C-l> <Right>
 
+" insert mode でjjでesc
+inoremap jj <Esc>
+
 " spaceで次のbufferへ。back-spaceで前のbufferへ
 nmap <Space><Space> :bn<CR>zz
 nmap <BS><BS> :bp<CR>zz
@@ -108,5 +111,3 @@ function! s:do_git_diff_aware_gf(command)
   endif
 endfunction
 
-" insert mode でjjでesc
-inoremap jj <Esc>
