@@ -146,6 +146,7 @@ freebsd*|darwin*)
     alias vim="/Applications/MacVim.app/Contents/MacOS/Vim"
     alias vi="/Applications/MacVim.app/Contents/MacOS/Vim"
     alias vl="/Applications/VLC.app/Contents/MacOS/VLC --intf=rc"
+    alias less="/Applications/MacVim.app/Contents/Resources/vim/runtime/macros/less.sh"
     alias mp="mplayer"
     alias dt="dotcloud"
     ;;
@@ -220,8 +221,8 @@ esac
 
 
 # Less Color Syntax with source-highlight
-export LESS='-R'
-export LESSOPEN='| /usr/local/bin/src-hilite-lesspipe.sh %s'
+# export LESS='-R'
+# export LESSOPEN='| /usr/local/bin/src-hilite-lesspipe.sh %s'
 
 
 # set terminal title including current directory
