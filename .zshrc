@@ -240,12 +240,15 @@ bindkey -s '^z' '^[q %vi^m'
 
 # cd履歴のジャンプ
 _Z_CMD=j
+_Z_DATA=${HOME}/.zsh/z/.z
 if [ -f ${HOME}/.zsh/z/z.sh ]; then
     source  ${HOME}/.zsh/z/z.sh
     precmd() {
       _z --add "$(pwd -P)"
     }
 fi
+
+
 
 # cd履歴のジャンプ
 #if [ -f `brew --prefix`/etc/autojump ]; then
