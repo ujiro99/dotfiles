@@ -142,6 +142,7 @@ setopt complete_aliases     # aliased ls needs if file/dir completions work
 case "${OSTYPE}" in
 freebsd*|darwin*)
     alias ls="ls -G -w"
+    alias ll="ls -lh"
     alias vim="/Applications/MacVim.app/Contents/MacOS/Vim"
     alias vi="/Applications/MacVim.app/Contents/MacOS/Vim"
     alias vl="/Applications/VLC.app/Contents/MacOS/VLC --intf=rc"
@@ -171,7 +172,6 @@ alias c="cd"
 alias l="ls -a"
 alias la="ls -a"
 alias lf="ls -F"
-alias ll="ls -l"
 alias du="du -h"
 alias df="df -h"
 alias su="su -l"
