@@ -250,7 +250,6 @@ if [ -f ${HOME}/.zsh/z/z.sh ]; then
 fi
 
 
-
 # cd履歴のジャンプ
 #if [ -f `brew --prefix`/etc/autojump ]; then
 #  . `brew --prefix`/etc/autojump
@@ -266,3 +265,4 @@ fi
 #    zle -N zle-line-init
 #    zstyle ':completion:*' completer _oldlist _complete
 #fi
+
