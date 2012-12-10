@@ -17,8 +17,8 @@ endif
 if has('gui_running')
     NeoBundle 'https://github.com/vim-scripts/Align.git'
 endif
-
 NeoBundle 'https://github.com/banyan/recognize_charcode.vim.git'
+NeoBundle 'https://github.com/mattn/zencoding-vim.git'
 NeoBundle 'https://github.com/Shougo/neobundle.vim.git'
 NeoBundle 'https://github.com/Shougo/neocomplcache.git'
 NeoBundle 'https://github.com/Shougo/neosnippet.git'
@@ -206,7 +206,7 @@ au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>q
 "---------------------------------------------
 " VimFiler関連
 "--------------------------------------------
-nnoremap <Space>f :VimFiler -buffer-name=explorer -split -winwidth=45 -toggle -no-quit<Cr>
+nnoremap <Space>f :VimFiler -buffer-name=explorer -split -winwidth=45 -toggle<Cr>.
 autocmd! FileType vimfiler call g:my_vimfiler_settings()
 function! g:my_vimfiler_settings()
   nmap     <buffer><expr><Cr> vimfiler#smart_cursor_map("\<Plug>(vimfiler_expand_tree)", "\<Plug>(vimfiler_edit_file)")
