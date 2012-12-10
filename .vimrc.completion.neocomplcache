@@ -47,11 +47,7 @@ endif
 let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
 
 " ユーザー定義スニペット保存ディレクトリ
-let g:neocomplcache_snippets_dir = $HOME.'/.vim/snippets'
-
-" スニペット
-imap <C-y> <Plug>(neocomplcache_snippets_expand)
-smap <C-k> <Plug>(neocomplcache_snippets_expand)
+let g:neosnippet#snippets_directory = $HOME.'/.vim/snippets'
 
 " 補完を選択しpopupを閉じる
 " inoremap <expr><C-y> neocomplcache#close_popup()
@@ -65,8 +61,6 @@ inoremap <expr><C-g>     neocomplcache#undo_completion()
 inoremap <expr><C-s> neocomplcache#complete_common_string()
 " SuperTab like snippets behavior.
 imap <expr><TAB> neocomplcache#sources#snippets_complete#expandable() ? "\<Plug>(neocomplcache_snippets_expand)" : pumvisible() ? "\<C-n>" : "\<TAB>"
-" C-kを押すと行末まで削除
-" inoremap <C-k> <C-o>D
 " C-nでneocomplcache補完
 inoremap <expr><C-n>  pumvisible() ? "\<C-n>" : "\<C-x>\<C-u>\<C-p>"
 " C-pでkeyword補完
@@ -141,3 +135,20 @@ let g:rsenseUseOmniFunc = 1
 let g:rsenseHome = expand('~/src/rsense-0.3')
 
 let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
+
+
+"---------------------------------------------
+" NeoSnippet key-mappings.
+"---------------------------------------------
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+
+" SuperTab like snippets behavior.
+imap <expr><TAB> neosnippet#expandable() ? "\<Plug>(neosnippet_expand_or_jump)" : pumvisible() ? "\<C-n>" : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+
+" For snippet_complete marker.
+if has('conceal')
+  set conceallevel=2 concealcursor=i
+endif
+
