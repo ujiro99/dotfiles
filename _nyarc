@@ -44,6 +44,7 @@ if /%OS%/ == /Windows_NT/ then
     alias    pw      pwd
     alias    st      start
     alias    vi      ""C:\Program Files\vim73-kaoriya-win32\vim.exe""
+    alias    s       svn
     suffix   vbs     cscript  //nologo
     suffix   js      cscript  //nologo
 endif
