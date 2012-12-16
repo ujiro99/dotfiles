@@ -206,7 +206,7 @@ au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>q
 "---------------------------------------------
 " VimFiler関連
 "--------------------------------------------
-nnoremap <Space>f :VimFiler -buffer-name=explorer -split -winwidth=45 -toggle<Cr>.
+nnoremap <Space>f :VimFiler -buffer-name=explorer -split -winwidth=45 -toggle -no-quit<Cr>
 autocmd! FileType vimfiler call g:my_vimfiler_settings()
 function! g:my_vimfiler_settings()
   nmap     <buffer><expr><Cr> vimfiler#smart_cursor_map("\<Plug>(vimfiler_expand_tree)", "\<Plug>(vimfiler_edit_file)")
