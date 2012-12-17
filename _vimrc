@@ -277,7 +277,7 @@ let g:Align_xstrlen=3
 " 補完を有効化
 let g:use_zen_complete_tag = 1
 " キーマップを変更する
-"let g:user_zen_leader_key = '<c-y>'
+let g:user_zen_leader_key = '<C-e>'
 " インデントは半角スペース4個
 let g:user_zen_settings = {
              \'indentation' : '    ',
