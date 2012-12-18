@@ -17,7 +17,9 @@ endif
 if has('gui_running')
     NeoBundle 'https://github.com/vim-scripts/Align.git'
 endif
+
 NeoBundle 'https://github.com/banyan/recognize_charcode.vim.git'
+NeoBundle 'https://github.com/glidenote/memolist.vim.git'
 NeoBundle 'https://github.com/mattn/zencoding-vim.git'
 NeoBundle 'https://github.com/Shougo/neobundle.vim.git'
 NeoBundle 'https://github.com/Shougo/neocomplcache.git'
@@ -190,6 +192,9 @@ nnoremap <silent> ,m :<C-u>Unite file_mru<CR>
 nnoremap <silent> ,u :<C-u>Unite buffer file_mru<CR>
 " 全部乗せ
 nnoremap <silent> ,a :<C-u>UniteWithBufferDir -buffer-name=files buffer file_mru bookmark file<CR>
+" memolist
+nnoremap <silent> ,l :Unite file:<C-r>=g:memolist_path."/"<CR><CR>
+
 
 " ウィンドウを分割して開く
 au FileType unite nnoremap <silent> <buffer> <expr> <C-j> unite#do_action('split')
@@ -292,6 +297,17 @@ let g:user_zen_settings = {
 let g:surround_45 = "<% \r %>"
 " =
 let g:surround_61 = "<%= \r %>"
+
+
+"---------------------------------------------
+" memolist 関連
+"---------------------------------------------
+map ,mn  :MemoNew<CR>
+map ,ml  :MemoList<CR>
+map ,mg  :MemoGrep<CR>
+let g:memolist_memo_date         = "%Y%m%d %H:%M"
+let g:memolist_memo_suffix       = "markdown"
+let g:memolist_template_dir_path = "$HOME/.vim/template/memolist"
 
 
 "---------------------------------------------
