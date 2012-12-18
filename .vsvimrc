@@ -35,5 +35,6 @@ nmap g# g#zz
 " ビジュアルモード時-で行末まで選択
 vnoremap - $h
 
-" insert mode でjjでesc
+" insert mode でesc
 inoremap jj <Esc>
+inoremap ii <Esc>

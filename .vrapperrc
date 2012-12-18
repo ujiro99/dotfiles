@@ -33,6 +33,7 @@ nnoremap # #zz
 nnoremap g* g*zz
 nnoremap g# g#zz
 
+" やり直し
 nnoremap u :undo<CR>
 nnoremap U :redo<CR>
 
@@ -42,9 +43,9 @@ nnoremap gr gT
 " ビジュアルモード時-で行末まで選択
 vnoremap - $h
 
-" insert mode でjjでesc
+" insert mode でesc
 inoremap jj <Esc>
-
+inoremap ii <Esc>
 
 "srで参照をプロジェクトから検索
 eclipseaction SearchRef  org.eclipse.jdt.ui.edit.text.java.search.references.in.project
