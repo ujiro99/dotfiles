@@ -181,19 +181,19 @@ endif
 " 入力モードで開始する
 let g:unite_enable_start_insert=1
 " バッファ一覧
-nnoremap <silent> ,b :<C-u>Unite buffer<CR>
+nnoremap <silent> ;b :<C-u>Unite buffer<CR>
 " ファイル一覧
-nnoremap <silent> ,f :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
+nnoremap <silent> ;f :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
 " レジスタ一覧
-nnoremap <silent> ,r :<C-u>Unite -buffer-name=register register<CR>
+nnoremap <silent> ;r :<C-u>Unite -buffer-name=register register<CR>
 " 最近使用したファイル一覧
-nnoremap <silent> ,m :<C-u>Unite file_mru<CR>
+nnoremap <silent> ;m :<C-u>Unite file_mru<CR>
 " 常用セット
-nnoremap <silent> ,u :<C-u>Unite buffer file_mru<CR>
+nnoremap <silent> ;u :<C-u>Unite buffer file_mru<CR>
 " 全部乗せ
-nnoremap <silent> ,a :<C-u>UniteWithBufferDir -buffer-name=files buffer file_mru bookmark file<CR>
+nnoremap <silent> ;a :<C-u>UniteWithBufferDir -buffer-name=files buffer file_mru bookmark file<CR>
 " memolist
-nnoremap <silent> ,l :Unite file:<C-r>=g:memolist_path."/"<CR><CR>
+nnoremap <silent> ;l :Unite file:<C-r>=g:memolist_path."/"<CR><CR>
 
 
 " ウィンドウを分割して開く
