@@ -280,9 +280,11 @@ map ,mn  :MemoNew<CR>
 map ,ml  :MemoList<CR>
 map ,mg  :MemoGrep<CR>
 let g:memolist_memo_date         = "%Y%m%d %H:%M"
-let g:memolist_memo_suffix       = "markdown"
+let g:memolist_memo_suffix       = "md"
 let g:memolist_template_dir_path = "$HOME/.vim/template/memolist"
-
+if has("win32") || has("win64") || has("win32unix")
+    let g:memolist_path = "$HOME/GoogleDrive/memo"
+endif
 
 "---------------------------------------------
 " 独自コマンド
