@@ -21,6 +21,9 @@
 #    - そのユーザで定義する設定は (2) へ
 # 配置してください.
 
+# 非公開の設定
+source ~/_nya.local
+
 if /%OS%/ == /Windows_NT/ then
     alias    kill    taskkill /f /pid
     alias    fk      taskkill /f /im
