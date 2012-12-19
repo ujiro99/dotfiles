@@ -4,8 +4,8 @@
 
 " カーソルを表示行で移動する。論理行移動は<C-n>,<C-p>
 nnoremap h <Left>
-nnoremap j gj
-nnoremap k gk
+nnoremap j gjzz
+nnoremap k gkzz
 nnoremap l <Right>
 nnoremap <Down> gj
 nnoremap <Up>   gk
@@ -49,10 +49,6 @@ noremap - $
 nnoremap [ %
 nnoremap ] %
 
-" 見た目で行移動
-nnoremap j gjzz
-nnoremap k gkzz
-
 " マッチ文字列が画面の真ん中にくるようにする
 nmap n nzz
 nmap N Nzz
@@ -72,8 +68,8 @@ nnoremap vy vawy
 " 矩形選択で自由に移動する
 set virtualedit+=block
 
-"ビジュアルモード時vで行末まで選択
-vnoremap v $h
+"ビジュアルモード時-で行末まで選択
+vnoremap - $h
 
 " CTRL-hjklでウィンドウ移動
 nnoremap <C-j> <C-w>j
