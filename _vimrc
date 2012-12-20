@@ -296,15 +296,23 @@ command! ReloadVimrc  source $MYVIMRC
 command! Kwbd let kwbd_bn= bufnr("%")|enew|exe "bdel ".kwbd_bn|unlet kwbd_bn
 " デスクトップへ移動
 if has("win32") || has("win64") || has("win32unix")
-   command! Cdd :cd $HOME\Desktop\
+    command! Cdd :cd $HOME\Desktop\
 endif
 
 
+"---------------------------------------------
+" function
+"---------------------------------------------
+
+function! s:format_space()
+    if &ft != 'markdown'
+        :%s/\s\+$//ge  " 行末の空白を除去する
+        :%s/\t/  /ge   " tabをスペースに変換する
+    endif
+endfunction
+
 augroup format_space
   autocmd!
-  " 保存時に行末の空白を除去する
-  autocmd BufWritePre * :%s/\s\+$//ge
-  " 保存時にtabをスペースに変換する
-  autocmd BufWritePre * :%s/\t/  /ge
+  autocmd BufWritePre * call <SID>format_space()
 augroup END
 
