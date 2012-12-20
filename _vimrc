@@ -19,7 +19,6 @@ if has('gui_running')
 endif
 
 NeoBundle 'https://github.com/banyan/recognize_charcode.vim.git'
-NeoBundle 'https://github.com/glidenote/memolist.vim.git'
 NeoBundle 'https://github.com/mattn/zencoding-vim.git'
 NeoBundle 'https://github.com/Shougo/neobundle.vim.git'
 NeoBundle 'https://github.com/Shougo/neocomplcache.git'
@@ -31,8 +30,10 @@ NeoBundle 'https://github.com/thinca/vim-ref.git'
 NeoBundle 'https://github.com/tpope/vim-fugitive.git'
 NeoBundle 'https://github.com/tpope/vim-rvm.git'
 NeoBundle 'https://github.com/tpope/vim-rails.git'
+NeoBundle 'https://github.com/tyru/open-browser.vim.git'
 NeoBundle 'https://github.com/tsukkee/unite-tag.git'
 NeoBundle 'https://github.com/ujiro99/my_color_scheme.git'
+NeoBundle 'https://github.com/ujiro99/memolist.vim.git'
 NeoBundle 'https://github.com/vim-ruby/vim-ruby.git'
 NeoBundle 'https://github.com/vim-scripts/eregex.vim.git'
 NeoBundle 'https://github.com/vim-scripts/gtags.vim.git'
@@ -234,7 +235,10 @@ nnoremap <Space>gb :<C-u>Gblame<Enter>
 "---------------------------------------------
 " 現在のバッファを実行
 nnoremap <F5> :QuickRun<CR>
-
+let g:quickrun_config = {}
+let g:quickrun_config['markdown'] = {
+      \ 'outputter': 'browser'
+      \ }
 
 "---------------------------------------------
 " vim-rvm 関連
@@ -283,9 +287,6 @@ let g:memolist_memo_date         = "%Y%m%d %H:%M"
 let g:memolist_memo_suffix       = "markdown"
 if has("win32") || has("win64") || has("win32unix")
     let g:memolist_path = "$HOME/GoogleDrive/memo"
-    let g:memolist_template_dir_path = "$HOME/vimfiles/template/memolist"
-else
-    let g:memolist_template_dir_path = "$HOME/.vim/template/memolist"
 endif
 
 
