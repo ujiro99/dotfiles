@@ -236,11 +236,12 @@ let g:quickrun_config['markdown'] = {
       \ 'outputter': 'browser'
       \ }
 
+
 "---------------------------------------------
 " vim-rvm 関連
 "---------------------------------------------
-" 新しいBufferでRvmで設定した環境を使う
-" autocmd BufEnter * Rvm
+" rubyのBufferではRvmで設定した環境を使う
+autocmd FileType ruby :Rvm
 
 
 "---------------------------------------------
