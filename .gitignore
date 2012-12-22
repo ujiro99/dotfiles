@@ -2,10 +2,13 @@
 /vimfiles/lib
 /vimfiles/autoload/
 
-#backupfile
+# backupfile
 *.bak
 
-#tag
+# Mac
+.DS_Store
+
+# tag
 GPATH
 GRTAGS
 GTAGS
