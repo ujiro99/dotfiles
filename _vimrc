@@ -20,7 +20,6 @@ if has('gui_running')
 endif
 
 NeoBundle 'https://github.com/banyan/recognize_charcode.vim.git'
-NeoBundle 'https://github.com/mattn/zencoding-vim.git'
 NeoBundle 'https://github.com/Shougo/neobundle.vim.git'
 NeoBundle 'https://github.com/Shougo/neocomplcache.git'
 NeoBundle 'https://github.com/Shougo/neosnippet.git'
@@ -29,17 +28,20 @@ NeoBundle 'https://github.com/Shougo/vimproc.git'
 NeoBundle 'https://github.com/thinca/vim-quickrun.git'
 NeoBundle 'https://github.com/thinca/vim-ref.git'
 NeoBundle 'https://github.com/tpope/vim-fugitive.git'
-NeoBundle 'https://github.com/tpope/vim-rvm.git'
-NeoBundle 'https://github.com/tpope/vim-rails.git'
-NeoBundle 'https://github.com/tyru/open-browser.vim.git'
 NeoBundle 'https://github.com/tsukkee/unite-tag.git'
 NeoBundle 'https://github.com/ujiro99/memolist.vim.git'
-NeoBundle 'https://github.com/vim-ruby/vim-ruby.git'
 NeoBundle 'https://github.com/vim-scripts/eregex.vim.git'
 NeoBundle 'https://github.com/vim-scripts/gtags.vim.git'
 NeoBundle 'https://github.com/vim-scripts/grep.vim.git'
 NeoBundle 'https://github.com/vim-scripts/surround.vim.git'
 NeoBundle 'https://github.com/vim-scripts/tagexplorer.vim.git'
+
+" FileTypeに応じて読み込む
+NeoBundleLazy 'https://github.com/tyru/open-browser.vim.git'
+NeoBundleLazy 'https://github.com/mattn/zencoding-vim.git'
+NeoBundleLazy 'https://github.com/tpope/vim-rvm.git'
+NeoBundleLazy 'https://github.com/tpope/vim-rails.git'
+NeoBundleLazy 'https://github.com/vim-ruby/vim-ruby.git'
 
 filetype plugin indent on     " required!
 
