@@ -143,7 +143,6 @@ nnoremap <silent> cw :call <SID>toggle_qf_window()<CR>
 "---------------------------------------------
 nmap <Space>b :ls<CR>:buffer
 nmap <Space>v :vsplit<CR><C-w><C-w>:ls<CR>:buffer
-nmap <Space>V :Vexplore!<CR><CR>
 nmap <Space>d :bd<CR>zz
 nmap <Space>D :bd!<CR>
 nmap <Space>k :Kwbd<CR>zz
