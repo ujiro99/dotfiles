@@ -16,6 +16,7 @@ endif
 
 if has('gui_running')
     NeoBundle 'https://github.com/vim-scripts/Align.git'
+    NeoBundle 'https://github.com/ujiro99/my_color_scheme.git'
 endif
 
 NeoBundle 'https://github.com/banyan/recognize_charcode.vim.git'
@@ -32,7 +33,6 @@ NeoBundle 'https://github.com/tpope/vim-rvm.git'
 NeoBundle 'https://github.com/tpope/vim-rails.git'
 NeoBundle 'https://github.com/tyru/open-browser.vim.git'
 NeoBundle 'https://github.com/tsukkee/unite-tag.git'
-NeoBundle 'https://github.com/ujiro99/my_color_scheme.git'
 NeoBundle 'https://github.com/ujiro99/memolist.vim.git'
 NeoBundle 'https://github.com/vim-ruby/vim-ruby.git'
 NeoBundle 'https://github.com/vim-scripts/eregex.vim.git'
@@ -303,7 +303,6 @@ endif
 "---------------------------------------------
 " function
 "---------------------------------------------
-
 function! s:format_space()
     if &ft != 'markdown'
         :%s/\s\+$//ge  " 行末の空白を除去する
