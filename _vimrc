@@ -315,6 +315,8 @@ command! Kwbd let kwbd_bn= bufnr("%")|enew|exe "bdel ".kwbd_bn|unlet kwbd_bn
 if has("win32") || has("win64") || has("win32unix")
     command! Cdd :cd $HOME\Desktop\
 endif
+" 表示中バッファのディレクトリへ移動
+command! -nargs=0 CdCurrent cd %:p:h
 
 
 "---------------------------------------------
