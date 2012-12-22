@@ -36,11 +36,12 @@ NeoBundle 'https://github.com/vim-scripts/grep.vim.git'
 NeoBundle 'https://github.com/vim-scripts/surround.vim.git'
 NeoBundle 'https://github.com/vim-scripts/tagexplorer.vim.git'
 
-" FileTypeに応じて読み込む
-NeoBundleLazy 'https://github.com/tyru/open-browser.vim.git'
+" 後で読み込む
 NeoBundleLazy 'https://github.com/mattn/zencoding-vim.git'
-NeoBundleLazy 'https://github.com/tpope/vim-rvm.git'
 NeoBundleLazy 'https://github.com/tpope/vim-rails.git'
+NeoBundleLazy 'https://github.com/tpope/vim-rvm.git'
+NeoBundleLazy 'https://github.com/tyru/open-browser.vim.git'
+NeoBundleLazy 'https://github.com/vim-jp/vimdoc-ja.git'
 NeoBundleLazy 'https://github.com/vim-ruby/vim-ruby.git'
 
 filetype plugin indent on     " required!
@@ -158,6 +159,21 @@ inoremap <silent> <ESC> <ESC>
 inoremap <silent> <C-[> <ESC>
 " 「日本語入力固定モード」切替キー
 inoremap <silent> <C-j> <C-^>
+
+
+"---------------------------------------------
+" NeoBundle 関連
+"---------------------------------------------
+augroup NeoBundleSource
+    autocmd!
+    autocmd FileType ruby NeoBundleSource
+                \ vim-rvm
+                \ vim-rails
+                \ vim-ruby
+    autocmd FileType {html,css,eruby,markdown} NeoBundleSource
+                \ open-browser.vim
+                \ zencoding-vim
+augroup END
 
 
 "---------------------------------------------
