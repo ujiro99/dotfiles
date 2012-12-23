@@ -30,6 +30,3 @@ nnoremap <silent> mt  :!ctags -R<CR>
 " gnu global
 nnoremap tr :<C-u>GtagsCursor<CR>
 
-"-------------------------------------------------------------
-"https://github.com/yuroyoro/dotfiles/blob/master/.vimrc.tags
-"-------------------------------------------------------------
