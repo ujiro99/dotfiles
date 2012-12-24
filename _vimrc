@@ -249,7 +249,9 @@ nnoremap <Space>gb :<C-u>Gblame<Enter>
 " 現在のバッファを実行
 nnoremap <F5> :QuickRun<CR>
 let g:quickrun_config = {}
-let g:quickrun_config['markdown'] = {
+let g:quickrun_config.markdown = {
+      \ 'hook/enable': 1,
+      \ 'hook/eval/template': "<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">  \n %s" ,
       \ 'outputter': 'browser'
       \ }
 
