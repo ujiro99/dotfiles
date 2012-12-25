@@ -283,7 +283,7 @@ map ,mg  :MemoGrep<CR>
 let g:memolist_memo_date         = "%Y%m%d %H:%M"
 let g:memolist_memo_suffix       = "markdown"
 if has("win32") || has("win64") || has("win32unix")
-    let g:memolist_path = "$HOME/GoogleDrive/memo"
+    let g:memolist_path = "~/GoogleDrive/memo"
 endif
 
 
