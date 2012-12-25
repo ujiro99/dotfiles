@@ -57,3 +57,8 @@ bind ^; copy
 # paste
 bind p paste .
 bind ^p paste .
+
+# paste to clipboard on osx
+bindkey -m ' ' eval 'stuff \040' 'writebuf' 'exec sh -c "/usr/bin/pbcopy < /tmp/screen-exchange"'
+bindkey -m Y   eval 'stuff Y'    'writebuf' 'exec sh -c "/usr/bin/pbcopy < /tmp/screen-exchange"'
+bindkey -m W   eval 'stuff W'    'writebuf' 'exec sh -c "/usr/bin/pbcopy < /tmp/screen-exchange"'

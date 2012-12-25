@@ -51,6 +51,3 @@ map <silent> <C-F2> :if &guioptions =~# 'T' <Bar>
                     \endif<CR>
 set guioptions-=T
 set guioptions-=m
-
-" Explicitly tell vim that the terminal supports 256 colors
-set t_Co=256

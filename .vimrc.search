@@ -6,6 +6,7 @@ set ignorecase " 大文字小文字無視
 set smartcase  " 検索文字列に大文字が含まれている場合は区別して検索する
 set incsearch  " インクリメンタルサーチ
 set hlsearch   " 検索文字をハイライト
+
 "Escの2回押しでハイライト消去
 nmap <ESC><ESC> :nohlsearch<CR><ESC>
 
@@ -20,7 +21,7 @@ nnoremap <expr> s* ':%substitute/\<' . expand('<cword>') . '\>/'
 " Ctrl-iでヘルプ
 nnoremap <C-i>  :<C-u>help<Space>
 " カーソル下のキーワードをヘルプでひく
-nnoremap <C-i><C-i> :<C-u>help<Space><C-r><C-w><Enter>
+nnoremap <C-i><C-i> :<C-u>help<Space><C-r><C-w><Enter>zz
 
 " :Gb <args> でGrepBufferする
 command! -nargs=1 Gb :GrepBuffer <args>

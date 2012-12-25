@@ -16,10 +16,10 @@ endif
 
 if has('gui_running')
     NeoBundle 'https://github.com/vim-scripts/Align.git'
+    NeoBundle 'https://github.com/ujiro99/my_color_scheme.git'
 endif
 
 NeoBundle 'https://github.com/banyan/recognize_charcode.vim.git'
-NeoBundle 'https://github.com/mattn/zencoding-vim.git'
 NeoBundle 'https://github.com/Shougo/neobundle.vim.git'
 NeoBundle 'https://github.com/Shougo/neocomplcache.git'
 NeoBundle 'https://github.com/Shougo/neosnippet.git'
@@ -28,18 +28,21 @@ NeoBundle 'https://github.com/Shougo/vimproc.git'
 NeoBundle 'https://github.com/thinca/vim-quickrun.git'
 NeoBundle 'https://github.com/thinca/vim-ref.git'
 NeoBundle 'https://github.com/tpope/vim-fugitive.git'
-NeoBundle 'https://github.com/tpope/vim-rvm.git'
-NeoBundle 'https://github.com/tpope/vim-rails.git'
-NeoBundle 'https://github.com/tyru/open-browser.vim.git'
 NeoBundle 'https://github.com/tsukkee/unite-tag.git'
-NeoBundle 'https://github.com/ujiro99/my_color_scheme.git'
 NeoBundle 'https://github.com/ujiro99/memolist.vim.git'
-NeoBundle 'https://github.com/vim-ruby/vim-ruby.git'
 NeoBundle 'https://github.com/vim-scripts/eregex.vim.git'
 NeoBundle 'https://github.com/vim-scripts/gtags.vim.git'
 NeoBundle 'https://github.com/vim-scripts/grep.vim.git'
 NeoBundle 'https://github.com/vim-scripts/surround.vim.git'
 NeoBundle 'https://github.com/vim-scripts/tagexplorer.vim.git'
+
+" 後で読み込む
+NeoBundleLazy 'https://github.com/mattn/zencoding-vim.git'
+NeoBundleLazy 'https://github.com/tpope/vim-rails.git'
+NeoBundleLazy 'https://github.com/tpope/vim-rvm.git'
+NeoBundleLazy 'https://github.com/tyru/open-browser.vim.git'
+NeoBundleLazy 'https://github.com/vim-jp/vimdoc-ja.git'
+NeoBundleLazy 'https://github.com/vim-ruby/vim-ruby.git'
 
 filetype plugin indent on     " required!
 
@@ -141,7 +144,6 @@ nnoremap <silent> cw :call <SID>toggle_qf_window()<CR>
 "---------------------------------------------
 nmap <Space>b :ls<CR>:buffer
 nmap <Space>v :vsplit<CR><C-w><C-w>:ls<CR>:buffer
-nmap <Space>V :Vexplore!<CR><CR>
 nmap <Space>d :bd<CR>zz
 nmap <Space>D :bd!<CR>
 nmap <Space>k :Kwbd<CR>zz
@@ -157,6 +159,21 @@ inoremap <silent> <ESC> <ESC>
 inoremap <silent> <C-[> <ESC>
 " 「日本語入力固定モード」切替キー
 inoremap <silent> <C-j> <C-^>
+
+
+"---------------------------------------------
+" NeoBundle 関連
+"---------------------------------------------
+augroup NeoBundleSource
+    autocmd!
+    autocmd FileType ruby NeoBundleSource
+                \ vim-rvm
+                \ vim-rails
+                \ vim-ruby
+    autocmd FileType {html,css,eruby,markdown} NeoBundleSource
+                \ open-browser.vim
+                \ zencoding-vim
+augroup END
 
 
 "---------------------------------------------
@@ -232,7 +249,9 @@ nnoremap <Space>gb :<C-u>Gblame<Enter>
 " 現在のバッファを実行
 nnoremap <F5> :QuickRun<CR>
 let g:quickrun_config = {}
-let g:quickrun_config['markdown'] = {
+let g:quickrun_config.markdown = {
+      \ 'hook/enable': 1,
+      \ 'hook/eval/template': "<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">  \n %s" ,
       \ 'outputter': 'browser'
       \ }
 
@@ -298,12 +317,13 @@ command! Kwbd let kwbd_bn= bufnr("%")|enew|exe "bdel ".kwbd_bn|unlet kwbd_bn
 if has("win32") || has("win64") || has("win32unix")
     command! Cdd :cd $HOME\Desktop\
 endif
+" 表示中バッファのディレクトリへ移動
+command! -nargs=0 CdCurrent cd %:p:h
 
 
 "---------------------------------------------
 " function
 "---------------------------------------------
-
 function! s:format_space()
     if &ft != 'markdown'
         :%s/\s\+$//ge  " 行末の空白を除去する
