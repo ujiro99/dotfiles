@@ -250,12 +250,13 @@ nnoremap <Space>gb :<C-u>Gblame<Enter>
 nnoremap <F5> :QuickRun<CR>
 let g:quickrun_config = {}
 let g:quickrun_config.markdown = {
+      \ 'command': 'bluefeather',
+      \ 'exec': 'cat %s | %c -',
       \ 'hook/enable': 1,
-      \ 'hook/eval/template': "<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">  \n %s" ,
+      \ 'hook/eval/template': "<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">  \n <link rel=\"stylesheet\" type=\"text/css\" media=\"all\" href=\"C:/Users/flower99.MSE-NTTD/dotfiles/vimfiles/template/style.css\" />  \n %s" ,
       \ 'hook/time/enable': 0,
       \ 'outputter': 'browser'
       \ }
-
 
 "---------------------------------------------
 " vim-rvm 関連

@@ -1,0 +1,81 @@
+/*
+ Theme Name  : memo css
+ Author URI  : ***
+ Description : stylesheet for my memo with markdown
+ Author      : yujiro takeda
+ Version     : 0.1
+ License     : GNU/GPL Version 2 or later. http : //www.gnu.org/licenses/gpl.html
+ Copyright   : (c) 2012
+ */
+h1, h2, h3 {
+    font-family: Georgia, Geneva, "Times New Roman", times;
+    margin-top: 30px;
+}
+h1 {
+    font-size: 150%;
+    line-height: 35px;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    border-left:7px solid #e3297d;
+    padding:0.3em 0.6em
+}
+h1#title {
+    font-size: 150%;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    border: 0;
+}
+h2 {
+    font-size: 130%;
+    margin-bottom: 15px;
+}
+h3 {
+    font-size: 120%;
+    font-weight: normal;
+    margin-bottom: 15px;
+}
+p {
+    margin: 10px 0;
+}
+ol {
+    list-style: decimal;
+    padding-left: 35px;
+    margin: 15px 0;
+}
+ul {
+    list-style: disc;
+    padding-left: 35px;
+    margin: 15px 0;
+}
+li {
+    color: #262626;
+    font: 12px/1.5 Helvetica, Arial, sans-serif;
+    margin: 3px 0;
+}
+blockquote {
+    padding: 15px 0 10px 65px;
+    background: url("images/bq.png") 20px 0 no-repeat;
+}
+blockquote p {color: #8c8888;
+    font: italic 16px Georgia, Geneva, "Times New Roman", times;
+}
+table{
+    font-size: small;
+    border: 1px #E3E3E3 solid;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+table th {
+    padding: 5px;
+    border: #E3E3E3 solid;
+    border-width: 0 0 1px 1px;
+    background: #F0F0F0;
+    font-weight: bold;
+    line-height: 120%;
+    text-align: center;
+}
+table td {
+    padding: 5px;
+    border: 1px #E3E3E3 solid;
+    border-width: 0 0 1px 1px;
+}
