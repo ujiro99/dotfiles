@@ -252,9 +252,6 @@ let g:quickrun_config = {}
 let g:quickrun_config.markdown = {
       \ 'command': 'bluefeather',
       \ 'exec': 'cat %s | %c -',
-      \ 'hook/enable': 1,
-      \ 'hook/eval/template': "<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">  \n <link rel=\"stylesheet\" type=\"text/css\" media=\"all\" href=\"C:/Users/flower99.MSE-NTTD/dotfiles/vimfiles/template/style.css\" />  \n %s" ,
-      \ 'hook/time/enable': 0,
       \ 'outputter': 'browser'
       \ }
 
@@ -302,7 +299,7 @@ map ,mn  :MemoNew<CR>
 map ,ml  :MemoList<CR>
 map ,mg  :MemoGrep<CR>
 let g:memolist_memo_date         = "%Y%m%d %H:%M"
-let g:memolist_memo_suffix       = "markdown"
+let g:memolist_memo_suffix       = "md"
 if has("win32") || has("win64") || has("win32unix")
     let g:memolist_path = "~/GoogleDrive/memo"
 endif
