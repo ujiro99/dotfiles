@@ -251,9 +251,13 @@ nnoremap <F5> :QuickRun<CR>
 let g:quickrun_config = {}
 let g:quickrun_config.markdown = {
       \ 'command': 'bluefeather',
-      \ 'exec': 'cat %s | %c -',
+      \ 'exec': 'cat %s | %c - -f d',
+      \ 'hook/enable': 1,
+      \ 'hook/eval/template': "CSS: $HOME/dotfiles/vimfiles/template/style.css\nEncoding: utf-8\n%s",
+      \ 'hook/time/enable': 0,
       \ 'outputter': 'browser'
       \ }
+
 
 "---------------------------------------------
 " vim-rvm 関連
