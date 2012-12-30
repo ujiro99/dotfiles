@@ -304,8 +304,10 @@ map ,ml  :MemoList<CR>
 map ,mg  :MemoGrep<CR>
 let g:memolist_memo_date         = "%Y%m%d %H:%M"
 let g:memolist_memo_suffix       = "md"
-if has("win32") || has("win64") || has("win32unix")
-    let g:memolist_path = "~/GoogleDrive/memo"
+if has("win32") || has("win64")
+    let g:memolist_path = "~/GoogleDrive/memo/win"
+elseif has("mac")
+    let g:memolist_path = "~/Google ドライブ/memo/mac"
 endif
 
 
