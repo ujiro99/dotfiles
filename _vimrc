@@ -64,7 +64,6 @@ source $HOME/dotfiles/.vimrc.moving
 " 検索関連
 source $HOME/dotfiles/.vimrc.search
 
-
 " 左右のカーソル移動で行間移動可能にする。
 set whichwrap=b,s,<,>,[,]
 
@@ -166,8 +165,9 @@ inoremap <silent> <C-j> <C-^>
 "---------------------------------------------
 augroup NeoBundleSource
     autocmd!
-    autocmd FileType ruby NeoBundleSource
+    autocmd FileType {ruby,markdown} NeoBundleSource
                 \ vim-rvm
+    autocmd FileType ruby NeoBundleSource
                 \ vim-rails
                 \ vim-ruby
     autocmd FileType {html,css,eruby,markdown} NeoBundleSource
@@ -258,8 +258,8 @@ let g:quickrun_config.markdown = {
 "---------------------------------------------
 " vim-rvm 関連
 "---------------------------------------------
-" rubyのBufferではRvmで設定した環境を使う
-autocmd FileType ruby :Rvm
+" ruby, markdown のBufferではRvmで設定した環境を使う
+autocmd FileType {ruby,markdown} :Rvm
 
 
 "---------------------------------------------
@@ -334,4 +334,6 @@ augroup format_space
   autocmd!
   autocmd BufWritePre * call <SID>format_space()
 augroup END
+
+
 
