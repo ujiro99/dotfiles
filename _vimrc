@@ -307,7 +307,7 @@ let g:memolist_memo_suffix       = "md"
 if has("win32") || has("win64")
     let g:memolist_path = "~/GoogleDrive/memo/win"
 elseif has("mac")
-    let g:memolist_path = "~/Google ドライブ/memo/mac"
+    let g:memolist_path = "~/GoogleDrive/memo/mac"
 endif
 
 
