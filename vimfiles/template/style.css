@@ -21,21 +21,24 @@ h1 {
     border-left:7px solid #e3297d;
     padding:0.3em 0.6em
 }
-h1#title {
-    font-size: 150%;
+header#title {
     color: #fff;
     text-shadow: 0px 0px 13px #fff;
-    border: 0;
-    line-height: 2em;
-    margin-top: 0px;
     position: fixed;
     top: 0px;
-    left: 0px;
     right: 0px;
     box-shadow: 0 0 6px #111;
     background-color: #555;
     background: -webkit-gradient(linear, left top, left bottom, from(#555), to(#333));
     opacity: 0.9;
+    /* border-bottom-left-radius: 10px; */
+}
+header#title h1 {
+    border: 0px;
+    margin: -5px 0px -5px 5px;
+}
+header#title li {
+    color: #fff;
 }
 h2 {
     font-size: 120%;
