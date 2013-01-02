@@ -55,7 +55,8 @@ blockquote {
     padding: 15px 0 10px 65px;
     background: url("images/bq.png") 20px 0 no-repeat;
 }
-blockquote p {color: #8c8888;
+blockquote p {
+    color: #8c8888;
     font: italic 16px Georgia, Geneva, "Times New Roman", times;
 }
 table{
