@@ -42,9 +42,8 @@ header#title li {
 }
 h2 {
     font-size: 120%;
-    margin-top: 15px;
-    margin-bottom: 15px;
-    padding: 0em 0.6em;
+    margin: 15px 0px;
+    padding: 0em 0.15em;
     position: relative;
 }
 h2:before {
