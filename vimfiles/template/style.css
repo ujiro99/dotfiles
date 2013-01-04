@@ -44,6 +44,7 @@ h2 {
     margin: 15px 0px;
     padding: 0em 0.15em;
 }
+/**
 h2:before {
     content: "■";
     color: #ccc;
@@ -51,6 +52,7 @@ h2:before {
     left: -0.3em;
     font-size: 1.3em;
 }
+/**/
 h3 {
     font-size: 110%;
     font-weight: normal;
