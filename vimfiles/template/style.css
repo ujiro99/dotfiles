@@ -33,7 +33,7 @@ h1, h2, h3 {
     font-family: Georgia, Geneva, "Times New Roman", times;
 }
 h1 {
-    font-size: 170%;
+    font-size: 150%;
     margin-top: 50px;
     margin-bottom: 15px;
     border-left:7px solid #e3297d;
@@ -131,4 +131,3 @@ hr {
     border-bottom: 1px solid rgba(255, 255, 255, 1);
 }
 /*/
-
