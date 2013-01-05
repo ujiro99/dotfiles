@@ -10,16 +10,6 @@
 body {
     background-color: #F9F9F9;
 }
-h1, h2, h3 {
-    font-family: Georgia, Geneva, "Times New Roman", times;
-}
-h1 {
-    font-size: 150%;
-    margin-top: 50px;
-    margin-bottom: 15px;
-    border-left:7px solid #e3297d;
-    padding:0.3em 0.6em;
-}
 header#title {
     color: #fff;
     text-shadow: 0px 0px 13px #fff;
@@ -38,6 +28,16 @@ header#title h1 {
 }
 header#title li {
     color: #fff;
+}
+h1, h2, h3 {
+    font-family: Georgia, Geneva, "Times New Roman", times;
+}
+h1 {
+    font-size: 170%;
+    margin-top: 50px;
+    margin-bottom: 15px;
+    border-left:7px solid #e3297d;
+    padding:0.3em 0.6em;
 }
 h2 {
     font-size: 120%;
