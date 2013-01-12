@@ -12,10 +12,11 @@ body {
 }
 header#title {
     color: #fff;
-    text-shadow: 0px 0px 13px #fff;
-    position: fixed;
+    text-shadow: 0px 0px 10px #000;
+    position: relative;
     top: 0px;
     right: 0px;
+    left: 0px;
     box-shadow: 0 0 6px #111;
     background-color: #555;
     background: -webkit-gradient(linear, left top, left bottom, from(#555), to(#333));
@@ -24,7 +25,10 @@ header#title {
 }
 header#title h1 {
     border: 0px;
-    margin: -5px 0px -5px 5px;
+    margin: -5px 0px -15px 5px;
+}
+header#title ul {
+    padding-bottom: 7px;
 }
 header#title li {
     color: #fff;
@@ -36,8 +40,8 @@ h1 {
     font-size: 150%;
     margin-top: 50px;
     margin-bottom: 15px;
-    border-left:7px solid #e3297d;
-    padding:0.3em 0.6em;
+    border-left:7px solid #aaa;
+    padding:0.3em 0.4em;
 }
 h2 {
     font-size: 120%;
@@ -69,11 +73,11 @@ ol {
 ul {
     list-style: disc;
     padding-left: 35px;
-    margin: 15px 13px 15px 0px;
+    margin: 15px 0;
 }
 li {
     color: #262626;
-    font: 12px/1.5 Helvetica, Arial, sans-serif;
+    font: 90% Helvetica, Arial, sans-serif;
     margin: 3px 0;
 }
 blockquote {
