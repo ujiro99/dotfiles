@@ -54,6 +54,9 @@ PATH=${PATH}:/Applications/Xcode.app/Contents/Developer/usr/bin
 # rvmへのパスを通す
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
+### Added by the Heroku Toolbelt
+PATH="/usr/local/heroku/bin:$PATH"
+
 # rbenvの読み込み
 eval "$(rbenv init -)"
 source /usr/local/Cellar/rbenv/0.3.0/completions/rbenv.zsh
@@ -265,4 +268,5 @@ fi
 #    zle -N zle-line-init
 #    zstyle ':completion:*' completer _oldlist _complete
 #fi
+
 
