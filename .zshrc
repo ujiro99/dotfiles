@@ -57,6 +57,9 @@ PATH=${PATH}:/Applications/Xcode.app/Contents/Developer/usr/bin
 ### Added by the Heroku Toolbelt
 PATH="/usr/local/heroku/bin:$PATH"
 
+# android sdk
+PATH="/Applications/android-sdk-mac_x86/platform-tools:$PATH"
+
 # rbenvの読み込み
 eval "$(rbenv init -)"
 source /usr/local/Cellar/rbenv/0.3.0/completions/rbenv.zsh
@@ -161,9 +164,6 @@ cygwin*)
     alias cdd="cd ~/Desktop/"
     alias cd/="cd /cygdrive/c/"
     alias fk="taskkill /f /im"
-    alias a="adb"
-    alias ad="adb devices"
-    alias al="adb logcat -v time"
     alias tcpdump="windump"
     alias apt="apt-cyg -m ftp://ftp.iij.ad.jp/pub/cygwin/"
     alias st="cygstart"
@@ -188,6 +188,9 @@ alias u="../"
 alias uu="../../"
 alias uuu="../../../"
 alias :q="exit"
+alias a="adb"
+alias ad="adb devices"
+alias al="adb logcat -v time"
 
 # grep デフォルトオプションの設定
 export GREP_OPTIONS
