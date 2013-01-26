@@ -23,6 +23,9 @@ esac
 ## git status & completion
 #[ -f ${HOME}/dotfiles/.zshrc.git ] && source ${HOME}/dotfiles/.zshrc.git
 
+# nvm
+[ -f ${HOME}/.nvm/nvm.sh ] && source ${HOME}/.nvm/nvm.sh
+
 
 ## Default shell configuration
 #
