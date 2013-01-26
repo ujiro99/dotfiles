@@ -61,6 +61,8 @@ source $HOME/dotfiles/.vimrc.tags
 source $HOME/dotfiles/.vimrc.colors
 " エンコーディング関連
 source $HOME/dotfiles/.vimrc.encoding
+" インデント関連
+source $HOME/dotfiles/.vimrc.indent
 " 移動関連
 source $HOME/dotfiles/.vimrc.moving
 " 検索関連
@@ -81,15 +83,6 @@ set matchtime=3
 " タブを空白で入力する
 set expandtab
 
-" 標準タブは4
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
-
-" 自動的にインデントする
-set autoindent
-" スマートインデント
-set smartindent
 " 折り返し表示しない
 set nowrap
 
