@@ -172,7 +172,7 @@ augroup NeoBundleSource
     autocmd FileType ruby NeoBundleSource
                 \ vim-rails
                 \ vim-ruby
-    autocmd FileType {html,css,eruby,markdown} NeoBundleSource
+    autocmd FileType {xhtml,html,css,eruby,markdown} NeoBundleSource
                 \ open-browser.vim
                 \ zencoding-vim
     autocmd FileType javascript NeoBundleSource
