@@ -193,6 +193,7 @@ alias uuu="../../../"
 alias :q="exit"
 alias a="adb"
 alias ad="adb devices"
+alias as="adb shell"
 alias al="adb logcat -v time"
 
 # grep デフォルトオプションの設定
