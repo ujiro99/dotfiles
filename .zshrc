@@ -158,6 +158,7 @@ freebsd*|darwin*)
     alias ll="ls -lh"
     alias vim="/Applications/MacVim.app/Contents/MacOS/Vim"
     alias vi="/Applications/MacVim.app/Contents/MacOS/Vim"
+    alias gvim="/Applications/MacVim.app/Contents/MacOS/mvim"
     alias vl="/Applications/VLC.app/Contents/MacOS/VLC --intf=rc"
     alias less="/Applications/MacVim.app/Contents/Resources/vim/runtime/macros/less.sh"
     alias mp="mplayer"
