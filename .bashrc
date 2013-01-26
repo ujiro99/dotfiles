@@ -1,7 +1,9 @@
 # Source global definitions
-if [ -f /etc/bashrc ]; then
-    ./etc/bashrc
-fi
+[ -s /etc/bashrc ] && . /etc/bashrc fi
+
+# nvm
+[ -s ${HOME}/.nvm/nvm.sh ] && . ${HOME}/.nvm/nvm.sh
+
 
 # 新しく作られたファイルのパーミッションを644をデフォルトにする
 umask 022
