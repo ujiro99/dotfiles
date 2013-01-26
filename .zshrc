@@ -26,7 +26,6 @@ esac
 # nvm
 [ -f ${HOME}/.nvm/nvm.sh ] && source ${HOME}/.nvm/nvm.sh
 
-
 ## Default shell configuration
 #
 # set prompt
@@ -93,6 +92,11 @@ setopt nobeep
 
 # no beep sound when complete list displayed
 setopt nolistbeep
+
+# パターンが一致しない場合、エラーではなくファイル名置換パターンを返す。
+# パターンが間違っている場合、エラーを返す。
+setopt nonomatch
+
 
 ## Keybind configuration
 # vim like keybind
