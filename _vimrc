@@ -37,6 +37,8 @@ NeoBundle 'https://github.com/vim-scripts/surround.vim.git'
 NeoBundle 'https://github.com/vim-scripts/tagexplorer.vim.git'
 
 " 後で読み込む
+NeoBundleLazy 'https://github.com/vim-scripts/Better-Javascript-Indentation.git'
+NeoBundleLazy 'https://github.com/jelera/vim-javascript-syntax.git'
 NeoBundleLazy 'https://github.com/mattn/zencoding-vim.git'
 NeoBundleLazy 'https://github.com/tpope/vim-rails.git'
 NeoBundleLazy 'https://github.com/tpope/vim-rvm.git'
@@ -173,6 +175,9 @@ augroup NeoBundleSource
     autocmd FileType {html,css,eruby,markdown} NeoBundleSource
                 \ open-browser.vim
                 \ zencoding-vim
+    autocmd FileType javascript NeoBundleSource
+                \ Better-Javascript-Indentation
+                \ vim-javascript-syntax
 augroup END
 
 
@@ -264,6 +269,13 @@ let g:quickrun_config.markdown = {
 "---------------------------------------------
 " ruby, markdown のBufferではRvmで設定した環境を使う
 autocmd FileType {ruby,markdown} :Rvm
+
+
+"---------------------------------------------
+" javascript 関連
+"---------------------------------------------
+autocmd FileType javascript :compiler gjslint
+autocmd QuickfixCmdPost make copen
 
 
 "---------------------------------------------
