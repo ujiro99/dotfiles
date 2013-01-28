@@ -37,6 +37,8 @@ NeoBundle 'https://github.com/vim-scripts/surround.vim.git'
 NeoBundle 'https://github.com/vim-scripts/tagexplorer.vim.git'
 
 " 後で読み込む
+NeoBundleLazy 'https://github.com/vim-scripts/Better-Javascript-Indentation.git'
+NeoBundleLazy 'https://github.com/jelera/vim-javascript-syntax.git'
 NeoBundleLazy 'https://github.com/mattn/zencoding-vim.git'
 NeoBundleLazy 'https://github.com/tpope/vim-rails.git'
 NeoBundleLazy 'https://github.com/tpope/vim-rvm.git'
@@ -59,6 +61,8 @@ source $HOME/dotfiles/.vimrc.tags
 source $HOME/dotfiles/.vimrc.colors
 " エンコーディング関連
 source $HOME/dotfiles/.vimrc.encoding
+" インデント関連
+source $HOME/dotfiles/.vimrc.indent
 " 移動関連
 source $HOME/dotfiles/.vimrc.moving
 " 検索関連
@@ -79,15 +83,6 @@ set matchtime=3
 " タブを空白で入力する
 set expandtab
 
-" 標準タブは4
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
-
-" 自動的にインデントする
-set autoindent
-" スマートインデント
-set smartindent
 " 折り返し表示しない
 set nowrap
 
@@ -168,16 +163,18 @@ augroup NeoBundleSource
     if has("mac")
         autocmd FileType {ruby,markdown} NeoBundleSource
                     \ vim-rvm
-        :Rvm " ruby, markdown のBufferではRvmで設定した環境を使う
+        " ruby, markdown のBufferではRvmで設定した環境を使う
+        autocmd FileType {ruby,markdown} :Rvm
     endif
     autocmd FileType ruby NeoBundleSource
                 \ vim-rails
                 \ vim-ruby
-    autocmd FileType {markdown} NeoBundleSource
-                \ open-browser.vim
-    autocmd FileType {html,css,eruby} NeoBundleSource
+    autocmd FileType {xhtml,html,css,eruby,markdown} NeoBundleSource
                 \ open-browser.vim
                 \ zencoding-vim
+    autocmd FileType javascript NeoBundleSource
+                \ Better-Javascript-Indentation
+                \ vim-javascript-syntax
 augroup END
 
 
@@ -262,6 +259,13 @@ let g:quickrun_config.markdown = {
       \ 'hook/time/enable': 0,
       \ 'outputter': 'browser'
       \ }
+
+
+"---------------------------------------------
+" javascript 関連
+"---------------------------------------------
+autocmd FileType javascript :compiler gjslint
+autocmd QuickfixCmdPost make copen
 
 
 "---------------------------------------------

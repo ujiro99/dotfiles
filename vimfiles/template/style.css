@@ -26,6 +26,7 @@ header#title {
 header#title h1 {
     border: 0px;
     margin: -5px 0px -15px 5px;
+    font-weight: normal;
 }
 header#title ul {
     padding-bottom: 7px;

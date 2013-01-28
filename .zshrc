@@ -23,6 +23,8 @@ esac
 ## git status & completion
 #[ -f ${HOME}/dotfiles/.zshrc.git ] && source ${HOME}/dotfiles/.zshrc.git
 
+# nvm
+[ -f ${HOME}/.nvm/nvm.sh ] && source ${HOME}/.nvm/nvm.sh
 
 ## Default shell configuration
 #
@@ -57,6 +59,9 @@ PATH=${PATH}:/Applications/Xcode.app/Contents/Developer/usr/bin
 ### Added by the Heroku Toolbelt
 PATH="/usr/local/heroku/bin:$PATH"
 
+# android sdk
+PATH="/Applications/android-sdk-mac_x86/platform-tools:$PATH"
+
 # rbenvの読み込み
 eval "$(rbenv init -)"
 source /usr/local/Cellar/rbenv/0.3.0/completions/rbenv.zsh
@@ -87,6 +92,11 @@ setopt nobeep
 
 # no beep sound when complete list displayed
 setopt nolistbeep
+
+# パターンが一致しない場合、エラーではなくファイル名置換パターンを返す。
+# パターンが間違っている場合、エラーを返す。
+setopt nonomatch
+
 
 ## Keybind configuration
 # vim like keybind
@@ -148,6 +158,7 @@ freebsd*|darwin*)
     alias ll="ls -lh"
     alias vim="/Applications/MacVim.app/Contents/MacOS/Vim"
     alias vi="/Applications/MacVim.app/Contents/MacOS/Vim"
+    alias gvim="/Applications/MacVim.app/Contents/MacOS/mvim"
     alias vl="/Applications/VLC.app/Contents/MacOS/VLC --intf=rc"
     alias less="/Applications/MacVim.app/Contents/Resources/vim/runtime/macros/less.sh"
     alias mp="mplayer"
@@ -161,9 +172,6 @@ cygwin*)
     alias cdd="cd ~/Desktop/"
     alias cd/="cd /cygdrive/c/"
     alias fk="taskkill /f /im"
-    alias a="adb"
-    alias ad="adb devices"
-    alias al="adb logcat -v time"
     alias tcpdump="windump"
     alias apt="apt-cyg -m ftp://ftp.iij.ad.jp/pub/cygwin/"
     alias st="cygstart"
@@ -188,6 +196,10 @@ alias u="../"
 alias uu="../../"
 alias uuu="../../../"
 alias :q="exit"
+alias a="adb"
+alias ad="adb devices"
+alias as="adb shell"
+alias al="adb logcat -v time"
 
 # grep デフォルトオプションの設定
 export GREP_OPTIONS

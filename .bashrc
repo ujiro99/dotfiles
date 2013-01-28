@@ -1,7 +1,9 @@
 # Source global definitions
-if [ -f /etc/bashrc ]; then
-    ./etc/bashrc
-fi
+[ -s /etc/bashrc ] && . /etc/bashrc fi
+
+# nvm
+[ -s ${HOME}/.nvm/nvm.sh ] && . ${HOME}/.nvm/nvm.sh
+
 
 # 新しく作られたファイルのパーミッションを644をデフォルトにする
 umask 022
@@ -59,9 +61,6 @@ export LESS='-X -r -i -P ?f%f:(stdin). ?lb%lb?L/%L.. [?eEOF:?pb%pb\%..]'
 
 ## Alias 一覧
 # ls の8ビット透過にする
-alias ls='ls --color=auto'
-alias l="ls -a --color=auto"
-alias ll="ls -l"
 # updatedbでwindows領域を除外する
 alias updatedb='updatedb --localpaths="/bin /dev /etc /home /lib /sbin /srv /usr /var" --prunepaths="/usr/tmp /var/tmp"'
 alias j=jobs
@@ -71,6 +70,8 @@ alias u="cd ../"
 alias uu="cd ../../"
 alias uuu="cd ../../../"
 alias g="git"
+alias l="ls -aG"
+alias ll="ls -lhG"
 
 if [ -d cygpath ]; then
     SYSTEM=`cygpath -u ${SYSTEMROOT}`/system32
@@ -87,4 +88,7 @@ if [ -d cygpath ]; then
     alias ad="adb devices"
     alias fk="taskkill /f /im"
     unset SYSTEM
+    alias ls='ls --color=auto'
+    alias l="ls -a --color=auto"
+    alias ll="ls -l"
 fi
