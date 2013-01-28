@@ -6,6 +6,7 @@ al = adb logcat $*
 as = adb shell $*
 c  = cd $*
 ch = cd %userprofile%
+cdd = cd %userprofile%\Desktop
 u  = cd ../
 uu = cd ../../
 g  = git $*
