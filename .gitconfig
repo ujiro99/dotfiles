@@ -68,11 +68,11 @@
     rhh4 = reset --hard HEAD~~~~
     rhh5 = reset --hard HEAD~~~~~
     # diff関連
-    di = diff
-    dm = diff master           # masterとのdiff
+    di = diff --color
+    dm = diff master --color   # masterとのdiff
     dw = diff --color-words -b # 単語単位でいろつけてdiff
-    dc = diff --cached         # addされているものとのdiff
-    ds = diff --staged         # 同上(1.6.1移行)
+    dc = diff --color --cached # addされているものとのdiff
+    ds = diff --staged --color # 同上(1.6.1移行)
     d1 = diff HEAD~            # HEADから1つ前とdiff
     d2 = diff HEAD~~           # HEADから2つ前とdiff
     d3 = diff HEAD~~~          # HEADから3つ前とdiff
