@@ -116,6 +116,9 @@ inoremap <CR> <CR>X<C-h>
 " もう一度やる
 nnoremap U <C-r>
 
+" コンソールでは desert
+colorscheme desert
+
 " ckfixウィンドウではq/ESCで閉じる
 autocmd FileType qf nnoremap <buffer> q :ccl<CR>
 autocmd FileType qf nnoremap <buffer> <ESC> :ccl<CR>
