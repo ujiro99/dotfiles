@@ -271,6 +271,13 @@ autocmd QuickfixCmdPost make copen
 
 
 "---------------------------------------------
+" coffeescript 関連
+"---------------------------------------------
+au BufWritePost *.coffee silent CoffeeMake! -cb | cwindow | redraw!
+nnoremap <Space>w :CoffeeCompile watch vert<CR>
+
+
+"---------------------------------------------
 " Align 関連
 "---------------------------------------------
 " utf8を使うときに必要らしい
