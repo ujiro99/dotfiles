@@ -173,7 +173,7 @@ augroup NeoBundleSource
     autocmd FileType {xhtml,html,css,eruby,markdown} NeoBundleSource
                 \ open-browser.vim
                 \ zencoding-vim
-    autocmd FileType javascript coffee NeoBundleSource
+    autocmd FileType {javascript,coffee} NeoBundleSource
                 \ Better-Javascript-Indentation
                 \ vim-javascript-syntax
 augroup END
