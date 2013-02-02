@@ -36,6 +36,7 @@ NeoBundle 'https://github.com/vim-scripts/surround.vim.git'
 NeoBundle 'https://github.com/vim-scripts/tagexplorer.vim.git'
 
 " 後で読み込む
+NeoBundleLazy 'https://github.com/claco/jasmine.vim.git'
 NeoBundleLazy 'https://github.com/jelera/vim-javascript-syntax.git'
 NeoBundleLazy 'https://github.com/kchmck/vim-coffee-script.git'
 NeoBundleLazy 'https://github.com/mattn/zencoding-vim.git'
@@ -172,10 +173,10 @@ augroup NeoBundleSource
     autocmd FileType {xhtml,html,css,eruby,markdown} NeoBundleSource
                 \ open-browser.vim
                 \ zencoding-vim
-    autocmd FileType javascript coffeescript NeoBundleSource
+    autocmd FileType javascript coffee NeoBundleSource
                 \ Better-Javascript-Indentation
                 \ vim-javascript-syntax
-    autocmd FileType coffeescript NeoBundleSource
+    autocmd FileType coffee NeoBundleSource
                 \ vim-coffee-script.git
 augroup END
 
@@ -261,6 +262,10 @@ let g:quickrun_config.markdown = {
       \ 'hook/time/enable': 0,
       \ 'outputter': 'browser'
       \ }
+let g:quickrun_config.coffee = {
+      \'command' : 'coffee',
+      \'exec' : ['%c -cbp %s']
+      \}
 
 
 "---------------------------------------------
@@ -273,7 +278,7 @@ autocmd QuickfixCmdPost make copen
 "---------------------------------------------
 " coffeescript 関連
 "---------------------------------------------
-au BufWritePost *.coffee silent CoffeeMake! -cb | cwindow | redraw!
+autocmd BufWritePost *.coffee silent CoffeeMake! -cb | cwindow | redraw!
 nnoremap <Space>w :CoffeeCompile watch vert<CR>
 
 
@@ -351,6 +356,4 @@ augroup format_space
   autocmd!
   autocmd BufWritePre * call <SID>format_space()
 augroup END
-
-
 
