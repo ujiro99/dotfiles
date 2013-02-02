@@ -28,15 +28,8 @@ let g:neocomplcache_max_list = 20
 let g:neocomplcache_dictionary_filetype_lists = {
     \ 'default' : '',
     \ 'vimshell' : $HOME.'/.vimshell_hist',
-    \ 'scala' : $HOME.'/.vim/bundle/vim-scala/dict/scala.dict',
     \ 'java' : $HOME.'/.vim/dict/java.dict',
-    \ 'c' : $HOME.'/.vim/dict/c.dict',
-    \ 'cpp' : $HOME.'/.vim/dict/cpp.dict',
     \ 'javascript' : $HOME.'/.vim/dict/javascript.dict',
-    \ 'ocaml' : $HOME.'/.vim/dict/ocaml.dict',
-    \ 'perl' : $HOME.'/.vim/dict/perl.dict',
-    \ 'php' : $HOME.'/.vim/dict/php.dict',
-    \ 'scheme' : $HOME.'/.vim/dict/scheme.dict',
     \ 'vm' : $HOME.'/.vim/dict/vim.dict'
     \ }
 
@@ -107,15 +100,11 @@ let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
 
 "インクルードパスの指定
 let g:neocomplcache_include_paths = {
-  \ 'cpp'  : '.,/opt/local/include/gcc46/c++,/opt/local/include,/usr/include',
-  \ 'c'    : '.,/usr/include',
   \ 'ruby' : '.,$HOME/.rvm/rubies/**/lib/ruby/1.8/',
   \ }
 "インクルード文のパターンを指定
 let g:neocomplcache_include_patterns = {
-  \ 'cpp' : '^\s*#\s*include',
   \ 'ruby' : '^\s*require',
-  \ 'perl' : '^\s*use',
   \ }
 "インクルード先のファイル名の解析パターン
 let g:neocomplcache_include_exprs = {
@@ -124,7 +113,6 @@ let g:neocomplcache_include_exprs = {
 " ファイルを探す際に、この値を末尾に追加したファイルも探す。
 let g:neocomplcache_include_suffixes = {
   \ 'ruby' : '.rb',
-  \ 'haskell' : '.hs'
   \ }
 
 " for rsense

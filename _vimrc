@@ -18,7 +18,6 @@ if has('gui_running')
     NeoBundle 'https://github.com/vim-scripts/Align.git'
     NeoBundle 'https://github.com/ujiro99/my_color_scheme.git'
 endif
-
 NeoBundle 'https://github.com/banyan/recognize_charcode.vim.git'
 NeoBundle 'https://github.com/Shougo/neobundle.vim.git'
 NeoBundle 'https://github.com/Shougo/neocomplcache.git'
@@ -37,14 +36,15 @@ NeoBundle 'https://github.com/vim-scripts/surround.vim.git'
 NeoBundle 'https://github.com/vim-scripts/tagexplorer.vim.git'
 
 " 後で読み込む
-NeoBundleLazy 'https://github.com/vim-scripts/Better-Javascript-Indentation.git'
 NeoBundleLazy 'https://github.com/jelera/vim-javascript-syntax.git'
+NeoBundleLazy 'https://github.com/kchmck/vim-coffee-script.git'
 NeoBundleLazy 'https://github.com/mattn/zencoding-vim.git'
 NeoBundleLazy 'https://github.com/tpope/vim-rails.git'
 NeoBundleLazy 'https://github.com/tpope/vim-rvm.git'
 NeoBundleLazy 'https://github.com/tyru/open-browser.vim.git'
 NeoBundleLazy 'https://github.com/vim-jp/vimdoc-ja.git'
 NeoBundleLazy 'https://github.com/vim-ruby/vim-ruby.git'
+NeoBundleLazy 'https://github.com/vim-scripts/Better-Javascript-Indentation.git'
 
 filetype plugin indent on     " required!
 
@@ -168,9 +168,11 @@ augroup NeoBundleSource
     autocmd FileType {xhtml,html,css,eruby,markdown} NeoBundleSource
                 \ open-browser.vim
                 \ zencoding-vim
-    autocmd FileType javascript NeoBundleSource
+    autocmd FileType javascript coffeescript NeoBundleSource
                 \ Better-Javascript-Indentation
                 \ vim-javascript-syntax
+    autocmd FileType coffeescript NeoBundleSource
+                \ vim-coffee-script.git
 augroup END
 
 
