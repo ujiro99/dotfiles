@@ -24,6 +24,7 @@ NeoBundle 'https://github.com/Shougo/neocomplcache.git'
 NeoBundle 'https://github.com/Shougo/neosnippet.git'
 NeoBundle 'https://github.com/Shougo/unite.vim.git'
 NeoBundle 'https://github.com/Shougo/vimproc.git'
+NeoBundle 'https://github.com/kchmck/vim-coffee-script.git'
 NeoBundle 'https://github.com/thinca/vim-quickrun.git'
 NeoBundle 'https://github.com/thinca/vim-ref.git'
 NeoBundle 'https://github.com/tpope/vim-fugitive.git'
@@ -38,7 +39,6 @@ NeoBundle 'https://github.com/vim-scripts/tagexplorer.vim.git'
 " 後で読み込む
 NeoBundleLazy 'https://github.com/claco/jasmine.vim.git'
 NeoBundleLazy 'https://github.com/jelera/vim-javascript-syntax.git'
-NeoBundleLazy 'https://github.com/kchmck/vim-coffee-script.git'
 NeoBundleLazy 'https://github.com/mattn/zencoding-vim.git'
 NeoBundleLazy 'https://github.com/tpope/vim-rails.git'
 NeoBundleLazy 'https://github.com/tpope/vim-rvm.git'
@@ -176,8 +176,6 @@ augroup NeoBundleSource
     autocmd FileType javascript coffee NeoBundleSource
                 \ Better-Javascript-Indentation
                 \ vim-javascript-syntax
-    autocmd FileType coffee NeoBundleSource
-                \ vim-coffee-script.git
 augroup END
 
 
