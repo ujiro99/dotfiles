@@ -160,8 +160,12 @@ inoremap <silent> <C-j> <C-^>
 "---------------------------------------------
 augroup NeoBundleSource
     autocmd!
-    autocmd FileType {ruby,markdown} NeoBundleSource
-                \ vim-rvm
+    if has("mac")
+        autocmd FileType {ruby,markdown} NeoBundleSource
+                    \ vim-rvm
+        " ruby, markdown のBufferではRvmで設定した環境を使う
+        autocmd FileType {ruby,markdown} :Rvm
+    endif
     autocmd FileType ruby NeoBundleSource
                 \ vim-rails
                 \ vim-ruby
@@ -257,13 +261,6 @@ let g:quickrun_config.markdown = {
       \ 'hook/time/enable': 0,
       \ 'outputter': 'browser'
       \ }
-
-
-"---------------------------------------------
-" vim-rvm 関連
-"---------------------------------------------
-" ruby, markdown のBufferではRvmで設定した環境を使う
-autocmd FileType {ruby,markdown} :Rvm
 
 
 "---------------------------------------------
