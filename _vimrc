@@ -116,6 +116,18 @@ inoremap <CR> <CR>X<C-h>
 " もう一度やる
 nnoremap U <C-r>
 
+" 括弧補完
+inoremap { {}<LEFT>
+inoremap [ []<LEFT>
+inoremap ( ()<LEFT>
+inoremap " ""<LEFT>
+inoremap ' ''<LEFT>
+vnoremap { "zdi^V{<C-R>z}<ESC>
+vnoremap [ "zdi^V[<C-R>z]<ESC>
+vnoremap ( "zdi^V(<C-R>z)<ESC>
+vnoremap " "zdi^V"<C-R>z^V"<ESC>
+vnoremap ' "zdi'<C-R>z'<ESC>
+
 " コンソールでは desert
 colorscheme desert
 
@@ -359,4 +371,5 @@ augroup format_space
   autocmd!
   autocmd BufWritePre * call <SID>format_space()
 augroup END
+
 
