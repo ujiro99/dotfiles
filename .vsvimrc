@@ -19,6 +19,8 @@ nnoremap U <C-y>
 
 " 行末へ移動
 nnoremap - $
+" ビジュアルモード時-で行末まで選択
+vnoremap - $h
 
 " 対応する括弧に移動
 nnoremap [ %
@@ -31,9 +33,6 @@ nmap * *zz
 nmap # #zz
 nmap g* g*zz
 nmap g# g#zz
-
-" ビジュアルモード時-で行末まで選択
-vnoremap - $h
 
 " insert mode でesc
 inoremap jj <Esc>
