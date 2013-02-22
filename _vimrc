@@ -319,8 +319,6 @@ let g:user_zen_settings = {
 " surround 関連
 "---------------------------------------------
 " 記号に対応する数字は :ascii で調べられる
-" 2
-let g:surround_50 = "\"\r\""
 " -
 let g:surround_45 = "<% \r %>"
 " =
