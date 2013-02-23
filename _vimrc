@@ -291,7 +291,6 @@ autocmd QuickfixCmdPost make copen
 "---------------------------------------------
 " coffeescript 関連
 "---------------------------------------------
-autocmd BufWritePost *.coffee silent CoffeeMake! -cb | cwindow | redraw!
 nnoremap <Space>w :CoffeeCompile watch vert<CR>
 
 
