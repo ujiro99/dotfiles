@@ -63,8 +63,8 @@ PATH="/usr/local/heroku/bin:${PATH}"
 PATH="/Applications/android-sdk-mac_x86/platform-tools:${PATH}"
 
 # rbenvの読み込み
-eval "$(rbenv init -)"
-source /usr/local/Cellar/rbenv/0.3.0/completions/rbenv.zsh
+# eval "$(rbenv init -)"
+# source /usr/local/Cellar/rbenv/0.3.0/completions/rbenv.zsh
 
 
 # auto change directory
@@ -264,21 +264,12 @@ if [ -f ${HOME}/.zsh/z/z.sh ]; then
     }
 fi
 
-
-# cd履歴のジャンプ
-#if [ -f `brew --prefix`/etc/autojump ]; then
-#  . `brew --prefix`/etc/autojump
-#fi
-
 # コマンドの自動補完
-# Cygwinだと遅いから使わない
-#if [ -f ${HOME}/.zsh/auto-fu.zsh/auto-fu.zsh ]; then
-#    source ${HOME}/.zsh/auto-fu.zsh/auto-fu.zsh
-#    function zle-line-init () {
-#        auto-fu-init
-#    }
-#    zle -N zle-line-init
-#    zstyle ':completion:*' completer _oldlist _complete
-#fi
-
-
+if [ -f ${HOME}/.zsh/auto-fu.zsh/auto-fu.zsh ]; then
+    source ${HOME}/.zsh/auto-fu.zsh/auto-fu.zsh
+    function zle-line-init () {
+        auto-fu-init
+    }
+    zle -N zle-line-init
+    zstyle ':completion:*' completer _oldlist _complete
+fi
