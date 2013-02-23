@@ -72,9 +72,14 @@ setopt auto_cd
 
 # cdで移動してもpushdと同じようにディレクトリスタックに追加する。
 setopt auto_pushd
+
+# 同じディレクトリを pushd しない
+setopt pushd_ignore_dups
+
 # カレントディレクトリ中に指定されたディレクトリが見つからなかった場合に
 # 移動先を検索するリスト。
 cdpath=(~)
+
 # ディレクトリが変わったらディレクトリスタックを表示。
 chpwd_functions=($chpwd_functions dirs)
 
@@ -97,6 +102,8 @@ setopt nolistbeep
 # パターンが間違っている場合、エラーを返す。
 setopt nonomatch
 
+# 出力時8ビットを通す
+setopt print_eight_bit
 
 ## Keybind configuration
 # vim like keybind
