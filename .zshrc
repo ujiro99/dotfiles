@@ -54,13 +54,13 @@ PATH=${HOME}/bin:/usr/local/bin:${PATH}
 PATH=${PATH}:/Applications/Xcode.app/Contents/Developer/usr/bin
 
 # rvmへのパスを通す
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+[[ -s "${HOME}/.rvm/scripts/rvm" ]] && . "${HOME}/.rvm/scripts/rvm"
 
 ### Added by the Heroku Toolbelt
-PATH="/usr/local/heroku/bin:$PATH"
+PATH="/usr/local/heroku/bin:${PATH}"
 
 # android sdk
-PATH="/Applications/android-sdk-mac_x86/platform-tools:$PATH"
+PATH="/Applications/android-sdk-mac_x86/platform-tools:${PATH}"
 
 # rbenvの読み込み
 eval "$(rbenv init -)"
