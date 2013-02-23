@@ -48,6 +48,12 @@ NeoBundleLazy 'https://github.com/vim-jp/vimdoc-ja.git'
 NeoBundleLazy 'https://github.com/vim-ruby/vim-ruby.git'
 NeoBundleLazy 'https://github.com/vim-scripts/Better-Javascript-Indentation.git'
 
+
+" NeoBundle 'https://github.com/nanotech/jellybeans.vim.git'
+" NeoBundle 'https://github.com/w0ng/vim-hybrid.git'
+" NeoBundle 'https://github.com/altercation/vim-colors-solarized.git'
+
+
 filetype plugin indent on     " required!
 
 "---------------------------------------------
