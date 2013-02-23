@@ -40,6 +40,7 @@ NeoBundle 'https://github.com/vim-scripts/tagexplorer.vim.git'
 NeoBundleLazy 'https://github.com/claco/jasmine.vim.git'
 NeoBundleLazy 'https://github.com/jelera/vim-javascript-syntax.git'
 NeoBundleLazy 'https://github.com/mattn/zencoding-vim.git'
+NeoBundleLazy 'https://github.com/tpope/vim-haml.git'
 NeoBundleLazy 'https://github.com/tpope/vim-rails.git'
 NeoBundleLazy 'https://github.com/tpope/vim-rvm.git'
 NeoBundleLazy 'https://github.com/tyru/open-browser.vim.git'
@@ -191,6 +192,8 @@ augroup NeoBundleSource
     autocmd FileType {javascript,coffee} NeoBundleSource
                 \ Better-Javascript-Indentation
                 \ vim-javascript-syntax
+    autocmd FileType haml NeoBundleSource
+                \ vim-haml
 augroup END
 
 
