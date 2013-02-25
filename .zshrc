@@ -54,17 +54,17 @@ PATH=${HOME}/bin:/usr/local/bin:${PATH}
 PATH=${PATH}:/Applications/Xcode.app/Contents/Developer/usr/bin
 
 # rvmへのパスを通す
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+[[ -s "${HOME}/.rvm/scripts/rvm" ]] && . "${HOME}/.rvm/scripts/rvm"
 
 ### Added by the Heroku Toolbelt
-PATH="/usr/local/heroku/bin:$PATH"
+PATH="/usr/local/heroku/bin:${PATH}"
 
 # android sdk
-PATH="/Applications/android-sdk-mac_x86/platform-tools:$PATH"
+PATH="/Applications/android-sdk-mac_x86/platform-tools:${PATH}"
 
 # rbenvの読み込み
-eval "$(rbenv init -)"
-source /usr/local/Cellar/rbenv/0.3.0/completions/rbenv.zsh
+# eval "$(rbenv init -)"
+# source /usr/local/Cellar/rbenv/0.3.0/completions/rbenv.zsh
 
 
 # auto change directory
@@ -72,9 +72,14 @@ setopt auto_cd
 
 # cdで移動してもpushdと同じようにディレクトリスタックに追加する。
 setopt auto_pushd
+
+# 同じディレクトリを pushd しない
+setopt pushd_ignore_dups
+
 # カレントディレクトリ中に指定されたディレクトリが見つからなかった場合に
 # 移動先を検索するリスト。
 cdpath=(~)
+
 # ディレクトリが変わったらディレクトリスタックを表示。
 chpwd_functions=($chpwd_functions dirs)
 
@@ -97,6 +102,8 @@ setopt nolistbeep
 # パターンが間違っている場合、エラーを返す。
 setopt nonomatch
 
+# 出力時8ビットを通す
+setopt print_eight_bit
 
 ## Keybind configuration
 # vim like keybind
@@ -264,21 +271,12 @@ if [ -f ${HOME}/.zsh/z/z.sh ]; then
     }
 fi
 
-
-# cd履歴のジャンプ
-#if [ -f `brew --prefix`/etc/autojump ]; then
-#  . `brew --prefix`/etc/autojump
-#fi
-
 # コマンドの自動補完
-# Cygwinだと遅いから使わない
-#if [ -f ${HOME}/.zsh/auto-fu.zsh/auto-fu.zsh ]; then
-#    source ${HOME}/.zsh/auto-fu.zsh/auto-fu.zsh
-#    function zle-line-init () {
-#        auto-fu-init
-#    }
-#    zle -N zle-line-init
-#    zstyle ':completion:*' completer _oldlist _complete
-#fi
-
-
+if [ -f ${HOME}/.zsh/auto-fu.zsh/auto-fu.zsh ]; then
+    source ${HOME}/.zsh/auto-fu.zsh/auto-fu.zsh
+    function zle-line-init () {
+        auto-fu-init
+    }
+    zle -N zle-line-init
+    zstyle ':completion:*' completer _oldlist _complete
+fi
