@@ -238,6 +238,8 @@ nnoremap <silent> ;u :<C-u>Unite buffer file_mru<CR>
 nnoremap <silent> ;a :<C-u>UniteWithBufferDir -buffer-name=files buffer file_mru bookmark file<CR>
 " memolist
 nnoremap <silent> ;l :Unite file:<C-r>=g:memolist_path."/"<CR><CR>
+" Tags
+nnoremap <silent> ;t :Unite tag<CR>
 
 
 " ウィンドウを分割して開く
