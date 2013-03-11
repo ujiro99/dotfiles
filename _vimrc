@@ -36,7 +36,6 @@ NeoBundle 'https://github.com/vim-scripts/eregex.vim.git'
 NeoBundle 'https://github.com/vim-scripts/grep.vim.git'
 NeoBundle 'https://github.com/vim-scripts/gtags.vim.git'
 NeoBundle 'https://github.com/vim-scripts/surround.vim.git'
-NeoBundle 'https://github.com/vim-scripts/tagexplorer.vim.git'
 
 
 " 後で読み込む
@@ -238,6 +237,8 @@ nnoremap <silent> ;u :<C-u>Unite buffer file_mru<CR>
 nnoremap <silent> ;a :<C-u>UniteWithBufferDir -buffer-name=files buffer file_mru bookmark file<CR>
 " memolist
 nnoremap <silent> ;l :Unite file:<C-r>=g:memolist_path."/"<CR><CR>
+" Tags
+nnoremap <silent> ;t :Unite tag<CR>
 
 
 " ウィンドウを分割して開く
