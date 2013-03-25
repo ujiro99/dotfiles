@@ -133,7 +133,7 @@ setopt share_history        # share command history data
 
 
 # 補完設定ファイルを読み込む
-fpath=(${HOME}/.zsh/functions/Completion ${fpath})
+fpath=(${HOME}/.zsh/zsh-completions/src ${fpath})
 autoload -U compinit
 compinit
 

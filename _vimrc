@@ -25,6 +25,7 @@ NeoBundle 'https://github.com/Shougo/unite.vim.git'
 NeoBundle 'https://github.com/Shougo/vimproc.git'
 NeoBundle 'https://github.com/banyan/recognize_charcode.vim.git'
 NeoBundle 'https://github.com/deton/jasegment.vim.git'
+NeoBundle 'https://github.com/h1mesuke/unite-outline.git'
 NeoBundle 'https://github.com/kchmck/vim-coffee-script.git'
 NeoBundle 'https://github.com/rhysd/clever-f.vim.git'
 NeoBundle 'https://github.com/thinca/vim-quickrun.git'
@@ -245,6 +246,8 @@ nnoremap <silent> ;a :<C-u>UniteWithBufferDir -buffer-name=files buffer file_mru
 nnoremap <silent> ;l :Unite file:<C-r>=g:memolist_path."/"<CR><CR>
 " Tags
 nnoremap <silent> ;t :Unite tag<CR>
+" Outline
+nnoremap <silent> ;o :Unite outline<CR>
 
 
 " ウィンドウを分割して開く
