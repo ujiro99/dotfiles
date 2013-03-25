@@ -26,7 +26,6 @@ NeoBundle 'https://github.com/Shougo/vimproc.git'
 NeoBundle 'https://github.com/banyan/recognize_charcode.vim.git'
 NeoBundle 'https://github.com/kchmck/vim-coffee-script.git'
 NeoBundle 'https://github.com/rhysd/clever-f.vim.git'
-NeoBundle 'https://github.com/rking/ag.vim.git'
 NeoBundle 'https://github.com/thinca/vim-quickrun.git'
 NeoBundle 'https://github.com/thinca/vim-ref.git'
 NeoBundle 'https://github.com/tpope/vim-fugitive.git'
@@ -37,6 +36,12 @@ NeoBundle 'https://github.com/vim-scripts/grep.vim.git'
 NeoBundle 'https://github.com/vim-scripts/gtags.vim.git'
 NeoBundle 'https://github.com/vim-scripts/surround.vim.git'
 
+" winでag使えるようになったらackから乗り換える
+if has("win32") || has("win64")
+  NeoBundle 'https://github.com/mileszs/ack.vim.git'
+elseif has("mac")
+  NeoBundle 'https://github.com/rking/ag.vim.git'
+endif
 
 " 後で読み込む
 NeoBundleLazy 'https://github.com/claco/jasmine.vim.git'

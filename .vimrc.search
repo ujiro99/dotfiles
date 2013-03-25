@@ -29,7 +29,12 @@ command! -nargs=1 Gb :GrepBuffer <args>
 nnoremap <C-g><C-b> :<C-u>GrepBuffer<Space><C-r><C-w><Enter>
 
 " カーソル下の単語をgrepする
-nnoremap <silent>gr :<C-u>Ag<Space><C-r><C-w> . <CR>
+" winでag使えるようになったらackから乗り換える
+if has("win32") || has("win64")
+  nnoremap <silent>gr :<C-u>Ack<Space><C-r><C-w> . <CR>
+elseif has("mac")
+  nnoremap <silent>gr :<C-u>Ag<Space><C-r><C-w> . <CR>
+endif
 
 let Grep_Skip_Dirs = '.svn .git'
 let Grep_Skip_Files = '*.bak *~'
