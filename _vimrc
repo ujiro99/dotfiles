@@ -37,6 +37,7 @@ NeoBundle 'https://github.com/vim-scripts/eregex.vim.git'
 NeoBundle 'https://github.com/vim-scripts/grep.vim.git'
 NeoBundle 'https://github.com/vim-scripts/gtags.vim.git'
 NeoBundle 'https://github.com/vim-scripts/surround.vim.git'
+NeoBundle 'https://github.com/wavded/vim-stylus.git'
 
 " winでag使えるようになったらackから乗り換える
 if has("win32") || has("win64")
