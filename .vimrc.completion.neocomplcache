@@ -31,7 +31,7 @@ let g:neocomplcache_dictionary_filetype_lists = {
     \ 'java' : $HOME.'/.vim/dict/java.dict',
     \ 'javascript' : $HOME.'/.vim/dict/javascript.dict',
     \ 'coffee' : $HOME.'/.vim/dict/javascript.dict',
-    \ 'vm' : $HOME.'/.vim/dict/vim.dict'
+    \ 'vim' : $HOME.'/.vim/dict/vim.dict'
     \ }
 
 " Define keyword.
