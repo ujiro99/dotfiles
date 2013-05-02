@@ -35,9 +35,8 @@
     a = add
     c = commit
     cm = commit -m
-    ca = commit --amend      # 直前のcommitを修正
     ci = commit -a           # modifiedなファイルを全てstageへ
-    cam = commit -a --amend  # 直前のcommitを修正
+    ca = commit --amend      # 直前のcommitを修正
     co = checkout
     cb = checkout -b         # branch切ってcheckoutする
     ct = checkout --track    # remoteのbranchを追跡
