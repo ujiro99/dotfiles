@@ -3,16 +3,14 @@ if has("win32") || has("win64")
 
     " フォント名に日本語名を使うので、一時的に文字コードを変える
     " fileencoding=cp932 する必要がある
-    " set encoding=cp932
-    " set guifont=Osaka－等幅:h10
-    " set guifontwide=Osaka－等幅:h10
-    " set ambiwidth=double
-    " " 文字コードを元に戻す
-    " set encoding=utf8
-
-    set guifont=Consolas:h10
-    set guifontwide=MeiryoKe_Console:h10
+    set encoding=cp932
+    set guifont=Osaka－等幅:h10
+    set guifontwide=Osaka－等幅:h10
     set ambiwidth=double
+    " 文字コードを元に戻す
+    set encoding=utf8
+    " DirectWrite を使う
+    set rop=type:directx
 else
     set guifont=Osaka-Mono:h14
 endif
