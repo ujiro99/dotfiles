@@ -1,6 +1,7 @@
 #!/bin/bash
 
 mkdir ~/dotfiles/vimfiles
+mkdir ~/.zsh
 
 ln -s ~/dotfiles/.gitignore ~/.gitignore
 ln -s ~/dotfiles/.gitconfig ~/.gitconfig
@@ -13,4 +14,6 @@ ln -s ~/dotfiles/vimfiles ~/.vim
 
 git clone https://github.com/Shougo/neobundle.vim ~/dotfiles/vimfiles/bundle/neobundle.vim
 git clone https://github.com/Shougo/vimproc ~/dotfiles/vimfiles/bundle/vimproc
-[! -d ~/.oh-my-zsh ] && git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+git clone https://github.com/rupa/z.git ~/.zsh/z
+git clone https://github.com/zsh-users/zsh-completions.git ~/.zsh/zsh-completions
+
