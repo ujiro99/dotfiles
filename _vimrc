@@ -40,6 +40,15 @@ NeoBundle 'https://github.com/vim-scripts/gtags.vim.git'
 NeoBundle 'https://github.com/vim-scripts/surround.vim.git'
 NeoBundle 'https://github.com/wavded/vim-stylus.git'
 
+" vimproc を自動でビルドする
+NeoBundle 'Shougo/vimproc', {
+      \ 'build' : {
+      \     'windows' : 'make -f make_mingw32.mak',
+      \     'cygwin' : 'make -f make_cygwin.mak',
+      \     'mac' : 'make -f make_mac.mak',
+      \     'unix' : 'make -f make_unix.mak',
+      \    },
+      \ }
 
 " winでag使えるようになったらackから乗り換える
 if has("win32") || has("win64")
