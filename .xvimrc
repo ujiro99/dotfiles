@@ -1,0 +1,42 @@
+set wrapscan
+set ignorecase
+set noerrorbells
+set incsearch
+set smartcase
+
+" do not  wrap long lines
+set nowrap
+set linebreak
+set textwidth=80
+set formatoptions+=qrn1
+
+" set the space between each line to 3
+set linespace=3
+
+" lines to scroll when cursor leaves screen
+set scrolljump=5
+
+" minimum lines to keep above and below cursor
+set scrolloff=3
+
+" lower the timeout when typing leader key followed by a command
+"set timeoutlen=500
+
+" automatically enable mouse usage
+set mouse=a
+
+" remove the toolbar
+"set guioptions-=T
+
+" remove the scrollbar
+"set guioptions-=r
+
+" remove the left scrollbar
+"set guioptions-=L
+
+" default leader is '\'
+let mapleader = ','
+
+"
+imap kj <Esc>
+
