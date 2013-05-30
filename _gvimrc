@@ -10,7 +10,7 @@ if has("win32") || has("win64")
     " 文字コードを元に戻す
     set encoding=utf8
     " DirectWrite を使う
-    set rop=type:directx
+    " set rop=type:directx
 else
     set guifont=Osaka-Mono:h14
 endif
