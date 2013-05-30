@@ -13,3 +13,4 @@ g  = git $*
 s  = svn $*
 st = start $*
 fk = taskkill /f /im $*
+ps = tasklist | sort
