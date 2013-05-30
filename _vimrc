@@ -25,6 +25,7 @@ NeoBundle 'https://github.com/Shougo/unite.vim.git'
 NeoBundle 'https://github.com/Shougo/vimproc.git'
 NeoBundle 'https://github.com/banyan/recognize_charcode.vim.git'
 NeoBundle 'https://github.com/deton/jasegment.vim.git'
+NeoBundle 'https://github.com/digitaltoad/vim-jade.git'
 NeoBundle 'https://github.com/h1mesuke/unite-outline.git'
 NeoBundle 'https://github.com/kchmck/vim-coffee-script.git'
 NeoBundle 'https://github.com/rhysd/clever-f.vim.git'
@@ -38,6 +39,16 @@ NeoBundle 'https://github.com/vim-scripts/grep.vim.git'
 NeoBundle 'https://github.com/vim-scripts/gtags.vim.git'
 NeoBundle 'https://github.com/vim-scripts/surround.vim.git'
 NeoBundle 'https://github.com/wavded/vim-stylus.git'
+
+" vimproc を自動でビルドする
+NeoBundle 'Shougo/vimproc', {
+      \ 'build' : {
+      \     'windows' : 'make -f make_mingw32.mak',
+      \     'cygwin' : 'make -f make_cygwin.mak',
+      \     'mac' : 'make -f make_mac.mak',
+      \     'unix' : 'make -f make_unix.mak',
+      \    },
+      \ }
 
 " winでag使えるようになったらackから乗り換える
 if has("win32") || has("win64")
@@ -314,7 +325,7 @@ autocmd QuickfixCmdPost make copen
 "---------------------------------------------
 " coffeescript 関連
 "---------------------------------------------
-nnoremap <Space>w :CoffeeCompile watch vert<CR>
+nnoremap <Space>w :CoffeeCompile watch<CR>
 
 
 "---------------------------------------------
