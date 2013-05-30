@@ -375,7 +375,10 @@ if has("win32") || has("win64") || has("win32unix")
 endif
 " 表示中バッファのディレクトリへ移動
 command! -nargs=0 CdCurrent cd %:p:h
-
+" XMLの整形
+map <Leader>x !python -m BeautifulSoup<CR>
+" Jsonの整形
+map <Leader>j !python -m json.tool<CR>
 
 "---------------------------------------------
 " function
