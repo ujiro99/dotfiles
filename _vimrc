@@ -6,11 +6,17 @@ filetype off
 set langmenu=none
 
 " NeoBundle.vimを使用する
+if has('vim_starting')
+  if has("win32") || has("win64") || has("win32unix")
+     set rtp+=$HOME/vimfiles/bundle/neobundle.vim
+  else
+     set rtp& rtp+=$HOME/.vim/bundle/neobundle.vim
+  endif
+endif
+
 if has("win32") || has("win64") || has("win32unix")
-   set rtp+=$HOME/vimfiles/bundle/neobundle.vim
    call neobundle#rc('$HOME/vimfiles/bundle/')
 else
-   set rtp& rtp+=$HOME/.vim/bundle/neobundle.vim
    call neobundle#rc()
 endif
 
