@@ -6,11 +6,17 @@ filetype off
 set langmenu=none
 
 " NeoBundle.vimを使用する
+if has('vim_starting')
+  if has("win32") || has("win64") || has("win32unix")
+     set rtp+=$HOME/vimfiles/bundle/neobundle.vim
+  else
+     set rtp& rtp+=$HOME/.vim/bundle/neobundle.vim
+  endif
+endif
+
 if has("win32") || has("win64") || has("win32unix")
-   set rtp+=$HOME/vimfiles/bundle/neobundle.vim
    call neobundle#rc('$HOME/vimfiles/bundle/')
 else
-   set rtp& rtp+=$HOME/.vim/bundle/neobundle.vim
    call neobundle#rc()
 endif
 
@@ -41,14 +47,14 @@ NeoBundle 'https://github.com/vim-scripts/surround.vim.git'
 NeoBundle 'https://github.com/wavded/vim-stylus.git'
 
 " vimproc を自動でビルドする
-NeoBundle 'Shougo/vimproc', {
+call neobundle#config('Shougo/vimproc', {
       \ 'build' : {
       \     'windows' : 'make -f make_mingw32.mak',
       \     'cygwin' : 'make -f make_cygwin.mak',
       \     'mac' : 'make -f make_mac.mak',
       \     'unix' : 'make -f make_unix.mak',
       \    },
-      \ }
+      \ })
 
 " winでag使えるようになったらackから乗り換える
 if has("win32") || has("win64")

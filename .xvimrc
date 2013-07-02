@@ -40,3 +40,17 @@ let mapleader = ','
 "
 imap kj <Esc>
 
+nnoremap - $
+nnoremap j jzz
+nnoremap k kzz
+nnoremap [ %
+nnoremap ] %
+
+nmap n nzz
+nmap N Nzz
+nmap * *zz
+nmap # #zz
+nmap g* g*zz
+nmap g# g#zz
+
+vnoremap - $hl
