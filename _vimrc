@@ -183,6 +183,11 @@ endfunction
 nnoremap <silent> cw :call <SID>toggle_qf_window()<CR>
 
 
+" 挿入モードでのカーソル移動
+inoremap <C-h> <Left>
+inoremap <C-l> <Right>
+
+
 "---------------------------------------------
 " バッファ操作関連
 "---------------------------------------------
