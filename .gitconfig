@@ -50,7 +50,7 @@
     # log関連
     wc = whatchanged         # logに変更されたファイルも一緒に出す
     ls = log --stat          # logに変更されたファイルも一緒に出す
-    lp = log -p              # diffも一緒に出す
+    lp = log -p --color      # diffも一緒に出す
     la = log --pretty=format:\"%C(yellow)%h %C(White)%ad | %C(White)%s%C(Green)%d %C(Red)[%an]\" --graph --date=short
     lr = log origin          # originのlog
     oneline = log --pretty=oneline
