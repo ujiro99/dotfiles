@@ -16,4 +16,4 @@ git clone https://github.com/Shougo/neobundle.vim ~/dotfiles/vimfiles/bundle/neo
 git clone https://github.com/Shougo/vimproc ~/dotfiles/vimfiles/bundle/vimproc
 git clone https://github.com/rupa/z.git ~/.zsh/z
 git clone https://github.com/zsh-users/zsh-completions.git ~/.zsh/zsh-completions
-
+git clone https://github.com/creationix/nvm.git ~/.nvm
