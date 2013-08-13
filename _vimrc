@@ -32,8 +32,9 @@ NeoBundle 'https://github.com/Shougo/vimproc.git'
 NeoBundle 'https://github.com/banyan/recognize_charcode.vim.git'
 NeoBundle 'https://github.com/deton/jasegment.vim.git'
 NeoBundle 'https://github.com/digitaltoad/vim-jade.git'
-NeoBundle 'https://github.com/h1mesuke/unite-outline.git'
+NeoBundle 'https://github.com/Shougo/unite-outline.git'
 NeoBundle 'https://github.com/kchmck/vim-coffee-script.git'
+NeoBundle 'https://github.com/moll/vim-node.git'
 NeoBundle 'https://github.com/rhysd/clever-f.vim.git'
 NeoBundle 'https://github.com/thinca/vim-quickrun.git'
 NeoBundle 'https://github.com/thinca/vim-ref.git'
@@ -45,6 +46,7 @@ NeoBundle 'https://github.com/vim-scripts/grep.vim.git'
 NeoBundle 'https://github.com/vim-scripts/gtags.vim.git'
 NeoBundle 'https://github.com/vim-scripts/surround.vim.git'
 NeoBundle 'https://github.com/wavded/vim-stylus.git'
+NeoBundle 'https://github.com/scrooloose/syntastic.git'
 
 " vimproc を自動でビルドする
 call neobundle#config('Shougo/vimproc', {
