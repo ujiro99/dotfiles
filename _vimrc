@@ -45,6 +45,8 @@ NeoBundle 'https://github.com/vim-scripts/grep.vim.git'
 NeoBundle 'https://github.com/vim-scripts/gtags.vim.git'
 NeoBundle 'https://github.com/vim-scripts/surround.vim.git'
 NeoBundle 'https://github.com/wavded/vim-stylus.git'
+NeoBundle 'https://github.com/rking/ag.vim.git'
+
 
 " vimproc を自動でビルドする
 call neobundle#config('Shougo/vimproc', {
@@ -56,12 +58,6 @@ call neobundle#config('Shougo/vimproc', {
       \    },
       \ })
 
-" winでag使えるようになったらackから乗り換える
-if has("win32") || has("win64")
-  NeoBundle 'https://github.com/mileszs/ack.vim.git'
-elseif has("mac")
-  NeoBundle 'https://github.com/rking/ag.vim.git'
-endif
 
 " 後で読み込む
 NeoBundleLazy 'https://github.com/claco/jasmine.vim.git'
