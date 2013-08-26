@@ -233,19 +233,6 @@ augroup END
 
 
 "---------------------------------------------
-" Vimproc関連
-"--------------------------------------------
-" windowsの場合はproc.dllを入れておく
-if has("win32") || has("win64")
-    let g:vimproc_dll_path = $HOME.'\vimfiles\bundle\vimproc\autoload\vimproc_win32.dll'
-elseif has("win32unix")
-    let g:vimproc_dll_path = $HOME.'/vimfiles/autoload/proc_cygwin.dll'
-else
-    let g:vimproc_dll_path = $HOME.'/.vim/bundle/vimproc/autoload/vimproc_mac.so'
-endif
-
-
-"---------------------------------------------
 " Unite.vim関連
 "---------------------------------------------
 " 入力モードで開始する
