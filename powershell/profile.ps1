@@ -10,24 +10,24 @@ function prompt {
   write-host " " -nonewline
 
   # Gitリポジトリがあった場合
-  if (isCurrentDirectoryGitRepository) {
-
-     $branch = $(gitBranchName)
-     # ブランチ名の表示を右寄せする
-     $oldposition = $host.ui.rawui.CursorPosition
-     $Endline = $oldposition
-     # 一行の行数からブラケットとブランチ名の長さを引く
-     $Endline.X = 80 - 2 - $branch.Length
-     $host.ui.rawui.CursorPosition = $Endline
-
-     if ($(gitStatus) -eq 1) {
-       write-host ("[" + $branch + "]") -nonewline -foregroundcolor Red
-     } else {
-       write-host ("[" + $branch + "]") -nonewline -foregroundcolor Blue
-     }
-
-     $host.ui.rawui.CursorPosition = $oldposition
-  }
+  #if (isCurrentDirectoryGitRepository) {
+  #
+  #    $branch = $(gitBranchName)
+  #    # ブランチ名の表示を右寄せする
+  #    $oldposition = $host.ui.rawui.CursorPosition
+  #    $Endline = $oldposition
+  #    # 一行の行数からブラケットとブランチ名の長さを引く
+  #    $Endline.X = 80 - 2 - $branch.Length
+  #    $host.ui.rawui.CursorPosition = $Endline
+  #
+  #    if ($(gitStatus) -eq 1) {
+  #      write-host ("[" + $branch + "]") -nonewline -foregroundcolor Red
+  #    } else {
+  #      write-host ("[" + $branch + "]") -nonewline -foregroundcolor Blue
+  #    }
+  #
+  #    $host.ui.rawui.CursorPosition = $oldposition
+  #}
 
   write-host ""
   return "$ "
