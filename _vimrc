@@ -250,24 +250,30 @@ endif
 "---------------------------------------------
 " 入力モードで開始する
 let g:unite_enable_start_insert=1
+"history/yankの有効化
+let g:unite_source_history_yank_enable =1
+
 " バッファ一覧
 nnoremap <silent> ;b :<C-u>Unite buffer<CR>
 " ファイル一覧
 nnoremap <silent> ;f :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
+" ディレクトリ一覧
+nnoremap <silent> ;d :<C-u>UniteWithBufferDir -buffer-name=directories directory<CR>
 " レジスタ一覧
 nnoremap <silent> ;r :<C-u>Unite -buffer-name=register register<CR>
 " 最近使用したファイル一覧
 nnoremap <silent> ;m :<C-u>Unite file_mru<CR>
 " 常用セット
 nnoremap <silent> ;u :<C-u>Unite buffer file_mru<CR>
-" 全部乗せ
-nnoremap <silent> ;a :<C-u>UniteWithBufferDir -buffer-name=files buffer file_mru bookmark file<CR>
 " memolist
 nnoremap <silent> ;l :Unite file:<C-r>=g:memolist_path."/"<CR><CR>
 " Tags
 nnoremap <silent> ;t :Unite tag<CR>
 " Outline
 nnoremap <silent> ;o :Unite outline<CR>
+" Yank
+nnoremap <silent> ;y :<C-u>Unite history/yank<CR>
+
 
 
 " ウィンドウを分割して開く
@@ -398,6 +404,7 @@ command! -nargs=0 CdCurrent cd %:p:h
 map <Leader>x !python -m BeautifulSoup<CR>
 " Jsonの整形
 map <Leader>j !python -m json.tool<CR>
+
 
 "---------------------------------------------
 " function
