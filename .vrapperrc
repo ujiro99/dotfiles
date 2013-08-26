@@ -50,3 +50,12 @@ inoremap kk <Esc>
 "srで参照をプロジェクトから検索
 eclipseaction SearchRef  org.eclipse.jdt.ui.edit.text.java.search.references.in.project
 noremap tr :SearchRef<C-m>
+
+
+" ----------------------------------------
+" unmap
+" ----------------------------------------
+unmap <C-d>
+unmap <C-D>
+unmap <C-U>
+
