@@ -24,8 +24,12 @@ nnoremap tk  ;<C-u>pop<CR>
 "履歴一覧
 nnoremap tl  ;<C-u>tags<CR>
 
-" タグファイル更新
+" Ctagsファイル更新
 nnoremap <silent> mt  :!ctags -R<CR>
+" Gtagsファイル更新
+nnoremap <silent> mg  :echo vimproc#system('gtags.exe -v --gtagsconf ~/dotfiles/.gtagsrc')<CR>
 
 " gnu global
 nnoremap tr :<C-u>GtagsCursor<CR>
+nnoremap <C-3> :<C-u>GtagsCursor<CR>
+
