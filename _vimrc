@@ -272,16 +272,6 @@ au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>q
 
 
 "---------------------------------------------
-" ref.vim関連
-"---------------------------------------------
-" ruby
-let g:ref_open         = 'split'
-let g:ref_refe_cmd     = "rurema"
-let g:ref_refe_version = 2
-nnoremap <Space>r :<C-U>Ref refe<Space>
-
-
-"---------------------------------------------
 " Fugitive 関連
 "---------------------------------------------
 nnoremap <Space>gd :<C-u>Gdiff<Enter>
