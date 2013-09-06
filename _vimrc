@@ -236,6 +236,9 @@ augroup END
 let g:unite_enable_start_insert=1
 "history/yankの有効化
 let g:unite_source_history_yank_enable =1
+" デフォルトでは ignorecase と smartcase を使う
+call unite#set_profile('default', 'ignorecase', 1)
+call unite#set_profile('default', 'smartcase', 1)
 
 " バッファ一覧
 nnoremap <silent> ;b :<C-u>Unite buffer<CR>
