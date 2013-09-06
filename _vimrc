@@ -163,7 +163,7 @@ vnoremap ' "zdi'<C-R>z'<ESC>
 autocmd FileType qf nnoremap <buffer> q :ccl<CR>
 autocmd FileType qf nnoremap <buffer> <ESC> :ccl<CR>
 
-" cwでquickfixウィンドウの表示をtoggleする
+" twでquickfixウィンドウの表示をtoggleする
 function! s:toggle_qf_window()
   for bufnr in range(1,  winnr('$'))
     if getwinvar(bufnr,  '&buftype') ==# 'quickfix'
@@ -174,7 +174,7 @@ function! s:toggle_qf_window()
   execute 'botright cw'
 endfunction
 
-nnoremap <silent> cw :call <SID>toggle_qf_window()<CR>
+nnoremap <silent> tw :call <SID>toggle_qf_window()<CR>
 
 
 " 挿入モードでのカーソル移動

@@ -31,5 +31,5 @@ nnoremap <silent> mg  :echo vimproc#system('gtags.exe -v --gtagsconf ~/dotfiles/
 
 " gnu global
 nnoremap tr :<C-u>GtagsCursor<CR>
-nnoremap <C-3> :<C-u>GtagsCursor<CR>
+nnoremap <C-3> :Gtags -f<CR>
 
