@@ -38,4 +38,4 @@ nmap g# g#zz
 
 " insert mode でesc
 inoremap jj <Esc>
-inoremap ii <Esc>
+inoremap kk <Esc>
