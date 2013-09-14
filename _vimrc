@@ -47,6 +47,7 @@ NeoBundle 'https://github.com/vim-scripts/grep.vim.git'
 NeoBundle 'https://github.com/vim-scripts/gtags.vim.git'
 NeoBundle 'https://github.com/vim-scripts/surround.vim.git'
 NeoBundle 'https://github.com/wavded/vim-stylus.git'
+NeoBundle 'https://github.com/othree/javascript-libraries-syntax.vim.git'
 
 
 " vimproc を自動でビルドする
@@ -311,6 +312,7 @@ let g:quickrun_config.coffee = {
 "---------------------------------------------
 autocmd FileType javascript :compiler gjslint
 autocmd QuickfixCmdPost make copen
+let g:used_javascript_libs = 'angularjs, jquery'
 
 
 "---------------------------------------------
