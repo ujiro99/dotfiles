@@ -301,10 +301,6 @@ let g:quickrun_config.markdown = {
       \ 'hook/time/enable': 0,
       \ 'outputter': 'browser'
       \ }
-let g:quickrun_config.coffee = {
-      \'command' : 'coffee',
-      \'exec' : ['%c -cbp %s']
-      \}
 
 
 "---------------------------------------------
@@ -318,7 +314,7 @@ let g:used_javascript_libs = 'angularjs, jquery'
 "---------------------------------------------
 " coffeescript 関連
 "---------------------------------------------
-nnoremap <Space>w :CoffeeCompile watch<CR>
+" nnoremap <Space>w :CoffeeCompile watch<CR>
 
 
 "---------------------------------------------
