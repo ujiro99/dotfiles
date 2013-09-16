@@ -107,6 +107,9 @@ source $HOME/dotfiles/.vimrc.indent
 source $HOME/dotfiles/.vimrc.moving
 " 検索関連
 source $HOME/dotfiles/.vimrc.search
+" プラグイン関連
+source $HOME/dotfiles/.vimrc.plugin
+
 
 " 左右のカーソル移動で行間移動可能にする。
 set whichwrap=b,s,<,>,[,]
