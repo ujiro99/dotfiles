@@ -18,10 +18,6 @@ endif
 " ハイライト on
 syntax enable
 
-" 補完候補の色づけ for vim7
-hi Pmenu ctermbg=white ctermfg=darkgray
-hi PmenuSel ctermbg=blue ctermfg=white
-hi PmenuSbar ctermbg=0 ctermfg=9
 
 " コンソールでは desert
 if has('gui_running') == 0
