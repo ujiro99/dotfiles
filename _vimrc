@@ -189,6 +189,9 @@ nnoremap <silent> tw :call <SID>toggle_qf_window()<CR>
 inoremap <C-h> <Left>
 inoremap <C-l> <Right>
 
+" Leader
+map ¥ <leader>
+
 
 "---------------------------------------------
 " バッファ操作関連
