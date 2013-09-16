@@ -1,0 +1,29 @@
+"------------------------------------
+" open-blowser.vim
+"------------------------------------
+" カーソル下のURLをブラウザで開く
+nmap <Space>fu <Plug>(openbrowser-open)
+vmap <Space>fu <Plug>(openbrowser-open)
+" カーソル下のキーワードをググる
+nnoremap <Space>fs :<C-u>OpenBrowserSearch<Space><C-r><C-w><Enter>
+
+
+"------------------------------------
+" Syntastic
+"------------------------------------
+" エラー行をsignで表示する
+let g:syntastic_enable_signs = 1
+" 可能ならhighligt表示する
+let g:syntastic_enable_highlighting = 1
+" 自動的に開いたり閉じたりする
+let g:syntastic_auto_loc_list=1
+
+
+"------------------------------------
+" ref-sources.vim
+"------------------------------------
+" ローカルに保存されたドキュメントを参照する
+let g:ref_jquery_doc_path = $HOME . '/.vim/bundle/jqapi'
+let g:ref_javascript_doc_path = $HOME . '/.vim/bundle/jsref/htdocs'
+" キャッシュを有効にする
+let g:ref_use_cache = 1
