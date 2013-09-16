@@ -273,7 +273,8 @@ nnoremap <silent> ;t :Unite tag<CR>
 nnoremap <silent> ;o :Unite outline<CR>
 " Yank
 nnoremap <silent> ;y :<C-u>Unite history/yank<CR>
-
+" snippet
+nnoremap <silent> ;s :<C-u>Unite snippet<CR>
 
 
 " ウィンドウを分割して開く
