@@ -106,7 +106,9 @@ let g:neocomplcache_include_paths = {
   \ }
 "インクルード文のパターンを指定
 let g:neocomplcache_include_patterns = {
-  \ 'ruby' : '^\s*require',
+  \ 'ruby'       : '^\s*require',
+  \ 'javascript' : '^\s*require',
+  \ 'coffee'     : '^\s*require',
   \ }
 "インクルード先のファイル名の解析パターン
 let g:neocomplcache_include_exprs = {
@@ -114,7 +116,9 @@ let g:neocomplcache_include_exprs = {
   \ }
 " ファイルを探す際に、この値を末尾に追加したファイルも探す。
 let g:neocomplcache_include_suffixes = {
-  \ 'ruby' : '.rb',
+  \ 'ruby'       : '.rb',
+  \ 'javascript' : '.js',
+  \ 'coffee'     : '.coffee',
   \ }
 
 " for rsense
