@@ -49,6 +49,7 @@ NeoBundle 'https://github.com/thinca/vim-ref.git'
 NeoBundle 'https://github.com/tokuhirom/jsref.git'
 NeoBundle 'https://github.com/tpope/vim-fugitive.git'
 NeoBundle 'https://github.com/tsukkee/unite-tag.git'
+NeoBundle 'https://github.com/tyru/open-browser.vim.git'
 NeoBundle 'https://github.com/ujiro99/memolist.vim.git'
 NeoBundle 'https://github.com/vim-scripts/eregex.vim.git'
 NeoBundle 'https://github.com/vim-scripts/grep.vim.git'
@@ -76,7 +77,6 @@ NeoBundleLazy 'https://github.com/mattn/zencoding-vim.git'
 NeoBundleLazy 'https://github.com/tpope/vim-haml.git'
 NeoBundleLazy 'https://github.com/tpope/vim-rails.git'
 NeoBundleLazy 'https://github.com/tpope/vim-rvm.git'
-NeoBundleLazy 'https://github.com/tyru/open-browser.vim.git'
 NeoBundleLazy 'https://github.com/vim-jp/vimdoc-ja.git'
 NeoBundleLazy 'https://github.com/vim-ruby/vim-ruby.git'
 NeoBundleLazy 'https://github.com/vim-scripts/Better-Javascript-Indentation.git'
@@ -228,7 +228,6 @@ augroup NeoBundleSource
                 \ vim-rails
                 \ vim-ruby
     autocmd FileType {xhtml,html,css,eruby,markdown} NeoBundleSource
-                \ open-browser.vim
                 \ zencoding-vim
     autocmd FileType {javascript,coffee} NeoBundleSource
                 \ Better-Javascript-Indentation
