@@ -24,6 +24,7 @@ if has('gui_running')
     NeoBundle 'https://github.com/vim-scripts/Align.git'
     NeoBundle 'https://github.com/ujiro99/my_color_scheme.git'
 endif
+
 NeoBundle 'https://github.com/Shougo/neobundle.vim.git'
 NeoBundle 'https://github.com/Shougo/neocomplcache.git'
 NeoBundle 'https://github.com/Shougo/neosnippet.git'
@@ -35,6 +36,7 @@ NeoBundle 'https://github.com/deton/jasegment.vim.git'
 NeoBundle 'https://github.com/digitaltoad/vim-jade.git'
 NeoBundle 'https://github.com/kchmck/vim-coffee-script.git'
 NeoBundle 'https://github.com/moll/vim-node.git'
+NeoBundle 'https://github.com/nathanaelkane/vim-indent-guides.git'
 NeoBundle 'https://github.com/rhysd/clever-f.vim.git'
 NeoBundle 'https://github.com/rking/ag.vim.git'
 NeoBundle 'https://github.com/scrooloose/syntastic.git'
