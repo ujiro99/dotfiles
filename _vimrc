@@ -37,9 +37,11 @@ NeoBundle 'https://github.com/digitaltoad/vim-jade.git'
 NeoBundle 'https://github.com/kchmck/vim-coffee-script.git'
 NeoBundle 'https://github.com/moll/vim-node.git'
 NeoBundle 'https://github.com/nathanaelkane/vim-indent-guides.git'
+NeoBundle 'https://github.com/othree/javascript-libraries-syntax.vim.git'
 NeoBundle 'https://github.com/rhysd/clever-f.vim.git'
 NeoBundle 'https://github.com/rking/ag.vim.git'
 NeoBundle 'https://github.com/scrooloose/syntastic.git'
+NeoBundle 'https://github.com/teramako/jscomplete-vim.git'
 NeoBundle 'https://github.com/thinca/vim-quickrun.git'
 NeoBundle 'https://github.com/tpope/vim-fugitive.git'
 NeoBundle 'https://github.com/tsukkee/unite-tag.git'
@@ -311,6 +313,7 @@ let g:quickrun_config.markdown = {
 autocmd FileType javascript :compiler gjslint
 autocmd QuickfixCmdPost make copen
 let g:used_javascript_libs = 'angularjs, jquery'
+let g:jscomplete_use = ['dom', 'moz']
 
 
 "---------------------------------------------
