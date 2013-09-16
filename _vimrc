@@ -56,7 +56,6 @@ NeoBundle 'https://github.com/vim-scripts/grep.vim.git'
 NeoBundle 'https://github.com/vim-scripts/gtags.vim.git'
 NeoBundle 'https://github.com/vim-scripts/surround.vim.git'
 NeoBundle 'https://github.com/wavded/vim-stylus.git'
-NeoBundle 'https://github.com/othree/javascript-libraries-syntax.vim.git'
 
 
 " vimproc を自動でビルドする
