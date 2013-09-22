@@ -46,7 +46,7 @@ nnoremap <silent> ;m :<C-u>Unite file_mru<CR>
 " 常用セット
 nnoremap <silent> ;u :<C-u>Unite buffer file_mru<CR>
 " memolist
-nnoremap <silent> ;l :Unite file:<C-r>=g:memolist_path."/"<CR><CR>
+nnoremap <silent> ;n :Unite file:<C-r>=g:memolist_path."/"<CR><CR>
 " Tags
 nnoremap <silent> ;t :Unite tag<CR>
 " Outline
@@ -55,6 +55,8 @@ nnoremap <silent> ;o :Unite outline<CR>
 nnoremap <silent> ;y :<C-u>Unite history/yank<CR>
 " snippet
 nnoremap <silent> ;s :<C-u>Unite snippet<CR>
+" Line/fast
+nnoremap <silent> ;/  :<C-u>Unite -buffer-name=search line/fast -start-insert -no-quit<CR>
 
 
 " ウィンドウを分割して開く
