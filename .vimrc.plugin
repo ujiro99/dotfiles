@@ -13,7 +13,7 @@ augroup NeoBundleSource
                 \ vim-rails
                 \ vim-ruby
     autocmd FileType {xhtml,html,css,eruby,markdown} NeoBundleSource
-                \ zencoding-vim
+                \ emmet-vim
     autocmd FileType {javascript,coffee} NeoBundleSource
                 \ Better-Javascript-Indentation
                 \ vim-javascript-syntax
@@ -137,17 +137,42 @@ let g:Align_xstrlen=3
 
 
 "---------------------------------------------
-" zencoding 関連
+" emmet 関連
 "---------------------------------------------
 " 補完を有効化
-let g:use_zen_complete_tag = 1
+let g:use_emmet_complete_tag = 1
 " キーマップを変更する
-let g:user_zen_leader_key = '<C-e>'
+let g:user_emmet_leader_key = '<C-e>'
 " インデントは半角スペース4個
-let g:user_zen_settings = {
+let g:user_emmet_settings = {
              \'indentation' : '    ',
              \}
-
+let g:user_emmet_settings = {
+\  'lang' : 'ja',
+\  'html' : {
+\    'filters' : 'html',
+\    'indentation' : ' '
+\  },
+\  'css' : {
+\    'filters' : 'fc',
+\  },
+\  'javascript' : {
+\    'snippets' : {
+\      'jq' : "$(function() {\n\t${cursor}${child}\n});",
+\      'jq:each' : "$.each(arr, function(index, item)\n\t${child}\n});",
+\      'fn' : "(function() {\n\t${cursor}\n})();",
+\      'tm' : "setTimeout(function() {\n\t${cursor}\n}, 100);",
+\    },
+\  },
+\ 'java' : {
+\  'indentation' : '    ',
+\  'snippets' : {
+\   'main': "public static void main(String[] args) {\n\t|\n}",
+\   'println': "System.out.println(\"|\");",
+\   'class': "public class | {\n}\n",
+\  },
+\ },
+\}
 
 "---------------------------------------------
 " surround 関連

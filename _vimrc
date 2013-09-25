@@ -73,7 +73,7 @@ call neobundle#config('Shougo/vimproc', {
 " 後で読み込む
 NeoBundleLazy 'https://github.com/claco/jasmine.vim.git'
 NeoBundleLazy 'https://github.com/jelera/vim-javascript-syntax.git'
-NeoBundleLazy 'https://github.com/mattn/zencoding-vim.git'
+NeoBundleLazy 'https://github.com/mattn/emmet-vim'
 NeoBundleLazy 'https://github.com/tpope/vim-haml.git'
 NeoBundleLazy 'https://github.com/tpope/vim-rails.git'
 NeoBundleLazy 'https://github.com/tpope/vim-rvm.git'
