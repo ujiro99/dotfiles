@@ -134,8 +134,9 @@ setopt share_history        # share command history data
 
 # 補完設定ファイルを読み込む
 fpath=(${HOME}/.zsh/zsh-completions/src ${fpath})
+fpath=($(brew --prefix)/share/zsh/site-functions $fpath)
 autoload -U compinit
-compinit
+compinit -u
 
 
 # 補完スタイルの改善
