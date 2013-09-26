@@ -27,7 +27,7 @@ nnoremap tl  ;<C-u>tags<CR>
 " Ctagsファイル更新
 nnoremap <silent> mt  :!ctags -R<CR>
 " Gtagsファイル更新
-nnoremap <silent> mg  :echo vimproc#system('gtags.exe -v --gtagsconf ~/dotfiles/.gtagsrc')<CR>
+nnoremap <silent> mg  :echo vimproc#system('gtags -v --gtagsconf ~/dotfiles/.gtagsrc')<CR>
 
 " gnu global
 nnoremap tr :<C-u>GtagsCursor<CR>
