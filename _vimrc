@@ -267,8 +267,8 @@ function! s:format_space()
     endif
 endfunction
 
-augroup format_space
-  autocmd!
-  autocmd BufWritePre * call <SID>format_space()
-augroup END
+" augroup format_space
+"   autocmd!
+"   autocmd BufWritePre * call <SID>format_space()
+" augroup END
 
