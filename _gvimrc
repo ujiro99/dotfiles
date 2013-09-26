@@ -12,7 +12,7 @@ if has("win32") || has("win64")
     " DirectWrite ‚ğg‚¤
     " set rop=type:directx
 else
-    set guifont=Osaka-Mono:h14
+    set guifont=Osaka-Mono:h13
 endif
 
 " sŠÔ
