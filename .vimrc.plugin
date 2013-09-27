@@ -27,11 +27,13 @@ augroup END
 "---------------------------------------------
 " 入力モードで開始する
 let g:unite_enable_start_insert=1
-"history/yankの有効化
+" history/yankの有効化
 let g:unite_source_history_yank_enable =1
 " デフォルトでは ignorecase と smartcase を使う
 call unite#set_profile('default', 'ignorecase', 1)
 call unite#set_profile('default', 'smartcase', 1)
+" ファイル選択時は smartcase を使わない
+call unite#set_profile('files', 'smartcase', 1)
 
 " バッファ一覧
 nnoremap <silent> ;b :<C-u>Unite buffer<CR>
@@ -44,7 +46,7 @@ nnoremap <silent> ;r :<C-u>Unite -buffer-name=register register<CR>
 " 最近使用したファイル一覧
 nnoremap <silent> ;m :<C-u>Unite file_mru<CR>
 " 常用セット
-nnoremap <silent> ;u :<C-u>Unite buffer file_mru<CR>
+nnoremap <silent> ;j :<C-u>Unite buffer file_mru<CR>
 " memolist
 nnoremap <silent> ;n :Unite file:<C-r>=g:memolist_path."/"<CR><CR>
 " Tags
@@ -57,7 +59,18 @@ nnoremap <silent> ;y :<C-u>Unite history/yank<CR>
 nnoremap <silent> ;s :<C-u>Unite snippet<CR>
 " Line/fast
 nnoremap <silent> ;/  :<C-u>Unite -buffer-name=search line/fast -start-insert -no-quit<CR>
-
+" grep検索
+nnoremap <silent> ;g  :<C-u>Unite grep:. -buffer-name=search-buffer<CR>
+" カーソル位置の単語をgrep検索
+nnoremap <silent> ;cg :<C-u>Unite grep:. -buffer-name=search-buffer<CR><C-R><C-W>
+" grep検索結果の再呼出
+nnoremap <silent> ;l  :<C-u>UniteResume search-buffer<CR>
+" unite grep に ag(The Silver Searcher) を使う
+if executable('ag')
+  let g:unite_source_grep_command = 'ag'
+  let g:unite_source_grep_default_opts = '--nogroup --nocolor --column'
+  let g:unite_source_grep_recursive_opt = ''
+endif
 
 " ウィンドウを分割して開く
 au FileType unite nnoremap <silent> <buffer> <expr> <C-j> unite#do_action('split')
