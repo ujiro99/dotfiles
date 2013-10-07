@@ -260,6 +260,7 @@ map <Leader>j JsonFormat<CR>
 "---------------------------------------------
 " function
 "---------------------------------------------
+command! RemoveSpace call <SID>format_space()
 function! s:format_space()
     if &ft != 'markdown'
         :%s/\s\+$//ge  " 行末の空白を除去する
