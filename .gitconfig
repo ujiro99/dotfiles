@@ -4,13 +4,7 @@
     encoding = utf-8
     fontdiff = -family Osaka-Mono -size 10 -weight normal -slant roman -underline 0 -overstrike 0
 [core]
-    excludesfile = ~/.gitignore #Globalな.gitignoreの指定
-    #excludesfile = ~/gitignore/Global/Eclipse.gitignore
-    #excludesfile = ~/gitignore/Global/vim.gitignore
-    #excludesfile = ~/gitignore/Global/VisualStudio.gitignore
-    #excludesfile = ~/gitignore/CSharp.gitignore
-    #excludesfile = ~/gitignore/Android.gitignore
-    #excludesfile = ~/gitignore/Java.gitignore
+    excludesfile = ~/.gitignore
     safeCRLF = true
     autoCRLF = false
     quotepath = true
