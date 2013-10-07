@@ -255,21 +255,16 @@ command! JsonFormat :execute '%!python -m json.tool'
   \ | :set ft=javascript
   \ | :1
 map <Leader>j JsonFormat<CR>
+" 空白の除去
+command! RemoveSpace call <SID>format_space()
 
 
 "---------------------------------------------
 " function
 "---------------------------------------------
-command! RemoveSpace call <SID>format_space()
 function! s:format_space()
     if &ft != 'markdown'
         :%s/\s\+$//ge  " 行末の空白を除去する
         :%s/\t/  /ge   " tabをスペースに変換する
     endif
 endfunction
-
-" augroup format_space
-"   autocmd!
-"   autocmd BufWritePre * call <SID>format_space()
-" augroup END
-
