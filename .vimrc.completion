@@ -17,6 +17,3 @@ cnoremap <Down>  <C-n>
 " 補完にneocomplcacheを使う
 source $HOME/dotfiles/.vimrc.completion.neocomplcache
 
-" 補完にAutoComplPopを使う
-"source $HOME/dotfiles/.vimrc.completion.autocomplpop
-
