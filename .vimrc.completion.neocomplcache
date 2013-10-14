@@ -1,7 +1,7 @@
 "------------------------------------
-" neocomplecache.vim
+" neocomplete.vim
 "------------------------------------
-" NeoComplCacheを有効にする
+" NeoCompleteを有効にする
 let g:neocomplete#enable_at_startup = 1
 " 補完が自動で開始される文字数
 let g:neocomplete#auto_completion_start_length = 3
@@ -13,7 +13,7 @@ let g:neocomplete#enable_camel_case_completion = 1
 let g:neocomplete#enable_underbar_completion = 1
 " シンタックスをキャッシュするときの最小文字長を3に
 let g:neocomplete#min_syntax_length = 3
-" neocomplcacheを自動的にロックするバッファ名のパターン
+" neocompleteを自動的にロックするバッファ名のパターン
 let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
 " -入力による候補番号の表示
 let g:neocomplete#enable_quick_match = 1
@@ -42,33 +42,33 @@ let g:neocomplete#keyword_patterns['default'] = '\h\w*'
 let g:neosnippet#snippets_directory = $HOME.'/.vim/snippets'
 
 " 補完を選択しpopupを閉じる
-" inoremap <expr><C-y> neocomplcache#close_popup()
+" inoremap <expr><C-y> neocomplete#close_popup()
 " 補完をキャンセルしpopupを閉じる
-" inoremap <expr><C-e> neocomplcache#cancel_popup()
+" inoremap <expr><C-e> neocomplete#cancel_popup()
 " TABで補完できるようにする
 inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 " undo
-inoremap <expr><C-g>     neocomplcache#undo_completion()
+inoremap <expr><C-g>     neocomplete#undo_completion()
 " 補完候補の共通部分までを補完する
-inoremap <expr><C-s> neocomplcache#complete_common_string()
+inoremap <expr><C-s> neocomplete#complete_common_string()
 " SuperTab like snippets behavior.
-imap <expr><TAB> neocomplcache#sources#snippets_complete#expandable() ? "\<Plug>(neocomplete#snippets_expand)" : pumvisible() ? "\<C-n>" : "\<TAB>"
-" C-nでneocomplcache補完
+imap <expr><TAB> neocomplete#sources#snippets_complete#expandable() ? "\<Plug>(neocomplete#snippets_expand)" : pumvisible() ? "\<C-n>" : "\<TAB>"
+" C-nでneocomplete補完
 inoremap <expr><C-n>  pumvisible() ? "\<C-n>" : "\<C-x>\<C-u>\<C-p>"
 " C-pでkeyword補完
 inoremap <expr><C-p> pumvisible() ? "\<C-p>" : "\<C-p>\<C-n>"
 " 補完候補が出ていたら確定、なければ改行
-inoremap <expr><CR>  pumvisible() ? neocomplcache#close_popup() : "<CR>"
+inoremap <expr><CR>  pumvisible() ? neocomplete#close_popup() : "<CR>"
 
 " <TAB>: completion.
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 " <C-h>, <BS>: close popup and delete backword char.
-inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
-inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
-inoremap <expr><C-x><C-o> &filetype == 'vim' ? "\<C-x><C-v><C-p>" : neocomplcache#start_manual_complete()()
+inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
+inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
+inoremap <expr><C-x><C-o> &filetype == 'vim' ? "\<C-x><C-v><C-p>" : neocomplete#start_manual_complete()()
 
 " buffer開いたらneoconでcache
-autocmd BufReadPost,BufEnter,BufWritePost :NeoComplCacheCachingBuffer <buffer>
+autocmd BufReadPost,BufEnter,BufWritePost :NeoCompleteBufferMakeCache <buffer>
 
 " FileType毎のOmni補完を設定
 autocmd FileType python     setlocal omnifunc=pythoncomplete#Complete
