@@ -263,8 +263,6 @@ command! RemoveSpace call <SID>format_space()
 " function
 "---------------------------------------------
 function! s:format_space()
-    if &ft != 'markdown'
-        :%s/\s\+$//ge  " 行末の空白を除去する
-        :%s/\t/  /ge   " tabをスペースに変換する
-    endif
+    :%s/\s\+$//ge  " 行末の空白を除去する
+    :%s/\t/  /ge   " tabをスペースに変換する
 endfunction
