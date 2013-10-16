@@ -46,7 +46,7 @@ if /%OS%/ == /Windows_NT/ then
     alias    gr      grep --color -i -n
     alias    pw      pwd
     alias    st      start
-    alias    vi      ""C:\Program Files\vim73-kaoriya-win32\vim.exe""
+    alias    vi      ""C:\Program Files\vim74-kaoriya-win32\vim.exe""
     alias    s       svn
     alias    vg      vagrant
     suffix   vbs     cscript  //nologo
