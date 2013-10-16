@@ -15,8 +15,15 @@ augroup NeoBundleSource
     autocmd FileType {xhtml,html,css,eruby,markdown} NeoBundleSource
                 \ emmet-vim
     autocmd FileType {javascript,coffee} NeoBundleSource
-                \ Better-Javascript-Indentation
+                \ jasmine.vim
+                \ javascript-libraries-syntax
+                \ jqapi
+                \ jscomplete-vim
+                \ jsref
+                \ tern_for_vim
+    autocmd FileType {javascript} NeoBundleSource
                 \ vim-javascript-syntax
+                \ Better-Javascript-Indentation
     autocmd FileType haml NeoBundleSource
                 \ vim-haml
 augroup END

@@ -32,4 +32,4 @@ nnoremap <C-g><C-b> :<C-u>GrepBuffer<Space><C-r><C-w><Enter>
 nnoremap <silent>gr :<C-u>Ag<Space><C-r><C-w> . <CR>
 
 let Grep_Skip_Dirs = '.svn .git'
-let Grep_Skip_Files = '*.bak *~'
+let Grep_Skip_Files = '*.bak *~ jquery.*.js'
