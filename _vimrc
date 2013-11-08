@@ -83,9 +83,6 @@ NeoBundleLazy 'https://github.com/marijnh/tern_for_vim.git'
 NeoBundleLazy 'https://github.com/jelera/vim-javascript-syntax.git'
 
 
-" NeoBundle 'https://github.com/nanotech/jellybeans.vim.git'
-NeoBundle 'https://github.com/altercation/vim-colors-solarized.git'
-
 
 filetype plugin indent on     " required!
 
