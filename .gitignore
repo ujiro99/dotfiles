@@ -222,3 +222,6 @@ local.properties
 *.jar
 *.war
 *.ear
+
+# tern
+.tern-port
