@@ -92,4 +92,8 @@
     generic = g move-first-line
     generic = G move-last-line
 [log]
-  date = local
+    date = local
+[pager]
+    log  = diff-highlight | less
+    show = diff-highlight | less
+    diff = diff-highlight | less
