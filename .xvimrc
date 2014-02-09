@@ -40,7 +40,8 @@ let mapleader = ','
 "
 imap kj <Esc>
 
-nnoremap - $
+noremap - $
+
 nnoremap j jzz
 nnoremap k kzz
 nnoremap [ %
