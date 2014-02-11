@@ -61,6 +61,7 @@ PATH="/usr/local/heroku/bin:${PATH}"
 
 # android sdk
 PATH="/Applications/android-sdk-mac_x86/platform-tools:${PATH}"
+PATH="/Applications/android-sdk-mac_x86/tools:${PATH}"
 
 # rbenvの読み込み
 # eval "$(rbenv init -)"

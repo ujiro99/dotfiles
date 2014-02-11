@@ -3,7 +3,14 @@ abbr        console.log(arg)
 prev_word   '^'
   console.log(${1:#arg})
 
+
 snippet     llog
 abbr        console.log(label + arg)
 prev_word   '^'
   console.log("${1:#label}: " + ${2:#arg})
+
+
+snippet     rstr
+abbr        Resource.string("arg")
+regexp      '\S*'
+  Resource.string("${1:#arg}")
