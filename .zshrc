@@ -53,9 +53,6 @@ esac
 PATH=${HOME}/bin:/usr/local/bin:${PATH}
 PATH=${PATH}:/Applications/Xcode.app/Contents/Developer/usr/bin
 
-# rvmへのパスを通す
-[[ -s "${HOME}/.rvm/scripts/rvm" ]] && . "${HOME}/.rvm/scripts/rvm"
-
 ### Added by the Heroku Toolbelt
 PATH="/usr/local/heroku/bin:${PATH}"
 
@@ -64,8 +61,8 @@ PATH="/Applications/android-sdk-mac_x86/platform-tools:${PATH}"
 PATH="/Applications/android-sdk-mac_x86/tools:${PATH}"
 
 # rbenvの読み込み
-# eval "$(rbenv init -)"
-# source /usr/local/Cellar/rbenv/0.3.0/completions/rbenv.zsh
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi")"
+source /usr/local/Cellar/rbenv/0.4.0/completions/rbenv.zsh
 
 
 # auto change directory

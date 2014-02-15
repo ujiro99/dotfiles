@@ -3,12 +3,12 @@
 "---------------------------------------------
 augroup NeoBundleSource
     autocmd!
-    if has("mac")
-        autocmd FileType {ruby,markdown} NeoBundleSource
-                    \ vim-rvm
-        " ruby, markdown のBufferではRvmで設定した環境を使う
-        autocmd FileType {ruby,markdown} :Rvm
-    endif
+    "if has("mac")
+    "    autocmd FileType {ruby,markdown} NeoBundleSource
+    "                \ vim-rvm
+    "    " ruby, markdown のBufferではRvmで設定した環境を使う
+    "    autocmd FileType {ruby,markdown} :Rvm
+    "endif
     autocmd FileType ruby NeoBundleSource
                 \ vim-rails
                 \ vim-ruby
