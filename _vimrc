@@ -104,6 +104,7 @@ set whichwrap=b,s,<,>,[,]
 
 " バックアップファイルを作成しない
 set nobackup
+set nowritebackup
 
 " スワップファイルを作成しない
 set noswapfile
