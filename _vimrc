@@ -2,8 +2,8 @@
 set nocompatible
 filetype off
 
-" メニューをデフォルトの英語にする
-set langmenu=none
+" 標準メニューを読み込まない
+let g:did_install_default_menus = 1
 
 " NeoBundle.vimを使用する
 if has('vim_starting')
