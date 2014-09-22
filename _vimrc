@@ -54,6 +54,8 @@ NeoBundle 'https://github.com/vim-scripts/grep.vim.git'
 NeoBundle 'https://github.com/vim-scripts/gtags.vim.git'
 NeoBundle 'https://github.com/vim-scripts/surround.vim.git'
 NeoBundle 'https://github.com/wavded/vim-stylus.git'
+NeoBundle 'https://github.com/leafgarland/typescript-vim.git'
+NeoBundle 'https://github.com/clausreinke/typescript-tools.git'
 
 " vimproc を自動でビルドする
 call neobundle#config('Shougo/vimproc', {
