@@ -28,6 +28,7 @@ endif
 NeoBundle 'https://github.com/Shougo/neobundle.vim.git'
 NeoBundle 'https://github.com/Shougo/neocomplete.vim.git'
 NeoBundle 'https://github.com/Shougo/neosnippet.git'
+NeoBundle 'https://github.com/Shougo/neosnippet-snippets.git'
 NeoBundle 'https://github.com/Shougo/unite-outline.git'
 NeoBundle 'https://github.com/Shougo/unite.vim.git'
 NeoBundle 'https://github.com/banyan/recognize_charcode.vim.git'
