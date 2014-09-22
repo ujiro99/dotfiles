@@ -137,6 +137,8 @@ let g:syntastic_enable_signs = 1
 let g:syntastic_enable_highlighting = 1
 " 自動的に開いたり閉じたりする
 let g:syntastic_auto_loc_list=1
+let g:syntastic_mode_map = { 'mode': 'active',
+                           \ 'passive_filetypes': ['java'] }
 " Javac Option
 let g:syntastic_java_javac_options = '-encoding utf-8 -J-Dfile.encoding=UTF8 -Xlint'
 let g:syntastic_java_javac_config_file_enabled = 1
@@ -216,12 +218,7 @@ let g:surround_61 = "<%= \r %>"
 map ,mn  :MemoNew<CR>
 map ,ml  :MemoList<CR>
 map ,mg  :MemoGrep<CR>
-let g:memolist_memo_date         = "%Y%m%d %H:%M"
-let g:memolist_memo_suffix       = "md"
-if has("win32") || has("win64")
-    let g:memolist_path = "~/GoogleDrive/memo/win"
-elseif has("mac")
-    let g:memolist_path = "~/GoogleDrive/memo/mac"
-endif
-
+let g:memolist_memo_date    = "%Y%m%d %H:%M"
+let g:memolist_memo_suffix  = "md"
+let g:memolist_path         = "~/memo"
 
