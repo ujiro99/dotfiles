@@ -146,6 +146,9 @@ let g:syntastic_mode_map = { 'mode': 'active',
 " Javac Option
 let g:syntastic_java_javac_options = '-encoding utf-8 -J-Dfile.encoding=UTF8 -Xlint'
 let g:syntastic_java_javac_config_file_enabled = 1
+let g:syntastic_mode_map = { 'mode': 'active',
+  \ 'active_filetypes': [],
+  \ 'passive_filetypes': ['html'] }  " polymer使うと沢山出るから
 
 
 "------------------------------------
