@@ -137,6 +137,9 @@ set hidden
 " 矩形選択で行末を超えてブロックを選択できるようにする
 set virtualedit+=block
 
+" undofileを一箇所にまとめる
+set undodir=~/.vim/undo
+
 " vimrcを編集する
 nnoremap <Space>. :<C-u>edit $HOME/dotfiles/_vimrc<CR>
 
