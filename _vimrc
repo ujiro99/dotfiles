@@ -72,7 +72,6 @@ NeoBundleLazy 'https://github.com/othree/javascript-libraries-syntax.vim.git'
 NeoBundleLazy 'https://github.com/mustardamus/jqapi.git'
 NeoBundleLazy 'https://github.com/teramako/jscomplete-vim.git'
 NeoBundleLazy 'https://github.com/tokuhirom/jsref.git'
-NeoBundleLazy 'https://github.com/marijnh/tern_for_vim.git'
 NeoBundleLazy 'https://github.com/jelera/vim-javascript-syntax.git'
 
 
