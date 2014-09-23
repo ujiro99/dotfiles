@@ -1,0 +1,64 @@
+" 検索をファイルの先頭へ循環しない
+"set nowrapscan
+
+" 大文字小文字の区別なし
+set ignorecase
+
+" 検索時に大文字を含んでいたら大/小を区別
+set smartcase
+
+" 検索対象をハイライト
+" ハイライトを消す場合は:noh[l]
+set hlsearch
+
+" スクロール時に表示を10行確保
+set scrolloff=10
+
+" JIS 配列 C-[ で Esc
+inoremap <C-[> <Esc>
+inoremap kj <Esc>
+
+" 対応する括弧に移動
+nnoremap [ %
+nnoremap ] %
+
+" x キー削除でデフォルトレジスタに入れない
+nnoremap x "_x
+vnoremap x "_x
+
+" - で行末まで移動
+noremap - $
+
+" ノーマルモード中にEnterで改行
+noremap <CR> i<CR><Esc>
+
+" インサートモードの移動
+inoremap <C-h> <Left>
+inoremap <C-l> <Right>
+inoremap <C-n> <Down>
+inoremap <C-p> <Up>
+
+" もう一度やる
+nnoremap U <C-r>
+
+" マッチ文字列が画面の真ん中にくるようにする
+nmap n nzz
+nmap N Nzz
+nmap * *zz
+nmap # #zz
+nmap g* g*zz
+nmap g# g#zz
+
+" ビジュアルモード時-で行末まで選択
+vnoremap - $h
+
+" ビジュアルモード時-で行末まで選択
+vnoremap - $h
+
+" vv で行末まで選択
+vnoremap v ^$h
+
+" 選択範囲のインデントを連続して変更
+vnoremap < <gv
+vnoremap > >gv
+
