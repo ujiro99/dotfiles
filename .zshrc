@@ -61,7 +61,7 @@ PATH="/Applications/android-sdk-mac_x86/platform-tools:${PATH}"
 PATH="/Applications/android-sdk-mac_x86/tools:${PATH}"
 
 # rbenvの読み込み
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi")"
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 source /usr/local/Cellar/rbenv/0.4.0/completions/rbenv.zsh
 
 
