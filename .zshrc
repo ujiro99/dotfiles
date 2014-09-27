@@ -64,7 +64,6 @@ PATH="/Applications/android-sdk-mac_x86/tools:${PATH}"
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 source /usr/local/Cellar/rbenv/0.4.0/completions/rbenv.zsh
 
-
 # auto change directory
 setopt auto_cd
 

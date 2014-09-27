@@ -2,8 +2,8 @@
 set nocompatible
 filetype off
 
-" メニューをデフォルトの英語にする
-set langmenu=none
+" 標準メニューを読み込まない
+let g:did_install_default_menus = 1
 
 " NeoBundle.vimを使用する
 if has('vim_starting')
@@ -31,7 +31,6 @@ NeoBundle 'https://github.com/Shougo/neosnippet.git'
 NeoBundle 'https://github.com/Shougo/neosnippet-snippets.git'
 NeoBundle 'https://github.com/Shougo/unite-outline.git'
 NeoBundle 'https://github.com/Shougo/unite.vim.git'
-NeoBundle 'https://github.com/Shougo/vimproc.git'
 NeoBundle 'https://github.com/banyan/recognize_charcode.vim.git'
 NeoBundle 'https://github.com/deton/jasegment.vim.git'
 NeoBundle 'https://github.com/digitaltoad/vim-jade.git'
@@ -49,7 +48,7 @@ NeoBundle 'https://github.com/thinca/vim-ref.git'
 NeoBundle 'https://github.com/tpope/vim-fugitive.git'
 NeoBundle 'https://github.com/tsukkee/unite-tag.git'
 NeoBundle 'https://github.com/tyru/open-browser.vim.git'
-NeoBundle 'https://github.com/ujiro99/memolist.vim.git'
+NeoBundle 'https://github.com/glidenote/memolist.vim.git'
 NeoBundle 'https://github.com/othree/eregex.vim.git'
 NeoBundle 'https://github.com/vim-scripts/grep.vim.git'
 NeoBundle 'https://github.com/vim-scripts/gtags.vim.git'
@@ -117,6 +116,7 @@ set whichwrap=b,s,<,>,[,]
 
 " バックアップファイルを作成しない
 set nobackup
+set nowritebackup
 
 " スワップファイルを作成しない
 set noswapfile
