@@ -185,6 +185,7 @@ esac
 
 alias where="command -v"
 alias c="cd"
+alias e="vi"
 alias l="ls -a"
 alias la="ls -a"
 alias lf="ls -F"
