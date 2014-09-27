@@ -137,8 +137,6 @@ let g:syntastic_enable_signs = 1
 let g:syntastic_enable_highlighting = 1
 " 自動的に開いたり閉じたりする
 let g:syntastic_auto_loc_list=1
-let g:syntastic_mode_map = { 'mode': 'active',
-                           \ 'passive_filetypes': ['java'] }
 " Javac Option
 let g:syntastic_java_javac_options = '-encoding utf-8 -J-Dfile.encoding=UTF8 -Xlint'
 let g:syntastic_java_javac_config_file_enabled = 1
@@ -146,7 +144,6 @@ let g:syntastic_java_javac_config_file_enabled = 1
 let g:syntastic_typescript_checkers = ['tslint']
 let g:syntastic_mode_map = { 'mode': 'active',
   \ 'active_filetypes': [],
-  \ 'passive_filetypes': ['html'] }  " polymer使うと沢山出るから
   \ 'passive_filetypes': ['html', 'java'] } " polymer使うと沢山出るから
 
 "------------------------------------
