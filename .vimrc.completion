@@ -14,6 +14,10 @@ cnoremap <Up>  <C-p>
 cnoremap <C-n> <Down>
 cnoremap <Down>  <C-n>
 
+" start completion Ctrl+space
+inoremap <C-Space> <C-x><C-o>
+inoremap <C-@> <C-Space>
+
 " 補完にneocomplcacheを使う
 source $HOME/dotfiles/.vimrc.completion.neocomplcache
 

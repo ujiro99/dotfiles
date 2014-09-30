@@ -104,11 +104,6 @@ let g:neocomplete#include_suffixes = {
   \ 'coffee'     : '.coffee',
   \ }
 
-" start completion Ctrl+space
-inoremap <expr><C-space> neocomplete#start_manual_complete()
-imap <C-@> <C-Space>
-
-
 "---------------------------------------------
 " NeoSnippet key-mappings.
 "---------------------------------------------
