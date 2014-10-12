@@ -15,10 +15,12 @@ if has('vim_starting')
 endif
 
 if has("win32") || has("win64") || has("win32unix")
-   call neobundle#rc('$HOME/vimfiles/bundle/')
+    call neobundle#begin(expand('~/vimfiles/bundle/'))
 else
-   call neobundle#rc()
+    call neobundle#begin(expand('~/.vim/bundle/'))
 endif
+NeoBundleFetch 'Shougo/neobundle.vim'
+call neobundle#end()
 
 if has('gui_running')
     NeoBundle 'https://github.com/vim-scripts/Align.git'
@@ -45,7 +47,6 @@ NeoBundle 'https://github.com/vim-scripts/gtags.vim.git'
 NeoBundle 'https://github.com/vim-scripts/surround.vim.git'
 
 " Shougo
-NeoBundle 'https://github.com/Shougo/neobundle.vim.git'
 NeoBundle 'https://github.com/Shougo/neocomplete.vim.git'
 NeoBundle 'https://github.com/Shougo/neosnippet.git'
 NeoBundle 'https://github.com/Shougo/neosnippet-snippets.git'
