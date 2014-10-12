@@ -25,18 +25,8 @@ if has('gui_running')
     NeoBundle 'https://github.com/ujiro99/my_color_scheme.git'
 endif
 
-NeoBundle 'https://github.com/Shougo/neobundle.vim.git'
-NeoBundle 'https://github.com/Shougo/neocomplete.vim.git'
-NeoBundle 'https://github.com/Shougo/neosnippet.git'
-NeoBundle 'https://github.com/Shougo/neosnippet-snippets.git'
-NeoBundle 'https://github.com/Shougo/unite-outline.git'
-NeoBundle 'https://github.com/Shougo/neomru.vim.git'
-NeoBundle 'https://github.com/Shougo/unite.vim.git'
 NeoBundle 'https://github.com/banyan/recognize_charcode.vim.git'
 NeoBundle 'https://github.com/deton/jasegment.vim.git'
-NeoBundle 'https://github.com/digitaltoad/vim-jade.git'
-NeoBundle 'https://github.com/hail2u/vim-css3-syntax.git'
-NeoBundle 'https://github.com/kchmck/vim-coffee-script.git'
 NeoBundle 'https://github.com/mojako/ref-sources.vim.git'
 NeoBundle 'https://github.com/moll/vim-node.git'
 NeoBundle 'https://github.com/nathanaelkane/vim-indent-guides.git'
@@ -47,36 +37,42 @@ NeoBundle 'https://github.com/scrooloose/syntastic.git'
 NeoBundle 'https://github.com/thinca/vim-quickrun.git'
 NeoBundle 'https://github.com/thinca/vim-ref.git'
 NeoBundle 'https://github.com/tpope/vim-fugitive.git'
-NeoBundle 'https://github.com/tsukkee/unite-tag.git'
 NeoBundle 'https://github.com/tyru/open-browser.vim.git'
 NeoBundle 'https://github.com/glidenote/memolist.vim.git'
 NeoBundle 'https://github.com/othree/eregex.vim.git'
 NeoBundle 'https://github.com/vim-scripts/grep.vim.git'
 NeoBundle 'https://github.com/vim-scripts/gtags.vim.git'
 NeoBundle 'https://github.com/vim-scripts/surround.vim.git'
-NeoBundle 'https://github.com/wavded/vim-stylus.git'
-NeoBundle 'https://github.com/leafgarland/typescript-vim.git'
-NeoBundle 'https://github.com/clausreinke/typescript-tools.git'
 
-" vimproc を自動でビルドする
-call neobundle#config('Shougo/vimproc', {
-      \ 'build' : {
-      \     'windows' : 'make -f make_mingw32.mak',
-      \     'cygwin' : 'make -f make_cygwin.mak',
-      \     'mac' : 'make -f make_mac.mak',
-      \     'unix' : 'make -f make_unix.mak',
-      \    },
-      \ })
+" Shougo
+NeoBundle 'https://github.com/Shougo/neobundle.vim.git'
+NeoBundle 'https://github.com/Shougo/neocomplete.vim.git'
+NeoBundle 'https://github.com/Shougo/neosnippet.git'
+NeoBundle 'https://github.com/Shougo/neosnippet-snippets.git'
+NeoBundle 'Shougo/vimproc.vim', {
+\ 'build' : {
+\     'windows' : 'tools\\update-dll-mingw',
+\     'cygwin' : 'make -f make_cygwin.mak',
+\     'mac' : 'make -f make_mac.mak',
+\     'linux' : 'make',
+\     'unix' : 'gmake',
+\    },
+\ }
 
+" Unite
+NeoBundle 'https://github.com/Shougo/neomru.vim.git'
+NeoBundle 'https://github.com/Shougo/unite.vim.git'
+NeoBundle 'https://github.com/Shougo/unite-outline.git'
+NeoBundle 'https://github.com/tsukkee/unite-tag.git'
 
 " 後で読み込む
-NeoBundleLazy 'https://github.com/mattn/emmet-vim'
-NeoBundleLazy 'https://github.com/tpope/vim-haml.git'
-NeoBundleLazy 'https://github.com/tpope/vim-rails.git'
 NeoBundleLazy 'https://github.com/vim-jp/vimdoc-ja.git'
+
+" Ruby
+NeoBundleLazy 'https://github.com/tpope/vim-rails.git'
 NeoBundleLazy 'https://github.com/vim-ruby/vim-ruby.git'
 
-" javascript
+" Javascript
 NeoBundleLazy 'https://github.com/vim-scripts/Better-Javascript-Indentation.git'
 NeoBundleLazy 'https://github.com/claco/jasmine.vim.git'
 NeoBundleLazy 'https://github.com/othree/javascript-libraries-syntax.vim.git'
@@ -85,7 +81,15 @@ NeoBundleLazy 'https://github.com/teramako/jscomplete-vim.git'
 NeoBundleLazy 'https://github.com/tokuhirom/jsref.git'
 NeoBundleLazy 'https://github.com/jelera/vim-javascript-syntax.git'
 
-
+" Web
+NeoBundleLazy 'https://github.com/mattn/emmet-vim'
+NeoBundleLazy 'https://github.com/tpope/vim-haml.git'
+NeoBundleLazy 'https://github.com/digitaltoad/vim-jade.git'
+NeoBundleLazy 'https://github.com/hail2u/vim-css3-syntax.git'
+NeoBundleLazy 'https://github.com/wavded/vim-stylus.git'
+NeoBundleLazy 'https://github.com/kchmck/vim-coffee-script.git'
+NeoBundleLazy 'https://github.com/leafgarland/typescript-vim.git'
+NeoBundleLazy 'https://github.com/clausreinke/typescript-tools.git'
 
 filetype plugin indent on     " required!
 
