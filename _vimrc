@@ -2,9 +2,6 @@
 set nocompatible
 filetype off
 
-" 標準メニューを読み込まない
-let g:did_install_default_menus = 1
-
 " NeoBundle.vimを使用する
 if has('vim_starting')
   if has("win32") || has("win64") || has("win32unix")
@@ -15,6 +12,8 @@ if has('vim_starting')
 endif
 
 if has("win32") || has("win64") || has("win32unix")
+    " 標準メニューを読み込まない
+    let g:did_install_default_menus = 1
     call neobundle#begin(expand('~/vimfiles/bundle/'))
 else
     call neobundle#begin(expand('~/.vim/bundle/'))
