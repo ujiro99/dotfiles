@@ -203,7 +203,7 @@ inoremap <C-h> <Left>
 inoremap <C-l> <Right>
 
 " Leader
-map ¥ <leader>
+let mapleader = " "
 
 
 "---------------------------------------------
