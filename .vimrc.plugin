@@ -24,6 +24,9 @@ augroup NeoBundleSource
     autocmd FileType {javascript} NeoBundleSource
                 \ vim-javascript-syntax
                 \ Better-Javascript-Indentation
+    autocmd FileType typescript NeoBundleSource
+                \ typescript-vim
+                \ typescript-tools
     autocmd FileType haml NeoBundleSource
                 \ vim-haml
 augroup END
@@ -150,6 +153,7 @@ let g:syntastic_mode_map = { 'mode': 'active',
   \ 'active_filetypes': [],
   \ 'passive_filetypes': ['html', 'java'] } " polymer使うと沢山出るから
 
+
 "------------------------------------
 " ref-sources.vim
 "------------------------------------
@@ -204,6 +208,7 @@ let g:user_emmet_settings = {
 \  },
 \ },
 \}
+
 
 "---------------------------------------------
 " surround 関連
