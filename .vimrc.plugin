@@ -44,10 +44,10 @@ call unite#set_profile('files', 'context', {'smartcase': 0})
 
 " バッファ一覧
 nnoremap <silent> ;b :<C-u>Unite buffer<CR>
-" ファイル一覧
+" ファイル一覧(カレントバッファ)
 nnoremap <silent> ;f :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
-" ディレクトリ一覧
-nnoremap <silent> ;d :<C-u>UniteWithBufferDir -buffer-name=directories directory<CR>
+" ファイル一覧(カレントディレクトリ)
+nnoremap <silent> ;d :<C-u>UniteWithCurrentDir -buffer-name=files file<CR>
 " レジスタ一覧
 nnoremap <silent> ;r :<C-u>Unite -buffer-name=register register<CR>
 " 最近使用したファイル一覧
