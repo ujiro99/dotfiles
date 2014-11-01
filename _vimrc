@@ -50,6 +50,7 @@ NeoBundle 'https://github.com/vim-scripts/surround.vim.git'
 NeoBundle 'https://github.com/Shougo/neocomplete.vim.git'
 NeoBundle 'https://github.com/Shougo/neosnippet.git'
 NeoBundle 'https://github.com/Shougo/neosnippet-snippets.git'
+NeoBundle 'https://github.com/Shougo/vimfiler.vim.git'
 NeoBundle 'Shougo/vimproc.vim', {
 \ 'build' : {
 \     'windows' : 'tools\\update-dll-mingw',

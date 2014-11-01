@@ -231,3 +231,9 @@ let g:memolist_unite = 1
 " vim markdown 関連
 "---------------------------------------------
 let g:vim_markdown_initial_foldlevel=2
+
+
+"---------------------------------------------
+" vimfiler 関連
+"---------------------------------------------
+let g:vimfiler_as_default_explorer = 1
