@@ -20,7 +20,7 @@ augroup NeoBundleSource
                 \ jqapi
                 \ jscomplete-vim
                 \ jsref
-                \ tern_for_vim
+                \ vim-coffee-script
     autocmd FileType {javascript} NeoBundleSource
                 \ vim-javascript-syntax
                 \ Better-Javascript-Indentation
