@@ -1,11 +1,13 @@
 #!/bin/bash
 
+# install Homebrew
+ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+brew install git
+
 mkdir ~/dotfiles/vimfiles
-mkdir ~/.zsh
 
 ln -s ~/dotfiles/.gitignore ~/.gitignore
 ln -s ~/dotfiles/.gitconfig ~/.gitconfig
-ln -s ~/dotfiles/.zshrc ~/.zshrc
 ln -s ~/dotfiles/.gtagsrc ~/.gtagsrc
 ln -s ~/dotfiles/_vimrc ~/.vimrc
 ln -s ~/dotfiles/_gvimrc ~/.gvimrc
@@ -14,8 +16,37 @@ ln -s ~/dotfiles/.ideavimrc ~/.ideavimrc
 ln -s ~/dotfiles/tslint.json ~/tslint.json
 ln -s ~/dotfiles/vimfiles ~/.vim
 
+# vi
 git clone https://github.com/Shougo/neobundle.vim ~/dotfiles/vimfiles/bundle/neobundle.vim
-git clone https://github.com/Shougo/vimproc ~/dotfiles/vimfiles/bundle/vimproc
-git clone https://github.com/rupa/z.git ~/.zsh/z
-git clone https://github.com/zsh-users/zsh-completions.git ~/.zsh/zsh-completions
-git clone https://github.com/creationix/nvm.git ~/.nvm
+
+## prezto
+git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+setopt EXTENDED_GLOB
+for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
+  ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
+done
+chsh -s /bin/zsh
+echo "source ~/dotfiles/.zshrc" >> ~/.zshrc
+
+# brew
+brew install cmigemo
+brew install nodebrew
+brew install pyenv
+brew install pyenv-pip-rehash
+brew install homebrew/boneyard/pyenv-pip-rehash
+brew install the_silver_searcher
+brew install tig
+brew install z
+brew install go
+brew install caskroom/cask/brew-cask
+brew cask install iterm2
+brew cask install keyremap4macbook
+brew cask install lastpass-universal
+brew cask install betterzipql
+brew cask install qlmarkdown
+brew cask install qlstephen
+brew cask install quicklook-json
+nodebrew install-binary stable
+
+# go
+go get github.com/lestrrat/peco/cmd/peco/
