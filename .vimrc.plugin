@@ -29,6 +29,12 @@ augroup NeoBundleSource
                 \ typescript-tools
     autocmd FileType haml NeoBundleSource
                 \ vim-haml
+    autocmd FileType jade NeoBundleSource
+                \ vim-jade
+    autocmd FileType css NeoBundleSource
+                \ vim-css3-syntax
+    autocmd FileType stylus NeoBundleSource
+                \ vim-stylus
 augroup END
 
 
