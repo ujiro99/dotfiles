@@ -15,6 +15,7 @@ ln -s ~/dotfiles/.xvimrc ~/.xvimrc
 ln -s ~/dotfiles/.ideavimrc ~/.ideavimrc
 ln -s ~/dotfiles/tslint.json ~/tslint.json
 ln -s ~/dotfiles/vimfiles ~/.vim
+ln -s ~/dotfiles/.tmux.conf ~/.tmux.conf
 
 # vi
 git clone https://github.com/Shougo/neobundle.vim ~/dotfiles/vimfiles/bundle/neobundle.vim
