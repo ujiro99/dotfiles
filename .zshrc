@@ -3,8 +3,6 @@
 source ~/dotfiles/.zshrc.peco
 source ~/dotfiles/.zshrc.tmux
 
-# nvm
-# [ -f ${HOME}/.nvm/nvm.sh ] && source ${HOME}/.nvm/nvm.sh
 # rbenv
 # if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 # source /usr/local/Cellar/rbenv/0.4.0/completions/rbenv.zsh
@@ -28,11 +26,6 @@ zle -N history-beginning-search-backward-end history-search-end
 zle -N history-beginning-search-forward-end history-search-end
 bindkey "^p" history-beginning-search-backward-end
 bindkey "^n" history-beginning-search-forward-end
-bindkey "\\ep" history-beginning-search-backward-end
-bindkey "\\en" history-beginning-search-forward-end
-# reverse menu completion binded to Shift-Tab
-bindkey "\e[Z" reverse-menu-complete
-
 
 ## Alias configuration
 # expand aliases before completing
@@ -65,8 +58,8 @@ alias la="ls -a"
 alias ll="ls -la"
 alias du="du -h"
 alias df="df -h"
+alias dl="docker ps -l -q"
 alias su="su -l"
-alias sc="screen"
 alias pw="pwd"
 alias g="git"
 alias gst="git st -s -b && git stash list"
@@ -79,6 +72,7 @@ alias a="adb"
 alias ad="adb devices"
 alias as="adb shell"
 alias al="adb logcat -v time"
+
 
 # grep デフォルトオプションの設定
 export GREP_OPTIONS
@@ -98,3 +92,4 @@ GREP_OPTIONS="--exclude-dir=.libs $GREP_OPTIONS"
 
 # z
 . `brew --prefix`/etc/profile.d/z.sh
+set $_Z_CMD j
