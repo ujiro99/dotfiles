@@ -19,7 +19,6 @@ else
     call neobundle#begin(expand('~/.vim/bundle/'))
 endif
 NeoBundleFetch 'Shougo/neobundle.vim'
-call neobundle#end()
 
 if has('gui_running')
     NeoBundle 'https://github.com/vim-scripts/Align.git'
@@ -95,6 +94,9 @@ NeoBundleLazy 'https://github.com/clausreinke/typescript-tools.git'
 NeoBundleLazy 'https://github.com/dag/vim2hs.git'
 NeoBundleLazy 'https://github.com/eagletmt/neco-ghc.git'
 NeoBundleLazy 'https://github.com/eagletmt/ghcmod-vim.git'
+
+call neobundle#end()
+
 
 filetype plugin indent on     " required!
 
