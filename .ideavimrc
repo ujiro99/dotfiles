@@ -16,15 +16,14 @@ set scrolloff=10
 
 " JIS 配列 C-[ で Esc
 inoremap <C-[> <Esc>
-inoremap kj <Esc>
 
 " 対応する括弧に移動
 nnoremap [ %
 nnoremap ] %
 
 " x キー削除でデフォルトレジスタに入れない
-nnoremap x "_x
-vnoremap x "_x
+" "nnoremap x "_x
+" "vnoremap x "_x
 
 " - で行末まで移動
 noremap - $
