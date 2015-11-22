@@ -16,6 +16,7 @@ PATH="/Applications/android-sdk-mac_x86/platform-tools:${PATH}" # android sdk
 PATH="/Applications/android-sdk-mac_x86/tools:${PATH}"          # android sdk
 PATH=$HOME/.nodebrew/current/bin:$PATH                          # nodebrew
 PATH=$HOME/.pyenv/shims:$PATH                                   # pyenv
+PATH=$HOME/.cabal/bin:$PATH                                     # cabal
 # go
 export GOROOT=/usr/local/opt/go/libexec
 export GOPATH=$HOME/go

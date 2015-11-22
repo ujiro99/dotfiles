@@ -35,6 +35,10 @@ augroup NeoBundleSource
                 \ vim-css3-syntax
     autocmd FileType stylus NeoBundleSource
                 \ vim-stylus
+    autocmd FileType haskell NeoBundleSource
+                \ vim2hs
+                \ neco-ghc
+                \ ghcmod-vim
 augroup END
 
 

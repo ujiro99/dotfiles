@@ -91,6 +91,11 @@ NeoBundleLazy 'https://github.com/kchmck/vim-coffee-script.git'
 NeoBundleLazy 'https://github.com/leafgarland/typescript-vim.git'
 NeoBundleLazy 'https://github.com/clausreinke/typescript-tools.git'
 
+" Haskell
+NeoBundleLazy 'https://github.com/dag/vim2hs.git'
+NeoBundleLazy 'https://github.com/eagletmt/neco-ghc.git'
+NeoBundleLazy 'https://github.com/eagletmt/ghcmod-vim.git'
+
 filetype plugin indent on     " required!
 
 "---------------------------------------------
