@@ -12,8 +12,7 @@ source ~/dotfiles/.zshrc.tmux
 ## PATH setting
 PATH=${HOME}/bin:/usr/local/bin:${PATH}
 PATH="/usr/local/heroku/bin:${PATH}"                            # Heroku
-PATH="/Applications/android-sdk-mac_x86/platform-tools:${PATH}" # android sdk
-PATH="/Applications/android-sdk-mac_x86/tools:${PATH}"          # android sdk
+PATH="/Users/uj/Library/Android/sdk/platform-tools:${PATH}"     # android sdk
 PATH=$HOME/.nodebrew/current/bin:$PATH                          # nodebrew
 PATH=$HOME/.pyenv/shims:$PATH                                   # pyenv
 PATH=$HOME/.cabal/bin:$PATH                                     # cabal
