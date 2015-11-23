@@ -1,6 +1,11 @@
 # Source global definitions
 [ -s /etc/bashrc ] && . /etc/bashrc
 
+# path
+export GOROOT=/usr/local/go
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+[ -s ~/dotfiles/.bashrc.peco ] && . ~/dotfiles/.bashrc.peco
 
 # 新しく作られたファイルのパーミッションを644をデフォルトにする
 umask 022
