@@ -95,6 +95,11 @@ NeoBundleLazy 'https://github.com/dag/vim2hs.git'
 NeoBundleLazy 'https://github.com/eagletmt/neco-ghc.git'
 NeoBundleLazy 'https://github.com/eagletmt/ghcmod-vim.git'
 
+" Go
+NeoBundle 'https://github.com/dgryski/vim-godef.git'
+NeoBundle 'https://github.com/vim-jp/vim-go-extra.git'
+set rtp^=$GOPATH/src/github.com/nsf/gocode/vim
+
 call neobundle#end()
 
 
