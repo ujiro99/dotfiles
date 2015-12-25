@@ -16,7 +16,7 @@ PATH=$HOME/.cabal/bin:$PATH                                     # cabal
 # go
 export GOROOT=/usr/local/opt/go/libexec
 export GOPATH=$HOME/go/thirdparty:$HOME/go/work
-PATH=$GOPATH/thirdparty/bin:$HOME/go/work/bin:$GOROOT/bin:$PATH
+PATH=$HOME/go/thirdparty/bin:$HOME/go/work/bin:$GOROOT/bin:$PATH
 
 ## Keybind configuration
 # historical backward/forward search with linehead string binded to ^P/^N
