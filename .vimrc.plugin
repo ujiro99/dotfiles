@@ -280,14 +280,3 @@ let g:vim_markdown_initial_foldlevel=2
 " vimfiler 関連
 "---------------------------------------------
 let g:vimfiler_as_default_explorer = 1
-
-
-"---------------------------------------------
-" go 関連
-"--------------------------------------------- {{{
-set path+=$GOPATH/src/**
-let g:gofmt_command = 'goimports'
-au BufWritePre *.go Fmt
-au BufNewFile,BufRead *.go set sw=4 noexpandtab ts=4 completeopt=menu,preview
-au FileType go compiler go
-" }}}

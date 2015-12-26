@@ -98,9 +98,8 @@ NeoBundleLazy 'https://github.com/eagletmt/neco-ghc.git'
 NeoBundleLazy 'https://github.com/eagletmt/ghcmod-vim.git'
 
 " Go
+NeoBundle 'https://github.com/fatih/vim-go.git'
 NeoBundle 'https://github.com/dgryski/vim-godef.git'
-NeoBundle 'https://github.com/vim-jp/vim-go-extra.git'
-set rtp^=$GOPATH/src/github.com/nsf/gocode/vim
 
 call neobundle#end()
 
@@ -254,6 +253,14 @@ let g:jscomplete_use = ['dom', 'moz']
 " coffeescript 関連
 "---------------------------------------------
 " nnoremap <Space>w :CoffeeCompile watch<CR>
+
+
+"---------------------------------------------
+" go 関連
+"---------------------------------------------
+au BufWritePre *.go GoFmt
+au BufNewFile,BufRead *.go set sw=4 noexpandtab ts=4 completeopt=menu,preview
+au FileType go compiler go
 
 
 "---------------------------------------------
