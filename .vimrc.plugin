@@ -54,6 +54,12 @@ call unite#set_profile('default', 'context', {'ignorecase': 1})
 call unite#set_profile('default', 'context', {'smartcase': 1})
 " ファイル選択時は smartcase を使わない
 call unite#set_profile('files', 'context', {'smartcase': 0})
+" unite grep に ptを使う
+if executable('pt')
+  let g:unite_source_grep_command = 'pt'
+  let g:unite_source_grep_default_opts = '--nogroup --nocolor'
+  let g:unite_source_grep_recursive_opt = ''
+endif
 
 " ファイル一覧(カレントバッファ)
 nnoremap <silent> ;f :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
@@ -83,16 +89,6 @@ nnoremap <silent> ;g  :<C-u>Unite grep:. -buffer-name=search-buffer<CR>
 nnoremap <silent> ;cg :<C-u>Unite grep:. -buffer-name=search-buffer<CR><C-R><C-W><CR>
 " grep検索結果の再呼出
 nnoremap <silent> ;l  :<C-u>UniteResume search-buffer<CR>
-" unite grep に pt or ag(The Silver Searcher) を使う
-if executable('pt')
-  let g:unite_source_grep_command = 'pt'
-  let g:unite_source_grep_default_opts = '--nogroup --nocolor'
-  let g:unite_source_grep_recursive_opt = ''
-elseif executable('ag')
-  let g:unite_source_grep_command = 'ag'
-  let g:unite_source_grep_default_opts = '--nogroup --nocolor --column'
-  let g:unite_source_grep_recursive_opt = ''
-endif
 
 " ウィンドウを分割して開く
 au FileType unite nnoremap <silent> <buffer> <expr> <C-j> unite#do_action('split')
