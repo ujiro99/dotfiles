@@ -196,20 +196,6 @@ vnoremap ' "zdi'<C-R>z'<ESC>
 autocmd FileType qf nnoremap <buffer> q :ccl<CR>
 autocmd FileType qf nnoremap <buffer> <ESC> :ccl<CR>
 
-" twでquickfixウィンドウの表示をtoggleする
-function! s:toggle_qf_window()
-  for bufnr in range(1,  winnr('$'))
-    if getwinvar(bufnr,  '&buftype') ==# 'quickfix'
-      execute 'ccl'
-      return
-    endif
-  endfor
-  execute 'botright cw'
-endfunction
-
-nnoremap <silent> tw :call <SID>toggle_qf_window()<CR>
-
-
 " 挿入モードでのカーソル移動
 inoremap <C-h> <Left>
 inoremap <C-l> <Right>
@@ -285,14 +271,26 @@ command! JsonFormat :execute '%!python -m json.tool'
   \ | :set ft=javascript
   \ | :1
 map <Leader>j JsonFormat<CR>
-" 空白の除去
-command! RemoveSpace call <SID>format_space()
 
 
 "---------------------------------------------
 " function
 "---------------------------------------------
+" 空白の除去
+command! RemoveSpace call <SID>format_space()
 function! s:format_space()
     :%s/\s\+$//ge  " 行末の空白を除去する
     :%s/\t/  /ge   " tabをスペースに変換する
+endfunction
+
+" twでquickfixウィンドウの表示をtoggleする
+nnoremap <silent> tw :call <SID>toggle_qf_window()<CR>
+function! s:toggle_qf_window()
+  for bufnr in range(1,  winnr('$'))
+    if getwinvar(bufnr,  '&buftype') ==# 'quickfix'
+      execute 'ccl'
+      return
+    endif
+  endfor
+  execute 'botright cw'
 endfunction
