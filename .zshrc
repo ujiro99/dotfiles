@@ -5,19 +5,6 @@ source ~/dotfiles/.zshrc.tmux
 # rbenv
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
-## PATH setting
-PATH=${HOME}/bin:/usr/local/bin:${PATH}
-PATH="/usr/local/heroku/bin:${PATH}"                            # Heroku
-PATH="/Users/uj/Library/Android/sdk/platform-tools:${PATH}"     # android sdk
-PATH=$HOME/.nodebrew/current/bin:$PATH                          # nodebrew
-PATH=$HOME/.pyenv/shims:$PATH                                   # pyenv
-PATH=$HOME/.cabal/bin:$PATH                                     # cabal
-
-# go
-export GOROOT=/usr/local/opt/go/libexec
-export GOPATH=$HOME/go/thirdparty:$HOME/go/work
-PATH=$HOME/go/thirdparty/bin:$HOME/go/work/bin:$GOROOT/bin:$PATH
-
 ## Keybind configuration
 # historical backward/forward search with linehead string binded to ^P/^N
 autoload history-search-end
@@ -92,3 +79,6 @@ GREP_OPTIONS="--exclude-dir=.libs $GREP_OPTIONS"
 # z
 . `brew --prefix`/etc/profile.d/z.sh
 set $_Z_CMD j
+
+typeset -U name_of_the_variable
+
