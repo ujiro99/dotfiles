@@ -62,31 +62,29 @@ if executable('pt')
 endif
 
 " ファイル一覧(カレントバッファ)
-nnoremap <silent> ;f :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
+nnoremap <silent> ;f  :<C-u>UniteWithBufferDir file<CR>
 " ファイル一覧(カレントディレクトリ)
-nnoremap <silent> ;d :<C-u>UniteWithCurrentDir -buffer-name=files file<CR>
+nnoremap <silent> ;d  :<C-u>UniteWithCurrentDir file<CR>
 " レジスタ一覧
-nnoremap <silent> ;r :<C-u>Unite -buffer-name=register register<CR>
+nnoremap <silent> ;r  :<C-u>Unite register<CR>
 " 最近使用したファイル一覧
-nnoremap <silent> ;m :<C-u>Unite file_mru<CR>
+nnoremap <silent> ;m  :<C-u>Unite file_mru<CR>
 " バッファ一覧
-nnoremap <silent> ;j :<C-u>Unite buffer<CR>
+nnoremap <silent> ;j  :<C-u>Unite buffer<CR>
 " memolist
-nnoremap <silent> ;n :Unite file:<C-r>=g:memolist_path."/"<CR><CR>
+nnoremap <silent> ;n  :Unite file:<C-r>=g:memolist_path."/"<CR><CR>
 " Tags
-nnoremap <silent> ;t :Unite tag<CR>
+nnoremap <silent> ;t  :Unite tag<CR>
 " Outline
-nnoremap <silent> ;o :Unite outline<CR>
+nnoremap <silent> ;o  :Unite outline<CR>
 " Yank
-nnoremap <silent> ;y :<C-u>Unite history/yank<CR>
-" snippet
-nnoremap <silent> ;s :<C-u>Unite snippet<CR>
-" Line/fast
-nnoremap <silent> ;/  :<C-u>Unite -buffer-name=search line/fast -start-insert -no-quit<CR>
+nnoremap <silent> ;y  :<C-u>Unite history/yank<CR>
+" Line
+nnoremap <silent> ;/  :<C-u>Unite line -start-insert -no-quit<CR>
 " grep検索
-nnoremap <silent> ;g  :<C-u>Unite grep:. -buffer-name=search-buffer<CR>
+nnoremap <silent> ;p  :<C-u>Unite grep:.<CR>
 " カーソル位置の単語をgrep検索
-nnoremap <silent> ;cg :<C-u>Unite grep:. -buffer-name=search-buffer<CR><C-R><C-W><CR>
+nnoremap <silent> ;cg :<C-u>Unite grep:.<CR><C-R><C-W><CR>
 " grep検索結果の再呼出
 nnoremap <silent> ;l  :<C-u>UniteResume search-buffer<CR>
 

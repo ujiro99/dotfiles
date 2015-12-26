@@ -65,6 +65,7 @@ NeoBundle 'https://github.com/Shougo/neomru.vim.git'
 NeoBundle 'https://github.com/Shougo/unite.vim.git'
 NeoBundle 'https://github.com/Shougo/unite-outline.git'
 NeoBundle 'https://github.com/tsukkee/unite-tag.git'
+NeoBundle 'https://github.com/Shougo/neoyank.vim.git'
 
 " 後で読み込む
 NeoBundleLazy 'https://github.com/vim-jp/vimdoc-ja.git'
