@@ -41,28 +41,18 @@ let g:neocomplete#keyword_patterns['default'] = '\h\w*'
 " ユーザー定義スニペット保存ディレクトリ
 let g:neosnippet#snippets_directory = $HOME.'/.vim/snippets'
 
-" 補完を選択しpopupを閉じる
-" inoremap <expr><C-y> neocomplete#close_popup()
-" 補完をキャンセルしpopupを閉じる
-" inoremap <expr><C-e> neocomplete#cancel_popup()
 " TABで補完できるようにする
 inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 " undo
 inoremap <expr><C-g>     neocomplete#undo_completion()
 " 補完候補の共通部分までを補完する
 inoremap <expr><C-s> neocomplete#complete_common_string()
-" SuperTab like snippets behavior.
-imap <expr><TAB> neocomplete#sources#snippets_complete#expandable() ? "\<Plug>(neocomplete#snippets_expand)" : pumvisible() ? "\<C-n>" : "\<TAB>"
 " C-nでneocomplete補完
 inoremap <expr><C-n>  pumvisible() ? "\<C-n>" : "\<C-x>\<C-u>\<C-p>"
 " C-pでkeyword補完
 inoremap <expr><C-p> pumvisible() ? "\<C-p>" : "\<C-p>\<C-n>"
 " 補完候補が出ていたら確定、なければ改行
 inoremap <expr><CR>  pumvisible() ? neocomplete#close_popup() : "<CR>"
-
-" <C-h>, <BS>: close popup and delete backword char.
-inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
-inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
 
 " buffer開いたらneoconでcache
 autocmd BufReadPost,BufEnter,BufWritePost :NeoCompleteBufferMakeCache <buffer>
@@ -83,20 +73,18 @@ if !exists('g:neocomplete#omni_patterns')
   let g:neocomplete#omni_patterns = {}
 endif
 
-"インクルードパスの指定
-let g:neocomplete#include_paths = {
-  \ 'ruby' : '.,$HOME/.rvm/rubies/**/lib/ruby/1.8/',
-  \ }
 "インクルード文のパターンを指定
 let g:neocomplete#include_patterns = {
   \ 'ruby'       : '^\s*require',
   \ 'javascript' : '^\s*require',
   \ 'coffee'     : '^\s*require',
   \ }
+
 "インクルード先のファイル名の解析パターン
 let g:neocomplete#include_exprs = {
   \ 'ruby' : substitute(v:fname,'::','/','g')
   \ }
+
 " ファイルを探す際に、この値を末尾に追加したファイルも探す。
 let g:neocomplete#include_suffixes = {
   \ 'ruby'       : '.rb',
@@ -109,10 +97,6 @@ let g:neocomplete#include_suffixes = {
 "---------------------------------------------
 imap <C-k>     <Plug>(neosnippet_expand_or_jump)
 smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-
-" SuperTab like snippets behavior.
-imap <expr><TAB> neosnippet#expandable() ? "\<Plug>(neosnippet_expand_or_jump)" : pumvisible() ? "\<C-n>" : "\<TAB>"
-smap <expr><TAB> neosnippet#expandable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
 
 " For snippet_complete marker.
 if has('conceal')
