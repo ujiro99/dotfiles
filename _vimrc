@@ -246,7 +246,8 @@ let g:jscomplete_use = ['dom', 'moz']
 au BufWritePre *.go GoFmt
 au BufNewFile,BufRead *.go set sw=4 noexpandtab ts=4 completeopt=menu,preview
 au FileType go compiler go
-
+au FileType go :highlight goErr cterm=bold ctermfg=214
+au FileType go :match goErr /\<err\>/
 
 "---------------------------------------------
 " command
