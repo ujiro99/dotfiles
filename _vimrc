@@ -99,7 +99,6 @@ NeoBundleLazy 'https://github.com/eagletmt/ghcmod-vim.git'
 
 " Go
 NeoBundle 'https://github.com/fatih/vim-go.git'
-NeoBundle 'https://github.com/dgryski/vim-godef.git'
 
 call neobundle#end()
 
