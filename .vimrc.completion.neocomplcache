@@ -38,9 +38,6 @@ if !exists('g:neocomplete#keyword_patterns')
 endif
 let g:neocomplete#keyword_patterns['default'] = '\h\w*'
 
-" ユーザー定義スニペット保存ディレクトリ
-let g:neosnippet#snippets_directory = $HOME.'/.vim/snippets'
-
 " TABで補完できるようにする
 inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 " undo
@@ -95,6 +92,9 @@ let g:neocomplete#include_suffixes = {
 "---------------------------------------------
 " NeoSnippet key-mappings.
 "---------------------------------------------
+" ユーザー定義スニペット保存ディレクトリ
+let g:neosnippet#snippets_directory = $HOME.'/.vim/snippets'
+
 imap <C-k>     <Plug>(neosnippet_expand_or_jump)
 smap <C-k>     <Plug>(neosnippet_expand_or_jump)
 
