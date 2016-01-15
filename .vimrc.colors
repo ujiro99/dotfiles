@@ -2,18 +2,8 @@
 " カラー関連 Colors
 "-------------------------------------------------------------------------------
 
-" ターミナルタイプによるカラー設定
-if &term =~ "xterm-debian" || &term =~ "xterm-xfree86" || &term =~ "xterm-256color"
-    set t_Co=16
-    set t_Sf=[3%dm
-    set t_Sb=[4%dm
-elseif &term =~ "xterm-color"
-    set t_Co=8
-    set t_Sf=[3%dm
-    set t_Sb=[4%dm
-else
-    set t_Co=256
-endif
+" 256カラー
+set t_Co=256
 
 " ハイライト on
 syntax enable
@@ -24,7 +14,9 @@ let g:indent_guides_guide_size = 1
 let g:indent_guides_auto_colors = 1
 let g:indent_guides_color_change_percent = 2
 
-" コンソールでは desert
-if has('gui_running') == 0
+" カラースキーム
+if has('gui_running')
+  colorscheme my_color_scheme
+else
   colorscheme desert
 endif
