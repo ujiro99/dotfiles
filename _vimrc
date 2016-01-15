@@ -243,11 +243,17 @@ let g:jscomplete_use = ['dom', 'moz']
 "---------------------------------------------
 " go 関連
 "---------------------------------------------
-au BufWritePre *.go GoFmt
-au BufNewFile,BufRead *.go set sw=4 noexpandtab ts=4 completeopt=menu,preview
+au BufNewFile,BufRead *.go set sw=4 noexpandtab ts=4 completeopt=menu
 au FileType go compiler go
 au FileType go :highlight goErr cterm=bold ctermfg=214
 au FileType go :match goErr /\<err\>/
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_build_constraints = 1
+let g:go_fmt_command = "goimports"
+let g:go_fmt_fail_silently = 1
+
 
 "---------------------------------------------
 " command

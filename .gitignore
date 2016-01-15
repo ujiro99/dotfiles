@@ -218,3 +218,7 @@ local.properties
 
 # tern
 .tern-port
+
+# visual studio code
+.vscode
+debug

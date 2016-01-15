@@ -14,5 +14,5 @@ PATH=${HOME}/.pyenv/shims:${PATH}
 PATH=${HOME}/.cabal/bin:${PATH}
 # go
 export GOROOT=/usr/local/opt/go/libexec
-export GOPATH=${HOME}/go/thirdparty:${HOME}/go/work
-PATH=${HOME}/go/thirdparty/bin:${HOME}/go/work/bin:${GOROOT}/bin:${PATH}
+export GOPATH=${HOME}/go
+PATH=${GOPATH}/bin:${GOROOT}/bin:${PATH}

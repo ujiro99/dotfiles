@@ -72,9 +72,13 @@ autocmd FileType c          setlocal omnifunc=ccomplete#Complete
 autocmd FileType ruby       setlocal omnifunc=rubycomplete#Complete
 
 " Enable heavy omni completion.
-if !exists('g:neocomplete#omni_patterns')
-  let g:neocomplete#omni_patterns = {}
+if !exists('g:neocomplete#sources#omni#input_patterns')
+  let g:neocomplete#sources#omni#input_patterns = {}
 endif
+if !exists('g:neocomplete#force_omni_input_patterns')
+  let g:neocomplete#force_omni_input_patterns = {}
+endif
+let g:neocomplete#sources#omni#input_patterns.go = '\h\w*\.\?'
 
 "インクルード文のパターンを指定
 let g:neocomplete#include_patterns = {
