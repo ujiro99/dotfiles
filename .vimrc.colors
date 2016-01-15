@@ -15,8 +15,6 @@ let g:indent_guides_auto_colors = 1
 let g:indent_guides_color_change_percent = 2
 
 " カラースキーム
-if has('gui_running')
-  colorscheme my_color_scheme
-else
+if has('gui_running') == 0
   colorscheme desert
 endif
