@@ -5,7 +5,7 @@
 # Heroku
 PATH=/usr/local/heroku/bin:${PATH}
 # android sdk
-PATH=/Users/uj/Library/Android/sdk/platform-tools:${PATH}
+PATH=${HOME}/Library/Android/sdk/platform-tools:${PATH}
 # nodebrew
 PATH=${HOME}/.nodebrew/current/bin:${PATH}
 # pyenv
