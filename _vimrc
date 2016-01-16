@@ -60,6 +60,12 @@ NeoBundle 'Shougo/vimproc.vim', {
 \    },
 \ }
 
+" Syntax check Async
+NeoBundle "osyo-manga/shabadou.vim"
+NeoBundle "osyo-manga/vim-watchdogs"
+NeoBundle "jceb/vim-hier"
+NeoBundle "dannyob/quickfixstatus"
+
 " Unite
 NeoBundle 'https://github.com/Shougo/neomru.vim.git'
 NeoBundle 'https://github.com/Shougo/unite.vim.git'
@@ -227,7 +233,7 @@ let g:jscomplete_use = ['dom', 'moz']
 
 
 "---------------------------------------------
-" go 関連
+" golang 関連
 "---------------------------------------------
 au BufNewFile,BufRead *.go set sw=4 noexpandtab ts=4 completeopt=menu
 au FileType go compiler go
