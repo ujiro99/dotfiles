@@ -183,25 +183,9 @@ inoremap <CR> <CR>X<C-h>
 " もう一度やる
 nnoremap U <C-r>
 
-" 括弧補完
-inoremap { {}<LEFT>
-inoremap [ []<LEFT>
-inoremap ( ()<LEFT>
-inoremap " ""<LEFT>
-inoremap ' ''<LEFT>
-vnoremap { "zdi^V{<C-R>z}<ESC>
-vnoremap [ "zdi^V[<C-R>z]<ESC>
-vnoremap ( "zdi^V(<C-R>z)<ESC>
-vnoremap " "zdi^V"<C-R>z^V"<ESC>
-vnoremap ' "zdi'<C-R>z'<ESC>
-
 " ckfixウィンドウではq/ESCで閉じる
 autocmd FileType qf nnoremap <buffer> q :ccl<CR>
 autocmd FileType qf nnoremap <buffer> <ESC> :ccl<CR>
-
-" 挿入モードでのカーソル移動
-inoremap <C-h> <Left>
-inoremap <C-l> <Right>
 
 " Leader
 let mapleader = " "
@@ -210,8 +194,6 @@ let mapleader = " "
 "---------------------------------------------
 " バッファ操作関連
 "---------------------------------------------
-nmap <Space>b :ls<CR>:buffer
-nmap <Space>v :vsplit<CR><C-w><C-w>:ls<CR>:buffer
 nmap <Space>d :bd<CR>zz
 nmap <Space>D :bd!<CR>
 nmap <Space>k :Kwbd<CR>zz

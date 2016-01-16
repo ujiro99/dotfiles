@@ -2,7 +2,7 @@
 " 移動設定 Move
 "-------------------------------------------------------------------------------
 
-" カーソルを表示行で移動する。論理行移動は<C-n>,<C-p>
+" カーソルを表示行で移動
 nnoremap h <Left>
 nnoremap j gjzz
 nnoremap k gkzz
@@ -11,21 +11,14 @@ nnoremap <Down> gj
 nnoremap <Up>   gk
 
 " insert mode での移動
+inoremap  <C-h> <Left>
+inoremap  <C-l> <Right>
 inoremap  <C-e> <END>
 inoremap  <C-a> <HOME>
 
 " insert mode でesc
 inoremap kk <Esc>
 inoremap jj <Esc>
-
-" spaceで次のbufferへ。back-spaceで前のbufferへ
-nmap <Space><Space> :bn<CR>zz
-nmap <BS><BS> :bp<CR>zz
-
-" 前のバッファ
-" nmap <C-h>    :bp<CR>zz
-" 次のバッファ
-" nmap <C-l>    :bn<CR>zz
 
 "フレームサイズを怠惰に変更する
 map <kPlus> <C-W>+
@@ -45,7 +38,9 @@ nnoremap <C-P> :lp  <CR>
 nnoremap <C-N> :lne <CR>
 
 " 行末へ移動
-noremap - $
+noremap  - $
+vnoremap - $h
+
 
 " 対応する括弧に移動
 nnoremap [ %
@@ -64,14 +59,8 @@ nnoremap gc  `[v`]
 vnoremap gc <C-u>normal gc<Enter>
 onoremap gc <C-u>normal gc<Enter>
 
-" カーソル位置の単語をyankする
-nnoremap vy vawy
-
 " 矩形選択で自由に移動する
 set virtualedit+=block
-
-"ビジュアルモード時-で行末まで選択
-vnoremap - $h
 
 " CTRL-hjklでウィンドウ移動
 nnoremap <C-j> <C-w>j
