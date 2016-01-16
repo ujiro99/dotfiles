@@ -100,6 +100,10 @@ NeoBundleLazy 'https://github.com/eagletmt/ghcmod-vim.git'
 " Go
 NeoBundle 'https://github.com/fatih/vim-go.git'
 
+" Color scheme
+NeoBundle 'https://github.com/jonathanfilip/vim-lucius.git'
+
+
 call neobundle#end()
 
 
