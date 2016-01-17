@@ -21,36 +21,33 @@ endif
 NeoBundleFetch 'Shougo/neobundle.vim'
 
 if has('gui_running')
-    NeoBundle 'https://github.com/ujiro99/my_color_scheme'
+    NeoBundle 'ujiro99/my_color_scheme'
 endif
 
-NeoBundle 'https://github.com/banyan/recognize_charcode.vim.git'
-NeoBundle 'https://github.com/deton/jasegment.vim.git'
-NeoBundle 'https://github.com/mojako/ref-sources.vim.git'
-NeoBundle 'https://github.com/moll/vim-node.git'
-NeoBundle 'https://github.com/nathanaelkane/vim-indent-guides.git'
-NeoBundle 'https://github.com/plasticboy/vim-markdown.git'
-NeoBundle 'https://github.com/rhysd/clever-f.vim.git'
-NeoBundle 'https://github.com/rking/ag.vim.git'
-NeoBundle 'https://github.com/thinca/vim-quickrun.git'
-NeoBundle 'https://github.com/thinca/vim-ref.git'
-NeoBundle 'https://github.com/tpope/vim-fugitive.git'
-NeoBundle 'https://github.com/kmnk/vim-unite-giti.git'
-NeoBundle 'https://github.com/tyru/open-browser.vim.git'
-NeoBundle 'https://github.com/glidenote/memolist.vim.git'
-NeoBundle 'https://github.com/othree/eregex.vim.git'
-NeoBundle 'https://github.com/vim-scripts/grep.vim.git'
-NeoBundle 'https://github.com/vim-scripts/gtags.vim.git'
-NeoBundle 'https://github.com/vim-scripts/surround.vim.git'
 NeoBundle 'Lokaltog/vim-easymotion'
 NeoBundle 'Townk/vim-autoclose'
+NeoBundle 'banyan/recognize_charcode.vim'
+NeoBundle 'deton/jasegment.vim'
+NeoBundle 'glidenote/memolist.vim'
 NeoBundle 'junegunn/vim-easy-align'
+NeoBundle 'kmnk/vim-unite-giti'
+NeoBundle 'moll/vim-node'
+NeoBundle 'othree/eregex.vim'
+NeoBundle 'plasticboy/vim-markdown'
+NeoBundle 'rhysd/clever-f.vim'
+NeoBundle 'rking/ag.vim'
+NeoBundle 'thinca/vim-quickrun'
+NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'tyru/open-browser.vim'
+NeoBundle 'vim-scripts/grep.vim'
+NeoBundle 'vim-scripts/gtags.vim'
+NeoBundle 'vim-scripts/surround.vim'
 
 " Shougo
-NeoBundle 'https://github.com/Shougo/neocomplete.vim.git'
-NeoBundle 'https://github.com/Shougo/neosnippet.git'
-NeoBundle 'https://github.com/Shougo/neosnippet-snippets.git'
-NeoBundle 'https://github.com/Shougo/vimfiler.vim.git'
+NeoBundle 'Shougo/neocomplete.vim'
+NeoBundle 'Shougo/neosnippet'
+NeoBundle 'Shougo/neosnippet-snippets'
+NeoBundle 'Shougo/vimfiler.vim'
 NeoBundle 'Shougo/vimproc.vim', {
 \ 'build' : {
 \     'windows' : 'tools\\update-dll-mingw',
@@ -61,55 +58,53 @@ NeoBundle 'Shougo/vimproc.vim', {
 \    },
 \ }
 
-" Syntax check Async
-NeoBundle "osyo-manga/shabadou.vim"
-NeoBundle "osyo-manga/vim-watchdogs"
-NeoBundle "jceb/vim-hier"
-NeoBundle "dannyob/quickfixstatus"
+" Syntax check
+NeoBundle 'scrooloose/syntastic'
+NeoBundle 'osyo-manga/shabadou.vim'
+NeoBundle 'osyo-manga/vim-watchdogs'
+NeoBundle 'jceb/vim-hier'
+NeoBundle 'dannyob/quickfixstatus'
 
 " Unite
-NeoBundle 'https://github.com/Shougo/neomru.vim.git'
-NeoBundle 'https://github.com/Shougo/unite.vim.git'
-NeoBundle 'https://github.com/Shougo/unite-outline.git'
-NeoBundle 'https://github.com/tsukkee/unite-tag.git'
-NeoBundle 'https://github.com/Shougo/neoyank.vim.git'
+NeoBundle 'Shougo/neomru.vim'
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/unite-outline'
+NeoBundle 'tsukkee/unite-tag'
+NeoBundle 'Shougo/neoyank.vim'
 
 " 後で読み込む
-NeoBundleLazy 'https://github.com/vim-jp/vimdoc-ja.git'
 
 " Ruby
-NeoBundleLazy 'https://github.com/tpope/vim-rails.git'
-NeoBundleLazy 'https://github.com/vim-ruby/vim-ruby.git'
+NeoBundleLazy 'tpope/vim-rails'
+NeoBundleLazy 'vim-ruby/vim-ruby'
 
 " Javascript
-NeoBundleLazy 'https://github.com/vim-scripts/Better-Javascript-Indentation.git'
-NeoBundleLazy 'https://github.com/claco/jasmine.vim.git'
-NeoBundleLazy 'https://github.com/othree/javascript-libraries-syntax.vim.git'
-NeoBundleLazy 'https://github.com/mattn/jscomplete-vim.git'
-NeoBundleLazy 'https://github.com/tokuhirom/jsref.git'
-NeoBundleLazy 'https://github.com/jelera/vim-javascript-syntax.git'
+NeoBundleLazy 'vim-scripts/Better-Javascript-Indentation'
+NeoBundleLazy 'claco/jasmine.vim'
+NeoBundleLazy 'othree/javascript-libraries-syntax.vim'
+NeoBundleLazy 'mattn/jscomplete-vim'
+NeoBundleLazy 'jelera/vim-javascript-syntax'
 
 " Web
-NeoBundleLazy 'https://github.com/mattn/emmet-vim'
-NeoBundleLazy 'https://github.com/tpope/vim-haml.git'
-NeoBundleLazy 'https://github.com/digitaltoad/vim-jade.git'
-NeoBundleLazy 'https://github.com/hail2u/vim-css3-syntax.git'
-NeoBundleLazy 'https://github.com/wavded/vim-stylus.git'
-NeoBundleLazy 'https://github.com/kchmck/vim-coffee-script.git'
-NeoBundleLazy 'https://github.com/leafgarland/typescript-vim.git'
-NeoBundleLazy 'https://github.com/clausreinke/typescript-tools.git'
+NeoBundleLazy 'mattn/emmet-vim'
+NeoBundleLazy 'tpope/vim-haml'
+NeoBundleLazy 'digitaltoad/vim-jade'
+NeoBundleLazy 'hail2u/vim-css3-syntax'
+NeoBundleLazy 'wavded/vim-stylus'
+NeoBundleLazy 'kchmck/vim-coffee-script'
+NeoBundleLazy 'leafgarland/typescript-vim'
+NeoBundleLazy 'clausreinke/typescript-tools'
 
 " Haskell
-NeoBundleLazy 'https://github.com/dag/vim2hs.git'
-NeoBundleLazy 'https://github.com/eagletmt/neco-ghc.git'
-NeoBundleLazy 'https://github.com/eagletmt/ghcmod-vim.git'
+NeoBundleLazy 'dag/vim2hs'
+NeoBundleLazy 'eagletmt/neco-ghc'
+NeoBundleLazy 'eagletmt/ghcmod-vim'
 
 " Go
-NeoBundle 'https://github.com/fatih/vim-go.git'
+NeoBundle 'fatih/vim-go'
 
 " Color scheme
-NeoBundle 'https://github.com/jonathanfilip/vim-lucius.git'
-
+NeoBundle 'jonathanfilip/vim-lucius'
 
 call neobundle#end()
 
