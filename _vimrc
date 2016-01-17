@@ -21,8 +21,7 @@ endif
 NeoBundleFetch 'Shougo/neobundle.vim'
 
 if has('gui_running')
-    NeoBundle 'https://github.com/vim-scripts/Align.git'
-    NeoBundle 'https://github.com/ujiro99/my_color_scheme.git'
+    NeoBundle 'https://github.com/ujiro99/my_color_scheme'
 endif
 
 NeoBundle 'https://github.com/banyan/recognize_charcode.vim.git'
@@ -43,6 +42,9 @@ NeoBundle 'https://github.com/othree/eregex.vim.git'
 NeoBundle 'https://github.com/vim-scripts/grep.vim.git'
 NeoBundle 'https://github.com/vim-scripts/gtags.vim.git'
 NeoBundle 'https://github.com/vim-scripts/surround.vim.git'
+NeoBundle 'Lokaltog/vim-easymotion'
+NeoBundle 'Townk/vim-autoclose'
+NeoBundle 'junegunn/vim-easy-align'
 
 " Shougo
 NeoBundle 'https://github.com/Shougo/neocomplete.vim.git'
