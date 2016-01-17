@@ -157,15 +157,6 @@ let g:watchdogs_check_BufWritePost_enable = 1
 let g:watchdogs_check_CursorHold_enable = 1
 au FileType go command! -buffer Build WatchdogsRun watchdogs_checker/go_build
 
-"------------------------------------
-" open-blowser.vim
-"------------------------------------
-" カーソル下のURLをブラウザで開く
-nmap <Space>fu <Plug>(openbrowser-open)
-vmap <Space>fu <Plug>(openbrowser-open)
-" カーソル下のキーワードをググる
-nnoremap <Space>fs :<C-u>OpenBrowserSearch<Space><C-r><C-w><Enter>
-
 
 "------------------------------------
 " Syntastic
@@ -188,56 +179,8 @@ let g:syntastic_java_javac_config_file_enabled = 1
 let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
 
 
-"------------------------------------
-" ref-sources.vim
-"------------------------------------
-" ローカルに保存されたドキュメントを参照する
-let g:ref_jquery_doc_path = $HOME . '/.vim/bundle/jqapi'
-let g:ref_javascript_doc_path = $HOME . '/.vim/bundle/jsref/htdocs'
-" キャッシュを有効にする
-let g:ref_use_cache = 1
-
-
-"------------------------------------
-" vim-ref.vim
-"------------------------------------
-"webdictサイトの設定
-let g:ref_source_webdict_sites = {
-\   'je': {
-\     'url': 'http://dictionary.infoseek.ne.jp/jeword/%s',
-\   },
-\   'ej': {
-\     'url': 'http://dictionary.infoseek.ne.jp/ejword/%s',
-\   },
-\   'wiki': {
-\     'url': 'http://ja.wikipedia.org/wiki/%s',
-\   },
-\ }
-
-"デフォルトサイト
-let g:ref_source_webdict_sites.default = 'ej'
-
-"出力に対するフィルタ。最初の数行を削除
-function! g:ref_source_webdict_sites.je.filter(output)
-  return join(split(a:output, "\n")[15 :], "\n")
-endfunction
-function! g:ref_source_webdict_sites.ej.filter(output)
-  return join(split(a:output, "\n")[15 :], "\n")
-endfunction
-function! g:ref_source_webdict_sites.wiki.filter(output)
-  return join(split(a:output, "\n")[2 :], "\n")
-endfunction
-
-nmap <Leader>rj :<C-u>Ref webdict je   <C-R><C-W> <CR>
-nmap <Leader>re :<C-u>Ref webdict ej   <C-R><C-W> <CR>
-nmap <Leader>rw :<C-u>Ref webdict wiki <C-R><C-W> <CR>
-
-
 "---------------------------------------------
-" Align 関連
 "---------------------------------------------
-" utf8を使うときに必要らしい
-let g:Align_xstrlen=3
 
 
 "---------------------------------------------
@@ -311,3 +254,4 @@ let g:vim_markdown_initial_foldlevel=2
 " vimfiler 関連
 "---------------------------------------------
 let g:vimfiler_as_default_explorer = 1
+
