@@ -59,10 +59,11 @@ NeoBundle 'Shougo/vimproc.vim', {
 \ }
 
 " Syntax check
-NeoBundle 'scrooloose/syntastic'
+" NeoBundle 'scrooloose/syntastic'
 NeoBundle 'osyo-manga/shabadou.vim'
 NeoBundle 'osyo-manga/vim-watchdogs'
-NeoBundle 'jceb/vim-hier'
+" NeoBundle 'jceb/vim-hier'
+NeoBundle 'KazuakiM/vim-qfsigns'
 NeoBundle 'dannyob/quickfixstatus'
 
 " Unite
