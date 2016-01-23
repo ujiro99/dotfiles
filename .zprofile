@@ -2,6 +2,8 @@
 # PATH setting
 #
 
+# My Scripts
+PATH=${HOME}/bin:${PATH}
 # Heroku
 PATH=/usr/local/heroku/bin:${PATH}
 # android sdk
