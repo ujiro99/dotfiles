@@ -191,8 +191,9 @@ au FileType go command! -buffer Build WatchdogsRun watchdogs_checker/go_build
 "---------------------------------------------
 " EasyAlign
 "---------------------------------------------
-" Start interactive EasyAlign in visual mode (e.g. vip<Enter>)
-vmap <Enter> <Plug>(EasyAlign)
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
 
@@ -249,6 +250,7 @@ let g:surround_61 = "<%= \r %>"
 "---------------------------------------------
 " memolist 関連
 "---------------------------------------------
+
 map ,mn  :MemoNew<CR>
 map ,ml  :MemoList<CR>
 map ,mg  :MemoGrep<CR>
