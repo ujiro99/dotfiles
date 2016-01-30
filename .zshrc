@@ -82,3 +82,8 @@ set $_Z_CMD j
 
 typeset -U name_of_the_variable
 
+# git completion
+fpath=($(brew --prefix)/share/zsh/site-functions $fpath)
+
+autoload -U compinit
+compinit -u
