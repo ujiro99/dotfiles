@@ -25,7 +25,7 @@ if has('gui_running')
 endif
 
 NeoBundle 'Lokaltog/vim-easymotion'
-NeoBundle 'Townk/vim-autoclose'
+NeoBundle 'kana/vim-smartinput'
 NeoBundle 'banyan/recognize_charcode.vim'
 NeoBundle 'deton/jasegment.vim'
 NeoBundle 'glidenote/memolist.vim'
@@ -41,7 +41,9 @@ NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'tyru/open-browser.vim'
 NeoBundle 'vim-scripts/grep.vim'
 NeoBundle 'vim-scripts/gtags.vim'
-NeoBundle 'vim-scripts/surround.vim'
+NeoBundle 'rhysd/vim-operator-surround'
+NeoBundle 'kana/vim-operator-user'
+
 
 " Shougo
 NeoBundle 'Shougo/neocomplete.vim'

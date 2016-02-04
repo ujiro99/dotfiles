@@ -238,19 +238,17 @@ let g:user_emmet_settings = {
 
 
 "---------------------------------------------
-" surround 関連
+" vim-operator-surround
 "---------------------------------------------
-" 記号に対応する数字は :ascii で調べられる
-" -
-let g:surround_45 = "<% \r %>"
-" =
-let g:surround_61 = "<%= \r %>"
+" operator mappings
+map <silent>sa <Plug>(operator-surround-append)
+map <silent>sd <Plug>(operator-surround-delete)
+map <silent>sr <Plug>(operator-surround-replace)
 
 
 "---------------------------------------------
 " memolist 関連
 "---------------------------------------------
-
 map ,mn  :MemoNew<CR>
 map ,ml  :MemoList<CR>
 map ,mg  :MemoGrep<CR>
@@ -270,4 +268,5 @@ let g:vim_markdown_initial_foldlevel=2
 " vimfiler 関連
 "---------------------------------------------
 let g:vimfiler_as_default_explorer = 1
+
 
