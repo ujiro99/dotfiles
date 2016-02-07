@@ -5,114 +5,23 @@ filetype off
 " NeoBundle.vimを使用する
 if has('vim_starting')
   if has("win32") || has("win64") || has("win32unix")
-     set rtp+=$HOME/vimfiles/bundle/neobundle.vim
-  else
-     set rtp& rtp+=$HOME/.vim/bundle/neobundle.vim
-  endif
-endif
-
-if has("win32") || has("win64") || has("win32unix")
-    " 標準メニューを読み込まない
     let g:did_install_default_menus = 1
-    call neobundle#begin(expand('~/vimfiles/bundle/'))
-else
-    call neobundle#begin(expand('~/.vim/bundle/'))
-endif
-NeoBundleFetch 'Shougo/neobundle.vim'
-
-if has('gui_running')
-    NeoBundle 'ujiro99/my_color_scheme'
+  endif
+  set rtp+=~/.vim/bundle/neobundle.vim
 endif
 
-NeoBundle 'Lokaltog/vim-easymotion'
-NeoBundle 'kana/vim-smartinput'
-NeoBundle 'banyan/recognize_charcode.vim'
-NeoBundle 'deton/jasegment.vim'
-NeoBundle 'glidenote/memolist.vim'
-NeoBundle 'junegunn/vim-easy-align'
-NeoBundle 'kmnk/vim-unite-giti'
-NeoBundle 'moll/vim-node'
-NeoBundle 'othree/eregex.vim'
-NeoBundle 'plasticboy/vim-markdown'
-NeoBundle 'rhysd/clever-f.vim'
-NeoBundle 'rking/ag.vim'
-NeoBundle 'thinca/vim-quickrun'
-NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'tyru/open-browser.vim'
-NeoBundle 'vim-scripts/grep.vim'
-NeoBundle 'vim-scripts/gtags.vim'
-NeoBundle 'rhysd/vim-operator-surround'
-NeoBundle 'kana/vim-operator-user'
-
-
-" Shougo
-NeoBundle 'Shougo/neocomplete.vim'
-NeoBundle 'Shougo/neosnippet'
-NeoBundle 'Shougo/neosnippet-snippets'
-NeoBundle 'Shougo/vimfiler.vim'
-NeoBundle 'Shougo/vimproc.vim', {
-\ 'build' : {
-\     'windows' : 'tools\\update-dll-mingw',
-\     'cygwin' : 'make -f make_cygwin.mak',
-\     'mac' : 'make -f make_mac.mak',
-\     'linux' : 'make',
-\     'unix' : 'gmake',
-\    },
-\ }
-
-" Syntax check
-" NeoBundle 'scrooloose/syntastic'
-NeoBundle 'osyo-manga/shabadou.vim'
-NeoBundle 'osyo-manga/vim-watchdogs'
-" NeoBundle 'jceb/vim-hier'
-NeoBundle 'KazuakiM/vim-qfsigns'
-NeoBundle 'dannyob/quickfixstatus'
-
-" Unite
-NeoBundle 'Shougo/neomru.vim'
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Shougo/unite-outline'
-NeoBundle 'tsukkee/unite-tag'
-NeoBundle 'Shougo/neoyank.vim'
-
-" 後で読み込む
-
-" Ruby
-NeoBundleLazy 'tpope/vim-rails'
-NeoBundleLazy 'vim-ruby/vim-ruby'
-
-" Javascript
-NeoBundleLazy 'vim-scripts/Better-Javascript-Indentation'
-NeoBundleLazy 'claco/jasmine.vim'
-NeoBundleLazy 'othree/javascript-libraries-syntax.vim'
-NeoBundleLazy 'mattn/jscomplete-vim'
-NeoBundleLazy 'jelera/vim-javascript-syntax'
-
-" Web
-NeoBundleLazy 'mattn/emmet-vim'
-NeoBundleLazy 'tpope/vim-haml'
-NeoBundleLazy 'digitaltoad/vim-jade'
-NeoBundleLazy 'hail2u/vim-css3-syntax'
-NeoBundleLazy 'wavded/vim-stylus'
-NeoBundleLazy 'kchmck/vim-coffee-script'
-NeoBundleLazy 'leafgarland/typescript-vim'
-NeoBundleLazy 'clausreinke/typescript-tools'
-
-" Haskell
-NeoBundleLazy 'dag/vim2hs'
-NeoBundleLazy 'eagletmt/neco-ghc'
-NeoBundleLazy 'eagletmt/ghcmod-vim'
-
-" Go
-NeoBundle 'fatih/vim-go'
-
-" Color scheme
-NeoBundle 'jonathanfilip/vim-lucius'
-
+call neobundle#begin(expand('~/.vim/bundle/'))
+if neobundle#load_cache()
+  NeoBundleFetch 'Shougo/neobundle.vim'
+  call neobundle#load_toml('~/.vim/neobundle.toml')
+  call neobundle#load_toml('~/.vim/neobundlelazy.toml', {'lazy' : 1})
+  NeoBundleSaveCache
+endif
 call neobundle#end()
 
-
 filetype plugin indent on     " required!
+NeoBundleCheck
+
 
 "---------------------------------------------
 " 設定ファイルの読込

@@ -1,0 +1,146 @@
+#--------------------------------
+# Shougo
+#--------------------------------
+[[plugins]]
+repo = 'Shougo/neosnippet.vim'
+depends = 'Shougo/neosnippet-snippets'
+on_i = 1
+on_ft = 'snippet
+on_unite = [ 'neosnippet', 'neosnippet/user', 'neosnippet/runtime']
+
+[[plugins]]
+repo = 'Shougo/neomru.vim'
+on_ft = 'all'
+
+[[plugins]]
+repo = 'Shougo/neoyank.vim'
+on_ft = 'all'
+
+[[plugins]]
+repo = 'Shougo/unite.vim'
+depends = 'Shougo/neomru.vim'
+on_cmd = 'Unite'
+
+[[plugins]]
+repo = 'Shougo/unite-outline'
+on_unite = 'outline'
+
+[[plugins]]
+repo = 'tsukkee/unite-tag'
+on_unite = 'tag'
+
+[[plugins]]
+repo = 'Shougo/neocomplete.vim'
+on_i = 1
+
+[[plugins]]
+repo = 'Shougo/vimfiler.vim'
+depends = 'Shougo/unite.vim'
+on_map = '<Plug>'
+on_path = '.*'
+on_cmd = 'VimFiler'
+
+
+#--------------------------------
+# Ruby
+#--------------------------------
+[[plugins]]
+repo = 'vim-ruby/vim-ruby'
+on_map = '<Plug>'
+on_ft = 'ruby'
+
+[[plugins]]
+repo = 'tpope/vim-rails'
+on_ft = 'ruby'
+
+
+#--------------------------------
+# Javascript
+#--------------------------------
+[[plugins]]
+repo = 'vim-scripts/Better-Javascript-Indentation'
+on_ft = 'javascript'
+
+[[plugins]]
+repo = 'claco/jasmine.vim'
+on_ft = 'javascript'
+
+[[plugins]]
+repo = 'othree/javascript-libraries-syntax.vim'
+on_ft = 'javascript'
+
+[[plugins]]
+repo = 'mattn/jscomplete-vim'
+on_ft = ['javascript', 'coffee']
+
+[[plugins]]
+repo = 'jelera/vim-javascript-syntax'
+on_ft = 'javascript'
+
+
+#--------------------------------
+# Web
+#--------------------------------
+[[plugins]]
+repo = 'mattn/emmet-vim'
+on_ft = ['xhtml', 'html', 'css', 'eruby', 'markdown']
+
+[[plugins]]
+repo = 'tpope/vim-haml'
+on_ft = 'haml'
+
+[[plugins]]
+repo = 'digitaltoad/vim-jade'
+on_ft = 'jade'
+
+[[plugins]]
+repo = 'hail2u/vim-css3-syntax'
+on_ft = 'css'
+
+[[plugins]]
+repo = 'wavded/vim-stylus'
+on_ft = 'stylus'
+
+[[plugins]]
+repo = 'kchmck/vim-coffee-script'
+on_ft = 'coffee'
+
+[[plugins]]
+repo = 'leafgarland/typescript-vim'
+on_ft = 'typescript'
+
+[[plugins]]
+repo = 'clausreinke/typescript-tools'
+on_ft = 'typescript'
+
+
+#--------------------------------
+# Haskell
+#--------------------------------
+[[plugins]]
+repo = 'dag/vim2hs'
+on_ft = 'haskell'
+
+[[plugins]]
+repo = 'eagletmt/neco-ghc'
+on_ft = 'haskell'
+
+[[plugins]]
+repo = 'eagletmt/ghcmod-vim'
+on_ft = 'haskell'
+
+
+#--------------------------------
+# Go
+#--------------------------------
+[[plugins]]
+repo = 'fatih/vim-go'
+on_ft = 'go'
+
+
+#--------------------------------
+# Color scheme
+#--------------------------------
+[[plugins]]
+repo = 'jonathanfilip/vim-lucius'
+on_ft = 'all'
