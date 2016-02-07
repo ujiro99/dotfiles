@@ -74,6 +74,14 @@ endif
 if !exists('g:neocomplete#force_omni_input_patterns')
   let g:neocomplete#force_omni_input_patterns = {}
 endif
+let g:neocomplete#force_overwrite_completefunc = 1
+" C
+let g:neocomplete#force_omni_input_patterns.c =
+  \ '[^.[:digit:] *\t]\%(\.\|->\)\w*'
+" C++
+let g:neocomplete#force_omni_input_patterns.cpp =
+  \ '[^.[:digit:] *\t]\%(\.\|->\)\w*\|\h\w*::\w*'
+" Golang
 let g:neocomplete#sources#omni#input_patterns.go = '\h\w*\.\?'
 
 "インクルード文のパターンを指定
