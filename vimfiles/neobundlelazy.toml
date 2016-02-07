@@ -2,75 +2,75 @@
 # Shougo
 #--------------------------------
 [[plugins]]
-repo = 'Shougo/neosnippet.vim'
-depends = 'Shougo/neosnippet-snippets'
-on_i = 1
-on_ft = 'snippet'
+repo     = 'Shougo/neosnippet.vim'
+depends  = 'Shougo/neosnippet-snippets'
+on_i     = 1
+on_ft    = 'snippet'
 on_unite = ['neosnippet', 'neosnippet/user', 'neosnippet/runtime']
 
 [[plugins]]
-repo = 'Shougo/neomru.vim'
-on_ft = 'all'
+repo     = 'Shougo/neomru.vim'
+on_ft    = 'all'
 
 [[plugins]]
-repo = 'Shougo/neoyank.vim'
-on_ft = 'all'
+repo     = 'Shougo/neoyank.vim'
+on_ft    = 'all'
 
 [[plugins]]
-repo = 'Shougo/unite-outline'
+repo     = 'Shougo/unite-outline'
 on_unite = 'outline'
 
 [[plugins]]
-repo = 'tsukkee/unite-tag'
+repo     = 'tsukkee/unite-tag'
 on_unite = 'tag'
 
 [[plugins]]
-repo    = 'Shougo/neocomplete.vim'
-depends = ['Shougo/neoinclude.vim', 'Shougo/context_filetype.vim']
-on_i    = 1
+repo     = 'Shougo/neocomplete.vim'
+depends  = ['Shougo/neoinclude.vim', 'Shougo/context_filetype.vim']
+on_i     = 1
 
 [[plugins]]
-repo = 'Shougo/vimfiler.vim'
-depends = 'Shougo/unite.vim'
-on_map = '<Plug>'
-on_path = '.*'
-on_cmd = 'VimFiler'
+repo     = 'Shougo/vimfiler.vim'
+depends  = 'Shougo/unite.vim'
+on_map   = '<Plug>'
+on_path  = '.*'
+on_cmd   = 'VimFiler'
 
 
 #--------------------------------
 # Ruby
 #--------------------------------
 [[plugins]]
-repo = 'vim-ruby/vim-ruby'
+repo   = 'vim-ruby/vim-ruby'
 on_map = '<Plug>'
-on_ft = 'ruby'
+on_ft  = 'ruby'
 
 [[plugins]]
-repo = 'tpope/vim-rails'
-on_ft = 'ruby'
+repo   = 'tpope/vim-rails'
+on_ft  = 'ruby'
 
 
 #--------------------------------
 # Javascript
 #--------------------------------
 [[plugins]]
-repo = 'vim-scripts/Better-Javascript-Indentation'
+repo  = 'vim-scripts/Better-Javascript-Indentation'
 on_ft = 'javascript'
 
 [[plugins]]
-repo = 'claco/jasmine.vim'
+repo  = 'claco/jasmine.vim'
 on_ft = 'javascript'
 
 [[plugins]]
-repo = 'othree/javascript-libraries-syntax.vim'
+repo  = 'othree/javascript-libraries-syntax.vim'
 on_ft = 'javascript'
 
 [[plugins]]
-repo = 'mattn/jscomplete-vim'
+repo  = 'mattn/jscomplete-vim'
 on_ft = ['javascript', 'coffee']
 
 [[plugins]]
-repo = 'jelera/vim-javascript-syntax'
+repo  = 'jelera/vim-javascript-syntax'
 on_ft = 'javascript'
 
 
@@ -78,35 +78,35 @@ on_ft = 'javascript'
 # Web
 #--------------------------------
 [[plugins]]
-repo = 'mattn/emmet-vim'
+repo  = 'mattn/emmet-vim'
 on_ft = ['xhtml', 'html', 'css', 'eruby', 'markdown']
 
 [[plugins]]
-repo = 'tpope/vim-haml'
+repo  = 'tpope/vim-haml'
 on_ft = 'haml'
 
 [[plugins]]
-repo = 'digitaltoad/vim-jade'
+repo  = 'digitaltoad/vim-jade'
 on_ft = 'jade'
 
 [[plugins]]
-repo = 'hail2u/vim-css3-syntax'
+repo  = 'hail2u/vim-css3-syntax'
 on_ft = 'css'
 
 [[plugins]]
-repo = 'wavded/vim-stylus'
+repo  = 'wavded/vim-stylus'
 on_ft = 'stylus'
 
 [[plugins]]
-repo = 'kchmck/vim-coffee-script'
+repo  = 'kchmck/vim-coffee-script'
 on_ft = 'coffee'
 
 [[plugins]]
-repo = 'leafgarland/typescript-vim'
+repo  = 'leafgarland/typescript-vim'
 on_ft = 'typescript'
 
 [[plugins]]
-repo = 'clausreinke/typescript-tools'
+repo  = 'clausreinke/typescript-tools'
 on_ft = 'typescript'
 
 
@@ -114,15 +114,15 @@ on_ft = 'typescript'
 # Haskell
 #--------------------------------
 [[plugins]]
-repo = 'dag/vim2hs'
+repo  = 'dag/vim2hs'
 on_ft = 'haskell'
 
 [[plugins]]
-repo = 'eagletmt/neco-ghc'
+repo  = 'eagletmt/neco-ghc'
 on_ft = 'haskell'
 
 [[plugins]]
-repo = 'eagletmt/ghcmod-vim'
+repo  = 'eagletmt/ghcmod-vim'
 on_ft = 'haskell'
 
 

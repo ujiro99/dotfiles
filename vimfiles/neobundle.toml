@@ -2,14 +2,13 @@
 repo = 'Shougo/vimproc.vim'
   [plugins.build]
   windows = 'tools\\update-dll-mingw'
-  cygwin = 'make -f make_cygwin.mak'
-  mac = 'make -f make_mac.mak'
-  unix = 'make -f make_unix.mak'
+  cygwin  = 'make -f make_cygwin.mak'
+  mac     = 'make -f make_mac.mak'
+  unix    = 'make -f make_unix.mak'
 
 [[plugins]]
-repo = 'Shougo/unite.vim'
+repo    = 'Shougo/unite.vim'
 depends = 'Shougo/neomru.vim'
-on_cmd = 'Unite'
 
 [[plugins]]
 repo = 'Lokaltog/vim-easymotion'
