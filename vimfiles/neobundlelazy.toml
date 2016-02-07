@@ -140,6 +140,16 @@ on_ft = 'go'
 [[plugins]]
 repo  = 'justmao945/vim-clang'
 on_ft = ['c', 'cpp']
+
+
+#--------------------------------
+# Java
+#--------------------------------
+[[plugins]]
+repo  = 'artur-shaik/vim-javacomplete2'
+on_ft = 'java'
+
+
 #--------------------------------
 # Toml
 #--------------------------------
