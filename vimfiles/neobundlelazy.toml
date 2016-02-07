@@ -6,7 +6,6 @@ repo     = 'Shougo/neosnippet.vim'
 depends  = 'Shougo/neosnippet-snippets'
 on_i     = 1
 on_ft    = 'snippet'
-on_unite = ['neosnippet', 'neosnippet/user', 'neosnippet/runtime']
 
 [[plugins]]
 repo     = 'Shougo/neomru.vim'
@@ -18,11 +17,11 @@ on_ft    = 'all'
 
 [[plugins]]
 repo     = 'Shougo/unite-outline'
-on_unite = 'outline'
+on_ft    = 'all'
 
 [[plugins]]
 repo     = 'tsukkee/unite-tag'
-on_unite = 'tag'
+on_ft    = 'all'
 
 [[plugins]]
 repo     = 'Shougo/neocomplete.vim'
@@ -58,10 +57,6 @@ repo  = 'vim-scripts/Better-Javascript-Indentation'
 on_ft = 'javascript'
 
 [[plugins]]
-repo  = 'claco/jasmine.vim'
-on_ft = 'javascript'
-
-[[plugins]]
 repo  = 'othree/javascript-libraries-syntax.vim'
 on_ft = 'javascript'
 
@@ -72,6 +67,35 @@ on_ft = ['javascript', 'coffee']
 [[plugins]]
 repo  = 'jelera/vim-javascript-syntax'
 on_ft = 'javascript'
+
+[[plugins]]
+repo  = 'marijnh/tern_for_vim'
+on_ft = 'javascript'
+build = 'npm install'
+
+[[plugins]]
+repo  = 'claco/jasmine.vim'
+on_ft = '[javascript], [coffee]'
+
+
+#--------------------------------
+# CoffeeScript
+#--------------------------------
+[[plugins]]
+repo  = 'kchmck/vim-coffee-script'
+on_ft = 'coffee'
+
+
+#--------------------------------
+# TypeScript
+#--------------------------------
+[[plugins]]
+repo  = 'leafgarland/typescript-vim'
+on_ft = 'typescript'
+
+[[plugins]]
+repo  = 'clausreinke/typescript-tools'
+on_ft = 'typescript'
 
 
 #--------------------------------
@@ -96,18 +120,6 @@ on_ft = 'css'
 [[plugins]]
 repo  = 'wavded/vim-stylus'
 on_ft = 'stylus'
-
-[[plugins]]
-repo  = 'kchmck/vim-coffee-script'
-on_ft = 'coffee'
-
-[[plugins]]
-repo  = 'leafgarland/typescript-vim'
-on_ft = 'typescript'
-
-[[plugins]]
-repo  = 'clausreinke/typescript-tools'
-on_ft = 'typescript'
 
 
 #--------------------------------
