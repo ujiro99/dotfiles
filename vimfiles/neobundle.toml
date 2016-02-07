@@ -7,7 +7,9 @@ repo = 'Shougo/vimproc.vim'
   unix = 'make -f make_unix.mak'
 
 [[plugins]]
-repo = 'ujiro99/my_color_scheme'
+repo = 'Shougo/unite.vim'
+depends = 'Shougo/neomru.vim'
+on_cmd = 'Unite'
 
 [[plugins]]
 repo = 'Lokaltog/vim-easymotion'
@@ -81,3 +83,13 @@ repo = 'KazuakiM/vim-qfsigns'
 
 [[plugins]]
 repo = 'dannyob/quickfixstatus'
+
+
+#--------------------------------
+# Color scheme
+#--------------------------------
+[[plugins]]
+repo = 'ujiro99/my_color_scheme'
+
+[[plugins]]
+repo = 'jonathanfilip/vim-lucius'

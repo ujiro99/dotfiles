@@ -95,8 +95,9 @@ let g:neocomplete#include_suffixes = {
   \ 'coffee'     : '.coffee',
   \ }
 
+
 "---------------------------------------------
-" NeoSnippet key-mappings.
+" NeoSnippet
 "---------------------------------------------
 " ユーザー定義スニペット保存ディレクトリ
 let g:neosnippet#snippets_directory = $HOME.'/.vim/snippets'

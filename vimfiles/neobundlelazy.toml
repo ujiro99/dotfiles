@@ -5,7 +5,7 @@
 repo = 'Shougo/neosnippet.vim'
 depends = 'Shougo/neosnippet-snippets'
 on_i = 1
-on_ft = 'snippet
+on_ft = 'snippet'
 on_unite = ['neosnippet', 'neosnippet/user', 'neosnippet/runtime']
 
 [[plugins]]
@@ -17,11 +17,6 @@ repo = 'Shougo/neoyank.vim'
 on_ft = 'all'
 
 [[plugins]]
-repo = 'Shougo/unite.vim'
-depends = 'Shougo/neomru.vim'
-on_cmd = 'Unite'
-
-[[plugins]]
 repo = 'Shougo/unite-outline'
 on_unite = 'outline'
 
@@ -30,8 +25,9 @@ repo = 'tsukkee/unite-tag'
 on_unite = 'tag'
 
 [[plugins]]
-repo = 'Shougo/neocomplete.vim'
-on_i = 1
+repo    = 'Shougo/neocomplete.vim'
+depends = ['Shougo/neoinclude.vim', 'Shougo/context_filetype.vim']
+on_i    = 1
 
 [[plugins]]
 repo = 'Shougo/vimfiler.vim'
@@ -134,13 +130,10 @@ on_ft = 'haskell'
 # Go
 #--------------------------------
 [[plugins]]
-repo = 'fatih/vim-go'
+repo  = 'fatih/vim-go'
 on_ft = 'go'
 
 
 #--------------------------------
-# Color scheme
 #--------------------------------
 [[plugins]]
-repo = 'jonathanfilip/vim-lucius'
-on_ft = 'all'

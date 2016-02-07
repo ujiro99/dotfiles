@@ -18,9 +18,9 @@ if neobundle#load_cache()
   NeoBundleSaveCache
 endif
 call neobundle#end()
+NeoBundleCheck
 
 filetype plugin indent on     " required!
-NeoBundleCheck
 
 
 "---------------------------------------------
