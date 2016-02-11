@@ -8,10 +8,6 @@ on_i     = 1
 on_ft    = 'snippet'
 
 [[plugins]]
-repo     = 'Shougo/neomru.vim'
-on_ft    = 'all'
-
-[[plugins]]
 repo     = 'Shougo/neoyank.vim'
 on_ft    = 'all'
 
@@ -136,6 +132,14 @@ on_ft = 'haskell'
 [[plugins]]
 repo  = 'eagletmt/ghcmod-vim'
 on_ft = 'haskell'
+
+
+#--------------------------------
+# Markdown
+#--------------------------------
+[[plugins]]
+repo = 'plasticboy/vim-markdown'
+on_ft = 'markdown'
 
 
 #--------------------------------
