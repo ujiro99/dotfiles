@@ -155,14 +155,14 @@ let g:user_emmet_settings = {
 \      'tm' : "setTimeout(function() {\n\t${cursor}\n}, 100);",
 \    },
 \  },
-\ 'java' : {
-\  'indentation' : '    ',
-\  'snippets' : {
-\    'main': "public static void main(String[] args) {\n\t|\n}",
-\    'println': "System.out.println(\"|\");",
-\    'class': "public class | {\n}\n",
+\  'java' : {
+\    'indentation' : '    ',
+\    'snippets' : {
+\      'main': "public static void main(String[] args) {\n\t|\n}",
+\      'println': "System.out.println(\"|\");",
+\      'class': "public class | {\n}\n",
+\    },
 \  },
-\ },
 \}
 
 
