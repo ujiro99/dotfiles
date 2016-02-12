@@ -9,6 +9,7 @@ mkdir ~/dotfiles/vimfiles
 ln -s ~/dotfiles/.gitignore ~/.gitignore
 ln -s ~/dotfiles/.gitconfig ~/.gitconfig
 ln -s ~/dotfiles/.gtagsrc ~/.gtagsrc
+ln -s ~/dotfiles/.ctagsignore ~/.ctagsignore
 ln -s ~/dotfiles/_vimrc ~/.vimrc
 ln -s ~/dotfiles/_gvimrc ~/.gvimrc
 ln -s ~/dotfiles/.xvimrc ~/.xvimrc
