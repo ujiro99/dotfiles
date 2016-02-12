@@ -36,11 +36,12 @@ brew install nodebrew
 brew install pyenv
 brew install pyenv-pip-rehash
 brew install homebrew/boneyard/pyenv-pip-rehash
-brew install the_silver_searcher
 brew install tig
 brew install z
 brew install go
+brew install pt
 brew install caskroom/cask/brew-cask
+brew install global --with-exuberant-ctags --with-pygments
 brew cask install iterm2
 brew cask install keyremap4macbook
 brew cask install lastpass-universal
