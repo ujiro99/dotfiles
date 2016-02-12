@@ -34,13 +34,10 @@ nnoremap gp ']
 " QuickFixの移動
 nnoremap <C-p> :cp  <CR>
 nnoremap <C-n> :cn  <CR>
-nnoremap <C-P> :lp  <CR>
-nnoremap <C-N> :lne <CR>
 
 " 行末へ移動
 noremap  - $
 vnoremap - $h
-
 
 " 対応する括弧に移動
 nnoremap [ %
