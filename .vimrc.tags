@@ -25,7 +25,8 @@ nnoremap tk  ;<C-u>pop<CR>
 nnoremap tl  ;<C-u>tags<CR>
 
 " Ctagsファイル更新
-nnoremap <silent> mt  :echo vimproc#system('ctags -R --exclude=@${HOME}/dotfiles/.ctagsignore')<CR>
+nnoremap <silent> mt  :echo vimproc#system('ctags -R --exclude=dist --exclude=bower_components --exclude=node_modules')<CR>
+
 " Gtagsファイル更新
 nnoremap <silent> mg  :echo vimproc#system('gtags -v --gtagsconf ~/dotfiles/.gtagsrc')<CR>
 
