@@ -32,6 +32,8 @@ nnoremap <silent> ;y  :<C-u>Unite history/yank<CR>
 nnoremap <silent> ;/  :<C-u>Unite line -start-insert -no-quit<CR>
 " grep検索
 nnoremap <silent> ;p  :<C-u>Unite grep:.<CR>
+" Codic
+nnoremap <silent> ;cc :Unite codic<CR>
 " カーソル位置の単語をgrep検索
 nnoremap <silent> ;cg :<C-u>Unite grep:.<CR><C-R><C-W><CR>
 " grep検索結果の再呼出

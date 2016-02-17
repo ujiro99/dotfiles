@@ -33,6 +33,19 @@ on_cmd   = 'VimFiler'
 
 
 #--------------------------------
+# Codic
+#--------------------------------
+[[plugins]]
+repo    = 'koron/codic-vim'
+on_ft   = 'all'
+
+[[plugins]]
+repo    = 'rhysd/unite-codic.vim'
+depends = ['Shougo/unite.vim', 'koron/codic-vim']
+on_ft   = 'all'
+
+
+#--------------------------------
 # Ruby
 #--------------------------------
 [[plugins]]
