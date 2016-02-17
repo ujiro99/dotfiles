@@ -38,9 +38,6 @@ repo = 'kmnk/vim-unite-giti'
 repo = 'moll/vim-node'
 
 [[plugins]]
-repo = 'othree/eregex.vim'
-
-[[plugins]]
 repo = 'rhysd/clever-f.vim'
 
 [[plugins]]
