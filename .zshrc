@@ -73,8 +73,11 @@ GREP_OPTIONS="--exclude-dir=.svn $GREP_OPTIONS"
 GREP_OPTIONS="--exclude-dir=.git $GREP_OPTIONS"
 GREP_OPTIONS="--exclude-dir=.deps $GREP_OPTIONS"
 GREP_OPTIONS="--exclude-dir=.libs $GREP_OPTIONS"
-# 色を付ける。
-# GREP_OPTIONS="--color=auto $GREP_OPTIONS"
+
+
+# Golangのビルドを早くする
+export GOGC=5000
+
 
 # z
 . `brew --prefix`/etc/profile.d/z.sh
