@@ -32,8 +32,11 @@ nnoremap gb '[
 nnoremap gp ']
 
 " QuickFixの移動
-nnoremap <C-p> :cp  <CR>
-nnoremap <C-n> :cn  <CR>
+nnoremap <C-p> :cp <CR>
+nnoremap <C-n> :cn <CR>
+" LocationListの移動
+nnoremap <C-k> :lp <CR>
+nnoremap <C-j> :lne <CR>
 
 " 行末へ移動
 noremap  - $
@@ -58,12 +61,6 @@ onoremap gc <C-u>normal gc<Enter>
 
 " 矩形選択で自由に移動する
 set virtualedit+=block
-
-" CTRL-hjklでウィンドウ移動
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
-nnoremap <C-h> <C-w>h
 
 " git-diff-aware version of gf commands.
 " http://labs.timedia.co.jp/2011/04/git-diff-aware-gf-commands-for-vim.html
