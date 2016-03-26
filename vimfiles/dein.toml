@@ -45,6 +45,7 @@ repo = 'rking/ag.vim'
 
 [[plugins]]
 repo = 'thinca/vim-quickrun'
+rev  = 'ac9f4be0698dffb30ebdf284f8ba5abbaab5eaca'
 
 [[plugins]]
 repo = 'tpope/vim-fugitive'
