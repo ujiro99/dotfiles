@@ -1,6 +1,7 @@
-/vimfiles/bundle/
+/vimfiles/bundle
 /vimfiles/lib
-/vimfiles/autoload/
+/vimfiles/autoload
+/vimfiles/undo
 
 # backupfile
 *.bak
