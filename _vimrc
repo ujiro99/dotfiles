@@ -2,30 +2,14 @@
 set nocompatible
 filetype off
 
-" NeoBundle.vimを使用する
-if has('vim_starting')
-  if has("win32") || has("win64") || has("win32unix")
-    let g:did_install_default_menus = 1
-  endif
-  set rtp+=~/.vim/bundle/neobundle.vim
-endif
-
-call neobundle#begin(expand('~/.vim/bundle/'))
-if neobundle#load_cache()
-  NeoBundleFetch 'Shougo/neobundle.vim'
-  call neobundle#load_toml('~/.vim/neobundle.toml')
-  call neobundle#load_toml('~/.vim/neobundlelazy.toml', {'lazy' : 1})
-  NeoBundleSaveCache
-endif
-call neobundle#end()
-NeoBundleCheck
-
-filetype plugin indent on     " required!
-
+" 標準のメニューが読み込まれないようにする
+let g:did_install_default_menus = 1
 
 "---------------------------------------------
 " 設定ファイルの読込
 "---------------------------------------------
+" dein関連
+source $HOME/dotfiles/.vimrc.dein
 " 表示関連
 source $HOME/dotfiles/.vimrc.appearance
 " 補間関連

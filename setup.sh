@@ -18,9 +18,6 @@ ln -s ~/dotfiles/tslint.json ~/tslint.json
 ln -s ~/dotfiles/vimfiles ~/.vim
 ln -s ~/dotfiles/.tmux.conf ~/.tmux.conf
 
-# vi
-git clone https://github.com/Shougo/neobundle.vim ~/dotfiles/vimfiles/bundle/neobundle.vim
-
 ## prezto
 git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
 setopt EXTENDED_GLOB

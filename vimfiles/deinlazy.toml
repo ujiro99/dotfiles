@@ -25,6 +25,12 @@ depends  = ['Shougo/neoinclude.vim', 'Shougo/context_filetype.vim']
 on_i     = 1
 
 [[plugins]]
+repo     = 'Shougo/neoinclude.vim'
+
+[[plugins]]
+repo     = 'Shougo/context_filetype.vim'
+
+[[plugins]]
 repo     = 'Shougo/vimfiler.vim'
 depends  = 'Shougo/unite.vim'
 on_map   = '<Plug>'

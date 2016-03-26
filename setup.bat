@@ -1,7 +1,6 @@
 cd %USERPROFILE%
 mkdir %USERPROFILE%/dotfiles/vimfiles/bundle
 git clone https://github.com/github/gitignore.git
-git clone https://github.com/Shougo/neobundle.vim %USERPROFILE%\dotfiles\vimfiles\bundle\neobundle.vim
 mklink %USERPROFILE%\_vimrc %USERPROFILE%\dotfiles\_vimrc
 mklink %USERPROFILE%\_gvimrc %USERPROFILE%\dotfiles\_gvimrc
 mklink %USERPROFILE%\_nya %USERPROFILE%\dotfiles\_nyarc
