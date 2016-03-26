@@ -12,11 +12,6 @@ nmap <ESC><ESC> :nohlsearch<CR><ESC>
 
 "選択した文字列を検索
 vnoremap <silent> // y/<C-R>=escape(@", '\\/.*$^~[]')<CR><CR>
-"選択した文字列を置換
-vnoremap /r "xy;%s/<C-R>=escape(@x, '\\/.*$^~[]')<CR>//gc<Left><Left><Left>
-
-"s*置換後文字列/g<Cr>でカーソル下のキーワードを置換
-nnoremap <expr> s* ':%substitute/\<' . expand('<cword>') . '\>/'
 
 " Ctrl-iでヘルプ
 nnoremap <C-i>  :<C-u>help<Space>
@@ -25,16 +20,9 @@ nnoremap <C-i><C-i> :<C-u>help<Space><C-r><C-w><Enter>zz
 
 " :Gb <args> でGrepBufferする
 command! -nargs=1 Gb :GrepBuffer <args>
-" カーソル下の単語をGrepBufferする
-nnoremap <C-g><C-b> :<C-u>GrepBuffer<Space><C-r><C-w><Enter>
 
 " カーソル下の単語をgrepする
 nnoremap <silent>gr :<C-u>Ag<Space><C-r><C-w> . <CR>
-
-" for eregex.vim
-let g:eregex_default_enable = 0
-let g:eregex_forward_delim = '/'
-let g:eregex_backward_delim = '?'
 
 let Grep_Skip_Dirs = '.svn .git'
 let Grep_Skip_Files = '*.bak *~ jquery.*.js'

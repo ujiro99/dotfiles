@@ -46,71 +46,44 @@ source $HOME/dotfiles/.vimrc.search
 source $HOME/dotfiles/.vimrc.plugin
 
 
+" Leader
+let mapleader = " "
+
 " 左右のカーソル移動で行間移動可能にする。
 set whichwrap=b,s,<,>,[,]
-
-" バックアップファイルを作成しない
-set nobackup
-set nowritebackup
-
-" スワップファイルを作成しない
-set noswapfile
-
+" バックアップファイルの作成先ディレクトリ
+set backupdir=$HOME/.vim/backup
+" スワップファイルの作成先ディレクトリ
+set directory=$HOME/.vim/swap
+" undofileの作成先ディレクトリ
+set undodir=$HOME/.vim/undo
 " 対応括弧の瞬間強調時間
 set matchtime=3
-
 " タブを空白で入力する
 set expandtab
-
 " 折り返し表示しない
 set nowrap
-
 " ヤンクをクリップボードへ送り込む
 set clipboard+=unnamed
-
 " 編集中でもバッファを切り替えれるようにしておく
 set hidden
-
 " 矩形選択で行末を超えてブロックを選択できるようにする
 set virtualedit+=block
 
-" undofileを一箇所にまとめる
-set undodir=~/.vim/undo
-
-" vimrcを編集する
-nnoremap <Space>. :<C-u>edit $HOME/dotfiles/_vimrc<CR>
-
 " escでハイライトをオフ
 nnoremap <silent> <ESC> <ESC>:noh<CR>
-
 " ノーマルモード中でもエンターキーで改行挿入でノーマルモードに戻る
 noremap <CR> i<CR><ESC>
-
-" クリップボードの貼付け
-nmap <Space>p "+gP
-
-" 空行のインデントを勝手に消さない
-nnoremap o oX<C-h>
-nnoremap O OX<C-h>
-inoremap <CR> <CR>X<C-h>
-
 " もう一度やる
 nnoremap U <C-r>
 
 " ckfixウィンドウではq/ESCで閉じる
-autocmd FileType qf nnoremap <buffer> q :ccl<CR>
-autocmd FileType qf nnoremap <buffer> <ESC> :ccl<CR>
+au FileType qf nnoremap <buffer> q :ccl<CR>
+au FileType qf nnoremap <buffer> <ESC> :ccl<CR>
 
-" Leader
-let mapleader = " "
-
-
-"---------------------------------------------
-" バッファ操作関連
-"---------------------------------------------
+" バッファを閉じる
 nmap <Space>d :bd<CR>zz
 nmap <Space>D :bd!<CR>
-nmap <Space>k :Kwbd<CR>zz
 
 
 "---------------------------------------------
@@ -167,13 +140,7 @@ let g:go_fmt_fail_silently = 1
 " command
 "---------------------------------------------
 " vimrcのリロード
-command! ReloadVimrc  source $MYVIMRC
-" ウィンドウレイアウトを崩さないでバッファを閉じる
-command! Kwbd let kwbd_bn= bufnr("%")|enew|exe "bdel ".kwbd_bn|unlet kwbd_bn
-" デスクトップへ移動
-if has("win32") || has("win64") || has("win32unix")
-    command! Cdd :cd $HOME\Desktop\
-endif
+command! ReloadVimrc source $MYVIMRC
 " 表示中バッファのディレクトリへ移動
 command! -nargs=0 CdCurrent cd %:p:h
 " XMLの整形

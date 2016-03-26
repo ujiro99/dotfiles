@@ -5,14 +5,13 @@ set showmatch         " 括弧の対応をハイライト
 set number            " 行番号表示
 set list              " 不可視文字表示
 set listchars=tab:>.,trail:_,extends:>,precedes:< " 不可視文字の表示形式
-set display=uhex      " 印字不可能文字を16進数で表示
-set ruler             " ルーラーを表示
-set title             " ウィンドウタイトル変更
 set lazyredraw        " コマンド実行中は再描画しない
 set ttyfast           " 高速ターミナル接続を行う
+set cursorline        " カーソル行をハイライト
 "ステータスのところにファイル情報表示
 set statusline=%<[%n]%F%=\ %m%r%h%w%y%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}\ %l,%c\ %P
-
+set guioptions-=T     " ツールバーを表示しない
+set guioptions-=m     " メニューバーを表示しない
 
 "全角スペースを視覚化
 if has('syntax')
@@ -27,9 +26,6 @@ if has('syntax')
   augroup END
 endif
 
-
-" カーソル行をハイライト
-set cursorline
 " カレントウィンドウにのみ罫線を引く
 augroup cch
   autocmd! cch
@@ -39,15 +35,3 @@ augroup END
 hi clear CursorLine
 hi CursorLine gui=underline
 highlight CursorLine ctermbg=black guibg=black
-
-
-" メニューとツールバーの切り替え機能をCtrl-F2に割り当てる
-map <silent> <C-F2> :if &guioptions =~# 'T' <Bar>
-                         \set guioptions-=T <Bar>
-                         \set guioptions-=m <bar>
-                    \else <Bar>
-                         \set guioptions+=T <Bar>
-                         \set guioptions+=m <Bar>
-                    \endif<CR>
-set guioptions-=T
-set guioptions-=m

@@ -1,7 +1,6 @@
 "-------------------------------------------------------------------------------
 " 移動設定 Move
 "-------------------------------------------------------------------------------
-
 " カーソルを表示行で移動
 nnoremap h <Left>
 nnoremap j gjzz
@@ -11,14 +10,10 @@ nnoremap <Down> gj
 nnoremap <Up>   gk
 
 " insert mode での移動
-inoremap  <C-h> <Left>
-inoremap  <C-l> <Right>
-inoremap  <C-e> <END>
-inoremap  <C-a> <HOME>
-
-" insert mode でesc
-inoremap kk <Esc>
-inoremap jj <Esc>
+inoremap <C-h> <Left>
+inoremap <C-l> <Right>
+inoremap <C-e> <END>
+inoremap <C-a> <HOME>
 
 "フレームサイズを怠惰に変更する
 map <kPlus> <C-W>+
@@ -27,24 +22,13 @@ map <kMinus> <C-W>-
 " 前回終了したカーソル行に移動
 autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g`\"" | endif
 
-" 最後に編集された位置に移動
-nnoremap gb '[
-nnoremap gp ']
-
 " QuickFixの移動
 nnoremap <C-p> :cp <CR>
 nnoremap <C-n> :cn <CR>
+
 " LocationListの移動
 nnoremap <C-k> :lp <CR>
 nnoremap <C-j> :lne <CR>
-
-" 行末へ移動
-noremap  - $
-vnoremap - $h
-
-" 対応する括弧に移動
-nnoremap [ %
-nnoremap ] %
 
 " マッチ文字列が画面の真ん中にくるようにする
 nmap n nzz
@@ -53,11 +37,6 @@ nmap * *zz
 nmap # #zz
 nmap g* g*zz
 nmap g# g#zz
-
-" 最後に変更されたテキストを選択する
-nnoremap gc  `[v`]
-vnoremap gc <C-u>normal gc<Enter>
-onoremap gc <C-u>normal gc<Enter>
 
 " 矩形選択で自由に移動する
 set virtualedit+=block

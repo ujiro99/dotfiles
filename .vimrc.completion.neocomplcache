@@ -5,7 +5,7 @@
 let g:neocomplete#enable_at_startup = 1
 " 補完が自動で開始される文字数
 let g:neocomplete#auto_completion_start_length = 3
-" smart case有効化。 大文字が入力されるまで大文字小文字の区別を無視する
+" smart case有効化。大文字が入力されるまで大文字小文字の区別を無視する
 let g:neocomplete#enable_smart_case = 1
 " camle caseを有効化。大文字を区切りとしたワイルドカードのように振る舞う
 let g:neocomplete#enable_camel_case_completion = 1
@@ -36,10 +36,6 @@ if !exists('g:neocomplete#keyword_patterns')
 endif
 let g:neocomplete#keyword_patterns['default'] = '\h\w*'
 
-" TABで補完できるようにする
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-" undo
-inoremap <expr><C-g>  neocomplete#undo_completion()
 " C-nでneocomplete補完
 inoremap <expr><C-n>  pumvisible() ? "\<C-n>" : "\<C-x>\<C-u>\<C-p>"
 " C-pでkeyword補完
@@ -110,8 +106,8 @@ let g:neocomplete#include_suffixes = {
 " ユーザー定義スニペット保存ディレクトリ
 let g:neosnippet#snippets_directory = $HOME.'/.vim/snippets'
 
-imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+imap <C-k> <Plug>(neosnippet_expand_or_jump)
+smap <C-k> <Plug>(neosnippet_expand_or_jump)
 
 " For snippet_complete marker.
 if has('conceal')
