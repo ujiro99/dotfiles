@@ -1,6 +1,3 @@
-" 検索をファイルの先頭へ循環しない
-"set nowrapscan
-
 " 大文字小文字の区別なし
 set ignorecase
 
@@ -16,17 +13,6 @@ set scrolloff=10
 
 " JIS 配列 C-[ で Esc
 inoremap <C-[> <Esc>
-
-" 対応する括弧に移動
-nnoremap [ %
-nnoremap ] %
-
-" x キー削除でデフォルトレジスタに入れない
-" "nnoremap x "_x
-" "vnoremap x "_x
-
-" - で行末まで移動
-noremap - $
 
 " ノーマルモード中にEnterで改行
 noremap <CR> i<CR><Esc>
@@ -47,12 +33,6 @@ nmap * *zz
 nmap # #zz
 nmap g* g*zz
 nmap g# g#zz
-
-" ビジュアルモード時-で行末まで選択
-vnoremap - $h
-
-" ビジュアルモード時-で行末まで選択
-vnoremap - $h
 
 " vv で行末まで選択
 vnoremap v ^$h
