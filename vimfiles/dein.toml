@@ -71,6 +71,16 @@ repo = 'ujihisa/neco-look'
 [[plugins]]
 repo = 'honza/vim-snippets'
 
+[[plugins]]
+repo     = 'Shougo/neocomplete.vim'
+depends  = 'Shougo/context_filetype.vim'
+
+[[plugins]]
+repo     = 'Shougo/context_filetype.vim'
+
+[[plugins]]
+repo     = 'Shougo/neosnippet-snippets'
+
 
 #--------------------------------
 # Syntax check
