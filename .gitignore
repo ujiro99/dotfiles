@@ -223,3 +223,6 @@ local.properties
 # visual studio code
 .vscode
 debug
+
+# idea
+.idea/
