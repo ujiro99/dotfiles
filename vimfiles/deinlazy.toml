@@ -81,7 +81,7 @@ build = 'npm install'
 
 [[plugins]]
 repo  = 'claco/jasmine.vim'
-on_ft = '[javascript], [coffee]'
+on_ft = ['javascript', 'coffee']
 
 
 #--------------------------------
