@@ -8,26 +8,6 @@ let g:ctrlp_open_new_file = 1                         " 新規ファイル作成
 let g:ctrlp_extensions = ['tag', 'quickfix', 'dir', 'line', 'mixed']
 let g:ctrlp_funky_syntax_highlight = 1
 
-" Use migemogrep
-function! MigemoMatch(items, str, limit, mmode, ispath, crfile, regex)
-  let tmp = tempname()
-  try
-    if a:str =~ '^\s*$'
-      return a:items
-    endif
-    call writefile(split(iconv(join(a:items, "\n"), &encoding, 'utf-8'), "\n"), tmp)
-    return split(iconv(system(
-    \  printf('migemogrep %s %s',
-    \    shellescape(a:str),
-    \    shellescape(tmp))), 'utf-8', &encoding), "\n")
-  catch
-    return []
-  finally
-    call delete(tmp)
-  endtry
-endfunction
-let g:ctrlp_match_func = {'match' : 'MigemoMatch'}
-
 nnoremap ; <Nop> " Use ; for prefix
 nnoremap ;a :<C-u>CtrlP<Space>
 nnoremap ;j :<C-u>CtrlPBuffer<CR>
