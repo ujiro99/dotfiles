@@ -12,33 +12,14 @@ repo     = 'Shougo/neoyank.vim'
 on_ft    = 'all'
 
 [[plugins]]
-repo     = 'Shougo/unite-outline'
-on_ft    = 'all'
-
-[[plugins]]
-repo     = 'tsukkee/unite-tag'
-on_ft    = 'all'
-
-[[plugins]]
 repo     = 'Shougo/neoinclude.vim'
 on_path  = '.*'
-
-[[plugins]]
-repo     = 'Shougo/vimfiler.vim'
-depends  = 'Shougo/unite.vim'
-on_path  = '.*'
-
 
 #--------------------------------
 # Codic
 #--------------------------------
 [[plugins]]
 repo    = 'koron/codic-vim'
-on_ft   = 'all'
-
-[[plugins]]
-repo    = 'rhysd/unite-codic.vim'
-depends = ['Shougo/unite.vim', 'koron/codic-vim']
 on_ft   = 'all'
 
 

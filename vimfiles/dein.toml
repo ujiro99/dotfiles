@@ -7,11 +7,13 @@ repo = 'Shougo/vimproc.vim'
   unix    = 'make -f make_unix.mak'
 
 [[plugins]]
-repo    = 'Shougo/unite.vim'
-depends = 'Shougo/neomru.vim'
+repo = 'ctrlpvim/ctrlp.vim'
 
 [[plugins]]
-repo = 'Shougo/neomru.vim'
+repo = 'mattn/ctrlp-register'
+
+[[plugins]]
+repo = 'tacahiroy/ctrlp-funky'
 
 [[plugins]]
 repo = 'Lokaltog/vim-easymotion'
@@ -30,9 +32,6 @@ repo = 'glidenote/memolist.vim'
 
 [[plugins]]
 repo = 'junegunn/vim-easy-align'
-
-[[plugins]]
-repo = 'kmnk/vim-unite-giti'
 
 [[plugins]]
 repo = 'moll/vim-node'
@@ -80,6 +79,9 @@ repo     = 'Shougo/context_filetype.vim'
 
 [[plugins]]
 repo     = 'Shougo/neosnippet-snippets'
+
+[[plugins]]
+repo     = 'Shougo/vimfiler.vim'
 
 
 #--------------------------------
