@@ -1,21 +1,11 @@
-" 大文字小文字の区別なし
-set ignorecase
-
-" 検索時に大文字を含んでいたら大/小を区別
-set smartcase
-
-" インクリメンタルサーチ
-set incsearch
-
-" ヤンクした内容をクリップボードへ
-set clipboard=unnamed
-
-" 検索対象をハイライト
-" ハイライトを消す場合は:noh[l]
-set hlsearch
-
-" スクロール時に表示を10行確保
-set scrolloff=10
+set clipboard=unnamed " clipboard options
+set hlsearch          " highlight matches with last search pattern
+set ignorecase        " ignore case in search patterns
+set incsearch         " show where search pattern typed so far matches
+set scrolloff=10      " minimum nr. of lines above and below cursor
+set showmode          " message on status line to show current mode
+set smartcase         " no ignore case when pattern has uppercase
+set surround          " emulates vim-surround
 
 " JIS 配列 C-[ で Esc
 inoremap <C-]> <Esc>
