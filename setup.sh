@@ -37,15 +37,16 @@ brew install tig
 brew install z
 brew install go
 brew install pt
-brew install caskroom/cask/brew-cask
 brew install global --with-exuberant-ctags --with-pygments
+brew tap caskroom/cask
 brew cask install iterm2
-brew cask install keyremap4macbook
 brew cask install lastpass-universal
 brew cask install betterzipql
 brew cask install qlmarkdown
 brew cask install qlstephen
 brew cask install quicklook-json
+brew cask install qlcolorcode
+brew cask install qlvideo
 nodebrew install-binary stable
 
 # go
