@@ -7,6 +7,7 @@ let g:ctrlp_mruf_max = 500                            " MRUの最大記録数
 let g:ctrlp_open_new_file = 1                         " 新規ファイル作成時にタブで開く
 let g:ctrlp_extensions = ['tag', 'quickfix', 'dir', 'line', 'mixed']
 let g:ctrlp_funky_syntax_highlight = 1
+let g:ctrlp_show_hidden = 1
 
 if executable('ag')
   let g:ctrlp_use_caching=0
