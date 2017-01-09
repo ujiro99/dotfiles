@@ -22,7 +22,7 @@ nnoremap <C-i><C-i> :<C-u>help<Space><C-r><C-w><Enter>zz
 command! -nargs=1 Gb :GrepBuffer <args>
 
 " カーソル下の単語をgrepする
-nnoremap <silent>gr :<C-u>Ag<Space><C-r><C-w> . <CR>
+nnoremap <silent>gr :<C-u>Ack<Space><C-r><C-w> . <CR>
 
 let Grep_Skip_Dirs = '.svn .git'
 let Grep_Skip_Files = '*.bak *~ jquery.*.js'
