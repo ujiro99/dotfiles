@@ -8,8 +8,6 @@ let g:did_install_default_menus = 1
 "---------------------------------------------
 " 設定ファイルの読込
 "---------------------------------------------
-" dein関連
-source $HOME/dotfiles/.vimrc.dein
 " 表示関連
 source $HOME/dotfiles/.vimrc.appearance
 " 補間関連
