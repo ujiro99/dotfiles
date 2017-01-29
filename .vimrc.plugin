@@ -164,3 +164,13 @@ else
 endif
 
 let g:clang_cpp_options = '-std=c++11 -stdlib=libc++'
+
+
+"---------------------------------------------
+" ack.vim
+"---------------------------------------------
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+elseif executable('pt')
+  let g:ackprg = 'pt -S'
+endif
