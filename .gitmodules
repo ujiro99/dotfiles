@@ -1,0 +1,171 @@
+[submodule "vimfiles/pack/github/start/memolist.vim"]
+	path = vimfiles/pack/github/start/memolist.vim
+	url = https://github.com/glidenote/memolist.vim.git
+[submodule "vimfiles/pack/github/start/vim-javascript"]
+	path = vimfiles/pack/github/start/vim-javascript
+	url = https://github.com/pangloss/vim-javascript.git
+[submodule "vimfiles/pack/github/start/ack.vim"]
+	path = vimfiles/pack/github/start/ack.vim
+	url = https://github.com/mileszs/ack.vim.git
+[submodule "vimfiles/pack/github/start/clever-f.vim"]
+	path = vimfiles/pack/github/start/clever-f.vim
+	url = https://github.com/rhysd/clever-f.vim.git
+[submodule "vimfiles/pack/github/start/vim-pug"]
+	path = vimfiles/pack/github/start/vim-pug
+	url = https://github.com/digitaltoad/vim-pug.git
+[submodule "vimfiles/pack/github/start/codic-vim"]
+	path = vimfiles/pack/github/start/codic-vim
+	url = https://github.com/koron/codic-vim.git
+[submodule "vimfiles/pack/github/start/context_filetype.vim"]
+	path = vimfiles/pack/github/start/context_filetype.vim
+	url = https://github.com/Shougo/context_filetype.vim.git
+[submodule "vimfiles/pack/github/start/cpsm"]
+	path = vimfiles/pack/github/start/cpsm
+	url = https://github.com/nixprime/cpsm.git
+[submodule "vimfiles/pack/github/start/vim2hs"]
+	path = vimfiles/pack/github/start/vim2hs
+	url = https://github.com/dag/vim2hs.git
+[submodule "vimfiles/pack/github/start/vim-stylus"]
+	path = vimfiles/pack/github/start/vim-stylus
+	url = https://github.com/wavded/vim-stylus.git
+[submodule "vimfiles/pack/github/start/vim-snippets"]
+	path = vimfiles/pack/github/start/vim-snippets
+	url = https://github.com/honza/vim-snippets.git
+[submodule "vimfiles/pack/github/start/vim-smartinput"]
+	path = vimfiles/pack/github/start/vim-smartinput
+	url = https://github.com/kana/vim-smartinput.git
+[submodule "vimfiles/pack/github/start/vim-rails"]
+	path = vimfiles/pack/github/start/vim-rails
+	url = https://github.com/tpope/vim-rails.git
+[submodule "vimfiles/pack/github/start/vim-quickrun"]
+	path = vimfiles/pack/github/start/vim-quickrun
+	url = https://github.com/thinca/vim-quickrun.git
+[submodule "vimfiles/pack/github/start/vim-qfsigns"]
+	path = vimfiles/pack/github/start/vim-qfsigns
+	url = https://github.com/KazuakiM/vim-qfsigns.git
+[submodule "vimfiles/pack/github/start/vim-operator-user"]
+	path = vimfiles/pack/github/start/vim-operator-user
+	url = https://github.com/kana/vim-operator-user.git
+[submodule "vimfiles/pack/github/start/vim-operator-surround"]
+	path = vimfiles/pack/github/start/vim-operator-surround
+	url = https://github.com/rhysd/vim-operator-surround.git
+[submodule "vimfiles/pack/github/start/vim-node"]
+	path = vimfiles/pack/github/start/vim-node
+	url = https://github.com/moll/vim-node.git
+[submodule "vimfiles/pack/github/start/vim-jsdoc"]
+	path = vimfiles/pack/github/start/vim-jsdoc
+	url = https://github.com/heavenshell/vim-jsdoc.git
+[submodule "vimfiles/pack/github/start/vim-markdown"]
+	path = vimfiles/pack/github/start/vim-markdown
+	url = https://github.com/plasticboy/vim-markdown.git
+[submodule "vimfiles/pack/github/start/vim-lucius"]
+	path = vimfiles/pack/github/start/vim-lucius
+	url = https://github.com/jonathanfilip/vim-lucius.git
+[submodule "vimfiles/pack/github/start/vim-go"]
+	path = vimfiles/pack/github/start/vim-go
+	url = https://github.com/fatih/vim-go.git
+[submodule "vimfiles/pack/github/start/vim-javascript-syntax"]
+	path = vimfiles/pack/github/start/vim-javascript-syntax
+	url = https://github.com/jelera/vim-javascript-syntax.git
+[submodule "vimfiles/pack/github/start/vim-javacomplete2"]
+	path = vimfiles/pack/github/start/vim-javacomplete2
+	url = https://github.com/artur-shaik/vim-javacomplete2.git
+[submodule "vimfiles/pack/github/start/vim-haml"]
+	path = vimfiles/pack/github/start/vim-haml
+	url = https://github.com/tpope/vim-haml.git
+[submodule "vimfiles/pack/github/start/vim-fugitive"]
+	path = vimfiles/pack/github/start/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive.git
+[submodule "vimfiles/pack/github/start/vim-easymotion"]
+	path = vimfiles/pack/github/start/vim-easymotion
+	url = https://github.com/Lokaltog/vim-easymotion.git
+[submodule "vimfiles/pack/github/start/vim-easy-align"]
+	path = vimfiles/pack/github/start/vim-easy-align
+	url = https://github.com/junegunn/vim-easy-align.git
+[submodule "vimfiles/pack/github/start/vim-css3-syntax"]
+	path = vimfiles/pack/github/start/vim-css3-syntax
+	url = https://github.com/hail2u/vim-css3-syntax.git
+[submodule "vimfiles/pack/github/start/vim-coffee-script"]
+	path = vimfiles/pack/github/start/vim-coffee-script
+	url = https://github.com/kchmck/vim-coffee-script.git
+[submodule "vimfiles/pack/github/start/vim-clang"]
+	path = vimfiles/pack/github/start/vim-clang
+	url = https://github.com/justmao945/vim-clang.git
+[submodule "vimfiles/pack/github/start/typescript-vim"]
+	path = vimfiles/pack/github/start/typescript-vim
+	url = https://github.com/leafgarland/typescript-vim.git
+[submodule "vimfiles/pack/github/start/grep"]
+	path = vimfiles/pack/github/start/grep
+	url = https://github.com/yegappan/grep.git
+[submodule "vimfiles/pack/github/start/gtags.vim"]
+	path = vimfiles/pack/github/start/gtags.vim
+	url = https://github.com/vim-scripts/gtags.vim.git
+[submodule "vimfiles/pack/github/start/ctrlp-funky"]
+	path = vimfiles/pack/github/start/ctrlp-funky
+	url = https://github.com/tacahiroy/ctrlp-funky.git
+[submodule "vimfiles/pack/github/start/ctrlp-register"]
+	path = vimfiles/pack/github/start/ctrlp-register
+	url = https://github.com/mattn/ctrlp-register.git
+[submodule "vimfiles/pack/github/start/ctrlp.vim"]
+	path = vimfiles/pack/github/start/ctrlp.vim
+	url = https://github.com/ctrlpvim/ctrlp.vim.git
+[submodule "vimfiles/pack/github/start/typescript-tools"]
+	path = vimfiles/pack/github/start/typescript-tools
+	url = https://github.com/clausreinke/typescript-tools.git
+[submodule "vimfiles/pack/github/start/tern_for_vim"]
+	path = vimfiles/pack/github/start/tern_for_vim
+	url = https://github.com/ternjs/tern_for_vim.git
+[submodule "vimfiles/pack/github/start/emmet-vim"]
+	path = vimfiles/pack/github/start/emmet-vim
+	url = https://github.com/mattn/emmet-vim.git
+[submodule "vimfiles/pack/github/start/ghcmod-vim"]
+	path = vimfiles/pack/github/start/ghcmod-vim
+	url = https://github.com/eagletmt/ghcmod-vim.git
+[submodule "vimfiles/pack/github/start/jasegment.vim"]
+	path = vimfiles/pack/github/start/jasegment.vim
+	url = https://github.com/deton/jasegment.vim.git
+[submodule "vimfiles/pack/github/start/javascript-libraries-syntax.vim"]
+	path = vimfiles/pack/github/start/javascript-libraries-syntax.vim
+	url = https://github.com/othree/javascript-libraries-syntax.vim.git
+[submodule "vimfiles/pack/github/start/my_color_scheme"]
+	path = vimfiles/pack/github/start/my_color_scheme
+	url = https://github.com/ujiro99/my_color_scheme.git
+[submodule "vimfiles/pack/github/start/neocomplete.vim"]
+	path = vimfiles/pack/github/start/neocomplete.vim
+	url = https://github.com/Shougo/neocomplete.vim.git
+[submodule "vimfiles/pack/github/start/jasmine.vim"]
+	path = vimfiles/pack/github/start/jasmine.vim
+	url = https://github.com/claco/jasmine.vim.git
+[submodule "vimfiles/pack/github/start/recognize_charcode.vim"]
+	path = vimfiles/pack/github/start/recognize_charcode.vim
+	url = https://github.com/banyan/recognize_charcode.vim.git
+[submodule "vimfiles/pack/github/start/quickfixstatus"]
+	path = vimfiles/pack/github/start/quickfixstatus
+	url = https://github.com/dannyob/quickfixstatus.git
+[submodule "vimfiles/pack/github/start/open-browser.vim"]
+	path = vimfiles/pack/github/start/open-browser.vim
+	url = https://github.com/tyru/open-browser.vim.git
+[submodule "vimfiles/pack/github/start/neoyank.vim"]
+	path = vimfiles/pack/github/start/neoyank.vim
+	url = https://github.com/Shougo/neoyank.vim.git
+[submodule "vimfiles/pack/github/start/neosnippet.vim"]
+	path = vimfiles/pack/github/start/neosnippet.vim
+	url = https://github.com/Shougo/neosnippet.vim.git
+[submodule "vimfiles/pack/github/start/neosnippet-snippets"]
+	path = vimfiles/pack/github/start/neosnippet-snippets
+	url = https://github.com/Shougo/neosnippet-snippets.git
+[submodule "vimfiles/pack/github/start/neomru.vim"]
+	path = vimfiles/pack/github/start/neomru.vim
+	url = https://github.com/Shougo/neomru.vim.git
+[submodule "vimfiles/pack/github/start/neoinclude.vim"]
+	path = vimfiles/pack/github/start/neoinclude.vim
+	url = https://github.com/Shougo/neoinclude.vim.git
+[submodule "vimfiles/pack/github/start/jscomplete-vim"]
+	path = vimfiles/pack/github/start/jscomplete-vim
+	url = https://github.com/mattn/jscomplete-vim.git
+[submodule "vimfiles/pack/github/start/neco-ghc"]
+	path = vimfiles/pack/github/start/neco-ghc
+	url = https://github.com/eagletmt/neco-ghc.git
+[submodule "vimfiles/pack/github/start/neco-look"]
+	path = vimfiles/pack/github/start/neco-look
+	url = https://github.com/ujihisa/neco-look.git
