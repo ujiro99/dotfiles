@@ -31,5 +31,4 @@ nnoremap <silent> mg :Dispatch gtags -v --gtagsconf ~/dotfiles/.gtagsrc <CR>
 
 " GNU global
 nnoremap tr :<C-u>GtagsCursor<CR>
-nnoremap <C-3> :Gtags -f<CR>
 
