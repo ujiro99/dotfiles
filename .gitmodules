@@ -169,3 +169,9 @@
 [submodule "vimfiles/pack/github/start/neco-look"]
 	path = vimfiles/pack/github/start/neco-look
 	url = https://github.com/ujihisa/neco-look.git
+[submodule "vimfiles/pack/errormarker.vim"]
+	path = vimfiles/pack/github/start/errormarker.vim
+	url = https://github.com/mh21/errormarker.vim.git
+[submodule "vimfiles/pack/asyncrun.vim"]
+	path = vimfiles/pack/github/start/asyncrun.vim
+	url = https://github.com/skywind3000/asyncrun.vim.git

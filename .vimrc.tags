@@ -24,12 +24,12 @@ nnoremap tk  ;<C-u>pop<CR>
 nnoremap tl  ;<C-u>tags<CR>
 
 " Ctagsファイル更新
-nnoremap <silent> mt  :echo vimproc#system('ctags -R --exclude=dist --exclude=bower_components --exclude=node_modules')<CR>
+nnoremap <silent> mt :AsyncRun! ctags -R --exclude=dist --exclude=bower_components --exclude=node_modules <CR>
 
 " Gtagsファイル更新
-nnoremap <silent> mg  :echo vimproc#system('gtags -v --gtagsconf ~/dotfiles/.gtagsrc')<CR>
+nnoremap <silent> mg :AsyncRun! gtags -v --gtagsconf ~/dotfiles/.gtagsrc <CR>
 
-" gnu global
+" GNU global
 nnoremap tr :<C-u>GtagsCursor<CR>
 nnoremap <C-3> :Gtags -f<CR>
 
