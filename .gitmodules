@@ -175,3 +175,6 @@
 [submodule "vimfiles/pack/asyncrun.vim"]
 	path = vimfiles/pack/github/start/asyncrun.vim
 	url = https://github.com/skywind3000/asyncrun.vim.git
+[submodule "vimfiles/pack/github/start/vim-dispatch"]
+	path = vimfiles/pack/github/start/vim-dispatch
+	url = https://github.com/tpope/vim-dispatch.git

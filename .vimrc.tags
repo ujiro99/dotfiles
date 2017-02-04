@@ -24,10 +24,10 @@ nnoremap tk  ;<C-u>pop<CR>
 nnoremap tl  ;<C-u>tags<CR>
 
 " Ctagsファイル更新
-nnoremap <silent> mt :AsyncRun! ctags -R --exclude=dist --exclude=bower_components --exclude=node_modules <CR>
+nnoremap <silent> mt :Dispatch ctags -R --exclude=dist --exclude=bower_components --exclude=node_modules <CR>
 
 " Gtagsファイル更新
-nnoremap <silent> mg :AsyncRun! gtags -v --gtagsconf ~/dotfiles/.gtagsrc <CR>
+nnoremap <silent> mg :Dispatch gtags -v --gtagsconf ~/dotfiles/.gtagsrc <CR>
 
 " GNU global
 nnoremap tr :<C-u>GtagsCursor<CR>

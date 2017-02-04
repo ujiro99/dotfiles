@@ -176,19 +176,3 @@ elseif executable('pt')
   let g:ackprg = 'pt -S'
 endif
 
-
-"---------------------------------------------
-" AsyncRun.vim
-"---------------------------------------------
-augroup AsyncRun
-  au!
-  " Show AsyncRun status to status line.
-  au User AsyncRunPre set statusline+=[%{g:asyncrun_status}]
-  au User AsyncRunStop set statusline-=[%{g:asyncrun_status}]
-augroup END
-
-" Use F9 to toggle quickfix window rapidly
-:noremap <F9> :call asyncrun#quickfix_toggle(8)<CR>
-
-" Quickfix encoding problem when using Chinese or Japanese
-let g:asyncrun_encs = 'gbk'
