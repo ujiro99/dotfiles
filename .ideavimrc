@@ -37,9 +37,16 @@ vnoremap v ^$h
 vnoremap < <gv
 vnoremap > >gv
 
-" 参照検索
+" search
 map gr :action ShowUsages<CR>
+
+" navigate
+map ;j :action SearchEverywhere<CR>
+map ;o :action FileStructurePopup<CR>
+map ;m :action RecentFiles<CR>
+map ;f :action GotoFile<CR>
 
 " Golang
 map <Space>f :action GoFmtFileAction<CR>
 map <Space>i :action GoImportsFileAction<CR>
+
