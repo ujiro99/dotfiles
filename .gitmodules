@@ -178,3 +178,6 @@
 [submodule "vimfiles/pack/github/start/vim-dispatch"]
 	path = vimfiles/pack/github/start/vim-dispatch
 	url = https://github.com/tpope/vim-dispatch.git
+[submodule "vimfiles/pack/github/start/jedi-vim"]
+	path = vimfiles/pack/github/start/jedi-vim
+	url = https://github.com/davidhalter/jedi-vim.git
