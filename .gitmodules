@@ -50,7 +50,7 @@
 	path = vimfiles/pack/github/start/vim-operator-surround
 	url = https://github.com/rhysd/vim-operator-surround.git
 [submodule "vimfiles/pack/github/start/vim-node"]
-	path = vimfiles/pack/github/start/vim-node
+	path = vimfiles/pack/github/opt/vim-node
 	url = https://github.com/moll/vim-node.git
 [submodule "vimfiles/pack/github/start/vim-jsdoc"]
 	path = vimfiles/pack/github/opt/vim-jsdoc
@@ -164,7 +164,7 @@
 	path = vimfiles/pack/github/opt/jscomplete-vim
 	url = https://github.com/mattn/jscomplete-vim.git
 [submodule "vimfiles/pack/github/start/neco-ghc"]
-	path = vimfiles/pack/github/start/neco-ghc
+	path = vimfiles/pack/github/opt/neco-ghc
 	url = https://github.com/eagletmt/neco-ghc.git
 [submodule "vimfiles/pack/github/start/neco-look"]
 	path = vimfiles/pack/github/start/neco-look
