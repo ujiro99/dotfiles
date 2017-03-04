@@ -1,0 +1,47 @@
+# rbenv
+rbenv init - | source
+
+# My Scripts
+set -x PATH {$HOME}/bin {$PATH}
+# android sdk
+set -x PATH {$HOME}/Library/Android/sdk/platform-tools {$PATH}
+# nodebrew
+set -x PATH {$HOME}/.nodebrew/current/bin {$PATH}
+# pyenv
+set -x PATH {$HOME}/.pyenv/shims {$PATH}
+# cabal
+set -x PATH {$HOME}/.cabal/bin {$PATH}
+# go
+set -x GOROOT /usr/local/opt/go/libexec
+set -x GOPATH {$HOME}/go
+set -x PATH {$GOPATH}/bin {$GOROOT}/bin {$PATH}
+
+switch (uname)
+    case Darwin
+        alias ls="ls -G -w"
+        alias ll="ls -lh"
+        alias vi="/Applications/MacVim.app/Contents/MacOS/Vim"
+        alias gvim="/Applications/MacVim.app/Contents/MacOS/mvim"
+end
+
+alias where "command -v"
+alias c "cd"
+alias e "vi"
+alias l "ls -a"
+alias la "ls -a"
+alias ll "ls -la"
+alias du "du -h"
+alias df "df -h"
+alias dl "docker ps -l -q"
+alias su "su -l"
+alias pw "pwd"
+alias g "git"
+alias grep "grep -i"
+alias u "cd ../"
+alias uu "cd ../../"
+alias uuu "cd ../../../"
+alias :q "exit"
+alias a "adb"
+
+# Golangのビルドを早くする
+set -x GOGC 5000

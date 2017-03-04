@@ -2,7 +2,7 @@
 
 # install Homebrew
 ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
-brew install git
+brew install git fish
 
 mkdir ~/dotfiles/vimfiles
 
@@ -18,14 +18,8 @@ ln -s ~/dotfiles/tslint.json ~/tslint.json
 ln -s ~/dotfiles/vimfiles ~/.vim
 ln -s ~/dotfiles/.tmux.conf ~/.tmux.conf
 
-## prezto
-git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
-setopt EXTENDED_GLOB
-for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
-  ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
-done
-chsh -s /bin/zsh
-echo "source ~/dotfiles/.zshrc" >> ~/.zshrc
+chsh -s /usr/local/bin/fish
+ln -s ~/dotfiles/.fishrc ~/.config/fish/config.fish
 
 # brew
 brew install cmigemo
@@ -34,10 +28,10 @@ brew install pyenv
 brew install pyenv-pip-rehash
 brew install homebrew/boneyard/pyenv-pip-rehash
 brew install tig
-brew install z
 brew install go
 brew install pt
 brew install global --with-exuberant-ctags --with-pygments
+brew install ghq fzf
 brew tap caskroom/cask
 brew cask install iterm2
 brew cask install lastpass-universal
@@ -49,5 +43,6 @@ brew cask install qlcolorcode
 brew cask install qlvideo
 nodebrew install-binary stable
 
-# go
-go get github.com/lestrrat/peco/cmd/peco/
+#fish
+curl -Lo  ~/.config/fish/functions/fisher.fish --create-dirs git.io/fisher
+fisher z fzf decors/fish-ghq rafaelrinaldi/pure
