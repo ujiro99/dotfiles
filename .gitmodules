@@ -145,18 +145,12 @@
 [submodule "vimfiles/pack/github/start/open-browser.vim"]
 	path = vimfiles/pack/github/start/open-browser.vim
 	url = https://github.com/tyru/open-browser.vim.git
-[submodule "vimfiles/pack/github/start/neoyank.vim"]
-	path = vimfiles/pack/github/start/neoyank.vim
-	url = https://github.com/Shougo/neoyank.vim.git
 [submodule "vimfiles/pack/github/start/neosnippet.vim"]
 	path = vimfiles/pack/github/start/neosnippet.vim
 	url = https://github.com/Shougo/neosnippet.vim.git
 [submodule "vimfiles/pack/github/start/neosnippet-snippets"]
 	path = vimfiles/pack/github/start/neosnippet-snippets
 	url = https://github.com/Shougo/neosnippet-snippets.git
-[submodule "vimfiles/pack/github/start/neomru.vim"]
-	path = vimfiles/pack/github/start/neomru.vim
-	url = https://github.com/Shougo/neomru.vim.git
 [submodule "vimfiles/pack/github/start/neoinclude.vim"]
 	path = vimfiles/pack/github/start/neoinclude.vim
 	url = https://github.com/Shougo/neoinclude.vim.git
@@ -172,9 +166,6 @@
 [submodule "vimfiles/pack/errormarker.vim"]
 	path = vimfiles/pack/github/start/errormarker.vim
 	url = https://github.com/mh21/errormarker.vim.git
-[submodule "vimfiles/pack/asyncrun.vim"]
-	path = vimfiles/pack/github/start/asyncrun.vim
-	url = https://github.com/skywind3000/asyncrun.vim.git
 [submodule "vimfiles/pack/github/start/vim-dispatch"]
 	path = vimfiles/pack/github/start/vim-dispatch
 	url = https://github.com/tpope/vim-dispatch.git
