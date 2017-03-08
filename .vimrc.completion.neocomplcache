@@ -114,3 +114,5 @@ if has('conceal')
   set conceallevel=2 concealcursor=i
 endif
 
+" ユーザー定義スニペット保存ディレクトリ
+let g:neosnippet#snippets_directory = $HOME.'/vimfiles/snippets'

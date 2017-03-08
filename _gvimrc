@@ -1,28 +1,19 @@
 colorscheme my_color_scheme
-if has("win32") || has("win64")
 
-    " ƒtƒHƒ“ƒg–¼‚É“ú–{Œê–¼‚ğg‚¤‚Ì‚ÅAˆê“I‚É•¶šƒR[ƒh‚ğ•Ï‚¦‚é
-    " fileencoding=cp932 ‚·‚é•K—v‚ª‚ ‚é
-    set encoding=cp932
-    set guifont=Osaka|“™•:h11
-    set guifontwide=Osaka|“™•:h11
-    set ambiwidth=double
-    " •¶šƒR[ƒh‚ğŒ³‚É–ß‚·
-    set encoding=utf8
-    " DirectWrite ‚ğg‚¤
-    set renderoptions=type:directx,contrast:1.0,renmode:5
-
-else
-    set guifont=Osaka-Mono:h13
+if has('win32')
+  set guifont=Osakaï¼ç­‰å¹…:h11:cSHIFTJIS
+  set ambiwidth=double
+  " DirectWrite ã‚’ä½¿ã†
+  set renderoptions=type:directx,contrast:1.0,renmode:5
 endif
 
-" sŠÔ
+" è¡Œé–“
 :set lsp=5
 
-" ‚‚³
+" é«˜ã•
 :set lines=999
 
 if has("mac")
-    " ©“®“I‚É“ú–{Œê“ü—Í(IM)‚ğƒIƒ“‚É‚·‚é
+    " è‡ªå‹•çš„ã«æ—¥æœ¬èªå…¥åŠ›(IM)ã‚’ã‚ªãƒ³ã«ã™ã‚‹
     set noimdisableactivate
 endif
