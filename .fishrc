@@ -12,9 +12,7 @@ set -x PATH {$HOME}/.pyenv/shims {$PATH}
 # cabal
 set -x PATH {$HOME}/.cabal/bin {$PATH}
 # go
-set -x GOROOT /usr/local/opt/go/libexec
-set -x GOPATH {$HOME}/go
-set -x PATH {$GOPATH}/bin {$GOROOT}/bin {$PATH}
+set -x GOPATH {$HOME}
 
 switch (uname)
     case Darwin
