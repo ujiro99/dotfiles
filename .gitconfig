@@ -42,7 +42,6 @@
     bn = branch --no-merged  # mergeしてないbranchを表示
     bo = branch -r           # remote branchを表示
     # log関連
-    wc = whatchanged         # logに変更されたファイルも一緒に出す
     ls = log --stat          # logに変更されたファイルも一緒に出す
     lp = log -p --color      # diffも一緒に出す
     la = log --pretty=format:\"%C(yellow)%h %C(White)%ad | %C(White)%s%C(Green)%d %C(Red)[%an]\" --graph --date=short
@@ -67,18 +66,10 @@
     dm = diff master --color   # masterとのdiff
     dw = diff --color-words -b # 単語単位でいろつけてdiff
     dc = diff --color --cached # addされているものとのdiff
-    ds = diff --staged --color # 同上(1.6.1移行)
     d1 = diff HEAD~            # HEADから1つ前とdiff
     d2 = diff HEAD~~           # HEADから2つ前とdiff
     d3 = diff HEAD~~~          # HEADから3つ前とdiff
     d4 = diff HEAD~~~~         # HEADから4つ前とdiff
-    d5 = diff HEAD~~~~~        # HEADから5つ前とdiff
-    d10 = diff HEAD~~~~~~~~~~  # HEADから10前とdiff
-    # mergeの際にconflictが起きたファイルを編集
-    edit-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; vim `f`"
-    # mergeの際にconflictが起きたファイルをadd
-    add-unmerged = "!f() { git ls-files --unmerged | cut -f2 | sort -u ; }; git add `f`"
-    delete-unmerged =  "!f() { git ls-files --deleted | cut -f2 | sort -u ; }; git rm `f`"
     # grep関連
     gr = grep
     gn = grep -n
