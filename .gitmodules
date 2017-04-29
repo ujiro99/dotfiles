@@ -172,3 +172,6 @@
 [submodule "vimfiles/pack/github/opt/jedi-vim"]
 	path = vimfiles/pack/github/opt/jedi-vim
 	url = https://github.com/davidhalter/jedi-vim.git
+[submodule "vimfiles/pack/github/opt/vim-mql5"]
+	path = vimfiles/pack/github/opt/vim-mql5
+	url = https://github.com/rupurt/vim-mql5.git
