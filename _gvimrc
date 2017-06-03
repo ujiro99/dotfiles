@@ -5,6 +5,8 @@ if has('win32')
   set ambiwidth=double
   " DirectWrite を使う
   set renderoptions=type:directx,contrast:1.0,renmode:5
+else
+  set guifont=Osaka-Mono:h13
 endif
 
 " 行間
