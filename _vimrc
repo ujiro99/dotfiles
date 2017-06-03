@@ -125,22 +125,14 @@ let g:go_fmt_fail_silently = 1
 command! ReloadVimrc source $MYVIMRC
 " 表示中バッファのディレクトリへ移動
 command! -nargs=0 CdCurrent cd %:p:h
-" XMLの整形
-map <Leader>x !python -m BeautifulSoup<CR>
-" Jsonの整形
-command! JsonFormat :execute '%!python -m json.tool'
-  \ | :execute '%!python -c "import re,sys;chr=__builtins__.__dict__.get(\"unichr\", chr);sys.stdout.write(re.sub(r\"\\u[0-9a-f]{4}\", lambda x: chr(int(\"0x\" + x.group(0)[2:], 16)), sys.stdin.read()))"'
-  \ | :%s/ \+$//ge
-  \ | :set ft=javascript
-  \ | :1
-map <Leader>j JsonFormat<CR>
+" 空白の除去
+command! RemoveSpace call <SID>format_space()
 
 
 "---------------------------------------------
 " function
 "---------------------------------------------
 " 空白の除去
-command! RemoveSpace call <SID>format_space()
 function! s:format_space()
     :%s/\s\+$//ge  " 行末の空白を除去する
     :%s/\t/  /ge   " tabをスペースに変換する
