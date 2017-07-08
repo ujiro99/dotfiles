@@ -1,9 +1,5 @@
 #!/bin/bash
 
-# install Homebrew
-ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
-brew install git fish
-
 mkdir ~/dotfiles/vimfiles
 
 ln -s ~/dotfiles/.gitignore ~/.gitignore
@@ -18,10 +14,10 @@ ln -s ~/dotfiles/tslint.json ~/tslint.json
 ln -s ~/dotfiles/vimfiles ~/.vim
 ln -s ~/dotfiles/.tmux.conf ~/.tmux.conf
 
-chsh -s /usr/local/bin/fish
-ln -s ~/dotfiles/.fishrc ~/.config/fish/config.fish
-
 # brew
+ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+brew install git
+brew install fish
 brew install cmigemo
 brew install nodebrew
 brew install pyenv
@@ -43,6 +39,11 @@ brew cask install qlcolorcode
 brew cask install qlvideo
 nodebrew install-binary stable
 
-#fish
+# vim plugins
+git submodule foreach git pull origin master
+
+# fish
+chsh -s /usr/local/bin/fish
+ln -s ~/dotfiles/.fishrc ~/.config/fish/config.fish
 curl -Lo  ~/.config/fish/functions/fisher.fish --create-dirs git.io/fisher
 fisher z fzf decors/fish-ghq rafaelrinaldi/pure
