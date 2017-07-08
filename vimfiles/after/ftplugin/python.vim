@@ -3,5 +3,3 @@ if !exists("python_plugin_loaded")
   packadd jedi-vim
 endif
 
-
-
