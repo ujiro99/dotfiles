@@ -14,7 +14,7 @@ set -x PATH {$HOME}/.cabal/bin {$PATH}
 # go
 set -x GOPATH {$HOME}
 # anaconda
-set -x PATH {$HOME}/anaconda3/bin {$PATH}
+# set -x PATH {$HOME}/anaconda3/bin {$PATH} # use pyenv !
 source {$HOME}/anaconda3/bin/conda.fish
 
 switch (uname)
