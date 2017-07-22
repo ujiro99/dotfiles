@@ -11,6 +11,7 @@ mklink %USERPROFILE%\.vrapperrc %USERPROFILE%\dotfiles\.vrapperrc
 mklink %USERPROFILE%\.gtagsrc %USERPROFILE%\dotfiles\.gtagsrc
 
 mklink /d %USERPROFILE%\.vim %USERPROFILE%\dotfiles\vimfiles
+mklink /d %USERPROFILE%\vimfiles %USERPROFILE%\dotfiles\vimfiles
 mkdir %USERPROFILE%/.vim/backup
 mkdir %USERPROFILE%/.vim/swap
 mkdir %USERPROFILE%/.vim/undo
