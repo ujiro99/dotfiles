@@ -2,7 +2,7 @@
 -- Edit and put it on %USERPROFILE%, %HOME% or the same folder with nyagos.exe
 
 -- Simple Prompt for CMD.EXE
-nyagos.env.prompt='$L'.. nyagos.getenv('COMPUTERNAME') .. ':$P$G$_$$$s'
+nyagos.env.prompt='$L$T:$P$G$_$$$s'
 
 -- Coloring Prompt for NYAGOS.exe
 nyagos.prompt = function(this)
@@ -13,9 +13,37 @@ nyagos.prompt = function(this)
     if wd:sub(1,home_len) == home then
         wd = "~" .. wd:sub(home_len+1)
     end
-    local title = wd .. " - NYAGOS"
-    return nyagos.default_prompt('$e[40;36;1m'..this..'$e[37;1m',title)
+    local title = wd
+    if nyagos.elevated() then
+        return nyagos.default_prompt('$e[40;34;1m'..this..'$e[37;1m',title)
+    else
+        return nyagos.default_prompt('$e[40;36;1m'..this..'$e[37;1m',title)
+    end
 end
+
+-- Key bind
+nyagos.bindkey("C_G",
+    function(this)
+        local str = nyagos.eval("ghq list -p | peco")
+        if (str ~= nil ) then
+            nyagos.exec("cd ".. '"' ..chomp(str).. '"')
+            nyagos.prompt(nyagos.getenv("PROMPT"))
+        end
+    end)
+
+nyagos.bindkey("C_R",
+    function(this)
+        local path = nyagos.getenv("APPDATA") .. '\\NYAOS_ORG\\nyagos.history'
+        local result = nyagos.eval('type ' .. path .. ' | peco')
+        nyagos.prompt(nyagos.getenv("PROMPT"))
+        return result
+    end)
+
+-- set docker-machine env
+set {DOCKER_TLS_VERIFY='1'}
+set {DOCKER_HOST='tcp://192.168.11.24:2376'}
+set {DOCKER_CERT_PATH='C:/Users/uj/.docker/machine/machines/vmvm'}
+set {DOCKER_MACHINE_NAME='vmvm'}
 
 alias "l=ls -a"
 alias "ll=ls -l"
@@ -27,11 +55,10 @@ alias "g=git"
 alias "st=start"
 alias "fk=taskkill /f /im"
 alias "ps=tasklist | sort"
-alias "vb='/Program Files/Oracle/VirtualBox/VBoxManage.exe'"
-alias "vi='/Program Files/vim74-kaoriya-win32/vim.exe'"
-alias "a=adb"
-alias "ad=adb devices"
-alias "al=adb logcat -v time"
-alias "as=adb shell"
+alias "vi='/Program Files/vim80-kaoriya-win64/vim.exe'"
+alias "mv='move'"
+alias "dk='docker'"
+alias "dkc='docker-compose'"
+alias "dkm='docker-machine'"
 
 -- vim:set ft=lua: --
