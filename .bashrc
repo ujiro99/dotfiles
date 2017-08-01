@@ -46,8 +46,10 @@ alias u="cd ../"
 alias uu="cd ../../"
 alias uuu="cd ../../../"
 alias g="git"
-alias l="ls -aG"
-alias ll="ls -lhG"
-alias a="adb"
-alias ad="adb devices"
-alias al="adb logcat -v time"
+
+export LS_OPTIONS='--color=auto'
+eval "`dircolors`"
+alias ls='ls $LS_OPTIONS'
+alias ll='ls $LS_OPTIONS -l'
+alias l='ls $LS_OPTIONS -lA'
+
