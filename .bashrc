@@ -4,11 +4,12 @@
 # path
 export GOROOT=/usr/local/go
 export GOPATH=$HOME/go
-export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin:/usr/share/doc/git/contrib
 [ -s ~/dotfiles/.bashrc.peco ] && . ~/dotfiles/.bashrc.peco
 
 # 新しく作られたファイルのパーミッションを644をデフォルトにする
 umask 022
+
 # coreファイルを作らないようにする
 ulimit -c 0
 
@@ -40,7 +41,7 @@ export LESS='-X -r -i -P ?f%f:(stdin). ?lb%lb?L/%L.. [?eEOF:?pb%pb\%..]'
 
 ## Alias 一覧
 alias j=jobs
-alias vi=vim
+alias vi="vim"
 alias c=cd
 alias u="cd ../"
 alias uu="cd ../../"
@@ -48,8 +49,7 @@ alias uuu="cd ../../../"
 alias g="git"
 
 export LS_OPTIONS='--color=auto'
-eval "`dircolors`"
-alias ls='ls $LS_OPTIONS'
+alias ls='ls $LS_OPTIONS -a'
 alias ll='ls $LS_OPTIONS -l'
 alias l='ls $LS_OPTIONS -lA'
 
