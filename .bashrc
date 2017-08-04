@@ -4,7 +4,7 @@
 # path
 export GOROOT=/usr/local/go
 export GOPATH=$HOME/go
-export PATH=$PATH:$GOROOT/bin:$GOPATH/bin:/usr/share/doc/git/contrib
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin:/usr/share/doc/git/contrib/diff-highlight
 [ -s ~/dotfiles/.bashrc.peco ] && . ~/dotfiles/.bashrc.peco
 
 # 新しく作られたファイルのパーミッションを644をデフォルトにする
