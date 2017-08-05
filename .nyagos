@@ -31,14 +31,6 @@ nyagos.bindkey("C_G",
         end
     end)
 
-nyagos.bindkey("C_R",
-    function(this)
-        local path = nyagos.getenv("APPDATA") .. '\\NYAOS_ORG\\nyagos.history'
-        local result = nyagos.eval('type ' .. path .. ' | peco')
-        nyagos.prompt(nyagos.getenv("PROMPT"))
-        return result
-    end)
-
 alias "l=ls -a"
 alias "ll=ls -l"
 alias "u=cd ../"
