@@ -39,12 +39,6 @@ nyagos.bindkey("C_R",
         return result
     end)
 
--- set docker-machine env
-set {DOCKER_TLS_VERIFY='1'}
-set {DOCKER_HOST='tcp://192.168.11.24:2376'}
-set {DOCKER_CERT_PATH='C:/Users/uj/.docker/machine/machines/vmvm'}
-set {DOCKER_MACHINE_NAME='vmvm'}
-
 alias "l=ls -a"
 alias "ll=ls -l"
 alias "u=cd ../"
