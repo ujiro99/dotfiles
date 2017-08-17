@@ -31,6 +31,14 @@ nyagos.bindkey("C_G",
         end
     end)
 
+-- docker-machine
+set {DOCKER_TLS_VERIFY='1'}
+set {DOCKER_HOST='tcp://172.29.32.2:2376'}
+set {DOCKER_CERT_PATH='C:/Users/uj/.docker/machine/machines/default'}
+set {DOCKER_MACHINE_NAME='default'}
+set {COMPOSE_CONVERT_WINDOWS_PATHS='true'}
+
+-- alias
 alias "l=ls -a"
 alias "ll=ls -l"
 alias "u=cd ../"
