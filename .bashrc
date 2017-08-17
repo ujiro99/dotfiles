@@ -6,6 +6,7 @@ export GOROOT=/usr/local/go
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin:/usr/share/doc/git/contrib/diff-highlight
 [ -s ~/dotfiles/.bashrc.peco ] && . ~/dotfiles/.bashrc.peco
+[ -s ~/.bashrc.local ] && . ~/.bashrc.local
 
 # 新しく作られたファイルのパーミッションを644をデフォルトにする
 umask 022
@@ -50,6 +51,6 @@ alias g="git"
 
 export LS_OPTIONS='--color=auto'
 alias ls='ls $LS_OPTIONS -a'
-alias ll='ls $LS_OPTIONS -l'
+alias ll='ls $LS_OPTIONS -la'
 alias l='ls $LS_OPTIONS -lA'
 
