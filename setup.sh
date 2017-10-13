@@ -39,9 +39,6 @@ brew cask install qlcolorcode
 brew cask install qlvideo
 nodebrew install-binary stable
 
-# vim plugins
-git submodule foreach git pull origin master
-
 # fish
 chsh -s /usr/local/bin/fish
 ln -s ~/dotfiles/.fishrc ~/.config/fish/config.fish

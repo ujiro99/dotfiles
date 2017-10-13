@@ -15,8 +15,6 @@ mklink /d %USERPROFILE%\vimfiles %USERPROFILE%\dotfiles\vimfiles
 mkdir %USERPROFILE%/.vim/backup
 mkdir %USERPROFILE%/.vim/swap
 mkdir %USERPROFILE%/.vim/undo
-git submodule init
-git submodule update
 
 reg add "HKEY_CURRENT_USER\Software\Microsoft\Command Processor" /v AutoRun /d "doskey /macrofile=%USERPROFILE%\dotfiles\.cmdrc"
 

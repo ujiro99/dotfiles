@@ -17,6 +17,3 @@ mkdir ~/.vim/backup
 mkdir ~/.vim/swap
 mkdir ~/.vim/undo
 
-# vim plugins
-git submodule foreach git pull origin master
-

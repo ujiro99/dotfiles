@@ -3,6 +3,7 @@
 /vimfiles/autoload
 /vimfiles/undo
 /vimfiles/swap
+/vimfiles/pack
 
 # backupfile
 *.bak
