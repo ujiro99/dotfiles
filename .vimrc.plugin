@@ -7,7 +7,13 @@ nnoremap ;f :Files<CR>
 nnoremap ;l :Lines<CR>
 nnoremap ;t :Tags<CR>
 nnoremap ;m :History<CR>
-nnoremap ;c :Commits<CR>
+nnoremap ;c :BCommits<CR>
+
+" Customize fzf colors to match your color scheme
+let g:fzf_colors = {
+\   'fg+':     ['fg', 'Error', 'CursorColumn', 'Normal'],
+\   'header':  ['fg', 'Comment'],
+\}
 
 
 "---------------------------------------------
