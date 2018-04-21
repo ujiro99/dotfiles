@@ -1,7 +1,7 @@
 colorscheme my_color_scheme
 
 if has('win32')
-  set guifont=Osaka－等幅:h11:cSHIFTJIS
+  set guifont=Osaka－等幅:h10:cSHIFTJIS
   set ambiwidth=double
   " DirectWrite を使う
   set renderoptions=type:directx,contrast:1.0,renmode:5
