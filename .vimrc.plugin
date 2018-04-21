@@ -15,6 +15,9 @@ let g:fzf_colors = {
 \   'header':  ['fg', 'Comment'],
 \}
 
+" [Tags] Command to generate tags file
+let g:fzf_tags_command = 'ctags -R --exclude=dist --exclude=bower_components --exclude=node_modules'
+
 
 "---------------------------------------------
 " ALE 関連
