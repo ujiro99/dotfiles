@@ -37,7 +37,7 @@ let g:ale_completion_enabled = 1
 " NERDTree関連
 "---------------------------------------------
 nnoremap ;n :NERDTreeToggle<CR>
-
+set guioptions-=L
 
 "---------------------------------------------
 " Fugitive 関連
