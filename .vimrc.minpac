@@ -38,7 +38,6 @@ function! s:init_packages()
   call minpac#add('jonathanfilip/vim-lucius', {'type': 'opt'})
   call minpac#add('dag/vim2hs', {'type': 'opt'})
   call minpac#add('eagletmt/ghcmod-vim', {'type': 'opt'})
-  call minpac#add('justmao945/vim-clang', {'type': 'opt'})
   call minpac#add('moll/vim-node', {'type': 'opt'})
   call minpac#add('mattn/emmet-vim', {'type': 'opt'})
   call minpac#add('hail2u/vim-css3-syntax', {'type': 'opt'})
@@ -51,6 +50,12 @@ function! s:init_packages()
   call minpac#add('eagletmt/neco-ghc', {'type': 'opt'})
   call minpac#add('davidhalter/jedi-vim', {'type': 'opt'})
   call minpac#add('rupurt/vim-mql5', {'type': 'opt'})
+  " c & cpp
+  call minpac#add('jceb/vim-hier', {'type': 'opt'})
+  call minpac#add('justmao945/vim-clang', {'type': 'opt'})
+  call minpac#add('vim-scripts/DoxygenToolkit.vim', {'type': 'opt'})
+  call minpac#add('vim-scripts/OmniCppComplete', {'type': 'opt'})
+  call minpac#add('vim-scripts/taglist.vim', {'type': 'opt'})
 
 endfunction
 
