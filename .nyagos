@@ -4,6 +4,8 @@
 -- Simple Prompt for CMD.EXE
 nyagos.env.prompt='$L$T:$P$G$_$$$s'
 
+nyagos.env.TERM=''
+
 -- Coloring Prompt for NYAGOS.exe
 nyagos.prompt = function(this)
     local wd = nyagos.getwd()
@@ -22,14 +24,26 @@ nyagos.prompt = function(this)
 end
 
 -- Key bind
-nyagos.bindkey("C_G",
-    function(this)
-        local str = nyagos.eval("ghq list -p | peco")
-        if (str ~= nil ) then
-            nyagos.exec("cd ".. '"' ..chomp(str).. '"')
-            nyagos.prompt(nyagos.getenv("PROMPT"))
-        end
-    end)
+nyagos.bindkey("C_G", function(this)
+    local str = nyagos.eval("ghq list -p | peco")
+    if (str ~= nil ) then
+        nyagos.exec("cd ".. '"' ..chomp(str).. '"')
+        nyagos.prompt(nyagos.getenv("PROMPT"))
+    end
+end)
+
+nyagos.bindkey("C_D", function(this)
+    local result = nyagos.eval('docker-selector.exe -a')
+    this:call("CLEAR_SCREEN")
+    return result
+end)
+
+nyagos.bindkey("C_E", function(this)
+    local result = nyagos.eval('docker-selector.exe -i')
+    this:call("CLEAR_SCREEN")
+    return result
+end)
+
 
 -- docker-machine
 set {DOCKER_TLS_VERIFY='1'}
