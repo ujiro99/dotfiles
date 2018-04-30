@@ -1,6 +1,6 @@
 #!/bin/bash
 
-rm -f ~/.bashrc
+mv ~/.bashrc ~/.bashrc.bak
 
 ln -s ~/dotfiles/.gitignore ~/.gitignore
 ln -s ~/dotfiles/.gitconfig ~/.gitconfig
@@ -16,4 +16,10 @@ ln -s ~/dotfiles/.bashrc ~/.bashrc
 mkdir ~/.vim/backup
 mkdir ~/.vim/swap
 mkdir ~/.vim/undo
+
+# update vim plugin
+mkdir -p ~/dotfiles/vimfiles/pack/minpac/opt
+cd ~/dotfiles/vimfiles/pack/minpac/opt
+git clone https://github.com/k-takata/minpac.git
+vim -c 'PackUpdate' -c 'q'
 
