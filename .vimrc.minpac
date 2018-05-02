@@ -33,7 +33,6 @@ function! s:init_packages()
   call minpac#add('airblade/vim-gitgutter')
   call minpac#add('scrooloose/nerdtree')
   call minpac#add('sheerun/vim-polyglot')
-  call minpac#add('gorodinskiy/vim-coloresque') " css/less/sass/html color preview for vim
 
   call minpac#add('ujiro99/my_color_scheme', {'type': 'opt'})
   call minpac#add('jonathanfilip/vim-lucius', {'type': 'opt'})
@@ -41,7 +40,6 @@ function! s:init_packages()
   call minpac#add('eagletmt/ghcmod-vim', {'type': 'opt'})
   call minpac#add('moll/vim-node', {'type': 'opt'})
   call minpac#add('mattn/emmet-vim', {'type': 'opt'})
-  call minpac#add('hail2u/vim-css3-syntax', {'type': 'opt'})
   call minpac#add('ternjs/tern_for_vim', {'type': 'opt'})
   call minpac#add('clausreinke/typescript-tools', {'type': 'opt'})
   call minpac#add('artur-shaik/vim-javacomplete2', {'type': 'opt'})
@@ -51,6 +49,9 @@ function! s:init_packages()
   call minpac#add('eagletmt/neco-ghc', {'type': 'opt'})
   call minpac#add('davidhalter/jedi-vim', {'type': 'opt'})
   call minpac#add('rupurt/vim-mql5', {'type': 'opt'})
+  " css
+  call minpac#add('hail2u/vim-css3-syntax', {'type': 'opt'})
+  call minpac#add('gorodinskiy/vim-coloresque', {'type': 'opt'}) " css/less/sass/html color preview for vim
   " c & cpp
   call minpac#add('jceb/vim-hier', {'type': 'opt'})
   call minpac#add('justmao945/vim-clang', {'type': 'opt'})
