@@ -1,7 +1,12 @@
 "---------------------------------------------
 " fzf 関連
 "---------------------------------------------
-set rtp+=~\src\github.com\junegunn\fzf
+if has('win32')
+  set rtp+=~\src\github.com\junegunn\fzf
+else
+  set rtp+=~/src/github.com/junegunn/fzf
+endif
+
 nnoremap ;j :Buffers<CR>
 nnoremap ;f :Files<CR>
 nnoremap ;l :Lines<CR>

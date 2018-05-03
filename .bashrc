@@ -54,3 +54,5 @@ alias ls='ls $LS_OPTIONS -a'
 alias ll='ls $LS_OPTIONS -la'
 alias l='ls $LS_OPTIONS -lA'
 
+## fzf
+export FZF_DEFAULT_COMMAND='ag -g ""'
