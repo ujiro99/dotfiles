@@ -3,6 +3,7 @@
 mv ~/.bashrc ~/.bashrc.bak
 
 ln -s ~/dotfiles/.gitignore ~/.gitignore
+ln -s ~/dotfiles/.gitignore ~/.agignore
 ln -s ~/dotfiles/.gitconfig ~/.gitconfig
 ln -s ~/dotfiles/.gtagsrc ~/.gtagsrc
 ln -s ~/dotfiles/.ctagsignore ~/.ctagsignore
@@ -19,7 +20,7 @@ mkdir ~/.vim/undo
 
 # fzf
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-~/.fzf/install
+~/.fzf/install --all
 
 # update vim plugin
 mkdir -p ~/dotfiles/vimfiles/pack/minpac/opt

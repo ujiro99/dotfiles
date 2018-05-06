@@ -228,3 +228,9 @@ debug
 
 # idea
 .idea/
+
+# cpp
+*.d
+*.o
+*.gcno
+*.gcda
