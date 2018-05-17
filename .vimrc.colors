@@ -13,7 +13,7 @@ let g:indent_guides_auto_colors = 1
 let g:indent_guides_color_change_percent = 2
 
 " カラースキーム
-if has('gui_running') == 0 && isdirectory($HOME . '/vimfiles/pack/minpac/opt/vim-lucius')
+if has('gui_running') == 0 && isdirectory($HOME . '/dotfiles/vimfiles/pack/minpac/opt/vim-lucius')
   colorscheme lucius
   set background=dark
 endif
