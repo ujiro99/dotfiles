@@ -33,6 +33,7 @@ function! s:init_packages()
   call minpac#add('airblade/vim-gitgutter')
   call minpac#add('scrooloose/nerdtree')
   call minpac#add('sheerun/vim-polyglot')
+  call minpac#add('itchyny/lightline.vim')
 
   call minpac#add('ujiro99/my_color_scheme', {'type': 'opt'})
   call minpac#add('jonathanfilip/vim-lucius', {'type': 'opt'})

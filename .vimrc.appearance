@@ -8,8 +8,7 @@ set listchars=tab:>.,trail:_,extends:>,precedes:< " 不可視文字の表示形�
 set lazyredraw        " コマンド実行中は再描画しない
 set ttyfast           " 高速ターミナル接続を行う
 set cursorline        " カーソル行をハイライト
-"ステータスのところにファイル情報表示
-set statusline=%<[%n]%F%=\ %m%r%h%w%y%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}\ %l,%c\ %P
+set laststatus=2      " lightline.vim
 set guioptions-=T     " ツールバーを表示しない
 set guioptions-=m     " メニューバーを表示しない
 
