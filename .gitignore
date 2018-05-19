@@ -234,3 +234,7 @@ debug
 *.o
 *.gcno
 *.gcda
+*.libdep
+*.rule
+*.out
+*.map
