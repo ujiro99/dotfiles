@@ -229,7 +229,12 @@ let g:jedi#auto_vim_configuration = 0
 
 if !exists('g:neocomplete#force_omni_input_patterns')
         let g:neocomplete#force_omni_input_patterns = {}
-endif
+endiflucius
 
 let g:neocomplete#force_omni_input_patterns.python = '\h\w*\|[^. \t]\.\w*'
 
+
+"---------------------------------------------
+" vim-airline
+"---------------------------------------------
+let g:airline_theme='minimalist'
