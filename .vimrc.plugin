@@ -207,10 +207,14 @@ let OmniCpp_DefaultNamespaces =["std", "_GLIBCXX_STD"]
 " ack.vim
 "---------------------------------------------
 if executable('ag')
-  let g:ackprg = 'ag --vimgrep'
+  let g:ackprg = 'ag --vimgrep --hidden --ignore .git'
 elseif executable('pt')
   let g:ackprg = 'pt -S'
 endif
+let g:ack_mappings = { "o": "<CR>zz" }
+" Enterでファイルを開く。
+" 本当はack.vimがデフォルトで対応している筈だが動作しないため、自分で設定
+autocmd FileType qf nnoremap <buffer> <CR> :.cc<CR>
 
 
 "---------------------------------------------
