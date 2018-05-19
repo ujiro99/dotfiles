@@ -212,6 +212,7 @@ elseif executable('pt')
   let g:ackprg = 'pt -S'
 endif
 let g:ack_mappings = { "o": "<CR>zz" }
+let g:ack_use_dispatch = 1
 " Enterでファイルを開く。
 " 本当はack.vimがデフォルトで対応している筈だが動作しないため、自分で設定
 autocmd FileType qf nnoremap <buffer> <CR> :.cc<CR>
