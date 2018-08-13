@@ -122,6 +122,18 @@ let g:go_fmt_fail_silently = 1
 
 
 "---------------------------------------------
+" python 関連
+"---------------------------------------------
+if has('vim_starting')
+    if has('macunix')
+    elseif has('win32')
+        set pythonthreedll=%PYTHONHOME%\python36.dll
+        set pythonthreehome=%PYTHONHOME%
+
+    endif
+endif
+
+"---------------------------------------------
 " command
 "---------------------------------------------
 " vimrcのリロード

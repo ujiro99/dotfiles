@@ -13,6 +13,6 @@ cnoremap <Up>  <C-p>
 cnoremap <C-n> <Down>
 cnoremap <Down>  <C-n>
 
-" 補完にneocomplcacheを使う
-source $HOME/dotfiles/.vimrc.completion.neocomplcache
+" 補完にdeopleteを使う
+let g:deoplete#enable_at_startup = 1
 
