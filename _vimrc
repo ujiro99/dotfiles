@@ -41,6 +41,7 @@ set backupdir=$HOME/.vim/backup
 set directory=$HOME/.vim/swap
 " undofileの作成先ディレクトリ
 set undodir=$HOME/.vim/undo
+set undofile
 " 対応括弧の瞬間強調時間
 set matchtime=3
 " タブを空白で入力する
