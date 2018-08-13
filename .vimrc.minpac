@@ -26,6 +26,9 @@ function! s:init_packages()
   call minpac#add('roxma/vim-hug-neovim-rpc')
   call minpac#add('vim-airline/vim-airline')
   call minpac#add('vim-airline/vim-airline-themes')
+  " elm
+  call minpac#add('elmcast/elm-vim')
+  call minpac#add('pbogut/deoplete-elm')
 
   call minpac#add('ujiro99/my_color_scheme', {'type': 'opt'})
   call minpac#add('jonathanfilip/vim-lucius', {'type': 'opt'})
