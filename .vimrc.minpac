@@ -20,10 +20,14 @@ function! s:init_packages()
   call minpac#add('w0rp/ale')
   call minpac#add('airblade/vim-gitgutter')
   call minpac#add('scrooloose/nerdtree')
+
   " deoplete
   call minpac#add('Shougo/deoplete.nvim')
-  call minpac#add('roxma/nvim-yarp')
-  call minpac#add('roxma/vim-hug-neovim-rpc')
+  if !has('nvim')
+    call minpac#add('roxma/nvim-yarp')
+    call minpac#add('roxma/vim-hug-neovim-rpc')
+  endif
+
   call minpac#add('vim-airline/vim-airline')
   call minpac#add('vim-airline/vim-airline-themes')
 
