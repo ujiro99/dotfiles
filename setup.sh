@@ -25,7 +25,7 @@ brew install pyenv-pip-rehash
 brew install homebrew/boneyard/pyenv-pip-rehash
 brew install tig
 brew install go
-brew install pt
+brew install ripgrep
 brew install global --with-exuberant-ctags --with-pygments
 brew install ghq fzf
 brew tap caskroom/cask
