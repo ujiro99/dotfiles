@@ -233,6 +233,12 @@ let g:jedi#auto_vim_configuration = 0
 
 
 "---------------------------------------------
+" Vue
+"---------------------------------------------
+autocmd FileType vue syntax sync fromstart
+
+
+"---------------------------------------------
 " vim-airline
 "---------------------------------------------
 let g:airline_theme='minimalist'
