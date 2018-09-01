@@ -21,11 +21,10 @@ switch (uname)
     case Darwin
         alias ls="ls -G -w"
         alias ll="ls -lh"
-        alias vi="/Applications/MacVim.app/Contents/MacOS/Vim"
-        alias gvim="/Applications/MacVim.app/Contents/MacOS/mvim"
 end
 
 alias where "command -v"
+alias vi "nvim"
 alias c "cd"
 alias e "vi"
 alias l "ls -a"
