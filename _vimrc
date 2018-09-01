@@ -84,15 +84,6 @@ inoremap <silent> <C-j> <C-^>
 
 
 "---------------------------------------------
-" javascript 関連
-"---------------------------------------------
-autocmd FileType javascript :compiler gjslint
-autocmd QuickfixCmdPost make copen
-let g:used_javascript_libs = 'angularjs, jquery'
-let g:jscomplete_use = ['dom', 'moz']
-
-
-"---------------------------------------------
 " coffeescript 関連
 "---------------------------------------------
 " nnoremap <Space>w :CoffeeCompile watch<CR>
