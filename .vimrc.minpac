@@ -21,20 +21,13 @@ function! s:init_packages()
   call minpac#add('airblade/vim-gitgutter')
   call minpac#add('scrooloose/nerdtree')
   call minpac#add('prettier/vim-prettier')
-
-  " deoplete
-  call minpac#add('Shougo/deoplete.nvim')
-  if !has('nvim')
-    call minpac#add('roxma/nvim-yarp')
-    call minpac#add('roxma/vim-hug-neovim-rpc')
-  endif
-
+  call minpac#add('bfredl/nvim-miniyank')
+  call minpac#add('neoclide/coc.nvim', {'branch': 'release'})
   call minpac#add('vim-airline/vim-airline')
   call minpac#add('vim-airline/vim-airline-themes')
 
   " elm
   call minpac#add('elmcast/elm-vim')
-  call minpac#add('pbogut/deoplete-elm')
 
   " vue
   call minpac#add('posva/vim-vue')
@@ -44,16 +37,20 @@ function! s:init_packages()
   call minpac#add('dag/vim2hs', {'type': 'opt'})
   call minpac#add('eagletmt/ghcmod-vim', {'type': 'opt'})
   call minpac#add('mattn/emmet-vim', {'type': 'opt'})
-  call minpac#add('clausreinke/typescript-tools', {'type': 'opt'})
   call minpac#add('artur-shaik/vim-javacomplete2', {'type': 'opt'})
-  call minpac#add('heavenshell/vim-jsdoc', {'type': 'opt'})
   call minpac#add('eagletmt/neco-ghc', {'type': 'opt'})
   call minpac#add('davidhalter/jedi-vim', {'type': 'opt'})
   call minpac#add('rupurt/vim-mql5', {'type': 'opt'})
 
   " javascript
+  call minpac#add('pangloss/vim-javascript')
   call minpac#add('moll/vim-node', {'type': 'opt'})
   call minpac#add('othree/javascript-libraries-syntax.vim', {'type': 'opt'})
+  call minpac#add('heavenshell/vim-jsdoc', {'type': 'opt'})
+
+  " typescript
+  call minpac#add('clausreinke/typescript-tools', {'type': 'opt'})
+  call minpac#add('leafgarland/typescript-vim', {'type': 'opt'})
 
   " css
   call minpac#add('hail2u/vim-css3-syntax', {'type': 'opt'})
@@ -63,7 +60,6 @@ function! s:init_packages()
   call minpac#add('jceb/vim-hier', {'type': 'opt'})
   call minpac#add('justmao945/vim-clang', {'type': 'opt'})
   call minpac#add('vim-scripts/DoxygenToolkit.vim', {'type': 'opt'})
-  call minpac#add('vim-scripts/OmniCppComplete', {'type': 'opt'})
   call minpac#add('vim-scripts/taglist.vim', {'type': 'opt'})
 
 endfunction
