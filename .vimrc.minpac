@@ -26,27 +26,29 @@ function! s:init_packages()
   call minpac#add('vim-airline/vim-airline')
   call minpac#add('vim-airline/vim-airline-themes')
 
-  " elm
-  call minpac#add('elmcast/elm-vim')
-
-  " vue
-  call minpac#add('posva/vim-vue')
-
+  " color scheme
   call minpac#add('ujiro99/my_color_scheme', {'type': 'opt'})
   call minpac#add('jonathanfilip/vim-lucius', {'type': 'opt'})
+  call minpac#add('rhysd/vim-color-spring-night', {'type': 'opt'})
+
+  " elm
+  call minpac#add('elmcast/elm-vim', {'type': 'opt'})
+
+  " vue
+  call minpac#add('posva/vim-vue', {'type': 'opt'})
+
   call minpac#add('dag/vim2hs', {'type': 'opt'})
   call minpac#add('eagletmt/ghcmod-vim', {'type': 'opt'})
   call minpac#add('mattn/emmet-vim', {'type': 'opt'})
-  call minpac#add('artur-shaik/vim-javacomplete2', {'type': 'opt'})
   call minpac#add('eagletmt/neco-ghc', {'type': 'opt'})
   call minpac#add('davidhalter/jedi-vim', {'type': 'opt'})
   call minpac#add('rupurt/vim-mql5', {'type': 'opt'})
 
   " javascript
-  call minpac#add('pangloss/vim-javascript')
+  call minpac#add('heavenshell/vim-jsdoc', {'type': 'opt'})
   call minpac#add('moll/vim-node', {'type': 'opt'})
   call minpac#add('othree/javascript-libraries-syntax.vim', {'type': 'opt'})
-  call minpac#add('heavenshell/vim-jsdoc', {'type': 'opt'})
+  call minpac#add('pangloss/vim-javascript', {'type': 'opt'})
 
   " typescript
   call minpac#add('clausreinke/typescript-tools', {'type': 'opt'})
