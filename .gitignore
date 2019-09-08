@@ -4,6 +4,7 @@
 /vimfiles/undo
 /vimfiles/swap
 /vimfiles/pack
+/vimfiles/sessions
 
 # backupfile
 *.bak
