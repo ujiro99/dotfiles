@@ -1,6 +1,6 @@
 #!/bin/bash
 
-mkdir ~/dotfiles/vimfiles
+mkdir -p ~/dotfiles/vimfiles
 
 ln -s ~/dotfiles/.gitignore ~/.gitignore
 ln -s ~/dotfiles/.gitconfig ~/.gitconfig
@@ -15,7 +15,9 @@ ln -s ~/dotfiles/vimfiles ~/.vim
 ln -s ~/dotfiles/.tmux.conf ~/.tmux.conf
 
 # neovim
+mkdir -p ~/.config/nvim
 ln -sf ~/dotfiles/_vimrc  ~/.config/nvim/init.vim
+ln -s  ~/dotfiles/vimfiles/after/ftplugin ~/.config/nvim/ftplugin
 
 # brew
 ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
