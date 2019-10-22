@@ -6,6 +6,8 @@
 /vimfiles/pack
 /vimfiles/sessions
 
+node_modules
+
 # backupfile
 *.bak
 
