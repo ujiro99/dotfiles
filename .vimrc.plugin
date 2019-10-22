@@ -48,7 +48,6 @@ let g:ale_completion_enabled = 1
 " NERDTree関連
 "---------------------------------------------
 nnoremap ;n :NERDTreeToggle<CR>
-set guioptions-=L
 " ツリーを表示するカレントディレクトリを自動的に変更する
 let g:NERDTreeChDirMode = 2
 " 隠しファイルを表示する

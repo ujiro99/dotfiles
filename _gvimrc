@@ -9,6 +9,15 @@ else
   set guifont=Osaka-Mono:h13
 endif
 
+
+set guioptions-=T
+set guioptions-=m
+set guioptions-=r
+set guioptions-=R
+set guioptions-=l
+set guioptions-=L
+set guioptions-=b
+
 " 行間
 :set lsp=5
 
