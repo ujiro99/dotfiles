@@ -2,7 +2,6 @@
 
 mv ~/.bashrc ~/.bashrc.bak
 
-ln -s ~/dotfiles/.gitignore ~/.gitignore
 ln -s ~/dotfiles/.gitignore ~/.agignore
 ln -s ~/dotfiles/.gitconfig ~/.gitconfig
 ln -s ~/dotfiles/.gtagsrc ~/.gtagsrc

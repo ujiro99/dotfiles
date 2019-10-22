@@ -5,7 +5,6 @@ mklink %USERPROFILE%\_vimrc %USERPROFILE%\dotfiles\_vimrc
 mklink %USERPROFILE%\_gvimrc %USERPROFILE%\dotfiles\_gvimrc
 mklink %USERPROFILE%\.nyagos %USERPROFILE%\dotfiles\.nyagos
 mklink %USERPROFILE%\.vsvimrc %USERPROFILE%\dotfiles\.vsvimrc
-mklink %USERPROFILE%\.gitignore %USERPROFILE%\dotfiles\.gitignore
 mklink %USERPROFILE%\.gitconfig %USERPROFILE%\dotfiles\.gitconfig
 mklink %USERPROFILE%\.vrapperrc %USERPROFILE%\dotfiles\.vrapperrc
 mklink %USERPROFILE%\.gtagsrc %USERPROFILE%\dotfiles\.gtagsrc

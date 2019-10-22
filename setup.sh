@@ -2,7 +2,6 @@
 
 mkdir -p ~/dotfiles/vimfiles
 
-ln -s ~/dotfiles/.gitignore ~/.gitignore
 ln -s ~/dotfiles/.gitconfig ~/.gitconfig
 ln -s ~/dotfiles/.gtagsrc ~/.gtagsrc
 ln -s ~/dotfiles/.ctagsignore ~/.ctagsignore
