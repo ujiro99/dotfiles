@@ -21,13 +21,13 @@ nnoremap <C-i><C-i> :<C-u>help<Space><C-r><C-w><Enter>zz
 " :Gb <args> でGrepBufferする
 command! -nargs=1 Gb :GrepBuffer <args>
 
-"" カーソル下の単語をgrepする
-"nnoremap gr :Ack<Space><C-r><C-w> <CR>
-"
-"if executable('rg')
-"  set grepprg=rg\ --vimgrep\ --no-heading
-"  set grepformat=%f:%l:%c:%m,%f:%l:%m
-"endif
+" カーソル下の単語をgrepする
+nnoremap Gr :Ack<Space><C-r><C-w> <CR>
+
+if executable('rg')
+  set grepprg=rg\ --vimgrep\ --no-heading
+  set grepformat=%f:%l:%c:%m,%f:%l:%m
+endif
 
 let Grep_Skip_Dirs = '.svn .git'
 let Grep_Skip_Files = '*.bak *~ jquery.*.js'
