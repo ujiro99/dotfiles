@@ -1,5 +1,3 @@
-colorscheme my_color_scheme
-
 if has('win32')
   set guifont=Osaka－等幅:h10:cSHIFTJIS
   set ambiwidth=double
@@ -25,6 +23,6 @@ set guioptions-=b
 :set lines=999
 
 if has("mac")
-    " 自動的に日本語入力(IM)をオンにする
-    set noimdisableactivate
+  " 自動的に日本語入力(IM)をオンにする
+  set noimdisableactivate
 endif
