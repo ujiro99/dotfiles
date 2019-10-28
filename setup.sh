@@ -15,6 +15,7 @@ ln -s ~/dotfiles/.tmux.conf ~/.tmux.conf
 
 # neovim
 mkdir -p ~/.config/nvim
+mkdir -p ~/.config/nvim/colors
 ln -sf ~/dotfiles/_vimrc  ~/.config/nvim/init.vim
 ln -s  ~/dotfiles/vimfiles/after/ftplugin ~/.config/nvim/ftplugin
 
@@ -43,11 +44,6 @@ brew cask install quicklook-json
 brew cask install qlcolorcode
 brew cask install qlvideo
 nodebrew install-binary stable
-
-# minpac
-git clone https://github.com/k-takata/minpac.git ~/.vim/pack/minpac/opt/minpac
-mkdir -p .config/nvim/pack/minpac/opt
-ln -s ~/.vim/pack/minpac/opt/minpac ~/.config/nvim/pack/minpac/opt/minpac
 
 # fish
 chsh -s /usr/local/bin/fish
