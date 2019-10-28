@@ -21,9 +21,3 @@ mkdir ~/.vim/undo
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install --all
 
-# update vim plugin
-mkdir -p ~/dotfiles/vimfiles/pack/minpac/opt
-cd ~/dotfiles/vimfiles/pack/minpac/opt
-git clone https://github.com/k-takata/minpac.git
-vim -c 'PackUpdate' -c 'q'
-

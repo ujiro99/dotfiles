@@ -26,8 +26,6 @@ source $HOME/dotfiles/.vimrc.moving
 source $HOME/dotfiles/.vimrc.search
 " プラグイン関連
 source $HOME/dotfiles/.vimrc.plugin
-" プラグイン管理
-source $HOME/dotfiles/.vimrc.minpac
 
 
 " Leader

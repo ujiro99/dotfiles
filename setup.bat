@@ -17,11 +17,8 @@ mkdir %USERPROFILE%/.vim/swap
 mkdir %USERPROFILE%/.vim/undo
 
 git clone https://github.com/github/gitignore.git
-git clone https://github.com/k-takata/minpac.git ~/.vim/pack/minpac/opt/minpac
 go get github.com/motemen/ghq
 go get github.com/junegunn/fzf
-
-vim -c PackUpdate -c q
 
 reg add "HKEY_CURRENT_USER\Software\Microsoft\Command Processor" /v AutoRun /d "doskey /macrofile=%USERPROFILE%\dotfiles\.cmdrc"
 
