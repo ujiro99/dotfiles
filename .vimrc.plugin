@@ -6,30 +6,31 @@ if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
 endif
 
 call plug#begin()
-  Plug 'mileszs/ack.vim'
-  Plug 'rhysd/clever-f.vim'
-  Plug 'vim-scripts/gtags.vim'
+
+  Plug 'airblade/vim-gitgutter'
+  Plug 'banyan/recognize_charcode.vim'
+  Plug 'bfredl/nvim-miniyank'
   Plug 'deton/jasegment.vim'
   Plug 'glidenote/memolist.vim'
   Plug 'honza/vim-snippets'
-  Plug 'banyan/recognize_charcode.vim'
-  Plug 'junegunn/vim-easy-align'
-  Plug 'tpope/vim-fugitive'
-  Plug 'kana/vim-operator-user'
-  Plug 'rhysd/vim-operator-surround'
-  Plug 'tpope/vim-dispatch'
-  Plug 'thinca/vim-quickrun'
-  Plug 'kana/vim-smartinput'
   Plug '/usr/local/opt/fzf'
   Plug 'junegunn/fzf.vim'
-  Plug 'w0rp/ale'
-  Plug 'airblade/vim-gitgutter'
-  Plug 'scrooloose/nerdtree'
-  Plug 'prettier/vim-prettier'
-  Plug 'bfredl/nvim-miniyank'
+  Plug 'junegunn/vim-easy-align'
+  Plug 'kana/vim-operator-user'
+  Plug 'kana/vim-smartinput'
+  Plug 'mileszs/ack.vim'
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
+  Plug 'prettier/vim-prettier'
+  Plug 'rhysd/clever-f.vim'
+  Plug 'rhysd/vim-operator-surround'
+  Plug 'scrooloose/nerdtree'
+  Plug 'thinca/vim-quickrun'
+  Plug 'tpope/vim-dispatch'
+  Plug 'tpope/vim-fugitive'
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
+  Plug 'vim-scripts/gtags.vim'
+  Plug 'w0rp/ale'
 
   " color scheme
   Plug 'jonathanfilip/vim-lucius', {'do': 'cp colors/* ~/.config/nvim/colors/'}
@@ -125,11 +126,11 @@ nnoremap ;n :NERDTreeToggle<CR>
 " ツリーを表示するカレントディレクトリを自動的に変更する
 let g:NERDTreeChDirMode = 2
 " 隠しファイルを表示する
-let g:NERDTreeShowHidden=1
+let g:NERDTreeShowHidden = 1
 
 
 "---------------------------------------------
-" Fugitive 関連
+" vim-fugitive
 "---------------------------------------------
 nnoremap <Space>gd :<C-u>Gdiff<Enter>
 nnoremap <Space>gs :<C-u>Gstatus<Enter>
@@ -141,7 +142,7 @@ nnoremap <Space>gb :<C-u>Gblame<Enter>
 
 
 "---------------------------------------------
-" QuickRun 関連
+" vim-quickrun 関連
 "---------------------------------------------
 " 現在のバッファを実行
 nnoremap <F5> :QuickRun<CR>
@@ -155,7 +156,7 @@ let g:quickrun_config['go.test'] = {
 
 
 "---------------------------------------------
-" EasyAlign
+" vim-easy-align
 "---------------------------------------------
 " Start interactive EasyAlign in visual mode (e.g. vipga)
 xmap ga <Plug>(EasyAlign)
@@ -233,18 +234,6 @@ nmap ,mf  :exe "CtrlP" g:memolist_path<cr><f5>
 let g:memolist_memo_date    = "%Y%m%d %H:%M"
 let g:memolist_memo_suffix  = "md"
 let g:memolist_path         = "~/memo"
-
-
-"---------------------------------------------
-" plasticboy/vim-markdown
-"---------------------------------------------
-let g:vim_markdown_folding_disabled = 1
-
-
-"---------------------------------------------
-" vimfiler 関連
-"---------------------------------------------
-let g:vimfiler_as_default_explorer = 1
 
 
 "---------------------------------------------
