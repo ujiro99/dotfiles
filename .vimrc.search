@@ -22,7 +22,7 @@ nnoremap <C-i><C-i> :<C-u>help<Space><C-r><C-w><Enter>zz
 command! -nargs=1 Gb :GrepBuffer <args>
 
 " カーソル下の単語をgrepする
-nnoremap Gr :Ack<Space><C-r><C-w> <CR>
+nnoremap gr :Ack<Space><C-r><C-w> <CR>
 
 if executable('rg')
   set grepprg=rg\ --vimgrep\ --no-heading
