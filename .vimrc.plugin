@@ -210,6 +210,12 @@ let g:used_javascript_libs = 'vue, angularjs, jquery'
 
 
 "---------------------------------------------
+" vim-jsdoc
+"---------------------------------------------
+nmap <silent> <C-l> <Plug>(jsdoc)
+
+
+"---------------------------------------------
 " vim-operator-surround
 "---------------------------------------------
 " operator mappings
