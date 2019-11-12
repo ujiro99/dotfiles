@@ -29,8 +29,7 @@ source $HOME/dotfiles/.vimrc.plugin
 
 
 " Leader
-let mapleader = " "
-
+let mapleader = "\<Space>"
 " 左右のカーソル移動で行間移動可能にする。
 set whichwrap=b,s,<,>,[,]
 " バックアップファイルの作成先ディレクトリ
