@@ -20,7 +20,7 @@ call plug#begin()
   Plug 'kana/vim-smartinput'
   Plug 'mileszs/ack.vim'
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
-  Plug 'prettier/vim-prettier'
+  "Plug 'prettier/vim-prettier'
   Plug 'rhysd/clever-f.vim'
   Plug 'rhysd/vim-operator-surround'
   Plug 'scrooloose/nerdtree'
@@ -110,13 +110,15 @@ nnoremap ;g :Ghq<CR>
 " After this is configured, :ALEFix will try and fix your JS code with ESLint.
 let g:ale_fixers = {}
 let g:ale_fixers['javascript'] = ['prettier', 'eslint']
+let g:ale_fixers['typescript'] = ['prettier']
 
 " Set this setting in vimrc if you want to fix files automatically on save.
 " This is off by default.
-let g:ale_fix_on_save = 0
+let g:ale_fix_on_save = 1
 let g:ale_javascript_prettier_use_local_config = 1
+let g:ale_typescript_prettier_use_local_config = 1
 " Enable completion where available.
-let g:ale_completion_enabled = 0
+" let g:ale_completion_enabled = 0
 
 
 "---------------------------------------------
@@ -299,16 +301,16 @@ map p <Plug>(miniyank-autoput)
 map P <Plug>(miniyank-autoPut)
 
 
-"---------------------------------------------
-" vim-prettier
-"---------------------------------------------
-" @formatアノテーションを持ったファイルの自動フォーマットを無効にする
-let g:prettier#autoformat = 0
-
-" Prettierのパースエラーをquickfixに表示しない
-let g:prettier#quickfix_enabled = 0
-
-autocmd BufWritePre *.js,*.ts,*.vue,*.css,*.scss,*.json,*.md PrettierAsync
+" "---------------------------------------------
+" " vim-prettier
+" "---------------------------------------------
+" " @formatアノテーションを持ったファイルの自動フォーマットを無効にする
+" let g:prettier#autoformat = 0
+" 
+" " Prettierのパースエラーをquickfixに表示しない
+" let g:prettier#quickfix_enabled = 0
+" 
+" autocmd BufWritePre *.js,*.ts,*.vue,*.css,*.scss,*.json,*.md PrettierAsync
 
 
 "---------------------------------------------
