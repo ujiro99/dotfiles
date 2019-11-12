@@ -5,29 +5,6 @@ filetype off
 " 標準のメニューが読み込まれないようにする
 let g:did_install_default_menus = 1
 
-"---------------------------------------------
-" 設定ファイルの読込
-"---------------------------------------------
-" 表示関連
-source $HOME/dotfiles/.vimrc.appearance
-" 補間関連
-source $HOME/dotfiles/.vimrc.completion
-" Tags関連
-source $HOME/dotfiles/.vimrc.tags
-" Color関連
-source $HOME/dotfiles/.vimrc.colors
-" エンコーディング関連
-source $HOME/dotfiles/.vimrc.encoding
-" インデント関連
-source $HOME/dotfiles/.vimrc.indent
-" 移動関連
-source $HOME/dotfiles/.vimrc.moving
-" 検索関連
-source $HOME/dotfiles/.vimrc.search
-" プラグイン関連
-source $HOME/dotfiles/.vimrc.plugin
-
-
 " Leader
 let mapleader = "\<Space>"
 " 左右のカーソル移動で行間移動可能にする。
@@ -152,3 +129,29 @@ function! s:toggle_qf_window()
   endfor
   execute 'botright cw'
 endfunction
+
+
+"---------------------------------------------
+" 設定ファイルの読込
+"---------------------------------------------
+" 表示関連
+source $HOME/dotfiles/.vimrc.appearance
+" 補間関連
+source $HOME/dotfiles/.vimrc.completion
+" Tags関連
+source $HOME/dotfiles/.vimrc.tags
+" Color関連
+source $HOME/dotfiles/.vimrc.colors
+" エンコーディング関連
+source $HOME/dotfiles/.vimrc.encoding
+" インデント関連
+source $HOME/dotfiles/.vimrc.indent
+" 移動関連
+source $HOME/dotfiles/.vimrc.moving
+" 検索関連
+source $HOME/dotfiles/.vimrc.search
+" プラグイン関連
+source $HOME/dotfiles/.vimrc.plugin
+
+set noautochdir
+
