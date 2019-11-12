@@ -155,3 +155,9 @@ source $HOME/dotfiles/.vimrc.plugin
 
 set noautochdir
 
+
+"---------------------------------------------
+" Typescript 関連
+"---------------------------------------------
+au BufNewFile,BufRead *.ts set sw=2 expandtab ts=2
+
