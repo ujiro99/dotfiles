@@ -48,9 +48,9 @@ call plug#begin()
 
   " javascript
   Plug 'heavenshell/vim-jsdoc', {'for': ['js', 'vue']}
-  Plug 'moll/vim-node', {'for': ['js']}
-  Plug 'othree/javascript-libraries-syntax.vim', {'for': ['js', 'vue']}
-  Plug 'pangloss/vim-javascript', {'for': ['js', 'vue']}
+"  Plug 'moll/vim-node', {'for': ['js']}
+"  Plug 'othree/javascript-libraries-syntax.vim', {'for': ['js', 'vue']}
+"  Plug 'pangloss/vim-javascript', {'for': ['js', 'vue']}
 
   " typescript
   Plug 'leafgarland/typescript-vim', {'for': 'ts'}
@@ -63,7 +63,7 @@ call plug#begin()
 
   " css
   Plug 'hail2u/vim-css3-syntax', {'for': 'css'}
-  Plug 'gorodinskiy/vim-coloresque', {'for': 'css'} " css/less/sass/html color preview for vim
+"  Plug 'gorodinskiy/vim-coloresque', {'for': 'css'} " css/less/sass/html color preview for vim
 
   " c & cpp
   Plug 'justmao945/vim-clang', {'for': ['c', 'cpp']}
@@ -186,22 +186,6 @@ let g:user_emmet_settings = {
 \  },
 \  'css' : {
 \    'filters' : 'fc',
-\  },
-\  'javascript' : {
-\    'snippets' : {
-\      'jq' : "$(function() {\n\t${cursor}${child}\n});",
-\      'jq:each' : "$.each(arr, function(index, item)\n\t${child}\n});",
-\      'fn' : "(function() {\n\t${cursor}\n})();",
-\      'tm' : "setTimeout(function() {\n\t${cursor}\n}, 100);",
-\    },
-\  },
-\  'java' : {
-\    'indentation' : '    ',
-\    'snippets' : {
-\      'main': "public static void main(String[] args) {\n\t|\n}",
-\      'println': "System.out.println(\"|\");",
-\      'class': "public class | {\n}\n",
-\    },
 \  },
 \}
 
