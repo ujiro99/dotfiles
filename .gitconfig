@@ -63,3 +63,5 @@
     root = ~/src
 [log]
     date = local
+[fetch]
+    prune = true
