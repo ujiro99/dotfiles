@@ -230,7 +230,6 @@ debug
 .idea/
 
 # cpp
-*.d
 *.o
 *.gcno
 *.gcda
