@@ -48,5 +48,10 @@ nodebrew install-binary stable
 # fish
 chsh -s /usr/local/bin/fish
 ln -s ~/dotfiles/.fishrc ~/.config/fish/config.fish
+ln -s ~/dotfiles/fishfile ~/.config/fish/fishfile
 curl -Lo  ~/.config/fish/functions/fisher.fish --create-dirs git.io/fisher
-fisher z fzf decors/fish-ghq rafaelrinaldi/pure
+fisher
+
+# change key speed
+defaults write -g InitialKeyRepeat -int 15
+defaults write -g KeyRepeat -int 1
