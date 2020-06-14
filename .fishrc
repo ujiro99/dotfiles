@@ -45,3 +45,7 @@ alias a "adb"
 
 # Golangのビルドを早くする
 set -x GOGC 5000
+
+set pure_color_git_branch brcyan
+set pure_color_git_dirty brcyan
+
