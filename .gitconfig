@@ -8,7 +8,7 @@
     safeCRLF = true
     autoCRLF = false
     quotepath = true
-    editor = vim -c \"set fenc=utf-8\"
+    editor = nvim
 [color]
     status = auto
     diff = auto
