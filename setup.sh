@@ -20,24 +20,22 @@ ln -sf ~/dotfiles/_vimrc  ~/.config/nvim/init.vim
 ln -s  ~/dotfiles/vimfiles/after/ftplugin ~/.config/nvim/ftplugin
 
 # brew
-ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 brew install git
+brew install tmux
 brew install fish
 brew install cmigemo
 brew install nodebrew
 brew install pyenv
-brew install pyenv-pip-rehash
-brew install homebrew/boneyard/pyenv-pip-rehash
 brew install tig
 brew install go
+brew install wget
 brew install ripgrep
 brew install global --with-exuberant-ctags --with-pygments
 brew install ghq fzf
 brew install neovim
-brew tap caskroom/cask
+brew install cask
 brew cask install iterm2
-brew cask install lastpass-universal
-brew cask install betterzipql
 brew cask install qlmarkdown
 brew cask install qlstephen
 brew cask install quicklook-json
