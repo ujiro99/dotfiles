@@ -65,3 +65,5 @@
     date = local
 [fetch]
     prune = true
+[pull]
+    ff = only
