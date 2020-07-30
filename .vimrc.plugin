@@ -59,7 +59,7 @@ call plug#begin()
   Plug 'posva/vim-vue', {'for': 'vue'}
 
   " html, css
-  Plug 'mattn/emmet-vim', {'for': ['html', 'css']}
+  Plug 'mattn/emmet-vim', {'for': ['html', 'css', 'scss', 'php']}
 
   " css
   Plug 'hail2u/vim-css3-syntax', {'for': 'css'}
@@ -176,13 +176,17 @@ let g:use_emmet_complete_tag = 1
 let g:user_emmet_leader_key = '<C-e>'
 " インデントは半角スペース4個
 let g:user_emmet_settings = {
-             \'indentation' : '    ',
-             \}
-let g:user_emmet_settings = {
-\  'lang' : 'ja',
+\  'indentation' : '    ',
+\  'variables' : {
+\      'lang' : 'ja',
+\  },
 \  'html' : {
 \    'filters' : 'html',
 \    'indentation' : ' '
+\  },
+\  'php' : {
+\    'extends' : 'html',
+\    'filters' : 'html,c',
 \  },
 \  'css' : {
 \    'filters' : 'fc',
