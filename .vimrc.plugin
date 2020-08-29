@@ -75,7 +75,7 @@ call plug#begin()
   Plug 'neoclide/coc-stylelint', {'do': 'npm install'}
 
   "php
-  Plug 'phpactor/coc-phpactor', {'do': 'npm install'}
+  Plug 'marlonfan/coc-phpls', {'do': 'npm install'}
 
   " c & cpp
   Plug 'justmao945/vim-clang', {'for': ['c', 'cpp']}
