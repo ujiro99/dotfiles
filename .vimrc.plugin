@@ -13,7 +13,7 @@ call plug#begin()
   Plug 'deton/jasegment.vim'
   Plug 'glidenote/memolist.vim'
   Plug 'honza/vim-snippets'
-  Plug '/usr/local/opt/fzf'
+  Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
   Plug 'junegunn/fzf.vim'
   Plug 'junegunn/vim-easy-align'
   Plug 'kana/vim-operator-user'
@@ -109,6 +109,9 @@ let g:fzf_colors = {
 \   'fg+':     ['fg', 'Error', 'CursorColumn', 'Normal'],
 \   'header':  ['fg', 'Comment'],
 \}
+
+" Customize fzf command
+let $FZF_DEFAULT_COMMAND = 'rg --files --hidden --follow --glob "!.git/*" --glob "!node_modules/*"'
 
 " [Tags] Command to generate tags file
 let g:fzf_tags_command = 'ctags -R --exclude=dist --exclude=bower_components --exclude=node_modules'
