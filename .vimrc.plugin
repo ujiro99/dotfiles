@@ -30,11 +30,6 @@ call plug#begin()
   Plug 'vim-airline/vim-airline-themes'
   Plug 'vim-scripts/gtags.vim'
 
-  Plug 'neoclide/coc-json', {'do': 'npm install'}
-  Plug 'neoclide/coc-yank', {'do': 'npm install'}
-  Plug 'neoclide/coc-json', {'do': 'npm install'}
-  Plug 'neoclide/coc-prettier', {'do': 'npm install'}
-
   " color scheme
   Plug 'jonathanfilip/vim-lucius', {'do': 'cp colors/* ~/.config/nvim/colors/'}
   Plug 'rhysd/vim-color-spring-night', {'do': 'cp colors/* ~/.config/nvim/colors/'}
@@ -51,39 +46,27 @@ call plug#begin()
 
   " javascript
   Plug 'heavenshell/vim-jsdoc', {'for': ['js', 'vue']}
-  Plug 'neoclide/coc-eslint', {'do': 'npm install'}
 "  Plug 'moll/vim-node', {'for': ['js']}
 "  Plug 'othree/javascript-libraries-syntax.vim', {'for': ['js', 'vue']}
 "  Plug 'pangloss/vim-javascript', {'for': ['js', 'vue']}
 
   " typescript
   Plug 'leafgarland/typescript-vim', {'for': 'ts'}
-  Plug 'neoclide/coc-tsserver', {'do': 'npm install'}
 
   " vue
   Plug 'posva/vim-vue', {'for': 'vue'}
-  Plug 'neoclide/coc-vetur', {'do': 'npm install'}
 
   " html, css
-  Plug 'neoclide/coc-html', {'do': 'npm install'}
   Plug 'mattn/emmet-vim', {'for': ['html', 'css', 'scss', 'php']}
-  Plug 'neoclide/coc-emmet', {'do': 'npm install'}
 
   " css
   Plug 'hail2u/vim-css3-syntax', {'for': 'css'}
-  Plug 'neoclide/coc-css', {'do': 'npm install'}
-  Plug 'neoclide/coc-stylelint', {'do': 'npm install'}
-
-  "php
-  Plug 'marlonfan/coc-phpls', {'do': 'npm install'}
 
   " c & cpp
   Plug 'justmao945/vim-clang', {'for': ['c', 'cpp']}
   Plug 'vim-scripts/DoxygenToolkit.vim', {'for': ['c', 'cpp']}
   Plug 'vim-scripts/taglist.vim', {'for': ['c', 'cpp']}
 
-  " python
-  Plug 'neoclide/coc-python', {'do': 'npm install'}
 
 call plug#end()
 
@@ -397,3 +380,18 @@ nnoremap <silent> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
+
+let g:coc_global_extensions = [
+      \  'coc-css'
+      \, 'coc-emmet'
+      \, 'coc-eslint'
+      \, 'coc-html'
+      \, 'coc-json'
+      \, 'coc-phpls'
+      \, 'coc-prettier'
+      \, 'coc-python'
+      \, 'coc-stylelint'
+      \, 'coc-tsserver'
+      \, 'coc-vetur'
+      \, 'coc-yank'
+      \]
