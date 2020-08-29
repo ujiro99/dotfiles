@@ -134,14 +134,14 @@ endfunction
 "---------------------------------------------
 " 設定ファイルの読込
 "---------------------------------------------
+" プラグイン関連
+source $HOME/dotfiles/.vimrc.plugin
 " 表示関連
 source $HOME/dotfiles/.vimrc.appearance
 " 補間関連
 source $HOME/dotfiles/.vimrc.completion
 " Tags関連
 source $HOME/dotfiles/.vimrc.tags
-" Color関連
-source $HOME/dotfiles/.vimrc.colors
 " エンコーディング関連
 source $HOME/dotfiles/.vimrc.encoding
 " インデント関連
@@ -150,8 +150,6 @@ source $HOME/dotfiles/.vimrc.indent
 source $HOME/dotfiles/.vimrc.moving
 " 検索関連
 source $HOME/dotfiles/.vimrc.search
-" プラグイン関連
-source $HOME/dotfiles/.vimrc.plugin
 
 set noautochdir
 
