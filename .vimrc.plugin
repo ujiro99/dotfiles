@@ -20,7 +20,6 @@ call plug#begin()
   Plug 'kana/vim-smartinput'
   Plug 'mileszs/ack.vim'
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
-  "Plug 'prettier/vim-prettier'
   Plug 'rhysd/clever-f.vim'
   Plug 'rhysd/vim-operator-surround'
   Plug 'scrooloose/nerdtree'
@@ -30,7 +29,11 @@ call plug#begin()
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
   Plug 'vim-scripts/gtags.vim'
-  Plug 'w0rp/ale'
+
+  Plug 'neoclide/coc-json', {'do': 'npm install'}
+  Plug 'neoclide/coc-yank', {'do': 'npm install'}
+  Plug 'neoclide/coc-json', {'do': 'npm install'}
+  Plug 'neoclide/coc-prettier', {'do': 'npm install'}
 
   " color scheme
   Plug 'jonathanfilip/vim-lucius', {'do': 'cp colors/* ~/.config/nvim/colors/'}
@@ -48,27 +51,39 @@ call plug#begin()
 
   " javascript
   Plug 'heavenshell/vim-jsdoc', {'for': ['js', 'vue']}
+  Plug 'neoclide/coc-eslint', {'do': 'npm install'}
 "  Plug 'moll/vim-node', {'for': ['js']}
 "  Plug 'othree/javascript-libraries-syntax.vim', {'for': ['js', 'vue']}
 "  Plug 'pangloss/vim-javascript', {'for': ['js', 'vue']}
 
   " typescript
   Plug 'leafgarland/typescript-vim', {'for': 'ts'}
+  Plug 'neoclide/coc-tsserver', {'do': 'npm install'}
 
   " vue
   Plug 'posva/vim-vue', {'for': 'vue'}
+  Plug 'neoclide/coc-vetur', {'do': 'npm install'}
 
   " html, css
+  Plug 'neoclide/coc-html', {'do': 'npm install'}
   Plug 'mattn/emmet-vim', {'for': ['html', 'css', 'scss', 'php']}
+  Plug 'neoclide/coc-emmet', {'do': 'npm install'}
 
   " css
   Plug 'hail2u/vim-css3-syntax', {'for': 'css'}
-"  Plug 'gorodinskiy/vim-coloresque', {'for': 'css'} " css/less/sass/html color preview for vim
+  Plug 'neoclide/coc-css', {'do': 'npm install'}
+  Plug 'neoclide/coc-stylelint', {'do': 'npm install'}
+
+  "php
+  Plug 'phpactor/coc-phpactor', {'do': 'npm install'}
 
   " c & cpp
   Plug 'justmao945/vim-clang', {'for': ['c', 'cpp']}
   Plug 'vim-scripts/DoxygenToolkit.vim', {'for': ['c', 'cpp']}
   Plug 'vim-scripts/taglist.vim', {'for': ['c', 'cpp']}
+
+  " python
+  Plug 'neoclide/coc-python', {'do': 'npm install'}
 
 call plug#end()
 
@@ -101,24 +116,6 @@ let g:fzf_tags_command = 'ctags -R --exclude=dist --exclude=bower_components --e
 " Change directory using ghq
 command! -nargs=* -complete=dir Ghq call fzf#run(fzf#wrap({'source': 'ghq list -p', 'sink': 'cd'}))
 nnoremap ;g :Ghq<CR>
-
-
-"---------------------------------------------
-" ALE 関連
-"---------------------------------------------
-" Put this in vimrc or a plugin file of your own.
-" After this is configured, :ALEFix will try and fix your JS code with ESLint.
-let g:ale_fixers = {}
-let g:ale_fixers['javascript'] = ['prettier', 'eslint']
-let g:ale_fixers['typescript'] = ['prettier']
-
-" Set this setting in vimrc if you want to fix files automatically on save.
-" This is off by default.
-let g:ale_fix_on_save = 1
-let g:ale_javascript_prettier_use_local_config = 1
-let g:ale_typescript_prettier_use_local_config = 1
-" Enable completion where available.
-" let g:ale_completion_enabled = 0
 
 
 "---------------------------------------------
@@ -289,18 +286,6 @@ map p <Plug>(miniyank-autoput)
 map P <Plug>(miniyank-autoPut)
 
 
-" "---------------------------------------------
-" " vim-prettier
-" "---------------------------------------------
-" " @formatアノテーションを持ったファイルの自動フォーマットを無効にする
-" let g:prettier#autoformat = 0
-" 
-" " Prettierのパースエラーをquickfixに表示しない
-" let g:prettier#quickfix_enabled = 0
-" 
-" autocmd BufWritePre *.js,*.ts,*.vue,*.css,*.scss,*.json,*.md PrettierAsync
-
-
 "---------------------------------------------
 " coc.nvim
 "---------------------------------------------
@@ -385,6 +370,9 @@ command! -nargs=? Fold :call     CocAction('fold', <f-args>)
 
 " use `:OR` for organize import of current buffer
 command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
+
+" Prettier
+command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
 
 " Add status line support, for integration with other plugin, checkout `:h coc-status`
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
