@@ -5,6 +5,8 @@
 /vimfiles/swap
 /vimfiles/pack
 /vimfiles/sessions
+/vimfiles/plugged
+/vimfiles/views
 
 node_modules
 
