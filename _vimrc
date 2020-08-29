@@ -58,15 +58,8 @@ inoremap <silent> <C-j> <C-^>
 
 
 "---------------------------------------------
-" coffeescript 関連
-"---------------------------------------------
-" nnoremap <Space>w :CoffeeCompile watch<CR>
-
-
-"---------------------------------------------
 " golang 関連
 "---------------------------------------------
-au BufNewFile,BufRead *.go set sw=4 noexpandtab ts=4 completeopt=menu
 au FileType go compiler go
 au FileType go :highlight goErr cterm=bold ctermfg=214
 au FileType go :match goErr /\<err\>/
@@ -97,6 +90,7 @@ if has('vim_starting')
 
     endif
 endif
+
 
 "---------------------------------------------
 " command
@@ -152,10 +146,4 @@ source $HOME/dotfiles/.vimrc.moving
 source $HOME/dotfiles/.vimrc.search
 
 set noautochdir
-
-
-"---------------------------------------------
-" Typescript 関連
-"---------------------------------------------
-au BufNewFile,BufRead *.ts set sw=2 expandtab ts=2
 
