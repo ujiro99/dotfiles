@@ -417,8 +417,10 @@ set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 " Using CocList
 " Show all diagnostics
 nnoremap <silent> <space>a  :<C-u>CocList diagnostics<cr>
-" Manage extensions
-nnoremap <silent> <space>e  :<C-u>CocList extensions<cr>
+" Open snippets list
+nnoremap <silent> <space>e  :<C-u>CocList snippets<cr>
+" Edit user snippet of current filetype
+nnoremap <silent> <space>m  :<C-u>CocCommand snippets.editSnippets<cr>
 " Show commands
 nnoremap <silent> <space>c  :<C-u>CocList commands<cr>
 " Find symbol of current document
@@ -445,4 +447,5 @@ let g:coc_global_extensions = [
       \, 'coc-tsserver'
       \, 'coc-vetur'
       \, 'coc-yank'
+      \, 'coc-snippets'
       \]
