@@ -27,6 +27,7 @@ brew install fish
 brew install cmigemo
 brew install nodebrew
 brew install pyenv
+brew install pyenv-virtualenv
 brew install tig
 brew install go
 brew install wget
