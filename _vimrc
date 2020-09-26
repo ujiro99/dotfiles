@@ -83,7 +83,16 @@ let g:go_fmt_fail_silently = 1
 " python 関連
 "---------------------------------------------
 if has('vim_starting')
-    if has('macunix')
+    if has('mac')
+      " NeoVim用のPython環境
+      " https://qiita.com/sigwyg/items/41630f8754c2028a7a9f
+      let $PYENV_ROOT = $HOME."/.pyenv"
+      if has('nvim') && executable( $PYENV_ROOT."/versions/neovim-2/bin/python" )
+        let g:python_host_prog = $PYENV_ROOT.'/versions/neovim-2/bin/python'
+      endif
+      if has('nvim') && executable( $PYENV_ROOT."/versions/neovim-3/bin/python" )
+        let g:python3_host_prog = $PYENV_ROOT.'/versions/neovim-3/bin/python'
+      endif
     elseif has('win32')
         set pythonthreedll=%PYTHONHOME%\python36.dll
         set pythonthreehome=%PYTHONHOME%

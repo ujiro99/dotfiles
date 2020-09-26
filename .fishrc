@@ -3,22 +3,27 @@ rbenv init - | source
 
 # My Scripts
 set -x PATH {$HOME}/bin {$PATH}
+
 # android sdk
 set -x PATH {$HOME}/Library/Android/sdk/platform-tools {$PATH}
+
 # nodebrew
 set -x PATH {$HOME}/.nodebrew/current/bin {$PATH}
-# pyenv
-set -x PATH {$HOME}/.pyenv/shims {$PATH}
+
 # cabal
 set -x PATH {$HOME}/.cabal/bin {$PATH}
+
 # go
 set -x GOPATH {$HOME}
+
 # anaconda
 # set -x PATH {$HOME}/anaconda3/bin {$PATH} # use pyenv !
 # source {$HOME}/anaconda3/bin/conda.fish
 # pyenv
 set -x PYENV_ROOT {$HOME}/.pyenv
 set -x PATH {$PYENV_ROOT}/shims {$PATH}
+status --is-interactive; and pyenv init - | source
+status --is-interactive; and pyenv virtualenv-init - | source
 
 switch (uname)
     case Darwin
