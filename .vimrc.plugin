@@ -74,10 +74,11 @@ endif
   Plug 'posva/vim-vue', {'for': 'vue'}
 
   " html, css
-  Plug 'mattn/emmet-vim', {'for': ['html', 'css', 'scss', 'php']}
+  Plug 'mattn/emmet-vim', {'for': ['html', 'css', 'scss', 'php', 'vue']}
 
   " css
   Plug 'hail2u/vim-css3-syntax', {'for': 'css'}
+  Plug 'cakebaker/scss-syntax.vim', {'for': 'scss'}
 
   " c & cpp
   Plug 'justmao945/vim-clang', {'for': ['c', 'cpp']}
@@ -135,6 +136,7 @@ else
   nnoremap ;l :Lines<CR>
   nnoremap ;t :Tags<CR>
   nnoremap ;m :History<CR>
+  nnoremap ;s :Snippets<CR>
   nnoremap ;c :BCommits<CR>
 
   " Customize fzf colors to match your color scheme
@@ -148,6 +150,9 @@ else
 
   " [Tags] Command to generate tags file
   let g:fzf_tags_command = 'ctags -R --exclude=dist --exclude=bower_components --exclude=node_modules'
+
+  " Empty value to disable preview window altogether
+  let g:fzf_preview_window = []
 
   " Change directory using ghq
   command! -nargs=* -complete=dir Ghq call fzf#run(fzf#wrap({'source': 'ghq list -p', 'sink': 'cd'}))
@@ -449,3 +454,6 @@ let g:coc_global_extensions = [
       \, 'coc-yank'
       \, 'coc-snippets'
       \]
+
+" For scss files
+autocmd FileType scss setl iskeyword+=@-@
