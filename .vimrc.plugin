@@ -62,7 +62,7 @@ endif
   Plug 'rupurt/vim-mql5', {'for': 'mql5'}
 
   " javascript
-  Plug 'heavenshell/vim-jsdoc', {'for': ['js', 'vue']}
+  Plug 'heavenshell/vim-jsdoc', {'for': ['js', 'vue'], 'do': 'make install'}
 "  Plug 'moll/vim-node', {'for': ['js']}
 "  Plug 'othree/javascript-libraries-syntax.vim', {'for': ['js', 'vue']}
 "  Plug 'pangloss/vim-javascript', {'for': ['js', 'vue']}
@@ -242,7 +242,8 @@ let g:used_javascript_libs = 'vue, angularjs, jquery'
 "---------------------------------------------
 " vim-jsdoc
 "---------------------------------------------
-nmap <silent> <C-l> <Plug>(jsdoc)
+" search for the last function declaration and puts your jsdoc above it:
+nmap <silent> <C-l> ?function<cr>:noh<cr><Plug>(jsdoc)
 
 
 "---------------------------------------------
