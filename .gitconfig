@@ -17,23 +17,15 @@
     grep = auto
 [alias]
     st = status
-    sh = show
-    so = remote show origin
     ft = fetch
     ftp = fetch --prune
-    up = pull --rebase       # pull rebase
-    po = push origin         # push origin
-    pof = push -f origin     # force
-    pu = push -u origin      # push origin and set upstream
     a = add
     ap = add -p
     c = commit
     cm = commit -m
-    ci = commit -a           # modifiedなファイルを全てstageへ
     ca = commit --amend      # 直前のcommitを修正
     co = checkout
     cb = checkout -b         # branch切ってcheckoutする
-    ct = checkout --track    # remoteのbranchを追跡
     # cherry-pick関連
     cp = cherry-pick
     # branch関連
@@ -45,10 +37,8 @@
     lp = log -p --color      # diffも一緒に出す
     la = log --pretty=format:\"%C(yellow)%h %C(White)%ad | %C(White)%s%C(Green)%d %C(Red)[%an]\" --graph --date=short
     # diff関連
-    di = diff --color
-    dm = diff master --color   # masterとのdiff
     dw = diff --color-words -b # 単語単位でいろつけてdiff
-    dc = diff --color --cached # addされているものとのdiff
+    dc = diff --color-words -b --cached # addされているものとのdiff
     # grep関連
     gr = grep
     gn = grep -n
