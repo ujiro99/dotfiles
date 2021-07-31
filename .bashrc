@@ -2,9 +2,8 @@
 [ -s /etc/bashrc ] && . /etc/bashrc
 
 # path
-export GOROOT=/usr/local/go
 export GOPATH=$HOME/go
-export PATH=$PATH:$GOROOT/bin:$GOPATH/bin:/usr/share/doc/git/contrib/diff-highlight
+export PATH=$PATH:$GOPATH/bin
 [ -s ~/dotfiles/.bashrc.peco ] && . ~/dotfiles/.bashrc.peco
 [ -s ~/.bashrc.local ] && . ~/.bashrc.local
 
