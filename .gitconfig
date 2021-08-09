@@ -8,7 +8,7 @@
     safeCRLF = true
     autoCRLF = false
     quotepath = true
-    editor = nvim
+    editor = vim
 [color]
     status = auto
     diff = auto
