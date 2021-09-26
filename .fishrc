@@ -9,7 +9,7 @@ set -x PATH {$HOME}/Library/Android/sdk/platform-tools {$PATH}
 
 # nodenv
 set -x PATH {$HOME}/.nodenv/bin $PATH
-nodenv init - | source
+eval (nodenv init - | source)
 
 # cabal
 set -x PATH {$HOME}/.cabal/bin {$PATH}

@@ -25,7 +25,7 @@ brew install git
 brew install tmux
 brew install fish
 brew install cmigemo
-brew install nodebrew
+brew install nodenv
 brew install pyenv
 brew install pyenv-virtualenv
 brew install tig
@@ -42,7 +42,6 @@ brew cask install qlstephen
 brew cask install quicklook-json
 brew cask install qlcolorcode
 brew cask install qlvideo
-nodebrew install-binary stable
 
 # fish
 chsh -s /usr/local/bin/fish
