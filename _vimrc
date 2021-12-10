@@ -111,7 +111,6 @@ command! -nargs=0 CdCurrent cd %:p:h
 " 空白の除去
 command! RemoveSpace call <SID>format_space()
 
-
 "---------------------------------------------
 " function
 "---------------------------------------------
@@ -133,6 +132,11 @@ function! s:toggle_qf_window()
   execute 'botright cw'
 endfunction
 
+" 表示中のファイルパスをクリップボードへコピー
+function! CopyPath()
+    let @*=expand('%:p')
+endfunction
+command! -nargs=0 CopyPath call CopyPath()
 
 "---------------------------------------------
 " 設定ファイルの読込
