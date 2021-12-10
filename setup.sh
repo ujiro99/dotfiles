@@ -18,6 +18,8 @@ mkdir -p ~/.config/nvim
 mkdir -p ~/.config/nvim/colors
 ln -sf ~/dotfiles/_vimrc  ~/.config/nvim/init.vim
 ln -s  ~/dotfiles/vimfiles/after/ftplugin ~/.config/nvim/ftplugin
+ln -s  ~/dotfiles/vimfiles/ftdetect ~/.config/nvim/ftdetect
+ln -s  ~/dotfiles/coc-settings.json ~/.config/nvim/coc-settings.json
 
 # brew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
@@ -36,12 +38,8 @@ brew install global --with-exuberant-ctags --with-pygments
 brew install ghq fzf
 brew install neovim
 brew install cask
+brew install jq
 brew cask install iterm2
-brew cask install qlmarkdown
-brew cask install qlstephen
-brew cask install quicklook-json
-brew cask install qlcolorcode
-brew cask install qlvideo
 
 # fish
 chsh -s /usr/local/bin/fish
