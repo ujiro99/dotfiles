@@ -263,7 +263,7 @@ map <silent>sr <Plug>(operator-surround-replace)
 "---------------------------------------------
 nmap ,mn  :MemoNew<CR>
 nmap ,mg  :MemoGrep<CR>
-nmap ,mf  :exe "CtrlP" g:memolist_path<cr><f5>
+nmap ,mf  :exe "Files" g:memolist_path<cr><f5>
 let g:memolist_memo_date    = "%Y%m%d %H:%M"
 let g:memolist_memo_suffix  = "md"
 let g:memolist_path         = "~/memo"
