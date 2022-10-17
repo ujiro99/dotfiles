@@ -3,6 +3,7 @@
 
 # My Scripts
 set -x PATH {$HOME}/bin {$PATH}
+set -x PATH {$HOME}/.local/bin {$PATH}
 
 # android sdk
 # set -x PATH {$HOME}/Library/Android/sdk/platform-tools {$PATH}
@@ -16,6 +17,7 @@ eval (nodenv init - | source)
 
 # go
 set -x GOPATH {$HOME}/go
+set -x PATH {$GOPATH}/bin {$PATH}
 
 # php
 # set -x PATH {$HOME}/.composer/vendor/bin/ {$PATH}
