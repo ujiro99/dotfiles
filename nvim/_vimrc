@@ -142,21 +142,21 @@ command! -nargs=0 CopyPath call CopyPath()
 " 設定ファイルの読込
 "---------------------------------------------
 " プラグイン関連
-source $HOME/dotfiles/.vimrc.plugin
+source <sfile>:h/.vimrc.plugin
 " 表示関連
-source $HOME/dotfiles/.vimrc.appearance
+source <sfile>:h/.vimrc.appearance
 " 補間関連
-source $HOME/dotfiles/.vimrc.completion
+source <sfile>:h/.vimrc.completion
 " Tags関連
-source $HOME/dotfiles/.vimrc.tags
+source <sfile>:h/.vimrc.tags
 " エンコーディング関連
-source $HOME/dotfiles/.vimrc.encoding
+source <sfile>:h/.vimrc.encoding
 " インデント関連
-source $HOME/dotfiles/.vimrc.indent
+source <sfile>:h/.vimrc.indent
 " 移動関連
-source $HOME/dotfiles/.vimrc.moving
+source <sfile>:h/.vimrc.moving
 " 検索関連
-source $HOME/dotfiles/.vimrc.search
+source <sfile>:h/.vimrc.search
 
 set noautochdir
 
