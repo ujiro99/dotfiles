@@ -19,8 +19,6 @@ call plug#begin()
   Plug 'banyan/recognize_charcode.vim'
   Plug 'bfredl/nvim-miniyank'
   Plug 'deton/jasegment.vim'
-  Plug 'glidenote/memolist.vim'
-  Plug 'honza/vim-snippets'
   Plug 'junegunn/vim-easy-align'
   Plug 'kana/vim-operator-user'
   Plug 'kana/vim-smartinput'
@@ -63,15 +61,9 @@ endif
 
   " javascript
   Plug 'heavenshell/vim-jsdoc', {'for': ['js', 'vue'], 'do': 'make install'}
-"  Plug 'moll/vim-node', {'for': ['js']}
-"  Plug 'othree/javascript-libraries-syntax.vim', {'for': ['js', 'vue']}
-"  Plug 'pangloss/vim-javascript', {'for': ['js', 'vue']}
 
   " typescript
   Plug 'leafgarland/typescript-vim', {'for': 'ts'}
-
-  " vue
-  Plug 'posva/vim-vue', {'for': 'vue'}
 
   " html, css
   Plug 'mattn/emmet-vim', {'for': ['html', 'css', 'scss', 'php', 'vue']}
@@ -79,12 +71,6 @@ endif
   " css
   Plug 'hail2u/vim-css3-syntax', {'for': 'css'}
   Plug 'cakebaker/scss-syntax.vim', {'for': 'scss'}
-
-  " c & cpp
-  Plug 'justmao945/vim-clang', {'for': ['c', 'cpp']}
-  Plug 'vim-scripts/DoxygenToolkit.vim', {'for': ['c', 'cpp']}
-  Plug 'vim-scripts/taglist.vim', {'for': ['c', 'cpp']}
-
 
 call plug#end()
 

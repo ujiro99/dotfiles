@@ -1,24 +1,26 @@
 # rbenv
-rbenv init - | source
+# rbenv init - | source
 
 # My Scripts
 set -x PATH {$HOME}/bin {$PATH}
+set -x PATH {$HOME}/.local/bin {$PATH}
 
 # android sdk
-set -x PATH {$HOME}/Library/Android/sdk/platform-tools {$PATH}
+# set -x PATH {$HOME}/Library/Android/sdk/platform-tools {$PATH}
 
 # nodenv
 set -x PATH {$HOME}/.nodenv/bin $PATH
 eval (nodenv init - | source)
 
 # cabal
-set -x PATH {$HOME}/.cabal/bin {$PATH}
+# set -x PATH {$HOME}/.cabal/bin {$PATH}
 
 # go
-set -x GOPATH {$HOME}
+set -x GOPATH {$HOME}/go
+set -x PATH {$GOPATH}/bin {$PATH}
 
 # php
-set -x PATH {$HOME}/.composer/vendor/bin/ {$PATH}
+# set -x PATH {$HOME}/.composer/vendor/bin/ {$PATH}
 
 # anaconda
 # set -x PATH {$HOME}/anaconda3/bin {$PATH} # use pyenv !
@@ -54,7 +56,6 @@ alias u "cd ../"
 alias uu "cd ../../"
 alias uuu "cd ../../../"
 alias :q "exit"
-alias a "adb"
 
 # Golangのビルドを早くする
 set -x GOGC 5000
