@@ -2,8 +2,8 @@
 [ -s /etc/bashrc ] && . /etc/bashrc
 
 # path
-export GOPATH=$HOME/go
-export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:$HOME/go/bin
+export PATH=$PATH:/usr/local/go/bin
 [ -s ~/.bashrc.local ] && . ~/.bashrc.local
 
 # 新しく作られたファイルのパーミッションを644をデフォルトにする
@@ -74,9 +74,30 @@ if ! shopt -oq posix; then
 fi
 
 ## fzf
-export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
+export FZF_DEFAULT_COMMAND='rg --hidden --ignore .git -g ""'
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+## fzf & ghq
+function fzf_ghq() {
+  local project_name=$(ghq list | sort | $(__fzfcmd))
+  if [ -n "$project_name" ]; then
+    local project_full_path=~/src/$project_name
+    cd $project_full_path
+    echo $project_full_path
+  fi
+}
+bind -x '"\C-g": fzf_ghq'
+function fzf_z() {
+  local res=$(z | sort -rn | cut -c 12- | fzf)
+  if [ -n "$res" ]; then
+    cd $res
+    echo $res
+  else
+    return 1
+  fi
+}
+bind -x '"\C-j": fzf_z'
 
 # nodenv
 export PATH="$HOME/.nodenv/bin:$PATH"
