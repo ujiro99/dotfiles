@@ -52,8 +52,7 @@ alias ls='ls $LS_OPTIONS -a'
 alias ll='ls $LS_OPTIONS -la'
 alias l='ls $LS_OPTIONS -lA'
 
-alias gocopy=/mnt/c/Users/siro_/go/bin/gocopy.exe
-alias gopaste=/mnt/c/Users/siro_/go/bin/gopaste.exe
+alias vi=/usr/local/bin/nvim
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
@@ -90,4 +89,4 @@ eval "$(pyenv init --path)"
 eval "$(pyenv virtualenv-init -)"
 
 # z
-source "$HOME/.zsh.d/z/z.sh"
+source "$HOME/z/z.sh"

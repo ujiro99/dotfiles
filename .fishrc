@@ -56,8 +56,6 @@ alias u "cd ../"
 alias uu "cd ../../"
 alias uuu "cd ../../../"
 alias :q "exit"
-alias gocopy "/mnt/c/Users/siro_/go/bin/gocopy.exe"
-alias gopaste "/mnt/c/Users/siro_/go/bin/gopaste.exe"
 
 # Golangのビルドを早くする
 set -x GOGC 5000
