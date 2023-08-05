@@ -36,10 +36,39 @@ vim.o.autoindent = true  -- 自動でインデント
 vim.o.smartindent = true -- 新しい行を開始したときに、新しい行のインデントを現在行と同じ量にする。
 
 -- softtabstopはTabキー押し下げ時の挿入される空白の量，0の場合はtabstopと同じ，BSにも影響する
-vim.o.tabstop = 4
-vim.o.shiftwidth = 4
+vim.o.tabstop = 2
+vim.o.shiftwidth = 2
 vim.o.softtabstop = 0
 
+vim.cmd [[
+  autocmd FileType go         setlocal sw=4 sts=4 ts=4 noet
+  autocmd FileType cs         setlocal sw=4 sts=4 ts=4 et
+  autocmd FileType css        setlocal sw=2 sts=2 ts=2 et
+  autocmd FileType stylus     setlocal sw=2 sts=2 ts=2 et
+  autocmd FileType diff       setlocal sw=4 sts=4 ts=4 et
+  autocmd FileType eruby      setlocal sw=4 sts=4 ts=4 et
+  autocmd FileType html       setlocal sw=2 sts=2 ts=2 et
+  autocmd FileType jade       setlocal sw=2 sts=2 ts=2 et
+  autocmd FileType java       setlocal sw=4 sts=4 ts=4 et
+  autocmd FileType javascript setlocal sw=2 sts=2 ts=2 et
+  autocmd FileType typescript setlocal sw=2 sts=2 ts=2 et
+  autocmd FileType typescriptreact setlocal sw=2 sts=2 ts=2 et
+  autocmd FileType vue        setlocal sw=2 sts=2 ts=2 et
+  autocmd FileType coffee     setlocal sw=2 sts=2 ts=2 et
+  autocmd FileType python     setlocal sw=4 sts=4 ts=4 et
+  autocmd FileType ruby       setlocal sw=2 sts=2 ts=2 et
+  autocmd FileType haml       setlocal sw=2 sts=2 ts=2 et
+  autocmd FileType sh         setlocal sw=4 sts=4 ts=4 et
+  autocmd FileType vim        setlocal sw=2 sts=2 ts=2 et
+  autocmd FileType wsh        setlocal sw=4 sts=4 ts=4 et
+  autocmd FileType xhtml      setlocal sw=4 sts=4 ts=4 et
+  autocmd FileType xml        setlocal sw=4 sts=4 ts=4 et
+  autocmd FileType yaml       setlocal sw=2 sts=2 ts=2 et
+  autocmd FileType zsh        setlocal sw=4 sts=4 ts=4 et
+  autocmd FileType scala      setlocal sw=2 sts=2 ts=2 et
+  autocmd FileType php        setlocal sw=4 sts=4 ts=4 et
+  autocmd FileType scss       setlocal sw=2 sts=2 ts=2 et
+]]
 
 -------------------------------------------------------------------------------
 -- keymap
@@ -57,12 +86,12 @@ vim.keymap.set('n', '<Space>D', ':bd!<CR>', { noremap = true })
 -- quickfixウィンドウではq/ESCで閉じる
 vim.api.nvim_create_augroup('vimrc', {})
 vim.api.nvim_create_autocmd({ 'FileType' }, {
-    pattern = 'quickfix',
-    group = 'vimrc',
-    callback = function()
-        vim.keymap.set('n', 'q', ':ccl<CR>', { noremap = true })
-        vim.keymap.set('n', '<ESC>', ':ccl<CR>', { noremap = true })
-    end
+  pattern = 'qf',
+  group = 'vimrc',
+  callback = function()
+    vim.keymap.set('n', 'q', ':ccl<CR>', { noremap = true })
+    vim.keymap.set('n', '<ESC>', ':ccl<CR>', { noremap = true })
+  end
 })
 
 -- ファイラーをトグルする
@@ -78,18 +107,18 @@ vim.cmd("command! ReloadVimrc :luafile %")
 vim.cmd("command! -nargs=0 CdCurrent cd %:p:h")
 -- 空白の除去
 vim.api.nvim_create_user_command('RemoveSpace',
-    function()
-        vim.api.nvim_command(":%s/\\s\\+$//ge") -- 行末の空白を除去する
-        vim.api.nvim_command(":%s/\\t/  /ge") -- tabをスペースに変換する
-    end,
-    { nargs = 0 }
+  function()
+    vim.api.nvim_command(":%s/\\s\\+$//ge") -- 行末の空白を除去する
+    vim.api.nvim_command(":%s/\\t/  /ge")   -- tabをスペースに変換する
+  end,
+  { nargs = 0 }
 )
 -- 表示中のファイルパスをクリップボードへコピー
 vim.api.nvim_create_user_command('CopyPath',
-    function()
-        vim.api.nvim_command("let @*=expand('%:p')")
-    end,
-    { nargs = 0 }
+  function()
+    vim.api.nvim_command("let @*=expand('%:p')")
+  end,
+  { nargs = 0 }
 )
 
 --[[
