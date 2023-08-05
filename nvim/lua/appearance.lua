@@ -9,9 +9,10 @@ vim.o.list = true -- 不可視文字表示
 vim.o.listchars = "tab:»-,trail:_,extends:»,precedes:«,nbsp:%" -- 不可視文字の表示形式
 vim.o.signcolumn = "yes"
 
--- vim.o.guifont = "Firge"
-
 -- カラースキーム
 vim.cmd [[colorscheme spring-night]]
 vim.o.background = "dark"
 vim.g.lightline = { colorscheme = 'spring_night' }
+
+-- Fern
+vim.g["fern#renderer"] = "nvim-web-devicons"

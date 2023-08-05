@@ -65,6 +65,9 @@ vim.api.nvim_create_autocmd({ 'FileType' }, {
     end
 })
 
+-- ファイラーをトグルする
+vim.keymap.set('n', ';n', ':Fern . -drawer -toggle<CR>', { noremap = true })
+
 
 ---------------------------------------------
 -- command

@@ -17,6 +17,12 @@ return require('packer').startup(function(use)
 
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
 
+    use 'lambdalisue/fern.vim'
+    use {
+        'TheLeoP/fern-renderer-web-devicons.nvim',
+        requires = { 'nvim-tree/nvim-web-devicons' }
+    }
+
     -- appearance
     use 'rhysd/vim-color-spring-night'
     use 'itchyny/lightline.vim'
@@ -27,7 +33,6 @@ return require('packer').startup(function(use)
         'nvim-telescope/telescope.nvim', tag = '0.1.2',
         requires = { 'nvim-lua/plenary.nvim' }
     }
-    use { "nvim-telescope/telescope-file-browser.nvim" }
     use {
         "nvim-telescope/telescope-frecency.nvim",
         config = function()
