@@ -1,8 +1,0 @@
-{
-  "typescript.format.insertSpaceAfterSemicolonInForStatements": false,
-  "eslint.filetypes": ["javascript", "vue"],
-  "eslint.autoFixOnSave": true,
-  "html.autoClosingTags": true,
-  "emmet.optimizeStylesheetParsing": false,
-  "coc.preferences.formatOnSaveFiletypes": ["html", "js", "css", "scss", "php", "Markdown"]
-}

@@ -1,1 +1,5 @@
-source $HOME/dotfiles/nvim/_vimrc
+require('base')
+require('plugins')
+require('appearance')
+require('moving')
+require('search')
