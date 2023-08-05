@@ -1,9 +1,9 @@
 -- 1. LSP Sever management
 require('mason').setup()
 require('mason-lspconfig').setup_handlers({ function(server)
-    require('lspconfig')[server].setup {
-        capabilities = require('cmp_nvim_lsp').default_capabilities(),
-    }
+  require('lspconfig')[server].setup {
+    capabilities = require('cmp_nvim_lsp').default_capabilities(),
+  }
 end })
 
 -- 2. build-in LSP function
@@ -21,11 +21,11 @@ vim.keymap.set('n', 'ge', '<cmd>lua vim.diagnostic.open_float()<CR>')
 vim.keymap.set('n', 'g]', '<cmd>lua vim.diagnostic.goto_next()<CR>')
 vim.keymap.set('n', 'g[', '<cmd>lua vim.diagnostic.goto_prev()<CR>')
 vim.keymap.set('n', '<space>f', function()
-    vim.lsp.buf.format { async = true }
+  vim.lsp.buf.format { async = true }
 end)
 -- LSP handlers
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
-    vim.lsp.diagnostic.on_publish_diagnostics, { virtual_text = false }
+  vim.lsp.diagnostic.on_publish_diagnostics, { virtual_text = false }
 )
 -- Reference highlight
 vim.cmd [[
@@ -33,36 +33,31 @@ vim.cmd [[
   highlight LspReferenceText  cterm=underline ctermfg=1 ctermbg=8 gui=underline guifg=#A00000 guibg=#104040
   highlight LspReferenceRead  cterm=underline ctermfg=1 ctermbg=8 gui=underline guifg=#A00000 guibg=#104040
   highlight LspReferenceWrite cterm=underline ctermfg=1 ctermbg=8 gui=underline guifg=#A00000 guibg=#104040
-  augroup lsp_document_highlight
-    autocmd!
-    autocmd CursorHold,CursorHoldI * lua vim.lsp.buf.document_highlight()
-    autocmd CursorMoved,CursorMovedI * lua vim.lsp.buf.clear_references()
-  augroup END
 ]]
 
 -- 3. completion (hrsh7th/nvim-cmp)
 local cmp = require("cmp")
 cmp.setup({
-    sources = {
-        { name = "nvim_lsp" },
-        { name = 'luasnip' },
-        { name = "buffer" },
-        { name = "path" },
-        { name = 'copilot' },
-    },
-    snippet = {
-        expand = function(args)
-            luasnip.lsp_expand(args.body)
-        end,
-    },
-    mapping = cmp.mapping.preset.insert({
-        ["<C-p>"] = cmp.mapping.select_prev_item(),
-        ["<C-n>"] = cmp.mapping.select_next_item(),
-        ['<C-l>'] = cmp.mapping.complete(),
-        ['<C-e>'] = cmp.mapping.abort(),
-        ["<CR>"] = cmp.mapping.confirm { select = true },
-    }),
-    experimental = {
-        ghost_text = true,
-    },
+  sources = {
+    { name = "nvim_lsp" },
+    { name = 'luasnip' },
+    { name = "buffer" },
+    { name = "path" },
+    { name = 'copilot' },
+  },
+  snippet = {
+    expand = function(args)
+      luasnip.lsp_expand(args.body)
+    end,
+  },
+  mapping = cmp.mapping.preset.insert({
+    ["<C-p>"] = cmp.mapping.select_prev_item(),
+    ["<C-n>"] = cmp.mapping.select_next_item(),
+    -- ['<C-l>'] = cmp.mapping.complete(),
+    -- ['<C-e>'] = cmp.mapping.abort(),
+    ["<CR>"] = cmp.mapping.confirm { select = true },
+  }),
+  experimental = {
+    ghost_text = true,
+  },
 })

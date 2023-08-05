@@ -2,12 +2,12 @@
 -- 移動設定 Move
 -------------------------------------------------------------------------------
 -- カーソルを表示行で移動
-vim.keymap.set('n', 'h', '<Left>', { noremap = true })
-vim.keymap.set('n', 'j', 'gj', { noremap = true })
-vim.keymap.set('n', 'k', 'gk', { noremap = true })
-vim.keymap.set('n', 'l', '<Right>', { noremap = true })
-vim.keymap.set('n', '<Down>', 'gj', { noremap = true })
-vim.keymap.set('n', '<Up>', 'gk', { noremap = true })
+vim.keymap.set('n', 'h', '<Left>', { noremap = true, silent = true })
+vim.keymap.set('n', 'j', 'gj', { noremap = true, silent = true })
+vim.keymap.set('n', 'k', 'gk', { noremap = true, silent = true })
+vim.keymap.set('n', 'l', '<Right>', { noremap = true, silent = true })
+vim.keymap.set('n', '<Down>', 'gj', { noremap = true, silent = true })
+vim.keymap.set('n', '<Up>', 'gk', { noremap = true, silent = true })
 
 -- insert mode での移動
 vim.keymap.set('i', '<C-h>', '<Left>', { noremap = true })
