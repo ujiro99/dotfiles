@@ -94,6 +94,9 @@ vim.api.nvim_create_autocmd({ 'FileType' }, {
   end
 })
 
+-- Quickfixウィンドウをトグルする
+vim.keymap.set('n', 'tw', '<Plug>window:quickfix:loop', { noremap = true })
+
 -- ファイラーをトグルする
 vim.keymap.set('n', ';n', ':Fern . -drawer -toggle<CR>', { noremap = true })
 

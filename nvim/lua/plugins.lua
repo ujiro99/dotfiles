@@ -8,7 +8,8 @@ return require('packer').startup(function(use)
   use 'duane9/nvim-rg'
   use 'glidenote/memolist.vim'
   use 'junegunn/vim-easy-align'
-  use "windwp/nvim-autopairs"
+  use 'windwp/nvim-autopairs'
+  use 'drmingdrmer/vim-toggle-quickfix'
   use {
     "kylechui/nvim-surround",
     tag = "*", -- Use for stability; omit to use `main` branch for the latest features
