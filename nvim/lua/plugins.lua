@@ -25,7 +25,7 @@ return require('packer').startup(function(use)
     -- telescope
     use {
         'nvim-telescope/telescope.nvim', tag = '0.1.2',
-        requires = { { 'nvim-lua/plenary.nvim' } }
+        requires = { 'nvim-lua/plenary.nvim' }
     }
     use { "nvim-telescope/telescope-file-browser.nvim" }
     use {
@@ -57,6 +57,26 @@ return require('packer').startup(function(use)
         'j-hui/fidget.nvim',
         tag = 'legacy',
         config = function() require("fidget").setup {} end,
+    }
+
+    -- Github copilot
+    use {
+        "zbirenbaum/copilot.lua",
+        cmd = "Copilot",
+        event = "InsertEnter",
+        config = function()
+            require("copilot").setup({
+                suggestion = { enabled = false },
+                panel = { enabled = false },
+            })
+        end,
+    }
+    use {
+        "zbirenbaum/copilot-cmp",
+        after = { "copilot.lua" },
+        config = function()
+            require("copilot_cmp").setup()
+        end
     }
 
     use { 'mattn/emmet-vim',

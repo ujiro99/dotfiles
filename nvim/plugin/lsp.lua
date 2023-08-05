@@ -48,6 +48,7 @@ cmp.setup({
         { name = 'luasnip' },
         { name = "buffer" },
         { name = "path" },
+        { name = 'copilot' },
     },
     snippet = {
         expand = function(args)
