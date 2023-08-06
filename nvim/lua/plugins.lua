@@ -56,6 +56,18 @@ return require('packer').startup(function(use)
     end,
     requires = { "kkharji/sqlite.lua" }
   }
+  use {
+    'nvim-telescope/telescope-ghq.nvim',
+    config = function()
+      require 'telescope'.load_extension 'ghq'
+    end,
+  }
+  use {
+    'delphinus/telescope-memo.nvim',
+    config = function()
+      require 'telescope'.load_extension 'memo'
+    end,
+  }
 
   -- LSP
   use 'neovim/nvim-lspconfig'
@@ -79,6 +91,8 @@ return require('packer').startup(function(use)
     tag = 'legacy',
     config = function() require("fidget").setup {} end,
   }
+  use('jose-elias-alvarez/null-ls.nvim')
+  use('MunifTanjim/prettier.nvim')
 
   -- Github copilot
   use {
