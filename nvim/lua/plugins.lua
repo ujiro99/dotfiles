@@ -4,7 +4,10 @@ vim.cmd [[packadd packer.nvim]]
 return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim' -- Packer can manage itself
   use 'dinhhuy258/git.nvim'
-  use 'lewis6991/gitsigns.nvim'
+  use {
+    'lewis6991/gitsigns.nvim',
+    config = function() require('gitsigns').setup {} end
+  }
   use 'duane9/nvim-rg'
   use 'glidenote/memolist.vim'
   use 'junegunn/vim-easy-align'
