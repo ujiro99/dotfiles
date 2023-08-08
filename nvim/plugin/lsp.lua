@@ -118,5 +118,6 @@ prettier.setup({
     "markdown",
     "typescript",
     "typescriptreact",
+    "lua"
   },
 })

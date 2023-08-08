@@ -3,20 +3,30 @@ vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim' -- Packer can manage itself
-  use 'dinhhuy258/git.nvim'
+  use 'duane9/nvim-rg'
+  use 'glidenote/memolist.vim'
+  use 'junegunn/vim-easy-align'
+  use 'drmingdrmer/vim-toggle-quickfix'
+
+  use({
+      "kylechui/nvim-surround",
+      tag = "*",
+      config = function()
+          require("nvim-surround").setup({})
+      end
+  })
+
+  use {'dinhhuy258/git.nvim',
+    config = function() require('git').setup {} end
+  }
   use {
     'lewis6991/gitsigns.nvim',
     config = function() require('gitsigns').setup {} end
   }
-  use 'duane9/nvim-rg'
-  use 'glidenote/memolist.vim'
-  use 'junegunn/vim-easy-align'
-  use 'windwp/nvim-autopairs'
-  use 'drmingdrmer/vim-toggle-quickfix'
+
   use {
-    "kylechui/nvim-surround",
-    tag = "*", -- Use for stability; omit to use `main` branch for the latest features
-    config = function() require("nvim-surround").setup({}) end
+    "windwp/nvim-autopairs",
+    config = function() require("nvim-autopairs").setup {} end
   }
 
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
@@ -28,7 +38,12 @@ return require('packer').startup(function(use)
   }
 
   -- appearance
-  use 'AlexvZyl/nordic.nvim'
+  use({
+    "neanias/everforest-nvim",
+    config = function()
+      require("everforest").setup()
+    end,
+  })
   use {
     'nvim-lualine/lualine.nvim',
     requires = { 'nvim-tree/nvim-web-devicons', opt = true },
@@ -36,7 +51,7 @@ return require('packer').startup(function(use)
       require 'lualine'.setup {
         options = {
           icons_enabled = false,
-          theme = 'nordic',
+          theme = 'everforest',
           section_separators = '',
           component_separators = ''
         }

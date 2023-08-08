@@ -10,8 +10,8 @@ vim.o.listchars = "tab:»-,trail:_,extends:»,precedes:«,nbsp:%" -- 不可視�
 vim.o.signcolumn = "yes"
 
 -- カラースキーム
-vim.cmd.colorscheme 'nordic'
-vim.o.background = "dark"
+vim.cmd.colorscheme 'everforest'
+vim.o.background = 'dark'
 
 -- Fern
 vim.g["fern#renderer"] = "nvim-web-devicons"
