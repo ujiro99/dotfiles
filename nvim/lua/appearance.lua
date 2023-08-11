@@ -17,4 +17,4 @@ vim.o.background = "dark"
 vim.g["fern#renderer"] = "nvim-web-devicons"
 
 -- フォント
-vim.o.guifont = "Hackgen:h12"
+vim.o.guifont = "更紗等幅ゴシック J Nerd Font:h12"
