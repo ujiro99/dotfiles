@@ -7,12 +7,12 @@ vim.o.smartcase = true  -- 検索文字列に大文字が含まれている場�
 vim.o.incsearch = true  -- インクリメンタルサーチ
 
 -- 選択した文字列を検索
-vim.cmd [[
+vim.cmd([[
   vnoremap <silent> // y/<C-R>=escape(@", '\\/.*$^~[]')<CR><CR>
-]]
+]])
 
 -- カーソル下のキーワードをヘルプでひく
-vim.keymap.set('n', '<C-i><C-i>', ':<C-u>help<Space><C-r><C-w><Enter>zz', { noremap = true })
+vim.keymap.set("n", "<C-i><C-i>", ":<C-u>help<Space><C-r><C-w><Enter>zz", { noremap = true })
 
 -- カーソル下の単語をgrepする
-vim.keymap.set('n', 'gr', ':Rg<Space><C-r><C-w> <CR>', { noremap = true })
+vim.keymap.set("n", "<C-g><C-g>", ":Rg<Space><C-r><C-w> <CR>", { noremap = true })
