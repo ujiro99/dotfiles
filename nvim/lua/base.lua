@@ -88,7 +88,7 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 	pattern = "qf",
 	group = "vimrc",
 	callback = function()
-		vim.keymap.set("n", "<ESC>", ":ccl<CR>", { noremap = true })
+		vim.keymap.set("n", "<ESC>", ":ccl<CR>", { noremap = true, buffer = true })
 	end,
 })
 
