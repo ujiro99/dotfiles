@@ -103,9 +103,9 @@ return require("packer").startup(function(use)
 			"hrsh7th/cmp-nvim-lsp",
 			{
 				"L3MON4D3/LuaSnip",
-				tag = "v1.*",
+				tag = "v2.*",
+				run = "make install_jsregexp",
 				requires = "saadparwaiz1/cmp_luasnip",
-				--       run = 'make install_jsregexp',
 			},
 		},
 	})
