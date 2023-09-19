@@ -20,4 +20,13 @@ git clone https://github.com/github/gitignore.git
 go install github.com/x-motemen/ghq@latest
 go install github.com/junegunn/fzf
 
+powershell -Command "Set-ExecutionPolicy RemoteSigned -Scope CurrentUser"
+powershell -Command "irm get.scoop.sh | iex"
+
+scoop install lua-language-server
+scoop install fd
+scoop install fzf
+scoop install ripgrep
+scoop install zig
+
 pause
