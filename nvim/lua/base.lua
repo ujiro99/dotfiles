@@ -26,7 +26,7 @@ vim.o.fileformats = "unix,dos"
 -- デフォルトエンコーディング
 vim.o.encoding = "utf-8"
 -- sqlite3
-vim.g.sqlite_clib_path = vim.fn.expand("~/AppData/Local/nvim-data/sqlite-dll-win64-x64-3420000/sqlite3.dll")
+vim.g.sqlite_clib_path = vim.fn.expand("~/AppData/Local/nvim-data/sqlite/sqlite3.dll")
 
 -------------------------------------------------------------------------------
 -- インデント Indent
