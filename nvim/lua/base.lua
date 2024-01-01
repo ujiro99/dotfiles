@@ -31,7 +31,7 @@ vim.g.sqlite_clib_path = vim.fn.expand("~/AppData/Local/nvim-data/sqlite/sqlite3
 -------------------------------------------------------------------------------
 -- インデント Indent
 -------------------------------------------------------------------------------
-vim.o.autoindent = true  -- 自動でインデント
+vim.o.autoindent = true -- 自動でインデント
 vim.o.smartindent = true -- 新しい行を開始したときに、新しい行のインデントを現在行と同じ量にする。
 
 -- softtabstopはTabキー押し下げ時の挿入される空白の量，0の場合はtabstopと同じ，BSにも影響する
@@ -82,14 +82,18 @@ vim.keymap.set("n", "U", "<C-r>", { noremap = true })
 vim.keymap.set("n", "<Space>d", ":bd<CR>zz", { noremap = true })
 vim.keymap.set("n", "<Space>D", ":bd!<CR>", { noremap = true })
 
+-- JIS配列キーボードとの互換性
+vim.keymap.set("n", "'", ":", { noremap = true }) -- COMMANDモード開始
+vim.keymap.set("n", '"', "*", { noremap = true }) -- 検索開始
+
 -- quickfixウィンドウではESCで閉じる
 vim.api.nvim_create_augroup("vimrc", {})
 vim.api.nvim_create_autocmd({ "FileType" }, {
-  pattern = "qf",
-  group = "vimrc",
-  callback = function()
-    vim.keymap.set("n", "<ESC>", ":ccl<CR>", { noremap = true, buffer = true })
-  end,
+	pattern = "qf",
+	group = "vimrc",
+	callback = function()
+		vim.keymap.set("n", "<ESC>", ":ccl<CR>", { noremap = true, buffer = true })
+	end,
 })
 
 -- Quickfixウィンドウをトグルする
@@ -107,10 +111,10 @@ vim.cmd("command! ReloadVimrc :luafile %")
 vim.cmd("command! -nargs=0 CdCurrent cd %:p:h")
 -- 空白の除去
 vim.api.nvim_create_user_command("RemoveSpace", function()
-  vim.api.nvim_command(":%s/\\s\\+$//ge") -- 行末の空白を除去する
-  vim.api.nvim_command(":%s/\\t/  /ge")  -- tabをスペースに変換する
+	vim.api.nvim_command(":%s/\\s\\+$//ge") -- 行末の空白を除去する
+	vim.api.nvim_command(":%s/\\t/  /ge") -- tabをスペースに変換する
 end, { nargs = 0 })
 -- 表示中のファイルパスをクリップボードへコピー
 vim.api.nvim_create_user_command("CopyPath", function()
-  vim.api.nvim_command("let @*=expand('%:p')")
+	vim.api.nvim_command("let @*=expand('%:p')")
 end, { nargs = 0 })
