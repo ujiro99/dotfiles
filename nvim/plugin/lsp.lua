@@ -103,6 +103,9 @@ null_ls.setup({
 		null_ls.builtins.formatting.sql_formatter,
 		null_ls.builtins.formatting.stylua,
 		null_ls.builtins.formatting.fixjson,
+		null_ls.builtins.formatting.black, -- python formatter
+		null_ls.builtins.formatting.isort, -- python import sort
+		null_ls.builtins.diagnostics.flake8, -- python linter
 	},
 	on_attach = function(client, bufnr)
 		if client.supports_method("textDocument/formatting") then
