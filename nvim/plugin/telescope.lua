@@ -36,7 +36,7 @@ vim.keymap.set("n", ";j", builtin.oldfiles, {})
 vim.keymap.set("n", ";b", builtin.buffers, {})
 vim.keymap.set("n", ";h", builtin.help_tags, {})
 vim.keymap.set("n", ";r", builtin.registers, {})
-vim.keymap.set("n", ";g", ":Telescope ghq list<CR>", {})
+vim.keymap.set("n", ";g", ":Telescope ghq<CR>", {})
 vim.keymap.set(
 	"n",
 	";m",
