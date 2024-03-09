@@ -150,11 +150,11 @@ require("lazy").setup({
 		event = { "LspAttach" },
 		opts = {},
 	},
-	"jose-elias-alvarez/null-ls.nvim",
+	"nvimtools/none-ls.nvim",
 	"MunifTanjim/prettier.nvim",
 
 	-- Github copilot
-  "github/copilot.vim",
+	"github/copilot.vim",
 
 	{
 		"mattn/emmet-vim",
