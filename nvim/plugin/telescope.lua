@@ -3,7 +3,15 @@ if not status then
 	return
 end
 local actions = require("telescope.actions")
-local home = os.getenv("USERPROFILE")
+
+local home
+if vim.fn.has("linux") == 1 then
+  home = vim.fn.expand('$HOME')
+elseif vim.fn.has("win64") == 1 then
+  home = os.getenv("USERPROFILE")
+else
+end
+
 telescope.setup({
 	defaults = {
 		mappings = {
