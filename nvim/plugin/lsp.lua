@@ -52,104 +52,31 @@ cmp.setup({
 	},
 })
 
--- Show diagnostic on hover
-local function on_cursor_hold()
-	if vim.lsp.buf.server_ready() then
-		vim.diagnostic.open_float()
-	end
-end
-local diagnostic_hover_augroup_name = "lspconfig-diagnostic"
-vim.api.nvim_set_option("updatetime", 500)
-vim.api.nvim_create_augroup(diagnostic_hover_augroup_name, { clear = true })
-vim.api.nvim_create_autocmd({ "CursorHold" }, { group = diagnostic_hover_augroup_name, callback = on_cursor_hold })
-
--- null-ls
-local async_formatting = function(bufnr)
-	bufnr = bufnr or vim.api.nvim_get_current_buf()
-
-	vim.lsp.buf_request(
-		bufnr,
-		"textDocument/formatting",
-		vim.lsp.util.make_formatting_params({}),
-		function(err, res, ctx)
-			if err then
-				local err_msg = type(err) == "string" and err or err.message
-				-- you can modify the log message / level (or ignore it completely)
-				vim.notify("formatting: " .. err_msg, vim.log.levels.WARN)
-				return
-			end
-
-			-- don't apply results if buffer is unloaded or has been modified
-			if not vim.api.nvim_buf_is_loaded(bufnr) or vim.api.nvim_buf_get_option(bufnr, "modified") then
-				return
-			end
-
-			if res then
-				local client = vim.lsp.get_client_by_id(ctx.client_id)
-				vim.lsp.util.apply_text_edits(res, bufnr, client and client.offset_encoding or "utf-16")
-				vim.api.nvim_buf_call(bufnr, function()
-					vim.cmd("silent noautocmd update")
-				end)
-			end
-		end
-	)
-end
-
+-- none-ls
+-- https://github.com/nvimtools/none-ls.nvim/wiki/Formatting-on-save
+-- https://github.com/nvimtools/none-ls.nvim/blob/main/doc/BUILTINS.md#formatting
 local null_ls = require("null-ls")
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 null_ls.setup({
 	sources = {
 		null_ls.builtins.formatting.prettierd,
+		null_ls.builtins.formatting.goimports,
 		null_ls.builtins.formatting.sql_formatter,
-		null_ls.builtins.formatting.stylua,
-		null_ls.builtins.formatting.fixjson,
+    null_ls.builtins.formatting.stylua, -- lua
 		null_ls.builtins.formatting.black, -- python formatter
 		null_ls.builtins.formatting.isort, -- python import sort
 		null_ls.builtins.diagnostics.flake8, -- python linter
 	},
 	on_attach = function(client, bufnr)
 		if client.supports_method("textDocument/formatting") then
-			-- format on <Leader>f
-			vim.keymap.set("n", "<Leader>f", function()
-				vim.lsp.buf.format({ bufnr = vim.api.nvim_get_current_buf() })
-			end, { buffer = bufnr, desc = "[lsp] format" })
-
-			-- format on save
 			vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
-			vim.api.nvim_create_autocmd("BufWritePost", {
+			vim.api.nvim_create_autocmd("BufWritePre", {
 				group = augroup,
 				buffer = bufnr,
 				callback = function()
-					async_formatting(bufnr)
+					vim.lsp.buf.format({ async = false })
 				end,
 			})
 		end
 	end,
-})
-
--- prettier
-local prettier = require("prettier")
-prettier.setup({
-	bin = "prettierd",
-	["null-ls"] = {
-		condition = function()
-			return prettier.config_exists({
-				check_package_json = true,
-			})
-		end,
-		runtime_condition = function(params)
-			return true
-		end,
-		timeout = 5000,
-	},
-	filetypes = {
-		"css",
-		"html",
-		"javascript",
-		"javascriptreact",
-		"json",
-		"markdown",
-		"typescript",
-		"typescriptreact",
-	},
 })
