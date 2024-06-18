@@ -151,7 +151,6 @@ require("lazy").setup({
 		opts = {},
 	},
 	"nvimtools/none-ls.nvim",
-	"MunifTanjim/prettier.nvim",
 
 	-- Github copilot
 	"github/copilot.vim",
