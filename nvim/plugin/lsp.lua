@@ -9,13 +9,20 @@ require("mason-lspconfig").setup_handlers({
 })
 
 local mason_packages = {
-	"typescript-language-server",
 	"biome",
+	"css-lsp",
+	"cssmodules-language-server",
 	"goimports",
 	"golines",
 	"gopls",
+	"html-lsp",
+	"json-lsp",
 	"lua-language-server",
 	"prettierd",
+	"prettierd",
+	"stylelint-lsp",
+	"stylua",
+	"typescript-language-server",
 }
 local function ensure_installed()
 	for _, package in ipairs(mason_packages) do
