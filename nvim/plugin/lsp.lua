@@ -10,7 +10,7 @@ require("mason-lspconfig").setup_handlers({
 
 -- 2. build-in LSP function
 -- keyboard shortcut
-vim.keymap.set("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>")
+-- vim.keymap.set("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>")
 vim.keymap.set("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>")
 vim.keymap.set("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>")
 vim.keymap.set("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>")
@@ -62,10 +62,15 @@ null_ls.setup({
 		null_ls.builtins.formatting.prettierd,
 		null_ls.builtins.formatting.goimports,
 		null_ls.builtins.formatting.sql_formatter,
-    null_ls.builtins.formatting.stylua, -- lua
+		null_ls.builtins.formatting.stylua, -- lua
+		null_ls.builtins.completion.spell,
+		null_ls.builtins.diagnostics.pylint.with({
+			diagnostics_postprocess = function(diagnostic)
+				diagnostic.code = diagnostic.message_id
+			end,
+		}), -- python linter
 		null_ls.builtins.formatting.black, -- python formatter
 		null_ls.builtins.formatting.isort, -- python import sort
-		null_ls.builtins.diagnostics.flake8, -- python linter
 	},
 	on_attach = function(client, bufnr)
 		if client.supports_method("textDocument/formatting") then
