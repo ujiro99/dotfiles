@@ -8,6 +8,25 @@ require("mason-lspconfig").setup_handlers({
 	end,
 })
 
+local mason_packages = {
+	"typescript-language-server",
+	"biome",
+	"goimports",
+	"golines",
+	"gopls",
+	"lua-language-server",
+	"prettierd",
+}
+local function ensure_installed()
+	for _, package in ipairs(mason_packages) do
+		local p = require("mason-registry").get_package(package)
+		if not p:is_installed() then
+			p:install()
+		end
+	end
+end
+ensure_installed()
+
 -- 2. build-in LSP function
 -- keyboard shortcut
 -- vim.keymap.set("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>")
