@@ -1,16 +1,13 @@
 cd %USERPROFILE%
-mkdir %USERPROFILE%\dotfiles\vimfiles\bundle
 mkdir %USERPROFILE%\AppData\Local\nvim
 
-mklink %USERPROFILE%\AppData\Local\nvim\init.lua %USERPROFILE%\dotfiles\_vimrc
+mklink %USERPROFILE%\AppData\Local\nvim\init.lua %USERPROFILE%\dotfiles\init.lua
 mklink /d %USERPROFILE%\AppData\Local\nvim\lua %USERPROFILE%\dotfiles\nvim\lua
 mklink /d %USERPROFILE%\AppData\Local\nvim\plugin %USERPROFILE%\dotfiles\nvim\plugin
 mklink /d %USERPROFILE%\AppData\Local\nvim\snippets %USERPROFILE%\dotfiles\nvim\snippets
 mklink %USERPROFILE%\.gitconfig %USERPROFILE%\dotfiles\.gitconfig
 mklink %USERPROFILE%\.gtagsrc %USERPROFILE%\dotfiles\.gtagsrc
 
-mklink /d %USERPROFILE%\.vim %USERPROFILE%\dotfiles\vimfiles
-mklink /d %USERPROFILE%\vimfiles %USERPROFILE%\dotfiles\vimfiles
 mkdir %USERPROFILE%/.vim/backup
 mkdir %USERPROFILE%/.vim/swap
 mkdir %USERPROFILE%/.vim/undo
