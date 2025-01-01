@@ -1,36 +1,35 @@
 -- 1. LSP Sever management
 require("mason").setup()
 require("mason-lspconfig").setup_handlers({
-	function(server)
-		require("lspconfig")[server].setup({
-			capabilities = require("cmp_nvim_lsp").default_capabilities(),
-		})
-	end,
+  function(server)
+    require("lspconfig")[server].setup({
+      capabilities = require("cmp_nvim_lsp").default_capabilities(),
+    })
+  end,
 })
 
 local mason_packages = {
-	"biome",
-	"css-lsp",
-	"cssmodules-language-server",
-	"goimports",
-	"golines",
-	"gopls",
-	"html-lsp",
-	"json-lsp",
-	"lua-language-server",
-	"prettierd",
-	"prettierd",
-	"stylelint-lsp",
-	"stylua",
-	"typescript-language-server",
+  "biome",
+  "css-lsp",
+  "cssmodules-language-server",
+  "goimports",
+  "golines",
+  "gopls",
+  "html-lsp",
+  "json-lsp",
+  "lua-language-server",
+  "prettierd",
+  "stylelint-lsp",
+  "stylua",
+  "typescript-language-server",
 }
 local function ensure_installed()
-	for _, package in ipairs(mason_packages) do
-		local p = require("mason-registry").get_package(package)
-		if not p:is_installed() then
-			p:install()
-		end
-	end
+  for _, package in ipairs(mason_packages) do
+    local p = require("mason-registry").get_package(package)
+    if not p:is_installed() then
+      p:install()
+    end
+  end
 end
 ensure_installed()
 
@@ -49,33 +48,33 @@ vim.keymap.set("n", "g]", "<cmd>lua vim.diagnostic.goto_next()<CR>")
 vim.keymap.set("n", "g[", "<cmd>lua vim.diagnostic.goto_prev()<CR>")
 -- LSP handlers
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
-	virtual_text = false,
+  virtual_text = false,
 })
 
 -- 3. completion (hrsh7th/nvim-cmp)
 local cmp = require("cmp")
 cmp.setup({
-	sources = {
-		{ name = "nvim_lsp" },
-		{ name = "luasnip" },
-		{ name = "buffer" },
-		{ name = "path" },
-	},
-	snippet = {
-		expand = function(args)
-			require("luasnip").lsp_expand(args.body)
-		end,
-	},
-	mapping = cmp.mapping.preset.insert({
-		["<C-p>"] = cmp.mapping.select_prev_item(),
-		["<C-n>"] = cmp.mapping.select_next_item(),
-		-- ['<C-l>'] = cmp.mapping.complete(),
-		-- ['<C-e>'] = cmp.mapping.abort(),
-		["<CR>"] = cmp.mapping.confirm({ select = true }),
-	}),
-	experimental = {
-		ghost_text = true,
-	},
+  sources = {
+    { name = "nvim_lsp" },
+    { name = "luasnip" },
+    { name = "buffer" },
+    { name = "path" },
+  },
+  snippet = {
+    expand = function(args)
+      require("luasnip").lsp_expand(args.body)
+    end,
+  },
+  mapping = cmp.mapping.preset.insert({
+    ["<C-p>"] = cmp.mapping.select_prev_item(),
+    ["<C-n>"] = cmp.mapping.select_next_item(),
+    -- ['<C-l>'] = cmp.mapping.complete(),
+    -- ['<C-e>'] = cmp.mapping.abort(),
+    ["<CR>"] = cmp.mapping.confirm({ select = true }),
+  }),
+  experimental = {
+    ghost_text = true,
+  },
 })
 
 -- none-ls
@@ -84,30 +83,30 @@ cmp.setup({
 local null_ls = require("null-ls")
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 null_ls.setup({
-	sources = {
-		null_ls.builtins.formatting.prettierd,
-		null_ls.builtins.formatting.goimports,
-		null_ls.builtins.formatting.sql_formatter,
-		null_ls.builtins.formatting.stylua, -- lua
-		null_ls.builtins.completion.spell,
-		null_ls.builtins.diagnostics.pylint.with({
-			diagnostics_postprocess = function(diagnostic)
-				diagnostic.code = diagnostic.message_id
-			end,
-		}), -- python linter
-		null_ls.builtins.formatting.black, -- python formatter
-		null_ls.builtins.formatting.isort, -- python import sort
-	},
-	on_attach = function(client, bufnr)
-		if client.supports_method("textDocument/formatting") then
-			vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
-			vim.api.nvim_create_autocmd("BufWritePre", {
-				group = augroup,
-				buffer = bufnr,
-				callback = function()
-					vim.lsp.buf.format({ async = false })
-				end,
-			})
-		end
-	end,
+  sources = {
+    null_ls.builtins.formatting.prettierd,
+    null_ls.builtins.formatting.goimports,
+    null_ls.builtins.formatting.sql_formatter,
+    null_ls.builtins.formatting.stylua, -- lua
+    null_ls.builtins.completion.spell,
+    null_ls.builtins.diagnostics.pylint.with({
+      diagnostics_postprocess = function(diagnostic)
+        diagnostic.code = diagnostic.message_id
+      end,
+    }),                              -- python linter
+    null_ls.builtins.formatting.black, -- python formatter
+    null_ls.builtins.formatting.isort, -- python import sort
+  },
+  on_attach = function(client, bufnr)
+    if client.supports_method("textDocument/formatting") then
+      vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+      vim.api.nvim_create_autocmd("BufWritePre", {
+        group = augroup,
+        buffer = bufnr,
+        callback = function()
+          vim.lsp.buf.format({ async = false })
+        end,
+      })
+    end
+  end,
 })
