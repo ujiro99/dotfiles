@@ -1,3 +1,7 @@
+if vim.g.vscode then
+	return
+end
+
 local status, telescope = pcall(require, "telescope")
 if not status then
 	return
@@ -6,9 +10,9 @@ local actions = require("telescope.actions")
 
 local home
 if vim.fn.has("linux") == 1 then
-  home = vim.fn.expand('$HOME')
+	home = vim.fn.expand("$HOME")
 elseif vim.fn.has("win64") == 1 then
-  home = os.getenv("USERPROFILE")
+	home = os.getenv("USERPROFILE")
 else
 end
 
@@ -29,10 +33,6 @@ telescope.setup({
 		frecency = {
 			show_scores = false,
 			ignore_patterns = { "*.git/*", "*/tmp/*" },
-			workspaces = {
-				["tlt"] = home .. "/src/github.com/ujiro99/tlt",
-				["dotfiles"] = home .. "/dotfiles",
-			},
 		},
 	},
 })
