@@ -34,3 +34,6 @@ source $HOME/dotfiles/zsh/fzf-history.zsh
 
 # zoxide
 eval "$(zoxide init zsh)"
+
+# uv
+source $HOME/.local/bin/env
