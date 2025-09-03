@@ -102,7 +102,6 @@ require("lazy").setup({
 	-- telescope
 	{
 		"nvim-telescope/telescope.nvim",
-		tag = "0.1.3",
 		dependencies = { "nvim-lua/plenary.nvim" },
 	},
 	{
@@ -125,10 +124,15 @@ require("lazy").setup({
 		end,
 	},
 
+	-- github copilot
+	{
+		"github/copilot.vim",
+	},
+
 	-- LSP
+	"mason-org/mason.nvim",
+	"mason-org/mason-lspconfig.nvim",
 	"neovim/nvim-lspconfig",
-	"williamboman/mason.nvim",
-	"williamboman/mason-lspconfig.nvim",
 	"hrsh7th/cmp-buffer",
 	"hrsh7th/cmp-path",
 	{
@@ -151,9 +155,6 @@ require("lazy").setup({
 		opts = {},
 	},
 	"nvimtools/none-ls.nvim",
-
-	-- Github copilot
-	"github/copilot.vim",
 
 	{
 		"mattn/emmet-vim",

@@ -45,13 +45,15 @@ vim.keymap.set("n", "<Space>D", ":bd!<CR>", { noremap = true })
 vim.keymap.set("n", "'", ":", { noremap = true }) -- COMMANDモード開始
 vim.keymap.set("n", '"', "*", { noremap = true }) -- 検索開始
 
--- quickfixウィンドウではESCで閉じる
 vim.api.nvim_create_augroup("vimrc", {})
 vim.api.nvim_create_autocmd({ "FileType" }, {
 	pattern = "qf",
 	group = "vimrc",
 	callback = function()
+		-- quickfixウィンドウではESCで閉じる
 		vim.keymap.set("n", "<ESC>", ":ccl<CR>", { noremap = true, buffer = true })
+		-- エンターキーの動作をリセットする(改行挿入しないようにする)
+		vim.keymap.set("n", "<CR>", "<CR>", { buffer = true, noremap = true })
 	end,
 })
 
