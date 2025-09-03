@@ -2,6 +2,7 @@ if vim.g.vscode then
 	require("base")
 	require("moving")
 	require("search")
+	require("vscodeNeovim")
 else
 	require("plugins")
 	require("base")
