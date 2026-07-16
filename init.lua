@@ -1,3 +1,6 @@
+-- これで慣れてる
+vim.g.mapleader = " "
+
 if vim.g.vscode then
 	require("base")
 	require("moving")

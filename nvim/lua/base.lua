@@ -5,8 +5,6 @@ vim.o.directory = vim.fn.expand("~/.vim/swap")
 -- undofileの作成先ディレクトリ
 vim.o.undodir = vim.fn.expand("~/.vim/undo")
 vim.o.undofile = true
--- これで慣れてる
-vim.g.mapleader = " "
 -- 左右のカーソル移動で行間移動可能にする。
 vim.o.whichwrap = "b,s,<,>,[,]"
 -- 対応括弧の瞬間強調時間
@@ -27,6 +25,8 @@ vim.o.fileformats = "unix,dos"
 vim.o.encoding = "utf-8"
 -- sqlite3
 vim.g.sqlite_clib_path = vim.fn.expand("~/AppData/Local/nvim-data/sqlite/sqlite3.dll")
+-- nvim-rg
+vim.g.rg_command = "rg --vimgrep -S --hidden"
 
 -------------------------------------------------------------------------------
 -- keymap

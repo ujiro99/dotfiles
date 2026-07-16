@@ -1,5 +1,7 @@
 ## Alias 一覧
 alias vi=nvim
+alias gvi=goneovim
+alias gvim=goneovim
 alias c=cd
 alias u="cd ../"
 alias uu="cd ../../"
@@ -37,3 +39,11 @@ eval "$(zoxide init zsh)"
 
 # uv
 source $HOME/.local/bin/env
+
+# npm
+export PATH=$PATH:`npm prefix --location=global`/bin
+
+# Editor
+export VISUAL="nvim"
+export EDITOR="nvim"
+

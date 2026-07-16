@@ -19,4 +19,7 @@ vim.o.background = "dark"
 vim.g["fern#renderer"] = "nvim-web-devicons"
 
 -- フォント
-vim.o.guifont = "UDEV Gothic NF:h11"
+vim.o.guifont = "UDEV Gothic NF:h17"
+
+-- 折りたたみしない
+vim.opt.foldenable = false
