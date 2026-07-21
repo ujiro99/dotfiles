@@ -47,7 +47,22 @@ require("lazy").setup({
 		opts = {},
 	},
 
-	{ "nvim-treesitter/nvim-treesitter", branch = "main", lazy = false, build = ":TSUpdate" },
+	{
+		"romus204/tree-sitter-manager.nvim",
+		lazy = false,
+		priority = 1000,
+		dependencies = {}, -- tree-sitter CLI must be installed system-wide
+		config = function()
+			require("tree-sitter-manager").setup({
+				auto_install = true,
+			})
+			vim.api.nvim_create_autocmd("FileType", {
+				callback = function(args)
+					pcall(vim.treesitter.start, args.buf)
+				end,
+			})
+		end,
+	},
 
 	{
 		"lambdalisue/fern.vim",
@@ -155,7 +170,6 @@ require("lazy").setup({
 		end,
 		-- Optional dependencies
 		dependencies = {
-			"nvim-treesitter/nvim-treesitter",
 			"nvim-tree/nvim-web-devicons",
 		},
 	},
