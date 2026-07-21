@@ -25,6 +25,9 @@ brew install jq
 brew install fd
 brew install stylua
 
+# go tools
+go install github.com/mattn/memo@latest
+
 # change key speed
 defaults write -g InitialKeyRepeat -int 15
 defaults write -g KeyRepeat -int 1
